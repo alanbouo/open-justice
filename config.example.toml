@@ -1,0 +1,9 @@
+# Copier ce fichier en config.toml (ignoré par git) et adapter les chemins.
+
+# Couche froide : archives zip d'origine, jamais modifiées, versions conservées.
+# Provisoire sur le Mac ; à déplacer sur le disque externe.
+cold_dir = "data/cold"
+
+# Couche de travail : XML décompressés, Parquet, DuckDB. Reconstructible
+# entièrement depuis la couche froide.
+work_dir = "data/work"
