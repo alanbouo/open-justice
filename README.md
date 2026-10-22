@@ -38,6 +38,20 @@ Raison : le volume du texte intégral (voir `mesures.md`) est disproportionné p
 rapport au disque disponible sur les serveurs, et le site n'a pas besoin de
 republier les décisions pour informer.
 
+## Utilisation
+
+Téléchargement des archives vers la couche froide (Python 3.11 ou plus, sans
+dépendance) :
+
+```
+python3 scripts/telecharger.py                  # plan seul : aucun téléchargement
+python3 scripts/telecharger.py --telecharger    # exécute le plan
+```
+
+Options utiles : `--sources CE,CAA,TA`, `--depuis AAAAMM`, `--jusqua AAAAMM`,
+`--archive TA_202609.zip`, `--max-go` (plafond de données par exécution),
+`--limite-debit` (Mo/s). Tests : `python3 -m unittest discover -s tests`.
+
 ## Périmètre
 
 Le reste est à définir. Les points qui le contraignent déjà sont dans
