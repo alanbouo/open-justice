@@ -83,8 +83,11 @@ Elle diffère en partie de la documentation du site.
   2 023, Satisfaction totale 1 781, Rejet irrecevabilité manifeste alinéa 4
   1 645, Non-lieu 1 442. C'est la donnée la plus directement utile pour des
   indicateurs sur l'issue des recours, sans passer par le texte.
-- Aucune balise d'identité de magistrat : les noms éventuels ne figurent que
-  dans le texte intégral. `Avocat_Requerant` est un champ propre à part.
+- Aucune balise d'identité de magistrat. Mais le bloc de signature en fin de
+  texte intégral porte le nom du magistrat et du greffier (constaté sur une
+  décision de TA ; fréquence sur l'ensemble **[non mesurée]**). Les parties
+  sont pseudonymisées (initiales). `Avocat_Requerant` est un champ propre à
+  part. Toute extraction de statistiques doit donc exclure ce bloc.
 
 ## 5. Estimations pour l'historique complet
 
