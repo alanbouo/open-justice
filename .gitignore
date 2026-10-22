@@ -1,0 +1,9 @@
+# Données : jamais dans le dépôt (public). Décisions, archives, bases de travail.
+data/
+config.toml
+
+# Divers
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
