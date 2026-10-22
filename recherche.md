@@ -37,6 +37,16 @@ Le calendrier a déjà été repoussé trois fois (juin 2023, décembre 2024, ao
 - Export : endpoint `/export` paginé (voir
   [pyJudilibre](https://pyjudilibre.readthedocs.io/en/latest/)).
   **Quotas et dump complet : [non vérifié]**, à lire dans le Swagger PISTE.
+- API : endpoints `/search`, `/decision`, `/export`, `/taxonomy`,
+  `/transactionalhistory` (journal des créations, mises à jour et suppressions,
+  prévu pour synchroniser une base locale). Authentification par en-tête
+  `KeyId` après création d'un compte PISTE et validation des CGU. Bac à sable :
+  `sandbox-api.piste.gouv.fr/cassation/judilibre/v1.0`, production :
+  `api.piste.gouv.fr/cassation/judilibre/v1.0`. Le texte est découpé en zones
+  (`introduction`, `expose`, `moyens`, `motivations`, `dispositif`, `annexes`)
+  par fragments `start`/`end`. Source :
+  [Cour-de-cassation/judilibre-search](https://github.com/Cour-de-cassation/judilibre-search).
+  Paramètres de `/export` et quotas : non documentés dans cette source.
 - Taux d'échec de pseudonymisation et couverture réelle : **[non vérifié]**. Le
   rapport officiel
   [ODDJ 2025](https://www.justice.gouv.fr/sites/default/files/2025-08/rapport_oddj_2025.pdf)
@@ -46,9 +56,23 @@ Le calendrier a déjà été repoussé trois fois (juin 2023, décembre 2024, ao
 
 Plateforme opendata.justice-administrative.fr : Conseil d'État (depuis le
 30/09/2021), cours administratives d'appel (depuis le 31/03/2022), tribunaux
-administratifs (depuis le 30/06/2022). Format XML, Licence Ouverte 2.0.
-Source : [Conseil d'État](https://www.conseil-etat.fr/decisions-de-justice/open-data).
-Volumes : non détaillés ici.
+administratifs (depuis le 30/06/2022). Licence Ouverte 2.0 et CGU du
+18/01/2022. Volumes : non détaillés ici.
+Sources : [Conseil d'État](https://www.conseil-etat.fr/decisions-de-justice/open-data),
+[aide](https://opendata.justice-administrative.fr/aide.html),
+[CGU](https://opendata.justice-administrative.fr/cgu.html).
+
+- **Publication** : répertoires par année puis par mois (date de lecture),
+  chacun téléchargeable en archive compressée contenant des fichiers XML. Mise
+  en ligne le lendemain du prononcé pour le Conseil d'État, du mardi au samedi.
+- **Balises XML documentées** : `Identification`, `Date_Mise_Jour`,
+  `Code_Juridiction`, `Nom_Juridiction`, `Numero_Dossier`, `Date_Lecture`,
+  `Numero_ECLI`, `Avocat_Requerant`, `Type_Decision`, `Type_Recours`,
+  `Code_Publication` (A, B, C, D, Z), `Date_Audience`, `Numero_Role`,
+  `Formation_Jugement`, `Texte_Integral` (paragraphes en `<p>`).
+- **Téléchargement en masse** : la page de recherche est une application web
+  qui appelle `/recherche/api/` ; la liste des archives mensuelles et leur URL
+  directe **[non vérifié]**.
 
 ### Statistiques ministérielles
 
@@ -117,13 +141,35 @@ acteurs de jurimétrie dans un
 
 ## 4. Contraintes
 
-- **Article 33 de la loi de réforme de la justice (2019)** : interdiction de
-  réutiliser les données identifiantes des magistrats pour évaluer ou prédire
-  leur pratique, sanctionnée pénalement (articles 226-18, 226-24 et 226-31 du
-  code pénal). Source :
+- **Interdiction du profilage** (article 33 de la loi de réforme de la justice
+  de 2019 ; pour la justice administrative, article L. 10, 4e alinéa, du code
+  de justice administrative) : les données d'identité des magistrats et des
+  membres du greffe ne peuvent être réutilisées pour **évaluer, analyser,
+  comparer ou prédire** leurs pratiques professionnelles, réelles ou supposées.
+  Sanction pénale (articles 226-18, 226-24 et 226-31 du code pénal). Sources :
+  [CGU justice administrative, art. VI](https://opendata.justice-administrative.fr/cgu.html),
   [ABA Journal](https://www.abajournal.com/news/article/france-bans-and-creates-criminal-penalty-for-judicial-analytics).
-  Les analyses par juridiction, type de contentieux ou délai ne sont pas
-  concernées par cette lecture, à confirmer juridiquement **[non vérifié]**.
+  Le verbe « analyser » est plus large que « prédire ». Les analyses par
+  juridiction, type de contentieux ou délai ne sont pas concernées par cette
+  lecture, à confirmer juridiquement **[non vérifié]**.
+- **Conditions de réutilisation (CGU justice administrative, art. V)**, fondées
+  sur l'article L. 322-1 du CRPA :
+  - ne pas altérer les décisions ni en dénaturer le sens ; chaque décision
+    réutilisée garde son numéro, la juridiction, la formation, le siège et la
+    date de prononcé ;
+  - un extrait est permis si son caractère partiel est indiqué et que la
+    décision intégrale reste accessible ; un commentaire est libre mais doit
+    être nettement distingué du texte de la décision ;
+  - mentionner la source (base Données ouvertes du Conseil d'État) ;
+  - mentionner la date de dernière mise à jour, sous la forme « Document chargé
+    sur le site source le … » (date de chargement par le réutilisateur, non
+    celle de la décision) ;
+  - le réutilisateur est responsable de traitement RGPD et doit tenir ses
+    données à jour ; le Conseil d'État peut corriger ou supprimer une décision
+    à tout moment, sans préavis.
+- Les CGU de Judilibre (Cour de cassation) et de PISTE s'appliquent séparément
+  aux données judiciaires. Leur contenu détaillé n'a pas été lu **[non
+  vérifié]**.
 - **Pénal non ouvert avant 2027-2028** : pas de décisions de condamnation ni
   d'application des peines aujourd'hui.
 - **Exécution des peines** : relève des statistiques ministérielles, pas des
@@ -138,7 +184,7 @@ tant qu'il n'est pas enregistré chez un registrar. Marques non vérifiées (INP
 
 | Domaine | État |
 |---|---|
-| `open-justice.fr` | Libre, nom retenu |
+| `open-justice.fr` | Nom retenu, enregistré par Alan le 22/10/2026 (déclaration d'Alan, non revérifiée au registre) |
 | `justiceopen.fr`, `openjustice-france.fr` | Libres |
 | `openjustice.fr` | Pris |
 | `justicevisible.fr` | Libre, alternative écartée |
@@ -156,4 +202,6 @@ tant qu'il n'est pas enregistré chez un registrar. Marques non vérifiées (INP
 5. Rapport ODDJ 2025, à relire quand le site est de nouveau en ligne.
 6. Volumes de la justice administrative.
 7. Marque « Open Justice » (INPI) et usage du nom en France.
-8. Réservation du domaine `open-justice.fr`.
+8. Procédure de téléchargement en masse des archives de la justice
+   administrative (appels de `/recherche/api/`).
+9. CGU de Judilibre et de PISTE (lecture complète).
