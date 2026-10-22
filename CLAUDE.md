@@ -18,6 +18,7 @@ chargés automatiquement : **tu dois les lire.**
 | Si la demande porte sur… | Lire avant de répondre |
 |---|---|
 | Les données disponibles, leur couverture, les acteurs existants | `recherche.md` |
+| Volumes, tailles, structure réelle des fichiers, ce qui est mesuré | `mesures.md` |
 | L'objectif, le périmètre, le nom | `README.md` |
 
 ---
