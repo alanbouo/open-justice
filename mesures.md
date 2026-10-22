@@ -93,24 +93,61 @@ Elle diffère en partie de la documentation du site.
   sont pseudonymisées (initiales). `Avocat_Requerant` est un champ propre à
   part. Toute extraction de statistiques doit donc exclure ce bloc.
 
-## 5. Estimations pour l'historique complet
+## 5. Historique complet : décisions (mesuré le 22/10/2026)
 
-Extrapolations à partir de septembre 2026 et des tailles d'archives. Ce ne sont
-pas des mesures.
+Script : `scripts/extraire_metadonnees.py` (lecture directe des 173 archives, 27 s,
+métadonnées seules vers `work/metadonnees.csv`, 193 Mo, hors dépôt).
 
-- Nombre de décisions : de l'ordre de 1,2 million (4,37 Go ÷ 80,8 Mo × 22 852),
-  avec une forte incertitude selon les mois.
-- XML décompressé : de l'ordre de 12 Go (4,37 Go × 2,8).
-- Texte intégral : de l'ordre de 10 Go avant compression.
-- Texte stocké dans PostgreSQL après compression : de l'ordre de 3,5 Go en
-  prenant le ratio zlib, plus si la compression est moins efficace.
+- **1 155 525 décisions** (l'estimation initiale était d'environ 1,2 million).
+  22 fichiers XML n'ont pas pu être analysés (non localisés).
+- Par ordre : CE 39 857 (2021-06 à 2026-10), CAA 127 209 (2022-03 à 2026-10),
+  TA 988 459 (2022-06 à 2026-10).
+- Par an de lecture (TA) : 2023 208 548, 2024 217 453, 2025 246 804 ; 2026
+  (jusqu'en octobre) 217 225. Mois d'archive TA : de 271 à 27 787, médiane 18 776.
+- Le nom de fichier seul n'identifie pas une décision (8 815 noms apparaissent
+  plusieurs fois). Le triplet ordre + code juridiction + nom de fichier est unique.
+- Aucune décision hors de son mois d'archive (date de lecture = mois de l'archive).
+- Texte intégral : 10,3 milliards de caractères (CE 248 M, CAA 1 604 M, TA 8 463 M).
+  Médiane : CE 4 315, CAA 10 857, TA 6 956 caractères ; maximum 280 799.
+- Non-lien avec l'ensemble de la justice : ce sont les décisions **publiées**. Le
+  rapport au nombre total de décisions rendues **[non mesuré]**.
 
-## 6. Non mesuré
+## 6. Contenu des métadonnées (premier regard)
+
+- 50 codes de juridiction distincts. Plus gros volumes : TA Paris 116 211, TA Nantes
+  68 095, TA Cergy-Pontoise 67 079 ; CAA Paris 23 350. Le CE est identifié
+  « Section du Contentieux » (39 848 sur 39 857).
+- Type de décision : TA 586 580 décisions et 401 879 ordonnances ; CAA 72 135 et
+  55 074 ; CE 26 234 et 13 623. Plus d'un tiers des décisions sont des ordonnances.
+- Type de recours : excès de pouvoir 679 643 et plein contentieux 214 979 (TA) ;
+  vide pour 88 757 décisions TA (9 %). 35 libellés distincts, casse différente
+  selon l'ordre (« Excès de pouvoir » / « excès de pouvoir »).
+- `Solution` : 177 libellés distincts, jamais vide sauf CE (8,7 %). TA : rejet 42,1 %,
+  satisfaction partielle 11,4 %, satisfaction totale 10,7 %, désistement 8,7 %,
+  rejet par irrecevabilité manifeste 7,4 %, non-lieu 5,9 %. CAA : rejet 44,5 %,
+  rejet R.222-1 (appel manifestement infondé) 29,0 %, satisfaction partielle 9,4 %,
+  totale 7,1 %. CE : rejet par non-admission (PAPC) 27,8 %, rejet 15,5 %.
+  **Un « rejet » n'est pas un résultat pour le requérant ou l'administration** :
+  la partie qui gagne n'est pas dans les métadonnées. Les libellés changent
+  d'un ordre à l'autre ; il faudra un référentiel.
+- `Code_Publication` vide pour 480 680 décisions TA sur 988 459 (49 %) et 34 737
+  CAA sur 127 209 (27 %). Sens du code **[non documenté, non vérifié]**.
+- `Date_Audience` renseignée : TA 46 %, CAA 55 %, CE 61 %. Pour celles où elle
+  existe, délai audience → lecture : médiane 14 jours (TA), 19 (CAA), 23 (CE).
+  **Ce n'est pas la durée du procès** : la date d'enregistrement de la requête
+  n'est pas dans les métadonnées.
+- `Formation_Jugement` : TA 46 % (« Reconduite à la frontière » 36 264, chambres),
+  CAA 76 %, CE 98 %. Libellés non normalisés (« 1ère chambre » / « 1ère Chambre »).
+- ECLI : CE 94,6 % ; CAA et TA 0 %.
+- `Date_Mise_Jour` : pour 98 155 des 98 429 décisions TA des archives de 2022, elle
+  est postérieure de plus d'un an à la lecture ; 0 en 2026. Cause **[inconnue]**
+  (nouvelle version, repseudonymisation ?). À élucider avant de s'en servir.
+
+## 7. Non mesuré
 
 - Taille réelle dans PostgreSQL (tables, TOAST, WAL).
 - Taille d'un index de recherche plein texte en français.
 - Temps de chargement, mémoire consommée pendant l'ingestion.
-- Taille des seules métadonnées, sans texte.
 - Volumes de Judilibre (nécessite un accès PISTE).
 
 Disque libre au 22/10/2026 : coolify-1 14 Go, coolify-2 11 Go, coolify-3 7,5 Go
