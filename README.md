@@ -28,9 +28,10 @@ Trois couches :
 - **Froide** (`cold_dir`) : archives zip d'origine, jamais modifiées. Chaque
   version téléchargée est conservée avec sa date et sa somme de contrôle, car
   des archives passées peuvent être complétées après coup (voir `mesures.md`).
-  Provisoirement sur le Mac (`data/cold`), à déplacer sur un disque externe.
-  Un seul disque pour l'instant, sans copie.
-- **De travail** (`work_dir`, `data/work`) : XML décompressés, Parquet, DuckDB.
+  Provisoirement sur le Mac (`~/data/open-justice/cold`), à déplacer sur un
+  disque externe. Un seul disque pour l'instant, sans copie.
+- **De travail** (`work_dir`, `~/data/open-justice/work`) : XML décompressés,
+  Parquet, DuckDB.
   Reconstructible depuis la couche froide.
 - **Publiée** : statistiques agrégées uniquement, sur le site.
 
@@ -60,4 +61,13 @@ profilage nominatif des magistrats est interdit par la loi.
 
 ## Licence
 
-À choisir.
+Code : [MIT](LICENSE). Statistiques publiées : licence à choisir.
+
+## Contribuer
+
+Les données restent hors du dépôt, qui est public. Après avoir cloné, activer
+le garde-fou qui refuse les commits de données :
+
+```
+git config core.hooksPath scripts/hooks
+```
