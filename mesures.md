@@ -15,8 +15,8 @@ Source : <https://opendata.justice-administrative.fr>.
   `/DCA/AAAA/MM/CAA_AAAAMM.zip` (cours administratives d'appel),
   `/DTA/AAAA/MM/TA_AAAAMM.zip` (tribunaux administratifs).
   L'index de chaque répertoire (`/DCE/`, `/DCA/`, `/DTA/`) liste les archives.
-- Disponibles : CE de 2021-06 à 2026-10 (65 archives), CAA de 2022-03 à 2026-10
-  (56), TA de 2022-06 à 2026-10 (53).
+- Disponibles : CE de 2021-06 à 2026-10 (64 archives : août 2021 est absent de
+  l'index), CAA de 2022-03 à 2026-10 (56), TA de 2022-06 à 2026-10 (53).
 - Les archives ne répondent pas aux requêtes `HEAD` sans le bon chemin (404) ;
   avec le bon chemin, la taille s'obtient par `Content-Length`.
 - Chaque répertoire contient aussi un fichier `*_documents_reverses.csv`
@@ -33,10 +33,14 @@ Source : <https://opendata.justice-administrative.fr>.
 
 | Ordre | Archives | Taille cumulée |
 |---|---|---|
-| Conseil d'État | 65 | 0,12 Go |
+| Conseil d'État | 64 | 0,12 Go |
 | Cours administratives d'appel | 56 | 0,62 Go |
 | Tribunaux administratifs | 53 | 3,63 Go |
-| **Total** | **174** | **4,37 Go** |
+| **Total** | **173** | **4,37 Go** |
+
+Téléchargement complet effectué le 22/10/2026 : 173 archives et 3 fichiers CSV
+(176 éléments), 4,37 Go, sommes de contrôle et tailles vérifiées, aucun fichier
+manquant ni partiel. Stockés dans la couche froide (provisoire, sur le Mac).
 
 Les mois varient : août 2026 pèse 41,3 Mo pour les TA, septembre 2026 69,1 Mo.
 
