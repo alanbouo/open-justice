@@ -16,11 +16,22 @@ La recherche préalable est dans [`recherche.md`](recherche.md).
 - S'appuyer uniquement sur des données publiques et ouvertes.
 - Rester un projet ouvert : code et méthode publics.
 
+## Architecture retenue
+
+Les décisions brutes (archives zip et XML) ne sont pas hébergées par la
+plateforme en ligne. Elles sont stockées sur un disque à part, où elles sont
+téléchargées et traitées. Seules les **statistiques** qui en sont calculées sont
+publiées sur le site (open-justice.fr).
+
+Raison : le volume du texte intégral (voir `mesures.md`) est disproportionné par
+rapport au disque disponible sur les serveurs, et le site n'a pas besoin de
+republier les décisions pour informer.
+
 ## Périmètre
 
-À définir. Les points qui le contraignent déjà sont dans `recherche.md` :
-le pénal n'est pas encore ouvert (échéances 2027-2028) et le profilage nominatif
-des magistrats est interdit par la loi.
+Le reste est à définir. Les points qui le contraignent déjà sont dans
+`recherche.md` : le pénal n'est pas encore ouvert (échéances 2027-2028) et le
+profilage nominatif des magistrats est interdit par la loi.
 
 ## Licence
 
