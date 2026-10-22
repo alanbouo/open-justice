@@ -50,7 +50,7 @@ def lire_config(chemin):
     chemin = Path(chemin).resolve()
     with open(chemin, "rb") as f:
         cfg = tomllib.load(f)
-    return chemin.parent / cfg["cold_dir"]
+    return chemin.parent / Path(cfg["cold_dir"]).expanduser()
 
 
 def lister(base, sources):
