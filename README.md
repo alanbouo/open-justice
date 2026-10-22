@@ -3,8 +3,7 @@
 Plateforme ouverte pour voir comment fonctionne la justice en France : rendre
 lisibles, pour les citoyens, les décisions de justice publiées en open data.
 
-Nom de domaine envisagé : `open-justice.fr` (libre au 22 octobre 2026, non
-réservé à la création de ce dépôt).
+Nom de domaine : `open-justice.fr` (enregistré le 22 octobre 2026).
 
 ## État du projet
 
