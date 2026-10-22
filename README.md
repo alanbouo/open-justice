@@ -23,6 +23,17 @@ plateforme en ligne. Elles sont stockées sur un disque à part, où elles sont
 téléchargées et traitées. Seules les **statistiques** qui en sont calculées sont
 publiées sur le site (open-justice.fr).
 
+Trois couches :
+
+- **Froide** (`cold_dir`) : archives zip d'origine, jamais modifiées. Chaque
+  version téléchargée est conservée avec sa date et sa somme de contrôle, car
+  des archives passées peuvent être complétées après coup (voir `mesures.md`).
+  Provisoirement sur le Mac (`data/cold`), à déplacer sur un disque externe.
+  Un seul disque pour l'instant, sans copie.
+- **De travail** (`work_dir`, `data/work`) : XML décompressés, Parquet, DuckDB.
+  Reconstructible depuis la couche froide.
+- **Publiée** : statistiques agrégées uniquement, sur le site.
+
 Raison : le volume du texte intégral (voir `mesures.md`) est disproportionné par
 rapport au disque disponible sur les serveurs, et le site n'a pas besoin de
 republier les décisions pour informer.
