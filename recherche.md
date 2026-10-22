@@ -70,9 +70,10 @@ Sources : [Conseil d'État](https://www.conseil-etat.fr/decisions-de-justice/ope
   `Numero_ECLI`, `Avocat_Requerant`, `Type_Decision`, `Type_Recours`,
   `Code_Publication` (A, B, C, D, Z), `Date_Audience`, `Numero_Role`,
   `Formation_Jugement`, `Texte_Integral` (paragraphes en `<p>`).
-- **Téléchargement en masse** : la page de recherche est une application web
-  qui appelle `/recherche/api/` ; la liste des archives mensuelles et leur URL
-  directe **[non vérifié]**.
+- **Téléchargement en masse** : archives mensuelles à URL directe, listées
+  dans les index `/DCE/`, `/DCA/` et `/DTA/`. Détail, tailles et structure réelle
+  des fichiers dans [`mesures.md`](mesures.md) (la structure réelle diffère en
+  partie de la liste de balises ci-dessus).
 
 ### Statistiques ministérielles
 
@@ -202,6 +203,5 @@ tant qu'il n'est pas enregistré chez un registrar. Marques non vérifiées (INP
 5. Rapport ODDJ 2025, à relire quand le site est de nouveau en ligne.
 6. Volumes de la justice administrative.
 7. Marque « Open Justice » (INPI) et usage du nom en France.
-8. Procédure de téléchargement en masse des archives de la justice
-   administrative (appels de `/recherche/api/`).
+8. Sens exact des fichiers `*_documents_reverses.csv` (voir `mesures.md`).
 9. CGU de Judilibre et de PISTE (lecture complète).
