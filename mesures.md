@@ -109,7 +109,7 @@ métadonnées seules vers `work/metadonnees.csv`, 193 Mo, hors dépôt).
 - Aucune décision hors de son mois d'archive (date de lecture = mois de l'archive).
 - Texte intégral : 10,3 milliards de caractères (CE 248 M, CAA 1 604 M, TA 8 463 M).
   Médiane : CE 4 315, CAA 10 857, TA 6 956 caractères ; maximum 280 799.
-- Non-lien avec l'ensemble de la justice : ce sont les décisions **publiées**. Le
+- Limite : ce ne sont pas toutes les décisions rendues, ce sont les décisions **publiées**. Le
   rapport au nombre total de décisions rendues **[non mesuré]**.
 
 ## 6. Contenu des métadonnées (premier regard)
