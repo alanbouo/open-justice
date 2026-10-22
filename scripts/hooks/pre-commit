@@ -1,0 +1,27 @@
+#!/bin/sh
+# Refuse tout commit qui contiendrait des données brutes ou volumineuses.
+# Le dépôt est public : une décision commitée par erreur ne se rattrape pas.
+# Activation (une fois par clone) : git config core.hooksPath scripts/hooks
+
+limite_octets=5000000
+refus=0
+
+for f in $(git diff --cached --name-only --diff-filter=ACMR); do
+  case "$f" in
+    data/*|*.xml|*.zip|*.parquet|*.duckdb|*.db|*.sqlite|*.sqlite3|*.7z|*.gz|*.tar)
+      echo "pre-commit : fichier de données refusé : $f" >&2
+      refus=1
+      continue
+      ;;
+  esac
+  taille=$(git cat-file -s ":$f" 2>/dev/null || echo 0)
+  if [ "$taille" -gt "$limite_octets" ]; then
+    echo "pre-commit : fichier trop volumineux ($taille octets) : $f" >&2
+    refus=1
+  fi
+done
+
+if [ "$refus" -ne 0 ]; then
+  echo "Commit refusé. Les données restent hors du dépôt (voir config.toml)." >&2
+  exit 1
+fi
