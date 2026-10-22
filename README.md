@@ -49,6 +49,10 @@ python3 scripts/telecharger.py                  # plan seul : aucun télécharge
 python3 scripts/telecharger.py --telecharger    # exécute le plan
 ```
 
+Sur un Mac avec Python installé depuis python.org, la vérification TLS peut
+échouer (`CERTIFICATE_VERIFY_FAILED`). Sans la désactiver, utiliser les
+certificats du système : `SSL_CERT_FILE=/etc/ssl/cert.pem python3 scripts/telecharger.py`.
+
 Options utiles : `--sources CE,CAA,TA`, `--depuis AAAAMM`, `--jusqua AAAAMM`,
 `--archive TA_202609.zip`, `--max-go` (plafond de données par exécution),
 `--limite-debit` (Mo/s). Tests : `python3 -m unittest discover -s tests`.
