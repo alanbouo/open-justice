@@ -10,10 +10,13 @@ API (par exemple PISTE) ne s'écrivent jamais dans les fichiers.
 
 **Aucune donnée dans le dépôt.** Ni texte de décision (il contient les noms de
 magistrats et de greffiers), ni archive, ni base de travail. Tout ce qui est
-brut vit sous `data/`, ignoré par git (voir `.gitignore`). Seuls le code, la
-documentation et les statistiques agrégées publiables peuvent être commités.
-Les chemins des données se lisent dans `config.toml` (non versionné ; modèle
-dans `config.example.toml`).
+brut vit **hors du dépôt** (`~/data/open-justice/`). Les chemins se lisent dans
+`config.toml` (non versionné ; modèle dans `config.example.toml`). Garde-fous :
+`.gitignore` exclut `data/`, et le hook `scripts/hooks/pre-commit` (activé par
+`git config core.hooksPath scripts/hooks`) refuse les fichiers de données et
+les fichiers volumineux. Ne jamais contourner le hook (`--no-verify`) ni
+retirer ces règles. Seuls le code, la documentation et les statistiques
+agrégées publiables peuvent être commités.
 
 ---
 
