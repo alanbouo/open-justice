@@ -8,6 +8,13 @@ Ce dépôt est **public** et le reste. Rien de personnel, aucun secret, aucune c
 d'API, aucune donnée issue de la vie privée d'Alan. Les identifiants d'accès aux
 API (par exemple PISTE) ne s'écrivent jamais dans les fichiers.
 
+**Aucune donnée dans le dépôt.** Ni texte de décision (il contient les noms de
+magistrats et de greffiers), ni archive, ni base de travail. Tout ce qui est
+brut vit sous `data/`, ignoré par git (voir `.gitignore`). Seuls le code, la
+documentation et les statistiques agrégées publiables peuvent être commités.
+Les chemins des données se lisent dans `config.toml` (non versionné ; modèle
+dans `config.example.toml`).
+
 ---
 
 ## RÈGLE DE LECTURE — à appliquer avant toute réponse
