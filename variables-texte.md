@@ -1,86 +1,159 @@
-# Variables à extraire du texte intégral
+# Variables à construire
 
-Établi le 22 octobre 2026 à partir de la lecture de 7 décisions de septembre 2025
-(3 jugements de TA : OQTF, fiscal, responsabilité ; 2 ordonnances de TA :
-irrecevabilité manifeste, désistement ; 1 arrêt de CAA ; 1 décision du CE). Sept
-exemples ne sont pas un échantillon représentatif : la liste est une hypothèse de
-travail, chaque extraction doit être validée sur un échantillon relu à la main
-avant publication.
+Catalogue des variables à tirer des décisions de la justice administrative, établi
+le 23 octobre 2026. Elles viennent soit des métadonnées (mesurées dans
+`mesures.md`), soit du texte intégral. Le texte a été lu sur 7 décisions de
+septembre 2025 (3 jugements de TA, 2 ordonnances de TA, 1 arrêt de CAA, 1
+décision du CE) : sept exemples ne sont pas un échantillon représentatif, donc
+chaque extraction est une hypothèse à valider sur un échantillon relu à la main.
 
-## Structure constatée d'une décision
+Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `testé`
+(présence du motif vérifiée sur un échantillon, extraction non validée) ;
+`non testé`.
 
-1. **Visas** (« Vu la procédure suivante ») : date de la requête, demandes,
-   moyens, mémoire en défense, textes visés, désignation du juge, audience.
-2. **Motifs** (« Considérant ce qui suit ») : numérotés, avec les articles
-   cités et le raisonnement.
-3. **Dispositif** (« DÉCIDE » / « ORDONNE », puis « Article 1er… ») : ce qui est
-   effectivement jugé. C'est la partie la plus régulière.
-4. **Bloc de clôture** : date de rendu, signatures, formule exécutoire.
+## Règles pour toutes les variables
 
-Les ordonnances sont courtes (de 1 300 à 3 300 caractères dans les exemples) et
-suivent un modèle quasi fixe ; l'extraction y est plus fiable que dans les
-jugements.
+- **Aucun identifiant de personne physique n'est stocké ni calculé** : ni nom (partie,
+  tiers, avocat, magistrat, greffier), ni adresse, ni date de naissance, ni numéro
+  de dossier administratif. Quand une variable a besoin d'une telle information
+  (âge, commune), elle est transformée à l'extraction (classe d'âge, département)
+  et la donnée brute est jetée.
+- **Aucune clé permettant de relier des affaires différentes d'une même personne.**
+  Les seuls liens sont ceux de la procédure elle-même (chaîne d'une même affaire,
+  voir groupe F).
+- Pas de variable par magistrat ni par greffier (article 33 de la loi de 2019).
+- Chaque variable porte son indicateur d'extraction (trouvée, absente, ambiguë)
+  pour mesurer les erreurs.
 
-## Variables candidates
+## A. Identification et métadonnées
 
-**Procédure**
-- Date(s) d'enregistrement de la requête et des mémoires (« enregistrés les 2 et
-  10 septembre 2025 », « le 01/10/2014 » : formats variables).
-- Date de clôture de l'instruction, date d'audience, date de rendu (« Rendu public
-  par mise à disposition au greffe le… », « Décision rendue le… »).
-- Formation : juge unique / magistrat désigné / collégiale ; audience tenue ou non ;
-  rapporteur public dispensé ou non. **Rôles seulement, jamais de noms.**
-- Défendeur : mémoire en défense produit ou non (« n'a pas produit de mémoire en
-  défense »).
+| Variable | Contenu | Statut |
+|---|---|---|
+| `id_decision` | ordre + code juridiction + nom de fichier (unique ; le nom seul ne l'est pas) | mesuré |
+| `ordre`, `juridiction`, `date_lecture`, `annee`, `mois` | | mesuré |
+| `type_decision` | décision / ordonnance | mesuré |
+| `type_recours_norm` | 35 libellés regroupés (casse, variantes par ordre) | mesuré, référentiel à faire |
+| `solution_norm` | 177 libellés regroupés (rejet, satisfaction totale ou partielle, désistement, non-lieu, rejet par voie rapide…) | mesuré, référentiel à faire |
+| `code_publication` | sens non documenté ; vide pour 49 % des décisions TA | mesuré |
+| `formation_norm` | juge des référés, chambre, formation à 3, reconduite à la frontière… ; rôle seulement | mesuré (couverture TA 46 %) |
+| `date_audience` | 46 % TA, 55 % CAA, 61 % CE | mesuré |
+| `longueur_texte` | nombre de caractères | mesuré |
 
-**Parties**
-- Nature du requérant : personne physique, société, association, collectivité.
-- Représenté par un avocat : oui / non (« représenté par Me… »). Ne pas conserver
-  le nom.
-- Défendeur (autorité) : préfet, ministre, commune, établissement public, lu dans les
-  demandes et dans l'article de notification.
+## B. Procédure (texte)
 
-**Litige**
-- Domaine : le plus fiable semble être les **codes visés** (« Vu le code de l'entrée
-  et du séjour des étrangers », « code général des impôts », « code de la construction
-  et de l'habitation »), plutôt que des mots-clés dans le corps.
-- Décision contestée : type (arrêté, décision implicite de rejet), date, auteur.
-- Demandes : annulation, décharge, indemnisation (montant demandé), injonction,
-  suspension, frais (montant demandé).
-- Moyens invoqués : incompétence, insuffisance de motivation, erreur manifeste
-  d'appréciation, article 8 de la CEDH, etc. (étiquettes à définir).
-- Textes cités : codes et articles (« article L. 761-1 », « R. 222-1 »).
-- Si appel ou cassation : juridiction d'origine, date et numéro du jugement attaqué,
-  son issue (« a rejeté sa demande »). Permet de calculer un taux d'infirmation.
+| Variable | Contenu | Statut |
+|---|---|---|
+| `date_requete` | date d'enregistrement de la requête (la première, pas celle d'un mémoire) | testé : formule présente dans 95 % des TA et CAA, 46 % des CE |
+| `dates_memoires`, `nb_memoires` | | non testé |
+| `date_cloture` | clôture d'instruction | non testé |
+| `date_rendu` | « Rendu public par mise à disposition au greffe le… » | non testé |
+| `formation_type` | juge unique / magistrat désigné / collégiale (rôle, pas le nom) | non testé |
+| `audience_tenue` | oui / non (les ordonnances n'en ont pas) | non testé |
+| `rapporteur_public_dispense` | oui / non | non testé |
+| `memoire_defense` | produit / non produit | non testé |
+| `requerant_avocat` | oui / non (« représenté par Me… ») ; champ `Avocat_Requerant` des métadonnées en complément | non testé |
 
-**Dispositif (ce qui est décidé)**
-- Pour chaque article : annulation, rejet, réformation, renvoi, injonction (délai,
-  astreinte et son montant), frais, notification.
-- Frais irrépétibles : montant, qui paie (l'État, la collectivité, le requérant),
-  qui reçoit (le requérant ou son avocat).
-- Montant de l'indemnité accordée, le cas échéant.
-- Fondement d'un rejet par ordonnance (R. 222-1, alinéa 4 irrecevabilité,
-  alinéa 1 désistement) et motif : tardiveté, requête prématurée, incompétence.
-- **Qui l'emporte** : variable calculée à partir du dispositif (article 1er) et de
-  `Solution`.
+## C. Parties
 
-**Variables dérivées**
-- Durée de jugement (rendu moins enregistrement de la requête) ; durée
-  d'instruction (clôture) ; délai audience → rendu.
-- Nombre d'articles du dispositif, présence d'une injonction, longueur des motifs.
+| Variable | Contenu | Statut |
+|---|---|---|
+| `requerant_nature` | personne physique / société / association / collectivité | non testé |
+| `defendeur_categorie` | État (préfecture, ministère) / collectivité / établissement public / organisme social… | non testé |
+| `defendeur_departement` | pour une préfecture ou une collectivité : le département, pas le nom d'une personne | non testé |
+
+## D. Litige
+
+| Variable | Contenu | Statut |
+|---|---|---|
+| `domaine` | lu dans les **codes visés** (CESEDA, CGI, code de la construction et de l'habitation, code des pensions…), plus fiable que les mots du corps | non testé (mots-clés bruts testés : trop larges) |
+| `sous_domaine` | OQTF, refus de titre de séjour, asile, DALO, taxe d'habitation, permis de construire, indemnisation… | non testé |
+| `decision_contestee_type`, `decision_contestee_date` | arrêté, décision implicite de rejet… ; auteur : catégorie seulement | non testé |
+| `demandes` | annulation, décharge, indemnité, injonction, suspension, frais | non testé |
+| `montant_indemnite_demande`, `montant_frais_demande` | € | testé pour la mention « somme de … euros » (69 % TA, 89 % CAA) |
+| `moyens` | étiquettes : incompétence, insuffisance de motivation, erreur manifeste d'appréciation, article 8 CEDH… (liste à définir) | non testé |
+| `textes_cites` | codes et articles | non testé |
+| `oqtf` et attributs | présence d'une OQTF, délai de départ, interdiction de retour (durée), placement en rétention | testé : mention dans 17 % des TA, 37 % des CAA |
+
+## E. Dispositif (ce qui est décidé)
+
+| Variable | Contenu | Statut |
+|---|---|---|
+| `issue_articles` | par article : annulation, rejet, réformation, renvoi, non-lieu, désistement donné acte, injonction | non testé |
+| `issue_requerant` | gagne / perd / partiel / neutre, calculée depuis les articles et `Solution` | non testé |
+| `injonction` | oui / non ; délai en jours ; astreinte en € | non testé |
+| `frais_l761` | montant alloué ; qui paie (État, collectivité, requérant) ; qui reçoit (requérant, avocat) | testé : article L.761-1 cité dans 65 % TA, 87 % CAA, 77 % CE |
+| `indemnite_accordee` | montant | non testé |
+| `motif_rejet` | irrecevabilité (tardiveté, requête prématurée, incompétence, défaut d'intérêt) ou rejet au fond | non testé |
+| `fondement_ordonnance` | article R.222-1, alinéa (désistement, irrecevabilité manifeste…) | non testé |
+
+## F. Chaînage d'une même affaire
+
+| Variable | Contenu | Statut |
+|---|---|---|
+| `decision_attaquee` | juridiction, numéro, date du jugement ou de l'arrêt attaqué | testé : cité avec numéro et date dans 79 % des arrêts de CAA |
+| `id_decision_attaquee` | lien vers la base, par juridiction + numéro + date | testé : 85 % des citations retrouvées ; rapprochement à affiner (tribunal compris, ordonnances) |
+| `issue_premiere_instance` | issue de la décision attaquée, lue dans l'arrêt ou dans la base | non testé |
+| `degres_parcourus` | tribunal, appel, cassation | non testé |
+| `auteur_appel` | requérant initial ou administration | non testé |
+
+## G. Répétition, calculée au niveau de la décision
+
+Indicateurs par décision, jamais par personne : le texte d'une décision signale
+ou non une procédure antérieure ; aucune décision n'est croisée avec une autre
+sur la base de l'identité du requérant.
+
+| Variable | Contenu | Statut |
+|---|---|---|
+| `procedure_anterieure_citee` | oui / non / ambigu | non testé |
+| `nb_procedures_anterieures_citees` | | non testé |
+| `mesure_eloignement_anterieure` | mention d'une mesure d'éloignement antérieure, **hors** citation de la loi et hors négation | testé et **non fiable** : 15,8 % des décisions d'OQTF, mais 3 passages sur 6 relus sont des citations de la loi ou des négations |
+| `reexamen_ou_nouvelle_demande` | demande de réexamen, nouvelle demande, second recours | non testé |
+
+Borne basse : le juge ne cite le passé que s'il pèse sur la décision.
+
+## H. Profil, en catégories larges
+
+| Variable | Contenu | Statut |
+|---|---|---|
+| `requerant_classe_age` | calculée à l'extraction (âge à la date de la décision, par tranche) puis date de naissance jetée | non testé |
+| `requerant_civilite` | M. / Mme | non testé |
+| `departement` | du lieu du litige ou du défendeur, jamais la commune | non testé |
+| `mineur_concerne` | oui / non | non testé |
+| nationalité, santé, composition familiale | données sensibles : **à ne pas extraire** avant vérification de ce qui est permis | non vérifié |
+
+## I. Dérivées
+
+| Variable | Calcul | Statut |
+|---|---|---|
+| `duree_jugement_jours` | `date_rendu` − `date_requete` ; contrôler les dates aberrantes (une requête de 2014 jugée en 2025) | non testé |
+| `duree_instruction_jours` | `date_cloture` − `date_requete` | non testé |
+| `delai_audience_rendu_jours` | `date_rendu` − `date_audience` | mesuré (médiane 14 à 23 jours) |
+| `duree_totale_affaire` | de la requête de première instance à la dernière décision de la chaîne | non testé |
+| `delai_appel_jours` | date de l'arrêt moins date du jugement attaqué | non testé |
+
+## J. Contrôle qualité
+
+`extraction_statut` (trouvée / absente / ambiguë) pour chaque variable, `version_extracteur`,
+`echantillon_relu` (marque les décisions relues à la main pour mesurer les erreurs).
+
+## Structure d'une décision (pour l'extraction)
+
+1. **Visas** (« Vu la procédure suivante ») : requête, demandes, moyens, mémoire en
+   défense, textes, désignation du juge, audience.
+2. **Motifs** (« Considérant ce qui suit »).
+3. **Dispositif** (« DÉCIDE » / « ORDONNE », « Article 1er… ») : la partie la plus
+   régulière.
+4. **Clôture** : date de rendu, signatures, formule exécutoire.
+
+Les ordonnances sont courtes (1 300 à 3 300 caractères dans les exemples) et
+suivent un modèle quasi fixe. Le texte varie selon l'ordre (CE : pourvoi, non-admission ;
+CAA : rappel de la première instance) : prévoir une extraction par ordre et par type.
 
 ## Points d'attention
 
-- **Des noms de magistrats figurent hors du bloc de signature** : dans les visas
-  (« la présidente a désigné M. … », « le rapport de M. … a été entendu », liste
-  « siégeaient ») en plus des signatures, et en toutes lettres au Conseil d'État.
-  Toute extraction doit exclure ces mentions : ne conserver que le rôle. Les
-  noms d'avocats et de parties (initiales ou non) ne sont pas à conserver non plus.
-- Une société n'est pas pseudonymisée dans l'exemple vu (désistement) : le texte brut
-  ne doit pas être republié.
-- **Dates incohérentes possibles** : une requête « enregistrée le 01/10/2014 » jugée
-  en 2025 est peut-être une erreur de saisie ; à contrôler avant d'en tirer une
-  durée.
-- Le texte varie entre ordres (CE : « pourvoi », « non admis » ; CAA : rappel de la
-  procédure de première instance) : prévoir une extraction par ordre et par type
-  de décision.
+- Des **noms de magistrats** figurent hors du bloc de signature (visas, formation) ;
+  en toutes lettres au Conseil d'État. Ne conserver que le rôle.
+- Une **société** n'était pas pseudonymisée dans l'exemple vu (désistement) : le
+  texte brut ne se republie jamais.
+- Les motifs de mots-clés bruts attrapent des citations de la loi et des négations :
+  toute extraction doit les exclure et être mesurée.
