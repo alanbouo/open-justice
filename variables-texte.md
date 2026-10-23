@@ -18,7 +18,7 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
   de dossier administratif. Quand une variable a besoin d'une telle information
   (âge, commune), elle est transformée à l'extraction (classe d'âge, département)
   et la donnée brute est jetée.
-  Nationalité et composition familiale sont extraites en catégories ; avec l'âge et le
+  Nationalité, pays d'origine, composition familiale et santé sont extraits en catégories ; avec l'âge et le
   département elles se recoupent : à ne publier qu'avec un effectif minimal par cellule.
 - **Aucune clé permettant de relier des affaires différentes d'une même personne.**
   Les seuls liens sont ceux de la procédure elle-même (chaîne d'une même affaire,
@@ -124,7 +124,12 @@ Borne basse : le juge ne cite le passé que s'il pèse sur la décision.
 | `nationalite` | pays de nationalité tel que le texte l'énonce (« ressortissante tunisienne ») ; regroupement par zone géographique pour publier | testé sur un mois par ordre (mars et septembre 2025) : « de nationalité … » dans 7 % des TA, 14 % des CAA ; « ressortissant(e) … » dans 31 % des TA, 53 % des CAA ; au moins l'une des deux dans 33 à 34 % des TA, 58 % des CAA, 2 % des CE. Les deux formules se recoupent. Quelques « ressortissant français » : à traiter |
 | `situation_familiale` | marié(e) / célibataire / pacsé(e) ; conjoint en France oui / non | non testé |
 | `enfants` | nombre d'enfants ; au moins un enfant mineur ; enfant né en France ; enfant scolarisé | non testé (enfant mineur : 4 à 7 % des décisions par mot-clé) |
-| santé | **non extraite** : non vérifié ; mention de handicap, maladie ou invalidité dans 7 à 15 % des décisions, par mot-clé | non vérifié |
+| `pays_origine` | pays dont le texte dit que la personne est originaire : « pays d'origine », « originaire de… », lieu de naissance suivi d'un pays. Distinct de `nationalite` (on peut être d'un pays et originaire d'un autre) ; garder les deux et noter laquelle des formulations a servi | testé sur le motif seul (septembre 2025) : « pays d'origine » dans 11 % des TA, 33 % des CAA, mais souvent dans une citation de la loi ou un énoncé de principe sans pays nommé ; « né(e) à … (pays) » 3 à 5 % ; « originaire de » moins de 1 %. Extraction du pays nommé non validée |
+| `pays_destination_renvoi` | pays vers lequel l'éloignement est fixé (décision d'OQTF) | testé : formule dans 17 % des TA, 51 % des CAA ; pays nommé non validé |
+| `sante_invoquee` | oui / non : la santé du requérant ou d'un proche est invoquée | testé par mots-clés : maladie ou pathologie 8 % TA, 14 % CAA ; handicap, invalidité ou taux d'incapacité 6 % ; état de santé ou article L. 425-9 du CESEDA (titre de séjour pour soins) 7 % TA, 14 % CAA ; collège de médecins de l'OFII 4 % TA, 7 % CAA ; troubles psychiques 3 à 4 % ; grossesse 2 % |
+| `sante_categorie` | catégorie seulement : maladie grave, handicap ou invalidité, trouble psychique, grossesse, autre. **Jamais le diagnostic ni le texte libre** | non testé |
+| `sante_beneficiaire` | le requérant, un enfant, un conjoint, un proche | non testé |
+| `avis_medical_pris` | avis du collège de médecins de l'OFII, ou expertise, mentionné et son sens (favorable, défavorable) | non testé |
 
 ## I. Dérivées
 
