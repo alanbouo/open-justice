@@ -34,9 +34,26 @@ Le calendrier a déjà été repoussé trois fois (juin 2023, décembre 2024, ao
   ou déjà sur Légifrance sont disponibles.
 - Recherche sans opérateurs booléens.
 - L'API est en version bêta.
-- Export : endpoint `/export` paginé (voir
-  [pyJudilibre](https://pyjudilibre.readthedocs.io/en/latest/)).
-  **Quotas et dump complet : [non vérifié]**, à lire dans le Swagger PISTE.
+- Export : deux points d'entrée, `/export` (lots numérotés) et `/scan` (lots
+  chaînés par `search_after`), documentés dans le Swagger 2.0 lu le 23/10/2026
+  (version 1.0.0, ajouté au portail le 19/08/2025). Taille de lot : 10 par défaut,
+  1 000 au maximum. Le Swagger indique une limite « par défaut, pour une connexion
+  non authentifiée » de 10 résultats par lot et 1 000 au total ; la limite avec une
+  clé n'y figure pas. **Quotas de débit par application et dump complet : [non
+  vérifié]**, à lire sur la page de l'application PISTE. Filtres : nature, matière,
+  chambre, formation, juridiction, siège, niveau de publication, solution, dates
+  (création ou mise à jour). Point d'entrée `/stats` : agrégats (année, mois,
+  juridiction, matière, solution, type…) pour `cc`, `ca`, `tj`, `tcom`.
+- Champs d'une décision (`decisionFull`) : texte intégral pseudonymisé, zones,
+  visas (textes appliqués), **décision attaquée (`contested`) et décision suivante
+  (`forward`)**, rapprochements, chronologie (`timeline`), thèmes, sommaire, ECLI,
+  numéros de pourvoi, solution, niveau de publication, code NAC.
+- PISTE propose 39 entrées d'API (une trentaine d'API distinctes) sur le compte
+  d'Alan au 23/10/2026. Justice : JUDILIBRE et « Justice back » (version 0.1, ajoutée
+  le 22/07/2026), qui sert le contenu du site justice.fr (lieux de justice,
+  communes, simulateurs, fiches) et non des décisions. Aussi : Légifrance, DECP et
+  DUME (marchés publics), Chorus Pro et G2B (facturation), CaptchEtat, E-Signature,
+  Ingres (nomenclatures RH). La liste varie selon l'organisation du compte.
 - API : endpoints `/search`, `/decision`, `/export`, `/taxonomy`,
   `/transactionalhistory` (journal des créations, mises à jour et suppressions,
   prévu pour synchroniser une base locale). Authentification par en-tête
