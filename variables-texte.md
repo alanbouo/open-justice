@@ -121,7 +121,7 @@ Borne basse : le juge ne cite le passé que s'il pèse sur la décision.
 | `requerant_civilite` | M. / Mme | non testé |
 | `departement` | du lieu du litige ou du défendeur, jamais la commune | non testé |
 | `mineur_concerne` | oui / non | non testé |
-| `nationalite` | pays de nationalité tel que le texte l'énonce (« ressortissante tunisienne ») ; regroupement par zone géographique pour publier | testé : mention « de nationalité … » dans 7 % des TA, 14 % des CAA ; la mention « ressortissant(e) » n'a pas été comptée |
+| `nationalite` | pays de nationalité tel que le texte l'énonce (« ressortissante tunisienne ») ; regroupement par zone géographique pour publier | testé sur un mois par ordre (mars et septembre 2025) : « de nationalité … » dans 7 % des TA, 14 % des CAA ; « ressortissant(e) … » dans 31 % des TA, 53 % des CAA ; au moins l'une des deux dans 33 à 34 % des TA, 58 % des CAA, 2 % des CE. Les deux formules se recoupent. Quelques « ressortissant français » : à traiter |
 | `situation_familiale` | marié(e) / célibataire / pacsé(e) ; conjoint en France oui / non | non testé |
 | `enfants` | nombre d'enfants ; au moins un enfant mineur ; enfant né en France ; enfant scolarisé | non testé (enfant mineur : 4 à 7 % des décisions par mot-clé) |
 | santé | **non extraite** : non vérifié ; mention de handicap, maladie ou invalidité dans 7 à 15 % des décisions, par mot-clé | non vérifié |
