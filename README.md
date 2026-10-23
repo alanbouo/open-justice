@@ -57,6 +57,19 @@ Options utiles : `--sources CE,CAA,TA`, `--depuis AAAAMM`, `--jusqua AAAAMM`,
 `--archive TA_202609.zip`, `--max-go` (plafond de données par exécution),
 `--limite-debit` (Mo/s). Tests : `python3 -m unittest discover -s tests`.
 
+Téléchargement de Judilibre (ordre judiciaire) vers la même couche froide, avec
+une clé d'API PISTE gardée **hors du dépôt** (variable `PISTE_KEY_ID` ou fichier
+`~/data/open-justice/piste.env`, voir `config.example.toml`) :
+
+```
+python3 scripts/telecharger_judilibre.py                       # plan : décisions par type de juridiction
+python3 scripts/telecharger_judilibre.py --telecharger --max-lots 1   # un lot d'essai
+python3 scripts/telecharger_judilibre.py --telecharger         # tout, avec reprise
+```
+
+Le script n'a été testé que contre un faux serveur : le comportement réel de l'API
+(débit, quotas, curseur) reste à vérifier avec une clé.
+
 ## Périmètre
 
 Le reste est à définir. Les points qui le contraignent déjà sont dans

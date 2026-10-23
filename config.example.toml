@@ -9,3 +9,8 @@ cold_dir = "~/data/open-justice/cold"
 # Couche de travail : XML décompressés, Parquet, DuckDB. Reconstructible
 # entièrement depuis la couche froide.
 work_dir = "~/data/open-justice/work"
+
+# Fichier contenant la clé d'API PISTE (ligne PISTE_KEY_ID=...), hors du dépôt,
+# lisible par vous seul (chmod 600). La variable d'environnement PISTE_KEY_ID
+# a priorité sur ce fichier. Ne jamais écrire la clé dans le dépôt.
+piste_env = "~/data/open-justice/piste.env"
