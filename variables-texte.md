@@ -18,6 +18,8 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
   de dossier administratif. Quand une variable a besoin d'une telle information
   (âge, commune), elle est transformée à l'extraction (classe d'âge, département)
   et la donnée brute est jetée.
+  Nationalité et composition familiale sont extraites en catégories ; avec l'âge et le
+  département elles se recoupent : à ne publier qu'avec un effectif minimal par cellule.
 - **Aucune clé permettant de relier des affaires différentes d'une même personne.**
   Les seuls liens sont ceux de la procédure elle-même (chaîne d'une même affaire,
   voir groupe F).
@@ -119,7 +121,10 @@ Borne basse : le juge ne cite le passé que s'il pèse sur la décision.
 | `requerant_civilite` | M. / Mme | non testé |
 | `departement` | du lieu du litige ou du défendeur, jamais la commune | non testé |
 | `mineur_concerne` | oui / non | non testé |
-| nationalité, santé, composition familiale | données sensibles : **à ne pas extraire** avant vérification de ce qui est permis | non vérifié |
+| `nationalite` | pays de nationalité tel que le texte l'énonce (« ressortissante tunisienne ») ; regroupement par zone géographique pour publier | testé : mention « de nationalité … » dans 7 % des TA, 14 % des CAA ; la mention « ressortissant(e) » n'a pas été comptée |
+| `situation_familiale` | marié(e) / célibataire / pacsé(e) ; conjoint en France oui / non | non testé |
+| `enfants` | nombre d'enfants ; au moins un enfant mineur ; enfant né en France ; enfant scolarisé | non testé (enfant mineur : 4 à 7 % des décisions par mot-clé) |
+| santé | **non extraite** : non vérifié ; mention de handicap, maladie ou invalidité dans 7 à 15 % des décisions, par mot-clé | non vérifié |
 
 ## I. Dérivées
 
