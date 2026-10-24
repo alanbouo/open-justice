@@ -20,7 +20,7 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
   **Seule exception, décidée par Alan le 24/10/2026 : la date de naissance du
   requérant** (`requerant_date_naissance`, groupe H), conservée complète dans la
   couche de travail (`work_dir`, hors du dépôt), jamais publiée, jamais commitée.
-  Nationalité, pays d'origine, composition familiale et santé sont extraits en catégories ; avec l'âge et le
+  Nationalité, pays d'origine, composition familiale, santé et aide juridictionnelle (indice indirect de ressources) sont extraits en catégories ; avec l'âge et le
   département elles se recoupent : à ne publier qu'avec un effectif minimal par cellule.
 - **Aucune clé permettant de relier des affaires différentes d'une même personne.**
   Les seuls liens sont ceux de la procédure elle-même (chaîne d'une même affaire,
@@ -56,14 +56,17 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
 | `rapporteur_public_dispense` | oui / non | non testé |
 | `memoire_defense` | produit / non produit | non testé |
 | `requerant_avocat` | oui / non (« représenté par Me… ») ; champ `Avocat_Requerant` des métadonnées en complément | non testé |
+| `type_procedure` | voie procédurale, lue dans les articles du code de justice administrative cités : excès de pouvoir ordinaire, plein contentieux, référé-suspension (L. 521-1), référé-liberté (L. 521-2), référé conservatoire (L. 521-3), référé-provision (R. 541-1), exécution (L. 911-4), autre. Différent de `type_recours` des métadonnées, qui ne distingue pas les référés | non testé |
+| `rapo` | recours administratif préalable obligatoire : exercé / non mentionné, lu dans les visas et les motifs (« recours administratif préalable obligatoire », « RAPO », « recours gracieux »). Ne dit pas s'il était obligatoire en droit | non testé |
+| `aide_juridictionnelle` | aide juridictionnelle du requérant : `totale` / `partielle` / `provisoire` / `refusee` / `non_mentionnee`. Repère déjà utilisé comme acte du dispositif (`aide_jur`) pour écarter ces articles du résultat. Indice indirect de ressources : à ne publier qu'en agrégat, avec effectif minimal par cellule | non testé |
 
 ## C. Parties
 
 | Variable | Contenu | Statut |
 |---|---|---|
 | `requerant_nature` | **une valeur par requérant**, dans l'ordre du texte : `physique` / `societe` / `association` / `syndicat` / `copropriete` / `collectivite` (commune, département, région, métropole, communauté) / `etat` (préfet, ministre, directions et services de l'État) / `etablissement_public` (hôpital, université, caisse, office, agence, ordre…) / `inconnue`. Lue dans le sujet de la première phrase de requête, par le début de chaque élément (« la société… », « l'association… », « M. X », « le préfet… ») | testé sur 4 500 décisions par ordre (5 mois) ; part des requérants, TA / CAA / CE : personne physique 82 % / 74 % / 55 %, société 7 % / 9 % / 15 %, État 4 % / 6 % / 6 %, collectivité 2 % / 3 % / 4 %, association 1 % / 1 % / 7 %, `inconnue` 4 % / 5 % / 8 % ; exactitude non mesurée |
-| `defendeur_categorie` | État (préfecture, ministère) / collectivité / établissement public / organisme social… | non testé |
-| `defendeur_departement` | pour une préfecture ou une collectivité : le département, pas le nom d'une personne | non testé |
+| `defendeur_categorie` | catégorie de l'administration ou de la partie adverse, lue dans l'auteur de la décision attaquée et dans le mémoire en défense : `etat` (préfecture, ministère, rectorat, direction) / `collectivite` / `etablissement_public` / `organisme_social` (caisse, CAF, URSSAF) / `societe` / `association` / `autre`. Mêmes catégories que `requerant_nature`, pour pouvoir croiser « qui saisit » et « contre qui » ; plusieurs défendeurs possibles, une valeur par défendeur. Au premier degré le défendeur est l'auteur de l'acte attaqué ; en appel, l'intimé | non testé |
+| `defendeur_departement` | pour une préfecture ou une collectivité : le département, pas le nom d'une personne ; sert à publier des statistiques par territoire sans passer par le nom de l'agent signataire | non testé |
 
 ## D. Litige
 
@@ -74,11 +77,15 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
 | `sous_domaines` | **tous** les sous-domaines mentionnés dans la demande et les motifs, pas seulement le principal (une même décision peut être une OQTF et un refus de titre de séjour) ; information secondaire, car une mention n'est pas un objet du litige (« débouté de sa demande d'asile » dans une affaire d'OQTF) | testé avec `sous_domaine` ; exactitude non mesurée |
 | `titre_sejour_mentions` | pour le droit des étrangers : type de titre de séjour dont parle la décision, lu dans la formule « portant la mention « … » » : vie_privee_familiale, salarie, etudiant, travailleur_temporaire, travailleur_saisonnier, passeport_talent, visiteur, etranger_malade, recherche_emploi_creation_entreprise, entrepreneur_profession_liberale, resident_longue_duree_ue, protection_subsidiaire, parent_enfant_francais, membre_famille_citoyen_ue, scientifique_chercheur, autre. Catégories seulement, jamais le libellé brut. Peut être le titre demandé, détenu ou cité par la loi : le rôle n'est pas distingué ; plusieurs valeurs possibles (décision marquée ambiguë) | testé sur 1 475 décisions d'étrangers : mention trouvée dans 30 % des TA et 40 % des CAA ; plusieurs valeurs dans 3 % des TA et 5 % des CAA ; répartition : vie privée et familiale (363), salarié (106), étudiant (51), travailleur temporaire (13) ; la décision n°1 du relevé n°1 est reconnue « étudiant » ; exactitude non mesurée ; absent quand le texte ne donne pas la mention |
 | `titre_sejour_regimes` | pour le droit des étrangers : régime du titre en litige (carte de séjour temporaire, pluriannuelle, carte de résident, certificat de résidence algérien, autorisation provisoire de séjour, récépissé, visa long séjour, admission exceptionnelle) lu dans la décision attaquée | **expérimental, non fiable** : trouvé dans 22 % des TA et 8 % des CAA seulement ; exclu des relevés |
-| `decision_contestee_type`, `decision_contestee_date` | arrêté, décision implicite de rejet… ; auteur : catégorie seulement | non testé |
+| `decision_contestee_type`, `decision_contestee_date` | nature de l'acte attaqué : arrêté, décision, délibération, décret, avis… ; date de l'acte ; auteur : catégorie seulement | non testé |
+| `decision_contestee_implicite` | oui / non : l'acte attaqué est une décision **implicite** (silence de l'administration, « décision implicite de rejet »). Distinct de `decision_contestee_type`, pour compter le silence de l'administration | non testé |
 | `demandes` | annulation, décharge, indemnité, injonction, suspension, frais | non testé |
 | `montant_indemnite_demande`, `montant_frais_demande` | € | testé pour la mention « somme de … euros » (69 % TA, 89 % CAA) |
-| `moyens` | étiquettes : incompétence, insuffisance de motivation, erreur manifeste d'appréciation, article 8 CEDH… (liste à définir) | non testé |
+| `montant_litige_fiscal` | pour le fiscal : montant des droits et pénalités dont la décharge ou la réduction est demandée (« décharge de la somme de … euros »), en € ; distinct de l'indemnité demandée | non testé |
+| `moyens` | étiquettes des moyens **soulevés** : incompétence, insuffisance de motivation, erreur manifeste d'appréciation, article 8 CEDH… (liste à définir) | non testé |
+| `moyen_retenu` | étiquette du moyen **sur lequel le juge annule ou accueille**, lue dans les motifs (« le moyen tiré de … est fondé », « doit être accueilli », « suffit à entraîner l'annulation »). Même liste d'étiquettes que `moyens` ; peut être vide (rejet, désistement) ou multiple. C'est ce qui dit *pourquoi* l'administration perd | non testé |
 | `textes_cites` | codes et articles | non testé |
+| `jurisprudence_citee` | oui / non, nombre de renvois à des décisions de justice, et leur origine **par catégorie seulement** (Conseil d'État, Cour de cassation, Conseil constitutionnel, CJUE, CEDH, juridictions du fond). Jamais la référence elle-même : une référence nominative peut contenir le nom d'une partie | non testé |
 | `oqtf` et attributs | présence d'une OQTF, délai de départ, interdiction de retour (durée), placement en rétention | testé : mention dans 17 % des TA, 37 % des CAA |
 
 ## E. Dispositif (ce qui est décidé)
@@ -100,6 +107,7 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
 | `decision_attaquee` | juridiction, numéro, date du jugement ou de l'arrêt attaqué | testé : cité avec numéro et date dans 79 % des arrêts de CAA |
 | `id_decision_attaquee` | lien vers la base, par juridiction + numéro + date | testé : 85 % des citations retrouvées ; rapprochement à affiner (tribunal compris, ordonnances) |
 | `issue_premiere_instance` | issue de la décision attaquée, lue dans l'arrêt ou dans la base | non testé |
+| `confirmation_premiere_instance` | pour un arrêt d'appel ou de cassation : `confirme` / `infirme_totalement` / `infirme_partiellement` / `annule_et_renvoie`, lue dans le dispositif (« le jugement … est annulé », « la requête est rejetée ») ; donne le taux d'infirmation en appel. Le sous-cas `appel_accueilli` de `issue_requerant` en est une première approximation | non testé |
 | `degres_parcourus` | tribunal, appel, cassation | non testé |
 | `auteur_appel` | requérant initial ou administration | non testé |
 
