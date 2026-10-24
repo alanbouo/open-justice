@@ -156,6 +156,13 @@ métadonnées seules vers `work/metadonnees.csv`, 193 Mo, hors dépôt).
   n'est pas dans les métadonnées.
 - `Formation_Jugement` : TA 46 % (« Reconduite à la frontière » 36 264, chambres),
   CAA 76 %, CE 98 %. Libellés non normalisés (« 1ère chambre » / « 1ère Chambre »).
+  Mesuré le 24/10/2026 : pour les CAA, « Juge des référés » ne désigne pas un référé. Sur 800
+  arrêts examinés (janvier 2023, juin 2025), 146 portent ce libellé, presque tous des
+  ordonnances, et les trois dont j'ai lu les visas sont des appels de fond (refus de titre de
+  séjour, restitution fiscale). Dans les 422 décisions de CAA de l'échantillon élargi qui
+  portent le libellé, 18 seulement citent un article de référé du CJA. Au CE, au contraire,
+  100 des 103 décisions étiquetées « référé » en citent un. `formation_norm` doit donc se
+  méfier de ce libellé pour les CAA **[échantillon limité, cause non identifiée]**.
 - ECLI : CE 94,6 % ; CAA et TA 0 %.
 - `Date_Mise_Jour` : pour 98 155 des 98 429 décisions TA des archives de 2022, elle
   est postérieure de plus d'un an à la lecture ; 0 en 2026. Cause **[inconnue]**
