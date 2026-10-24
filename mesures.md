@@ -122,17 +122,34 @@ métadonnées seules vers `work/metadonnees.csv`, 193 Mo, hors dépôt).
   55 074 ; CE 26 234 et 13 623. Plus d'un tiers des décisions sont des ordonnances.
 - Type de recours : excès de pouvoir 679 643 et plein contentieux 214 979 (TA) ;
   vide pour 88 757 décisions TA (9 %). 35 libellés distincts, casse différente
-  selon l'ordre (« Excès de pouvoir » / « excès de pouvoir »).
+  selon l'ordre (« Excès de pouvoir » / « excès de pouvoir »). Mesuré le
+  24/10/2026 : 28 libellés après passage en minuscules et suppression des
+  espaces ; restent des variantes de fond (« exécution d'un jugement » et
+  « exécution décision justice adm » ; « rectif. erreur matérielle » et
+  « rectif. d'erreur matérielle » ; « contentieux répressif » avec un espace
+  double ; « fiscal » et « contentieux fiscal »).
 - `Solution` : 177 libellés distincts, jamais vide sauf CE (8,7 %). TA : rejet 42,1 %,
   satisfaction partielle 11,4 %, satisfaction totale 10,7 %, désistement 8,7 %,
   rejet par irrecevabilité manifeste 7,4 %, non-lieu 5,9 %. CAA : rejet 44,5 %,
   rejet R.222-1 (appel manifestement infondé) 29,0 %, satisfaction partielle 9,4 %,
   totale 7,1 %. CE : rejet par non-admission (PAPC) 27,8 %, rejet 15,5 %.
+  **Défaut mesuré le 24/10/2026 : pour 24 982 ordonnances (TA 24 465, CAA 517),
+  `Solution` contient un nom de juridiction (« TA Montreuil », « TA Caen »…) et
+  non une solution.** Toutes sont des ordonnances ; le sens n'est pas documenté
+  (lecture probable : renvoi vers la juridiction nommée **[non vérifié]**). Le
+  référentiel `solution_norm` doit les traiter à part, sinon elles gonflent le
+  nombre de libellés et faussent les parts d'issue.
   **Un « rejet » n'est pas un résultat pour le requérant ou l'administration** :
   la partie qui gagne n'est pas dans les métadonnées. Les libellés changent
   d'un ordre à l'autre ; il faudra un référentiel.
 - `Code_Publication` vide pour 480 680 décisions TA sur 988 459 (49 %) et 34 737
   CAA sur 127 209 (27 %). Sens du code **[non documenté, non vérifié]**.
+  Mesuré le 24/10/2026, le code suit le type de décision : au CE, `Z` couvre
+  13 049 ordonnances sur 13 623 et 583 décisions, `C` et `D` presque uniquement
+  des décisions ; au TA, `D` couvre 133 385 ordonnances et 82 641 décisions, `C`
+  262 060 décisions et 27 851 ordonnances. Les valeurs `R` (TA 152, CAA 1) et
+  `""` (TA 2, guillemets littéraux) sont rares. Corrélation seulement : le sens
+  des lettres reste à trouver dans la documentation de l'éditeur.
 - `Date_Audience` renseignée : TA 46 %, CAA 55 %, CE 61 %. Pour celles où elle
   existe, délai audience → lecture : médiane 14 jours (TA), 19 (CAA), 23 (CE).
   **Ce n'est pas la durée du procès** : la date d'enregistrement de la requête
@@ -143,6 +160,14 @@ métadonnées seules vers `work/metadonnees.csv`, 193 Mo, hors dépôt).
 - `Date_Mise_Jour` : pour 98 155 des 98 429 décisions TA des archives de 2022, elle
   est postérieure de plus d'un an à la lecture ; 0 en 2026. Cause **[inconnue]**
   (nouvelle version, repseudonymisation ?). À élucider avant de s'en servir.
+  Mesuré le 24/10/2026 : pour les décisions TA lues en 2022, 86 dates de mise à
+  jour distinctes, concentrées du 17 au 26 mars 2025 (au plus 18 321 le 21 mars) ;
+  tous millésimes de lecture confondus, 167 156 décisions TA portent une mise à
+  jour en mars 2025. Écart de plus d'un an : TA 2023 39 123 décisions sur
+  208 548, 2024 5 518, 2025 2 671, 2026 0 ; il existe aussi pour le CE (2021
+  1 712 sur 3 561) et les CAA (2023 3 804). Cela ressemble à une opération en
+  lot de mars 2025 **[cause non confirmée]**, qui touche aussi les décisions de
+  2023.
 
 ## 7. Non mesuré
 
