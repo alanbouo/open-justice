@@ -14,10 +14,12 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
 ## Règles pour toutes les variables
 
 - **Aucun identifiant de personne physique n'est stocké ni calculé** : ni nom (partie,
-  tiers, avocat, magistrat, greffier), ni adresse, ni date de naissance, ni numéro
-  de dossier administratif. Quand une variable a besoin d'une telle information
-  (âge, commune), elle est transformée à l'extraction (classe d'âge, département)
-  et la donnée brute est jetée.
+  tiers, avocat, magistrat, greffier), ni adresse, ni numéro de dossier
+  administratif. Quand une variable a besoin d'une telle information (commune),
+  elle est transformée à l'extraction (département) et la donnée brute est jetée.
+  **Seule exception, décidée par Alan le 24/10/2026 : la date de naissance du
+  requérant** (`requerant_date_naissance`, groupe H), conservée complète dans la
+  couche de travail (`work_dir`, hors du dépôt), jamais publiée, jamais commitée.
   Nationalité, pays d'origine, composition familiale et santé sont extraits en catégories ; avec l'âge et le
   département elles se recoupent : à ne publier qu'avec un effectif minimal par cellule.
 - **Aucune clé permettant de relier des affaires différentes d'une même personne.**
@@ -117,7 +119,9 @@ Borne basse : le juge ne cite le passé que s'il pèse sur la décision.
 
 | Variable | Contenu | Statut |
 |---|---|---|
-| `requerant_classe_age` | calculée à l'extraction (âge à la date de la décision, par tranche) puis date de naissance jetée | non testé |
+| `requerant_date_naissance` | date complète telle que le texte l'énonce, si elle y figure ; couche de travail seulement. Ne sert **jamais** à rapprocher des décisions entre elles ni à publier (voir règle de non-liaison) ; seule la classe d'âge ci-dessous est publiable | non testé |
+| `requerant_age` | âge en années à la date de la décision, calculé depuis `requerant_date_naissance` | non testé |
+| `requerant_classe_age` | tranche d'âge dérivée de `requerant_age` ; c'est la seule forme publiée | non testé |
 | `requerant_civilite` | M. / Mme | non testé |
 | `departement` | du lieu du litige ou du défendeur, jamais la commune | non testé |
 | `mineur_concerne` | oui / non | non testé |
