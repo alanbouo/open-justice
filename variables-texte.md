@@ -11,6 +11,13 @@ Colonne **Statut** : `mesuré` (disponible tel quel dans les métadonnées) ; `t
 (présence du motif vérifiée sur un échantillon, extraction non validée) ;
 `non testé`.
 
+**Relecture manuelle.** Le relevé n°1 (10 décisions choisies pour couvrir les
+cas de dates, nationalités, nombre et nature des requérants, issue, domaine,
+sous-domaine, titre de séjour, procédure, défendeur, confirmation) a été relu
+par Alan le 24 octobre 2026 : les extractions lui ont paru correctes. Dix
+décisions ne donnent pas un taux d'erreur, et ce relevé ne contient que des
+affaires au fond (aucun référé ni infirmation) ; l'exactitude reste non mesurée.
+
 ## Règles pour toutes les variables
 
 - **Aucun identifiant de personne physique n'est stocké ni calculé** : ni nom (partie,
