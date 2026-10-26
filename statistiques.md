@@ -70,3 +70,51 @@ et non une statistique exacte ; les extractions elles-mêmes sont à valider.
 - Représentativité par rapport au total des décisions rendues : non mesurée.
 - Justice judiciaire et pénale : autre source (Judilibre), pas encore chargée.
 - Évolution avant 2021 (CE) ou 2022 (CAA, TA) : les données ne remontent pas.
+
+## D. Résultats calculés (provisoires)
+
+Calculés le 26 octobre 2026 sur les 1 155 525 décisions, avec les variables
+de `variables-texte.md` dont l'exactitude n'est pas mesurée (accord de 90 à 94 %
+avec la solution codée par la juridiction pour l'issue). À lire comme des ordres de
+grandeur, pas comme des taux précis. Agrégats seulement : aucune cellule
+inférieure à 300 décisions n'est publiée ici.
+
+### D1. Issue du recours selon le domaine
+
+`issue_requerant` est vue du côté de **celui qui saisit le juge** : en appel et en
+cassation, c'est l'appelant, qui peut être l'administration (préfet, ministre),
+pas le citoyen. Les ordonnances sont incluses, d'où une forte part de `neutre`
+(désistement, non-lieu, radiation, transmission, expertise). Part de chaque issue
+en % ; « sans domaine » = aucun thème trouvé (surtout des ordonnances).
+
+| Tribunaux administratifs | Décisions | Gagne | Partiel | Perd | Neutre |
+|---|---|---|---|---|---|
+| Étrangers | 427 499 | 7,6 | 17,3 | 60,0 | 15,1 |
+| Sans domaine | 104 643 | 5,6 | 2,6 | 43,5 | 48,3 |
+| Fonction publique | 85 701 | 6,1 | 11,3 | 52,1 | 30,5 |
+| Sécurité sociale, aides | 69 936 | 5,6 | 7,4 | 67,4 | 19,7 |
+| Logement | 56 294 | 38,0 | 19,4 | 28,3 | 14,2 |
+| Urbanisme | 44 197 | 10,7 | 11,5 | 49,3 | 28,4 |
+| Sécurité et police | 41 633 | 5,8 | 10,3 | 61,0 | 22,9 |
+| Fiscal | 41 299 | 3,4 | 8,8 | 62,4 | 25,4 |
+| Électoral | 4 922 | 55,8 | 5,7 | 34,8 | 3,6 |
+
+| Cours administratives d'appel | Décisions | Gagne | Partiel | Perd | Neutre |
+|---|---|---|---|---|---|
+| Étrangers | 68 562 | 6,8 | 8,0 | 82,7 | 2,5 |
+| Fiscal | 11 396 | 8,6 | 12,9 | 72,1 | 6,4 |
+| Fonction publique | 8 496 | 11,0 | 15,9 | 63,3 | 9,8 |
+| Urbanisme | 7 959 | 12,3 | 11,3 | 62,6 | 13,7 |
+
+| Conseil d'État | Décisions | Gagne | Partiel | Perd | Neutre |
+|---|---|---|---|---|---|
+| Sans domaine | 4 993 | 3,8 | 1,7 | 71,5 | 23,0 |
+| Fiscal | 4 870 | 17,8 | 4,7 | 71,9 | 5,6 |
+| Étrangers | 4 451 | 7,5 | 3,3 | 84,5 | 4,7 |
+| Fonction publique | 4 101 | 7,4 | 6,4 | 79,1 | 7,1 |
+
+Lecture, avec les réserves :
+- Les taux de `gagne` + `partiel` les plus élevés sont logement (57 % des TA) et électoral (62 %). Je n'ai pas vérifié leur cause ; l'hypothèse pour le logement est le recours pour droit au logement opposable, pas relu.
+- Parmi les décisions rendues au fond (hors ordonnances, issues gagne, partiel ou perd), la requête est accueillie en tout ou partie dans 35 % des cas en TA et en CAA, 21 % au CE.
+- Droit des étrangers au TA, part de `perd` selon le sous-domaine (ordonnances incluses) : titre de séjour 56,2 % (234 967 décisions), OQTF 68,9 % (100 767), asile 62,9 % (48 434) ; le sous-domaine n'est pas précisé pour 11 165 décisions.
+- Le domaine « sans domaine » regroupe des affaires closes sans examen du fond ; il sous-représente ces affaires dans chaque domaine nommé.
