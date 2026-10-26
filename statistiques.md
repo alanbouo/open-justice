@@ -81,11 +81,12 @@ inférieure à 300 décisions n'est publiée ici.
 
 ### D1. Issue du recours selon le domaine
 
-`issue_requerant` est vue du côté de **celui qui saisit le juge** : en appel et en
-cassation, c'est l'appelant, qui peut être l'administration (préfet, ministre),
-pas le citoyen. Les ordonnances sont incluses, d'où une forte part de `neutre`
-(désistement, non-lieu, radiation, transmission, expertise). Part de chaque issue
-en % ; « sans domaine » = aucun thème trouvé (surtout des ordonnances).
+`issue_requerant` est vue du côté de **celui qui saisit le juge**. En appel et en
+cassation, c'est l'appelant, qui peut être l'administration : la séparation selon
+la nature de l'appelant est en D2. Les ordonnances sont incluses, d'où une forte
+part de `neutre` (désistement, non-lieu, radiation, transmission, expertise).
+Part de chaque issue en % ; « sans domaine » = aucun thème trouvé (surtout des
+ordonnances).
 
 | Tribunaux administratifs | Décisions | Gagne | Partiel | Perd | Neutre |
 |---|---|---|---|---|---|
@@ -118,3 +119,33 @@ Lecture, avec les réserves :
 - Parmi les décisions rendues au fond (hors ordonnances, issues gagne, partiel ou perd), la requête est accueillie en tout ou partie dans 35 % des cas en TA et en CAA, 21 % au CE.
 - Droit des étrangers au TA, part de `perd` selon le sous-domaine (ordonnances incluses) : titre de séjour 56,2 % (234 967 décisions), OQTF 68,9 % (100 767), asile 62,9 % (48 434) ; le sous-domaine n'est pas précisé pour 11 165 décisions.
 - Le domaine « sans domaine » regroupe des affaires closes sans examen du fond ; il sous-représente ces affaires dans chaque domaine nommé.
+
+### D2. Issue du recours selon la nature de l'appelant ou du requérant
+
+La nature est celle du premier requérant du texte (`requerants_natures`) : `État`
+(préfet, ministre, directions), `physique` (particulier), `morale` (société,
+association, syndicat, collectivité, établissement public). `inconnue` = nature non
+déterminée. Décisions au sens strict (hors ordonnances). Part en %.
+
+| Ordre | Qui saisit | Décisions | Gagne | Partiel | Perd | Neutre |
+|---|---|---|---|---|---|---|
+| TA | Particulier | 449 862 | 9,3 | 21,3 | 59,0 | 10,4 |
+| TA | Personne morale | 64 484 | 11,6 | 18,2 | 57,1 | 13,0 |
+| TA | État | 23 951 | 35,7 | 11,3 | 44,7 | 8,3 |
+| CAA | Particulier | 41 452 | 10,7 | 18,3 | 69,5 | 1,5 |
+| CAA | Personne morale | 15 689 | 14,3 | 20,4 | 62,3 | 3,0 |
+| CAA | État | 7 496 | 37,9 | 18,8 | 41,6 | 1,7 |
+| CE | Particulier | 12 928 | 10,1 | 4,7 | 83,7 | 1,5 |
+| CE | Personne morale | 9 286 | 14,6 | 7,2 | 76,2 | 1,9 |
+| CE | État | 1 499 | 35,6 | 23,6 | 38,4 | 2,4 |
+
+Droit des étrangers en CAA (ordonnances incluses), part d'accueil total ou partiel
+(`gagne` + `partiel`) : **48,6 %** quand l'appelant est l'État (5 507 arrêts),
+**11,3 %** quand c'est un particulier (58 521 arrêts). Dans la même cour, les
+particuliers perdent 86,9 % de leurs appels en droit des étrangers.
+
+Lecture, avec les réserves :
+- Une part de l'écart entre l'État et les particuliers vient de la nature des affaires : l'État fait appel de jugements qui ont déjà annulé sa décision, donc d'affaires où il a perdu en première instance. Le chiffre mesure le succès de l'appelant, pas la qualité des arguments.
+- La nature repose sur le premier requérant cité ; les affaires à plusieurs requérants de natures différentes sont classées selon le premier.
+- Les natures `inconnue` (7 498 arrêts de CAA, 2 521 du CE) ne sont pas ventilées ici.
+- Ces taux ne disent pas qui avait raison, seulement qui a obtenu satisfaction.
