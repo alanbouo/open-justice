@@ -149,3 +149,57 @@ Lecture, avec les réserves :
 - La nature repose sur le premier requérant cité ; les affaires à plusieurs requérants de natures différentes sont classées selon le premier.
 - Les natures `inconnue` (7 498 arrêts de CAA, 2 521 du CE) ne sont pas ventilées ici.
 - Ces taux ne disent pas qui avait raison, seulement qui a obtenu satisfaction.
+
+### D3. Durée entre l'enregistrement de la requête et la lecture de la décision
+
+Durée en jours entre `date_requete` (première date d'enregistrement citée dans les
+visas) et `date_lecture` (métadonnées). Calculée pour 96,7 % des TA, 96,5 % des CAA
+et seulement **63,4 % du CE** ; l'écart est dû à l'absence de la formule
+d'enregistrement dans les visas du CE, donc les durées du CE ne valent que pour ces
+décisions. Sont écartées les dates antérieures à 2000 ou postérieures à la décision
+(712 décisions). Médiane, premier et troisième quartiles (q1, q3), 9ᵉ décile (p90).
+
+| Ordre | Type | Décisions | q1 | Médiane | q3 | p90 |
+|---|---|---|---|---|---|---|
+| TA | Décision | 571 193 | 28 | **193** | 615 | 914 |
+| TA | Ordonnance | 384 266 | 10 | 75 | 253 | 609 |
+| CAA | Décision | 70 427 | 263 | **441** | 674 | 855 |
+| CAA | Ordonnance | 52 327 | 74 | 141 | 244 | 436 |
+| CE | Décision | 13 888 | 32 | 179 | 338 | 548 |
+| CE | Ordonnance | 11 367 | 63 | 114 | 180 | 337 |
+
+Selon le type de procédure (tous ordres de décisions confondus) :
+
+| Ordre | Procédure | Décisions | Médiane (jours) | p90 |
+|---|---|---|---|---|
+| TA | Au fond | 732 165 | 225 | 906 |
+| TA | Référé-liberté | 41 632 | 2 | 8 |
+| TA | Référé-suspension | 100 752 | 14 | 34 |
+| TA | Référé conservatoire | 56 431 | 24 | 85 |
+| TA | Référé-provision | 5 784 | 170 | 636 |
+| CAA | Au fond | 118 626 | 288 | 772 |
+| CE | Référé-liberté | 2 122 | 13 | 119 |
+
+Selon le domaine, au TA, décisions seulement (hors ordonnances) :
+
+| Domaine | Décisions | Médiane (jours) | p90 |
+|---|---|---|---|
+| Électoral | 4 158 | 50 | 85 |
+| Étrangers | 309 224 | 70 | 509 |
+| Logement | 20 483 | 336 | 767 |
+| Sécurité sociale, aides | 30 869 | 492 | 917 |
+| Urbanisme | 27 573 | 669 | 1 174 |
+| Fonction publique | 45 075 | 681 | 1 098 |
+| Fiscal | 25 756 | 808 | 1 232 |
+| Civil | 7 184 | 952 | 1 227 |
+
+Au sein du droit des étrangers (TA, décisions) : rétention et assignation 17 jours,
+asile 25, OQTF 85, titre de séjour 86, visa et regroupement familial 316. En CAA,
+le droit des étrangers a une médiane de 298 jours, le fiscal 632, l'urbanisme 610.
+
+Lecture, avec les réserves :
+- Ce n'est **pas la durée totale du litige**. En CAA et au CE, la durée part de l'enregistrement de l'appel ou du pourvoi, sans compter la première instance.
+- Les décisions publiées ne sont pas toutes les décisions rendues (représentativité non mesurée), et la lecture est la date de la décision, pas celle de la notification.
+- Les décisions des dernières années sont plus courtes mécaniquement : seules celles déjà rendues sont dans la base (biais de censure à droite). Les médianes TA par année de lecture (162 jours en 2022, 211 en 2025, 188 en 2026) ne sont donc pas une tendance fiable.
+- La médiane du droit des étrangers (70 jours) mélange des procédures accélérées (OQTF avec délai court, rétention) et ordinaires ; elle ne dit pas qu'un recours ordinaire dure 70 jours.
+- `date_requete` n'a pas été relue à la main hors du relevé n°1.
