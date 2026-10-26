@@ -203,3 +203,35 @@ Lecture, avec les réserves :
 - Les décisions des dernières années sont plus courtes mécaniquement : seules celles déjà rendues sont dans la base (biais de censure à droite). Les médianes TA par année de lecture (162 jours en 2022, 211 en 2025, 188 en 2026) ne sont donc pas une tendance fiable.
 - La médiane du droit des étrangers (70 jours) mélange des procédures accélérées (OQTF avec délai court, rétention) et ordinaires ; elle ne dit pas qu'un recours ordinaire dure 70 jours.
 - `date_requete` n'a pas été relue à la main hors du relevé n°1.
+
+### D4. Sort des jugements en appel et en cassation
+
+`confirmation_premiere_instance` : `confirme` = l'appel (ou le pourvoi) est rejeté et le
+jugement attaqué subsiste ; `infirme_partiellement` = jugement réformé en partie ;
+`infirme_totalement` = jugement annulé (au CE, `annule_et_renvoie` pour une cassation avec
+renvoi). Sont exclues les décisions « sans objet » (désistement, non-lieu) et celles où le
+sort n'est pas lu (8 117 CAA, 2 172 CE). Les ordonnances sont à part : elles
+confirment à 99,6 % en CAA (rejets par voie rapide). Décisions au sens strict ; part en %.
+
+| Ordre | Qui fait appel | Décisions | Confirmé | Réformé en partie | Infirmé ou annulé |
+|---|---|---|---|---|---|
+| CAA | Toutes | 66 945 | 70,2 | 11,1 | 18,6 |
+| CAA | Particulier | 39 193 | 75,6 | 8,2 | 16,3 |
+| CAA | Personne morale | 14 264 | 70,2 | 14,5 | 15,3 |
+| CAA | État | 6 888 | 43,8 | 17,2 | 39,0 |
+| CE | Toutes | 23 923 | 86,1 | 1,6 | 12,3 |
+| CE | Particulier | 12 274 | 90,0 | 0,9 | 9,1 |
+| CE | Personne morale | 8 355 | 85,7 | 1,1 | 13,2 |
+| CE | État | 1 315 | 56,8 | 8,8 | 34,4 |
+
+Par domaine en CAA (décisions, plus de 500 par ligne) : la part d'arrêts qui confirment va de
+50,4 % (sécurité sociale et aides, où 32,3 % sont réformés en partie) et 59,1 %
+(commande publique) à 76,6 % (fiscal) et 75,0 % (urbanisme). Droit des étrangers :
+68,5 % de confirmations (27 336 arrêts), 74,1 % quand l'appelant est un particulier, 43,8 %
+quand c'est l'État.
+
+Lecture, avec les réserves :
+- Le taux de confirmation est stable d'une année à l'autre en CAA (69,3 à 70,9 % de 2022 à 2026).
+- Au CE, 12 457 des 23 923 décisions sont des non-admissions de pourvoi, comptées comme confirmations : le jugement subsiste, sans examen au fond. La cassation avec renvoi concerne 2 516 décisions (10,5 %).
+- Quand l'État fait appel, « infirmé » veut dire que le tribunal avait donné raison au citoyen et que la cour renverse ce jugement ; le tableau ne distingue pas le sens du jugement de première instance.
+- `confirmation_premiere_instance` a été relue sur dix décisions (relevé n°1, cinq arrêts) sans erreur constatée ; la cohérence interne avec `issue_requerant` est de 99,3 % sur échantillon ; l'exactitude n'est pas mesurée.
