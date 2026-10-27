@@ -17,7 +17,7 @@ Source : [data.gouv.fr, API Judilibre](https://www.data.gouv.fr/fr/datasets/api-
 
 | Juridiction | État | Source |
 |---|---|---|
-| Cour de cassation | Ouvert, ~535 855 décisions au 10/10/2024 | [Bases & Netsources](https://www.bases-netsources.com/articles-de-bases/judilibre-l-open-data-judiciaire-en-transformation) |
+| Cour de cassation | Ouvert, **569 520 décisions au 27/10/2026** (`/stats` de l'API, mesuré avec une clé de production) ; ~535 855 au 10/10/2024 | mesure du 27/10/2026 ; [Bases & Netsources](https://www.bases-netsources.com/articles-de-bases/judilibre-l-open-data-judiciaire-en-transformation) pour 2024 |
 | Cours d'appel (civil, social, commercial) | Ouvert, ~392 000 arrêts au 10/10/2024 | idem |
 | Tribunaux judiciaires (civil, social, commercial) | Chargement progressif : 72 000 jugements de 48 tribunaux au 10/10/2024. Un rapport de 2025 compte plus de 1,3 M de décisions toutes juridictions confondues | idem ; [Actu-Juridique](https://www.actu-juridique.fr/breves/juridictions/open-data-des-decisions-de-justice-ouverture-a-lensemble-des-juridictions-de-lordre-judiciaire/) |
 | Prud'hommes | Échéance fixée au 30/09/2026. **[non vérifié]** que la publication a eu lieu | [Actu-Juridique](https://www.actu-juridique.fr/breves/institutions-judiciaires/open-data-nouveau-report-pour-les-decisions-des-conseils-de-prud'hommes-et-les-decisions-penales/) |
@@ -48,6 +48,7 @@ Le calendrier a déjà été repoussé trois fois (juin 2023, décembre 2024, ao
   visas (textes appliqués), **décision attaquée (`contested`) et décision suivante
   (`forward`)**, rapprochements, chronologie (`timeline`), thèmes, sommaire, ECLI,
   numéros de pourvoi, solution, niveau de publication, code NAC.
+- **Accès de production (vérifié le 27/10/2026).** L'API attend la clé de l'application dans l'en-tête `KeyId`, sans client id ni secret OAuth ([tutoriel officiel de la Cour de cassation](https://github.com/Cour-de-cassation/judilibre-tutoriels)). L'application créée automatiquement à l'inscription est de type bac à sable et n'était abonnée à aucune API : ses appels renvoyaient 403 en bac à sable. Pour la production, il a fallu créer une seconde application, l'abonner à JUDILIBRE (production) et accepter les conditions d'utilisation de JUDILIBRE en production. Avant cet abonnement, la production répondait 400, avec ou sans clé, y compris sur `/healthcheck`. Le script `scripts/telecharger_judilibre.py` en mode plan (aucun téléchargement) obtient maintenant les totaux de `/stats`. Pour la Cour de cassation : 569 520 décisions. Pour les cours d'appel, les tribunaux judiciaires et les tribunaux de commerce, le total reste **inconnu** (le script n'obtient pas de valeur ; cause non vérifiée). Taille moyenne d'une décision et quotas de débit : **non mesurés**, un lot d'essai de 1 000 décisions est prévu. Python.org 3.14 sur macOS n'a pas de certificats racine par défaut : `Install Certificates.command` règle le défaut de vérification TLS.
 - PISTE propose 39 entrées d'API (une trentaine d'API distinctes) sur le compte
   d'Alan au 23/10/2026. Justice : JUDILIBRE et « Justice back » (version 0.1, ajoutée
   le 22/07/2026), qui sert le contenu du site justice.fr (lieux de justice,
