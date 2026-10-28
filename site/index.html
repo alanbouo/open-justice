@@ -8,33 +8,55 @@
 </head>
 <body>
 <main>
-<h1>Comment la justice administrative tranche-t-elle ?</h1>
-<p class="chapo">Des statistiques calculées sur plus d’un million de décisions de justice administrative publiées en open data : issue des recours, durée, sort des jugements en appel.</p>
-<p class="reserve"><b>Projet en construction.</b> Les chiffres sont provisoires : leur méthode d’extraction n’est pas encore validée sur un échantillon relu à la main. À lire comme des ordres de grandeur. Les décisions publiées ne sont pas toutes les décisions rendues.</p>
-<div class="grille">
-<a class="carte" href="issues.html"><b>Issue des recours</b><span>Qui obtient gain de cause, selon le domaine et selon qui saisit le juge.</span></a>
-<a class="carte" href="durees.html"><b>Durée</b><span>Le temps écoulé entre l’enregistrement de la requête et la décision.</span></a>
-<a class="carte" href="appel.html"><b>Appel et cassation</b><span>Que devient un jugement attaqué devant la cour ou le Conseil d’État.</span></a>
-<a class="carte" href="methode.html"><b>Méthode et limites</b><span>D’où viennent les chiffres, et ce qu’ils ne disent pas.</span></a>
+<div class="hero">
+  <h1>La justice administrative en <mark>chiffres clairs</mark></h1>
+  <p id="chapo">Des décisions publiées en open data, résumées en réponses simples. Aucun jugement individuel, aucun nom de magistrat.</p>
 </div>
-<h2>Volume des décisions publiées</h2>
-<div id="volumes"></div>
+<div class="questions" id="questions"></div>
+<p class="reserve"><b>Chiffres provisoires.</b> Ils sont extraits automatiquement du texte des décisions, et cette extraction n'est pas encore validée à la main : à lire comme des ordres de grandeur. Ce sont des statistiques sur les décisions publiées, pas toutes les décisions rendues ; elles décrivent le passé et ne prédisent pas l'issue d'une affaire.</p>
 </main>
 <script src="graphiques.js"></script>
 <script>
 cadre("index.html");
 
-charger("volumes.json").then((d) => {
-  pied(d);
-  const par = {};
-  for (const r of d.lignes) (par[r.ordre] ??= {})[r.annee] = (par[r.ordre][r.annee] || 0) + r.n;
-  const t = el("table", {}, el("thead", {}, el("tr", {}, el("th", {}, "Année"), ...Object.keys(ORDRES).map((o) => el("th", { class: "num" }, ORDRES[o])))));
-  const annees = [...new Set(d.lignes.map((r) => r.annee))].sort();
-  const corps = el("tbody", {});
-  for (const a of annees) corps.append(el("tr", {}, el("td", {}, String(a)), ...Object.keys(ORDRES).map((o) => el("td", { class: "num" }, par[o]?.[a] ? nf.format(par[o][a]) : "–"))));
-  t.append(corps);
-  document.getElementById("volumes").replaceChildren(t, el("p", { class: "chapo" }, "Les années 2021 et 2022 sont partielles : les archives commencent en juin 2021 (Conseil d’État), mars 2022 (cours) et juin 2022 (tribunaux), et 2026 s’arrête en octobre."));
-}).catch(erreur);
+const trouve = (rows, crit) => rows.find((r) => Object.entries(crit).every(([k, v]) => r[k] === v));
+const accueil = (r) => r.gagne + r.partiel;
+
+Promise.all([charger("duree.json"), charger("issue_domaine.json"), charger("appel.json"), charger("volumes.json")])
+  .then(([dur, iss, app, vol]) => {
+    pied(dur);
+    const total = Number(vol.base.match(/^\d+/)[0]);
+    const median = trouve(dur.par_type, { ordre: "TA", type_decision: "Décision" }).mediane;
+    const refere = trouve(dur.par_procedure, { ordre: "TA", procedure: "refere_liberte" }).mediane;
+    const logement = accueil(trouve(iss.lignes, { ordre: "TA", domaine: "logement" }));
+    const fiscal = accueil(trouve(iss.lignes, { ordre: "TA", domaine: "fiscal" }));
+    const particulier = trouve(app.lignes, { ordre: "CAA", saisissant: "physique" }).confirme;
+    const etat = trouve(app.lignes, { ordre: "CAA", saisissant: "etat" }).confirme;
+    const e = Math.round;
+
+    document.getElementById("chapo").textContent =
+      `${nf.format(total)} décisions publiées en open data, résumées en réponses simples. Aucun jugement individuel, aucun nom de magistrat.`;
+
+    const cartes = [
+      ["Durée", "Combien de temps faut-il pour être jugé ?", `${e(median)}`, " jours, en médiane",
+        `Devant un tribunal administratif, la moitié des jugements est rendue en moins de ${e(median)} jours après l'enregistrement de la requête. Un référé-liberté : ${e(refere)} jours.`,
+        "durees.html", "Voir les durées →"],
+      ["Issue", "Dans quels domaines obtient-on le plus souvent gain de cause ?", `${e(logement)} %`, " en droit du logement",
+        `Gain de cause total ou partiel devant un tribunal administratif. En matière fiscale : ${e(fiscal)} %.`,
+        "issues.html", "Voir tous les domaines →"],
+      ["Appel", "Que se passe-t-il quand on fait appel ?", `${e(particulier)} %`, " confirmés",
+        `Part des jugements confirmés par la cour administrative d'appel quand l'appelant est un particulier. Quand c'est l'État : ${e(etat)} %.`,
+        "appel.html", "Voir l'appel →"],
+      ["Méthode", "D'où viennent ces chiffres, et que ne disent-ils pas ?", nf.format(total), " décisions publiées",
+        "Ce sont les décisions publiées, pas toutes les décisions rendues. Un taux ne dit pas qui avait raison.",
+        "methode.html", "Lire la méthode →"],
+    ];
+    document.getElementById("questions").replaceChildren(...cartes.map(([tag, q, valeur, unite, texte, href, lien]) =>
+      el("div", { class: "q-carte" },
+        el("span", { class: "pastille" }, tag), el("h3", {}, q),
+        el("div", { class: "r" }, valeur, el("small", {}, unite)),
+        el("p", {}, texte), el("a", { href }, lien))));
+  }).catch(erreur);
 </script>
 </body>
 </html>
