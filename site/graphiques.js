@@ -78,19 +78,37 @@ function erreur(e) {
 }
 
 // En-tête et pied communs, écrits une seule fois.
-const PAGES = [["index.html", "Accueil"], ["durees.html", "Durée"], ["issues.html", "Issue des recours"],
-  ["appel.html", "Appel"], ["methode.html", "Méthode"]];
+// Chaque entrée du menu regroupe les pages qui lui appartiennent ; « sous » ajoute une seconde ligne de navigation.
+const MENU = [
+  { href: "index.html", titre: "Accueil", pages: ["index.html"] },
+  { href: "administratif.html", titre: "Administratif", pages: ["administratif.html", "durees.html", "issues.html", "appel.html"],
+    sous: [["administratif.html", "Vue d'ensemble"], ["durees.html", "Durée"], ["issues.html", "Issue des recours"], ["appel.html", "Appel"]] },
+  { href: "judiciaire.html", titre: "Judiciaire", pages: ["judiciaire.html"] },
+  { href: "penal.html", titre: "Pénal", pages: ["penal.html"] },
+  { href: "domaines.html", titre: "Domaines", pages: ["domaines.html"] },
+  { href: "juridictions.html", titre: "Juridictions", pages: ["juridictions.html"] },
+  { href: "methode.html", titre: "Méthode", pages: ["methode.html"] },
+];
 
 function cadre(courante) {
-  const nav = el("nav", {}, ...PAGES.map(([h, t]) => {
-    const a = el("a", { href: h }, t);
-    if (h === courante) a.setAttribute("aria-current", "page");
+  const actif = MENU.find((m) => m.pages.includes(courante));
+  const nav = el("nav", { "aria-label": "Sections" }, ...MENU.map((m) => {
+    const a = el("a", { href: m.href }, m.titre);
+    if (m === actif) a.setAttribute("aria-current", "page");
     return a;
   }));
   document.body.prepend(el("header", {}, el("a", { class: "nom", href: "index.html" }, "Open Justice"), nav));
+  if (actif?.sous) {
+    document.querySelector("header").after(el("nav", { class: "sous", "aria-label": actif.titre },
+      ...actif.sous.map(([h, t]) => {
+        const a = el("a", { href: h }, t);
+        if (h === courante) a.setAttribute("aria-current", "page");
+        return a;
+      })));
+  }
   document.body.append(el("footer", {},
     el("p", { id: "calcul" }),
-    el("p", {}, "Initiative indépendante. Source : base Données ouvertes du Conseil d'État et des juridictions administratives (Licence Ouverte 2.0). ",
+    el("p", {}, "Initiative indépendante. Sources : base Données ouvertes du Conseil d'État et des juridictions administratives (Licence Ouverte 2.0) ; Judilibre, Cour de cassation, pour la justice judiciaire. ",
       "Ce site ne republie aucune décision : il publie des statistiques calculées sur les décisions publiées, ",
       "jamais par magistrat ni par greffier (article 33 de la loi de réforme de la justice de 2019). Code : ",
       el("a", { href: "https://github.com/alanbouo/open-justice" }, "dépôt public"), ".")));
