@@ -8,7 +8,8 @@
 </head>
 <body>
 <main>
-<h1>Méthode et limites</h1>
+<span class="pastille">Méthode</span>
+<h1>D’où viennent ces chiffres, et que ne disent-ils pas ?</h1>
 <h2>D’où viennent les chiffres</h2>
 <p>Des archives mensuelles de la base Données ouvertes du Conseil d’État et des juridictions administratives : Conseil d’État depuis juin 2021, cours administratives d’appel depuis mars 2022, tribunaux administratifs depuis juin 2022, jusqu’en octobre 2026. Ces décisions sont téléchargées et traitées hors ligne. Le site ne publie que des totaux et des pourcentages.</p>
 <h2>Ce que les chiffres ne disent pas</h2>
@@ -20,6 +21,8 @@
 </ul>
 <h2>Ce qui n’est pas publié, par choix et par loi</h2>
 <p>Aucune statistique par magistrat ni par greffier : la loi interdit de réutiliser leurs données d’identité pour évaluer, analyser, comparer ou prédire leurs pratiques. Aucun groupe de moins de 300 décisions n’est affiché. Le texte des décisions n’est pas republié.</p>
+<h2>Volume des décisions publiées</h2>
+<div class="bloc" id="volumes"></div>
 <h2>Justice judiciaire</h2>
 <p>Pas encore traitée. Les décisions judiciaires (Judilibre) sont téléchargées mais aucune statistique n’en est publiée ici.</p>
 <h2>Reproduire</h2>
@@ -28,6 +31,16 @@
 <script src="graphiques.js"></script>
 <script>
 cadre("methode.html");
+charger("volumes.json").then((d) => {
+  pied(d);
+  const par = {};
+  for (const r of d.lignes) (par[r.ordre] ??= {})[r.annee] = (par[r.ordre][r.annee] || 0) + r.n;
+  const t = el("table", {}, el("thead", {}, el("tr", {}, el("th", {}, "Année"), ...Object.keys(ORDRES).map((o) => el("th", { class: "num" }, ORDRES[o])))));
+  const corps = el("tbody", {});
+  for (const a of [...new Set(d.lignes.map((r) => r.annee))].sort()) corps.append(el("tr", {}, el("td", {}, String(a)), ...Object.keys(ORDRES).map((o) => el("td", { class: "num" }, par[o]?.[a] ? nf.format(par[o][a]) : "–"))));
+  t.append(corps);
+  document.getElementById("volumes").replaceChildren(t, el("p", { class: "chapo" }, "Les années 2021 et 2022 sont partielles : les archives commencent en juin 2021 (Conseil d’État), mars 2022 (cours) et juin 2022 (tribunaux), et 2026 s’arrête en octobre."));
+}).catch(erreur);
 
 </script>
 </body>
