@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Justice judiciaire · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille attente">À venir</span>
+<h1>La justice judiciaire</h1>
+<p class="chapo">Les juridictions civiles, sociales et commerciales : Cour de cassation, cours d'appel, tribunaux judiciaires et tribunaux de commerce.</p>
+<div class="bientot">
+<h2>Où en est cette section</h2>
+<p>Les décisions sont récupérées (source : Judilibre, Cour de cassation, au 28 octobre 2026) mais <b>pas encore analysées</b> : aucune statistique n'est publiée ici pour l'instant.</p>
+<table>
+<thead><tr><th>Juridiction</th><th class="num">Décisions récupérées</th><th>Période</th></tr></thead>
+<tbody>
+<tr><td>Cour de cassation</td><td class="num" data-n="569520"></td><td>1860 à 2026</td></tr>
+<tr><td>Cours d'appel</td><td class="num" data-n="646601"></td><td>principalement 2020 et après</td></tr>
+<tr><td>Tribunaux judiciaires</td><td class="num" data-n="765280"></td><td>2023 à 2026</td></tr>
+<tr><td>Tribunaux de commerce</td><td class="num" data-n="202072"></td><td>2025 et 2026</td></tr>
+</tbody></table>
+<h2>Pistes envisagées</h2>
+<p>Non engagées, à confirmer selon ce que les données permettent : durée des procédures, issue des décisions, nature des affaires, sort des décisions attaquées.</p>
+</div>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("judiciaire.html");
+document.querySelectorAll("[data-n]").forEach((c) => { c.textContent = nf.format(Number(c.dataset.n)); });
+</script>
+</body>
+</html>
