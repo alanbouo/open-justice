@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Issue des recours · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Issue des recours</h1>
+<p class="chapo">Part des décisions qui donnent gain de cause, en tout ou partie, à celui qui saisit le juge.</p>
+<p class="reserve"><b>À lire avec prudence.</b> « Perd » ne veut pas dire que l’autre partie avait raison. En appel, celui qui saisit le juge peut être l’administration. « Sans examen du fond » regroupe désistements, non-lieux et ordonnances de procédure. Les domaines sont détectés par mots-clés dans le texte : approximatifs.</p>
+<h2>Selon le domaine</h2>
+<div class="filtres" id="f-ordre"></div>
+<div id="domaine"></div>
+<h2>Selon qui saisit le juge</h2>
+<p class="chapo">Décisions au sens strict (hors ordonnances). La nature est celle du premier requérant cité dans le texte.</p>
+<div id="saisissant"></div>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("issues.html");
+
+Promise.all([charger("issue_domaine.json"), charger("issue_saisissant.json")]).then(([dom, sai]) => {
+  pied(dom);
+  const montrer = (o) => barres(document.getElementById("domaine"), dom.lignes.filter((r) => r.ordre === o),
+    (r) => DOMAINES[r.domaine] || r.domaine, ISSUES, ISSUES);
+  filtres(document.getElementById("f-ordre"), ORDRES, "TA", montrer);
+  montrer("TA");
+  const ordre = { etat: 0, morale: 1, physique: 2 };
+  const rows = sai.lignes.slice().sort((a, b) => a.ordre.localeCompare(b.ordre) || ordre[a.saisissant] - ordre[b.saisissant]);
+  barres(document.getElementById("saisissant"), rows, (r) => `${r.ordre} · ${SAISISSANTS[r.saisissant]}`, ISSUES, ISSUES);
+}).catch(erreur);
+</script>
+</body>
+</html>
