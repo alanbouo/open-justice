@@ -7,3 +7,7 @@ config.toml
 __pycache__/
 *.pyc
 .venv/
+
+# Extraction de variables du texte : locale, non publiée (décision du 29/10/2026)
+scripts/extracteur/
+scripts/extraire_variables.py
