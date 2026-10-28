@@ -1,0 +1,88 @@
+{
+ "calcule_le": "2026-10-28",
+ "base": "1155525 décisions publiées (justice administrative)",
+ "seuil": 300,
+ "note": "Sort du jugement attaqué ; décisions au sens strict ; sans objet exclu. « infirmé » inclut la cassation avec renvoi. « tous » = toutes natures, y compris inconnue.",
+ "lignes": [
+  {
+   "ordre": "CAA",
+   "saisissant": "etat",
+   "n": 6888,
+   "confirme": 43.8,
+   "infirme_partiellement": 17.2,
+   "infirme": 39.0
+  },
+  {
+   "ordre": "CAA",
+   "saisissant": "inconnue",
+   "n": 5303,
+   "confirme": 66.1,
+   "infirme_partiellement": 14.9,
+   "infirme": 19.0
+  },
+  {
+   "ordre": "CAA",
+   "saisissant": "morale",
+   "n": 15561,
+   "confirme": 70.0,
+   "infirme_partiellement": 14.7,
+   "infirme": 15.4
+  },
+  {
+   "ordre": "CAA",
+   "saisissant": "physique",
+   "n": 39193,
+   "confirme": 75.6,
+   "infirme_partiellement": 8.2,
+   "infirme": 16.3
+  },
+  {
+   "ordre": "CAA",
+   "saisissant": "tous",
+   "n": 66945,
+   "confirme": 70.2,
+   "infirme_partiellement": 11.1,
+   "infirme": 18.6
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "etat",
+   "n": 1315,
+   "confirme": 56.8,
+   "infirme_partiellement": 8.8,
+   "infirme": 34.4
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "inconnue",
+   "n": 1326,
+   "confirme": 83.8,
+   "infirme_partiellement": 1.8,
+   "infirme": 14.4
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "morale",
+   "n": 9008,
+   "confirme": 85.4,
+   "infirme_partiellement": 1.4,
+   "infirme": 13.2
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "physique",
+   "n": 12274,
+   "confirme": 90.0,
+   "infirme_partiellement": 0.9,
+   "infirme": 9.1
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "tous",
+   "n": 23923,
+   "confirme": 86.1,
+   "infirme_partiellement": 1.6,
+   "infirme": 12.3
+  }
+ ]
+}

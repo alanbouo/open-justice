@@ -1,0 +1,661 @@
+{
+ "calcule_le": "2026-10-28",
+ "base": "1155525 décisions publiées (justice administrative)",
+ "seuil": 300,
+ "note": "Jours entre l'enregistrement de la requête (visas) et la lecture. Pas la durée totale du litige.",
+ "par_type": [
+  {
+   "ordre": "CAA",
+   "type_decision": "Décision",
+   "n": 70427,
+   "mediane": 441,
+   "q1": 263,
+   "q3": 674,
+   "p90": 855
+  },
+  {
+   "ordre": "CAA",
+   "type_decision": "Ordonnance",
+   "n": 52327,
+   "mediane": 141,
+   "q1": 74,
+   "q3": 244,
+   "p90": 436
+  },
+  {
+   "ordre": "CE",
+   "type_decision": "Décision",
+   "n": 13888,
+   "mediane": 179,
+   "q1": 32,
+   "q3": 338,
+   "p90": 548
+  },
+  {
+   "ordre": "CE",
+   "type_decision": "Ordonnance",
+   "n": 11367,
+   "mediane": 114,
+   "q1": 63,
+   "q3": 180,
+   "p90": 337
+  },
+  {
+   "ordre": "TA",
+   "type_decision": "Décision",
+   "n": 571193,
+   "mediane": 193,
+   "q1": 28,
+   "q3": 615,
+   "p90": 914
+  },
+  {
+   "ordre": "TA",
+   "type_decision": "Ordonnance",
+   "n": 384266,
+   "mediane": 75,
+   "q1": 10,
+   "q3": 253,
+   "p90": 609
+  }
+ ],
+ "par_procedure": [
+  {
+   "ordre": "CAA",
+   "procedure": "execution",
+   "n": 880,
+   "mediane": 412,
+   "q1": 240,
+   "q3": 711,
+   "p90": 1096
+  },
+  {
+   "ordre": "CAA",
+   "procedure": "fond",
+   "n": 118626,
+   "mediane": 288,
+   "q1": 138,
+   "q3": 544,
+   "p90": 772
+  },
+  {
+   "ordre": "CAA",
+   "procedure": "refere_instruction",
+   "n": 744,
+   "mediane": 105,
+   "q1": 59,
+   "q3": 194,
+   "p90": 389
+  },
+  {
+   "ordre": "CAA",
+   "procedure": "refere_provision",
+   "n": 892,
+   "mediane": 161,
+   "q1": 92,
+   "q3": 304,
+   "p90": 641
+  },
+  {
+   "ordre": "CAA",
+   "procedure": "refere_suspension",
+   "n": 1267,
+   "mediane": 32,
+   "q1": 13,
+   "q3": 95,
+   "p90": 295
+  },
+  {
+   "ordre": "CE",
+   "procedure": "fond",
+   "n": 20149,
+   "mediane": 163,
+   "q1": 83,
+   "q3": 310,
+   "p90": 512
+  },
+  {
+   "ordre": "CE",
+   "procedure": "refere_conservatoire",
+   "n": 458,
+   "mediane": 72,
+   "q1": 28,
+   "q3": 120,
+   "p90": 195
+  },
+  {
+   "ordre": "CE",
+   "procedure": "refere_liberte",
+   "n": 2122,
+   "mediane": 13,
+   "q1": 7,
+   "q3": 49,
+   "p90": 119
+  },
+  {
+   "ordre": "CE",
+   "procedure": "refere_suspension",
+   "n": 2249,
+   "mediane": 42,
+   "q1": 13,
+   "q3": 118,
+   "p90": 210
+  },
+  {
+   "ordre": "TA",
+   "procedure": "execution",
+   "n": 4329,
+   "mediane": 180,
+   "q1": 34,
+   "q3": 406,
+   "p90": 679
+  },
+  {
+   "ordre": "TA",
+   "procedure": "fond",
+   "n": 732165,
+   "mediane": 225,
+   "q1": 63,
+   "q3": 603,
+   "p90": 906
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_autre",
+   "n": 589,
+   "mediane": 6,
+   "q1": 2,
+   "q3": 17,
+   "p90": 54
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_conservatoire",
+   "n": 56431,
+   "mediane": 24,
+   "q1": 12,
+   "q3": 44,
+   "p90": 85
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_instruction",
+   "n": 12463,
+   "mediane": 83,
+   "q1": 20,
+   "q3": 174,
+   "p90": 315
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_liberte",
+   "n": 41632,
+   "mediane": 2,
+   "q1": 1,
+   "q3": 4,
+   "p90": 8
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_modification",
+   "n": 1314,
+   "mediane": 20,
+   "q1": 11,
+   "q3": 31,
+   "p90": 68
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_provision",
+   "n": 5784,
+   "mediane": 170,
+   "q1": 77,
+   "q3": 349,
+   "p90": 636
+  },
+  {
+   "ordre": "TA",
+   "procedure": "refere_suspension",
+   "n": 100752,
+   "mediane": 14,
+   "q1": 5,
+   "q3": 22,
+   "p90": 34
+  }
+ ],
+ "par_domaine": [
+  {
+   "ordre": "CAA",
+   "domaine": "civil",
+   "n": 887,
+   "mediane": 452,
+   "q1": 306,
+   "q3": 704,
+   "p90": 945
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "collectivites_domaine_public",
+   "n": 2396,
+   "mediane": 612,
+   "q1": 377,
+   "q3": 813,
+   "p90": 1120
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "commande_publique",
+   "n": 866,
+   "mediane": 662,
+   "q1": 402,
+   "q3": 857,
+   "p90": 1163
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "commerce_assurance",
+   "n": 576,
+   "mediane": 576,
+   "q1": 370,
+   "q3": 748,
+   "p90": 1031
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "education",
+   "n": 578,
+   "mediane": 518,
+   "q1": 308,
+   "q3": 736,
+   "p90": 916
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "environnement",
+   "n": 2095,
+   "mediane": 681,
+   "q1": 434,
+   "q3": 832,
+   "p90": 1023
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "etrangers",
+   "n": 28067,
+   "mediane": 298,
+   "q1": 198,
+   "q3": 426,
+   "p90": 567
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "fiscal",
+   "n": 8990,
+   "mediane": 632,
+   "q1": 482,
+   "q3": 773,
+   "p90": 914
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "fonction_publique",
+   "n": 6457,
+   "mediane": 582,
+   "q1": 378,
+   "q3": 765,
+   "p90": 919
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "logement",
+   "n": 386,
+   "mediane": 556,
+   "q1": 259,
+   "q3": 757,
+   "p90": 974
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "regulation_actes_reglementaires",
+   "n": 342,
+   "mediane": 476,
+   "q1": 330,
+   "q3": 703,
+   "p90": 930
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "responsabilite_indemnisation",
+   "n": 2201,
+   "mediane": 550,
+   "q1": 343,
+   "q3": 755,
+   "p90": 970
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "sante",
+   "n": 2215,
+   "mediane": 565,
+   "q1": 341,
+   "q3": 772,
+   "p90": 966
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "securite_police",
+   "n": 1698,
+   "mediane": 495,
+   "q1": 327,
+   "q3": 706,
+   "p90": 856
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "securite_sociale_aides",
+   "n": 1650,
+   "mediane": 552,
+   "q1": 364,
+   "q3": 798,
+   "p90": 1034
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "travail_emploi",
+   "n": 2185,
+   "mediane": 519,
+   "q1": 343,
+   "q3": 749,
+   "p90": 949
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "urbanisme",
+   "n": 6248,
+   "mediane": 610,
+   "q1": 378,
+   "q3": 778,
+   "p90": 949
+  },
+  {
+   "ordre": "CE",
+   "domaine": "collectivites_domaine_public",
+   "n": 401,
+   "mediane": 140,
+   "q1": 28,
+   "q3": 289,
+   "p90": 512
+  },
+  {
+   "ordre": "CE",
+   "domaine": "education",
+   "n": 323,
+   "mediane": 138,
+   "q1": 20,
+   "q3": 418,
+   "p90": 741
+  },
+  {
+   "ordre": "CE",
+   "domaine": "environnement",
+   "n": 779,
+   "mediane": 235,
+   "q1": 32,
+   "q3": 528,
+   "p90": 729
+  },
+  {
+   "ordre": "CE",
+   "domaine": "etrangers",
+   "n": 1231,
+   "mediane": 107,
+   "q1": 11,
+   "q3": 242,
+   "p90": 353
+  },
+  {
+   "ordre": "CE",
+   "domaine": "fiscal",
+   "n": 1891,
+   "mediane": 214,
+   "q1": 114,
+   "q3": 369,
+   "p90": 563
+  },
+  {
+   "ordre": "CE",
+   "domaine": "fonction_publique",
+   "n": 1316,
+   "mediane": 190,
+   "q1": 68,
+   "q3": 350,
+   "p90": 586
+  },
+  {
+   "ordre": "CE",
+   "domaine": "regulation_actes_reglementaires",
+   "n": 703,
+   "mediane": 162,
+   "q1": 23,
+   "q3": 368,
+   "p90": 568
+  },
+  {
+   "ordre": "CE",
+   "domaine": "responsabilite_indemnisation",
+   "n": 457,
+   "mediane": 175,
+   "q1": 33,
+   "q3": 316,
+   "p90": 541
+  },
+  {
+   "ordre": "CE",
+   "domaine": "sante",
+   "n": 1203,
+   "mediane": 127,
+   "q1": 27,
+   "q3": 336,
+   "p90": 541
+  },
+  {
+   "ordre": "CE",
+   "domaine": "securite_police",
+   "n": 934,
+   "mediane": 219,
+   "q1": 87,
+   "q3": 374,
+   "p90": 606
+  },
+  {
+   "ordre": "CE",
+   "domaine": "securite_sociale_aides",
+   "n": 759,
+   "mediane": 108,
+   "q1": 14,
+   "q3": 288,
+   "p90": 463
+  },
+  {
+   "ordre": "CE",
+   "domaine": "travail_emploi",
+   "n": 540,
+   "mediane": 216,
+   "q1": 118,
+   "q3": 453,
+   "p90": 676
+  },
+  {
+   "ordre": "CE",
+   "domaine": "urbanisme",
+   "n": 1275,
+   "mediane": 186,
+   "q1": 94,
+   "q3": 316,
+   "p90": 465
+  },
+  {
+   "ordre": "TA",
+   "domaine": "civil",
+   "n": 7184,
+   "mediane": 952,
+   "q1": 731,
+   "q3": 1100,
+   "p90": 1227
+  },
+  {
+   "ordre": "TA",
+   "domaine": "collectivites_domaine_public",
+   "n": 13060,
+   "mediane": 566,
+   "q1": 27,
+   "q3": 861,
+   "p90": 1064
+  },
+  {
+   "ordre": "TA",
+   "domaine": "commande_publique",
+   "n": 4219,
+   "mediane": 420,
+   "q1": 25,
+   "q3": 890,
+   "p90": 1172
+  },
+  {
+   "ordre": "TA",
+   "domaine": "commerce_assurance",
+   "n": 1205,
+   "mediane": 809,
+   "q1": 580,
+   "q3": 1001,
+   "p90": 1206
+  },
+  {
+   "ordre": "TA",
+   "domaine": "education",
+   "n": 7401,
+   "mediane": 89,
+   "q1": 20,
+   "q3": 611,
+   "p90": 841
+  },
+  {
+   "ordre": "TA",
+   "domaine": "electoral",
+   "n": 4158,
+   "mediane": 50,
+   "q1": 3,
+   "q3": 71,
+   "p90": 85
+  },
+  {
+   "ordre": "TA",
+   "domaine": "environnement",
+   "n": 5363,
+   "mediane": 724,
+   "q1": 392,
+   "q3": 946,
+   "p90": 1171
+  },
+  {
+   "ordre": "TA",
+   "domaine": "etrangers",
+   "n": 309224,
+   "mediane": 70,
+   "q1": 20,
+   "q3": 246,
+   "p90": 509
+  },
+  {
+   "ordre": "TA",
+   "domaine": "fiscal",
+   "n": 25756,
+   "mediane": 808,
+   "q1": 628,
+   "q3": 1011,
+   "p90": 1232
+  },
+  {
+   "ordre": "TA",
+   "domaine": "fonction_publique",
+   "n": 45075,
+   "mediane": 681,
+   "q1": 245,
+   "q3": 896,
+   "p90": 1098
+  },
+  {
+   "ordre": "TA",
+   "domaine": "logement",
+   "n": 20483,
+   "mediane": 336,
+   "q1": 49,
+   "q3": 525,
+   "p90": 767
+  },
+  {
+   "ordre": "TA",
+   "domaine": "regulation_actes_reglementaires",
+   "n": 2768,
+   "mediane": 541,
+   "q1": 32,
+   "q3": 797,
+   "p90": 1027
+  },
+  {
+   "ordre": "TA",
+   "domaine": "responsabilite_indemnisation",
+   "n": 10069,
+   "mediane": 505,
+   "q1": 140,
+   "q3": 862,
+   "p90": 1163
+  },
+  {
+   "ordre": "TA",
+   "domaine": "sante",
+   "n": 10577,
+   "mediane": 576,
+   "q1": 153,
+   "q3": 862,
+   "p90": 1087
+  },
+  {
+   "ordre": "TA",
+   "domaine": "securite_police",
+   "n": 20531,
+   "mediane": 521,
+   "q1": 166,
+   "q3": 791,
+   "p90": 999
+  },
+  {
+   "ordre": "TA",
+   "domaine": "securite_sociale_aides",
+   "n": 30869,
+   "mediane": 492,
+   "q1": 290,
+   "q3": 714,
+   "p90": 917
+  },
+  {
+   "ordre": "TA",
+   "domaine": "travail_emploi",
+   "n": 8138,
+   "mediane": 701,
+   "q1": 434,
+   "q3": 929,
+   "p90": 1163
+  },
+  {
+   "ordre": "TA",
+   "domaine": "urbanisme",
+   "n": 27573,
+   "mediane": 669,
+   "q1": 220,
+   "q3": 923,
+   "p90": 1174
+  }
+ ],
+ "lignes": []
+}

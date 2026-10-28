@@ -1,0 +1,89 @@
+{
+ "calcule_le": "2026-10-28",
+ "base": "1155525 décisions publiées (justice administrative)",
+ "seuil": 300,
+ "note": "Décisions au sens strict (hors ordonnances). Nature du premier requérant cité.",
+ "lignes": [
+  {
+   "ordre": "CAA",
+   "saisissant": "etat",
+   "n": 7146,
+   "gagne": 37.9,
+   "partiel": 18.8,
+   "perd": 41.6,
+   "neutre": 1.7
+  },
+  {
+   "ordre": "CAA",
+   "saisissant": "morale",
+   "n": 16787,
+   "gagne": 14.8,
+   "partiel": 20.3,
+   "perd": 61.7,
+   "neutre": 3.2
+  },
+  {
+   "ordre": "CAA",
+   "saisissant": "physique",
+   "n": 40573,
+   "gagne": 10.7,
+   "partiel": 18.3,
+   "perd": 69.5,
+   "neutre": 1.5
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "etat",
+   "n": 1473,
+   "gagne": 35.6,
+   "partiel": 23.6,
+   "perd": 38.4,
+   "neutre": 2.4
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "morale",
+   "n": 9810,
+   "gagne": 14.9,
+   "partiel": 7.3,
+   "perd": 75.4,
+   "neutre": 2.3
+  },
+  {
+   "ordre": "CE",
+   "saisissant": "physique",
+   "n": 12731,
+   "gagne": 10.1,
+   "partiel": 4.7,
+   "perd": 83.7,
+   "neutre": 1.5
+  },
+  {
+   "ordre": "TA",
+   "saisissant": "etat",
+   "n": 22579,
+   "gagne": 35.7,
+   "partiel": 11.3,
+   "perd": 44.7,
+   "neutre": 8.3
+  },
+  {
+   "ordre": "TA",
+   "saisissant": "morale",
+   "n": 73985,
+   "gagne": 12.3,
+   "partiel": 18.3,
+   "perd": 56.1,
+   "neutre": 13.2
+  },
+  {
+   "ordre": "TA",
+   "saisissant": "physique",
+   "n": 442477,
+   "gagne": 9.3,
+   "partiel": 21.3,
+   "perd": 59.0,
+   "neutre": 10.4
+  }
+ ]
+}

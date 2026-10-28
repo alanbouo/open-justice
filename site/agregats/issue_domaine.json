@@ -1,0 +1,512 @@
+{
+ "calcule_le": "2026-10-28",
+ "base": "1155525 décisions publiées (justice administrative)",
+ "seuil": 300,
+ "note": "Part de chaque issue, vue du côté de celui qui saisit le juge. Ordonnances incluses.",
+ "lignes": [
+  {
+   "ordre": "CAA",
+   "domaine": "etrangers",
+   "n": 67600,
+   "gagne": 6.8,
+   "partiel": 8.0,
+   "perd": 82.7,
+   "neutre": 2.5
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "fiscal",
+   "n": 11163,
+   "gagne": 8.6,
+   "partiel": 12.9,
+   "perd": 72.1,
+   "neutre": 6.4
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "fonction_publique",
+   "n": 8187,
+   "gagne": 11.0,
+   "partiel": 15.9,
+   "perd": 63.3,
+   "neutre": 9.8
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "urbanisme",
+   "n": 7763,
+   "gagne": 12.3,
+   "partiel": 11.3,
+   "perd": 62.6,
+   "neutre": 13.7
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "sans_domaine",
+   "n": 6884,
+   "gagne": 7.1,
+   "partiel": 6.2,
+   "perd": 54.3,
+   "neutre": 32.5
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "responsabilite_indemnisation",
+   "n": 3703,
+   "gagne": 6.9,
+   "partiel": 14.4,
+   "perd": 60.4,
+   "neutre": 18.3
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "sante",
+   "n": 2699,
+   "gagne": 11.9,
+   "partiel": 19.9,
+   "perd": 57.5,
+   "neutre": 10.7
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "securite_sociale_aides",
+   "n": 2460,
+   "gagne": 11.4,
+   "partiel": 26.2,
+   "perd": 47.3,
+   "neutre": 15.0
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "collectivites_domaine_public",
+   "n": 2414,
+   "gagne": 16.0,
+   "partiel": 20.8,
+   "perd": 60.8,
+   "neutre": 2.4
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "travail_emploi",
+   "n": 2389,
+   "gagne": 16.1,
+   "partiel": 13.2,
+   "perd": 68.6,
+   "neutre": 2.1
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "environnement",
+   "n": 2167,
+   "gagne": 13.6,
+   "partiel": 20.8,
+   "perd": 61.6,
+   "neutre": 4.0
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "securite_police",
+   "n": 1936,
+   "gagne": 16.0,
+   "partiel": 19.9,
+   "perd": 58.8,
+   "neutre": 5.3
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "civil",
+   "n": 1327,
+   "gagne": 12.4,
+   "partiel": 17.9,
+   "perd": 68.0,
+   "neutre": 1.7
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "commande_publique",
+   "n": 890,
+   "gagne": 10.6,
+   "partiel": 37.4,
+   "perd": 50.8,
+   "neutre": 1.2
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "education",
+   "n": 736,
+   "gagne": 11.4,
+   "partiel": 16.0,
+   "perd": 64.1,
+   "neutre": 8.4
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "regulation_actes_reglementaires",
+   "n": 644,
+   "gagne": 6.5,
+   "partiel": 7.6,
+   "perd": 61.0,
+   "neutre": 24.8
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "logement",
+   "n": 633,
+   "gagne": 7.1,
+   "partiel": 13.3,
+   "perd": 64.6,
+   "neutre": 15.0
+  },
+  {
+   "ordre": "CAA",
+   "domaine": "commerce_assurance",
+   "n": 612,
+   "gagne": 21.6,
+   "partiel": 18.6,
+   "perd": 56.7,
+   "neutre": 3.1
+  },
+  {
+   "ordre": "CE",
+   "domaine": "sans_domaine",
+   "n": 4870,
+   "gagne": 3.8,
+   "partiel": 1.7,
+   "perd": 71.5,
+   "neutre": 23.0
+  },
+  {
+   "ordre": "CE",
+   "domaine": "fiscal",
+   "n": 4783,
+   "gagne": 17.8,
+   "partiel": 4.7,
+   "perd": 71.9,
+   "neutre": 5.6
+  },
+  {
+   "ordre": "CE",
+   "domaine": "etrangers",
+   "n": 4388,
+   "gagne": 7.5,
+   "partiel": 3.3,
+   "perd": 84.5,
+   "neutre": 4.7
+  },
+  {
+   "ordre": "CE",
+   "domaine": "fonction_publique",
+   "n": 4045,
+   "gagne": 7.4,
+   "partiel": 6.4,
+   "perd": 79.1,
+   "neutre": 7.1
+  },
+  {
+   "ordre": "CE",
+   "domaine": "urbanisme",
+   "n": 3839,
+   "gagne": 10.1,
+   "partiel": 4.0,
+   "perd": 77.9,
+   "neutre": 7.9
+  },
+  {
+   "ordre": "CE",
+   "domaine": "securite_sociale_aides",
+   "n": 2681,
+   "gagne": 7.8,
+   "partiel": 4.0,
+   "perd": 83.8,
+   "neutre": 4.4
+  },
+  {
+   "ordre": "CE",
+   "domaine": "securite_police",
+   "n": 2518,
+   "gagne": 6.9,
+   "partiel": 4.9,
+   "perd": 84.7,
+   "neutre": 3.5
+  },
+  {
+   "ordre": "CE",
+   "domaine": "sante",
+   "n": 2425,
+   "gagne": 14.5,
+   "partiel": 5.5,
+   "perd": 72.6,
+   "neutre": 7.4
+  },
+  {
+   "ordre": "CE",
+   "domaine": "responsabilite_indemnisation",
+   "n": 1744,
+   "gagne": 4.9,
+   "partiel": 8.3,
+   "perd": 71.6,
+   "neutre": 15.3
+  },
+  {
+   "ordre": "CE",
+   "domaine": "regulation_actes_reglementaires",
+   "n": 1359,
+   "gagne": 5.8,
+   "partiel": 4.4,
+   "perd": 74.5,
+   "neutre": 15.3
+  },
+  {
+   "ordre": "CE",
+   "domaine": "environnement",
+   "n": 1340,
+   "gagne": 12.6,
+   "partiel": 7.9,
+   "perd": 76.8,
+   "neutre": 2.7
+  },
+  {
+   "ordre": "CE",
+   "domaine": "travail_emploi",
+   "n": 1201,
+   "gagne": 15.9,
+   "partiel": 5.2,
+   "perd": 77.3,
+   "neutre": 1.7
+  },
+  {
+   "ordre": "CE",
+   "domaine": "collectivites_domaine_public",
+   "n": 963,
+   "gagne": 14.7,
+   "partiel": 6.6,
+   "perd": 76.7,
+   "neutre": 1.9
+  },
+  {
+   "ordre": "CE",
+   "domaine": "education",
+   "n": 703,
+   "gagne": 11.4,
+   "partiel": 8.0,
+   "perd": 72.8,
+   "neutre": 7.8
+  },
+  {
+   "ordre": "CE",
+   "domaine": "logement",
+   "n": 612,
+   "gagne": 13.9,
+   "partiel": 5.6,
+   "perd": 73.7,
+   "neutre": 6.9
+  },
+  {
+   "ordre": "CE",
+   "domaine": "civil",
+   "n": 461,
+   "gagne": 5.6,
+   "partiel": 4.8,
+   "perd": 89.2,
+   "neutre": 0.4
+  },
+  {
+   "ordre": "CE",
+   "domaine": "commande_publique",
+   "n": 370,
+   "gagne": 14.6,
+   "partiel": 11.6,
+   "perd": 72.2,
+   "neutre": 1.6
+  },
+  {
+   "ordre": "CE",
+   "domaine": "electoral",
+   "n": 362,
+   "gagne": 6.9,
+   "partiel": 16.6,
+   "perd": 73.8,
+   "neutre": 2.8
+  },
+  {
+   "ordre": "CE",
+   "domaine": "commerce_assurance",
+   "n": 301,
+   "gagne": 9.0,
+   "partiel": 9.6,
+   "perd": 78.1,
+   "neutre": 3.3
+  },
+  {
+   "ordre": "TA",
+   "domaine": "etrangers",
+   "n": 420177,
+   "gagne": 7.6,
+   "partiel": 17.3,
+   "perd": 60.0,
+   "neutre": 15.1
+  },
+  {
+   "ordre": "TA",
+   "domaine": "sans_domaine",
+   "n": 97894,
+   "gagne": 5.6,
+   "partiel": 2.6,
+   "perd": 43.5,
+   "neutre": 48.3
+  },
+  {
+   "ordre": "TA",
+   "domaine": "fonction_publique",
+   "n": 83844,
+   "gagne": 6.1,
+   "partiel": 11.3,
+   "perd": 52.1,
+   "neutre": 30.5
+  },
+  {
+   "ordre": "TA",
+   "domaine": "securite_sociale_aides",
+   "n": 68060,
+   "gagne": 5.6,
+   "partiel": 7.4,
+   "perd": 67.4,
+   "neutre": 19.7
+  },
+  {
+   "ordre": "TA",
+   "domaine": "logement",
+   "n": 49875,
+   "gagne": 38.0,
+   "partiel": 19.4,
+   "perd": 28.3,
+   "neutre": 14.2
+  },
+  {
+   "ordre": "TA",
+   "domaine": "urbanisme",
+   "n": 43262,
+   "gagne": 10.7,
+   "partiel": 11.5,
+   "perd": 49.3,
+   "neutre": 28.4
+  },
+  {
+   "ordre": "TA",
+   "domaine": "fiscal",
+   "n": 40567,
+   "gagne": 3.4,
+   "partiel": 8.8,
+   "perd": 62.4,
+   "neutre": 25.4
+  },
+  {
+   "ordre": "TA",
+   "domaine": "securite_police",
+   "n": 40450,
+   "gagne": 5.8,
+   "partiel": 10.3,
+   "perd": 61.0,
+   "neutre": 22.9
+  },
+  {
+   "ordre": "TA",
+   "domaine": "responsabilite_indemnisation",
+   "n": 18873,
+   "gagne": 2.6,
+   "partiel": 10.6,
+   "perd": 52.7,
+   "neutre": 34.1
+  },
+  {
+   "ordre": "TA",
+   "domaine": "sante",
+   "n": 17523,
+   "gagne": 6.9,
+   "partiel": 13.0,
+   "perd": 48.5,
+   "neutre": 31.6
+  },
+  {
+   "ordre": "TA",
+   "domaine": "collectivites_domaine_public",
+   "n": 16375,
+   "gagne": 18.8,
+   "partiel": 21.9,
+   "perd": 50.8,
+   "neutre": 8.6
+  },
+  {
+   "ordre": "TA",
+   "domaine": "education",
+   "n": 14058,
+   "gagne": 8.1,
+   "partiel": 11.0,
+   "perd": 64.1,
+   "neutre": 16.8
+  },
+  {
+   "ordre": "TA",
+   "domaine": "travail_emploi",
+   "n": 12100,
+   "gagne": 7.0,
+   "partiel": 12.1,
+   "perd": 73.5,
+   "neutre": 7.4
+  },
+  {
+   "ordre": "TA",
+   "domaine": "civil",
+   "n": 9036,
+   "gagne": 6.7,
+   "partiel": 12.2,
+   "perd": 75.9,
+   "neutre": 5.3
+  },
+  {
+   "ordre": "TA",
+   "domaine": "regulation_actes_reglementaires",
+   "n": 7133,
+   "gagne": 6.1,
+   "partiel": 9.7,
+   "perd": 60.7,
+   "neutre": 23.5
+  },
+  {
+   "ordre": "TA",
+   "domaine": "environnement",
+   "n": 6134,
+   "gagne": 13.0,
+   "partiel": 17.2,
+   "perd": 62.2,
+   "neutre": 7.6
+  },
+  {
+   "ordre": "TA",
+   "domaine": "commande_publique",
+   "n": 5959,
+   "gagne": 9.7,
+   "partiel": 18.3,
+   "perd": 59.4,
+   "neutre": 12.7
+  },
+  {
+   "ordre": "TA",
+   "domaine": "electoral",
+   "n": 4028,
+   "gagne": 55.8,
+   "partiel": 5.7,
+   "perd": 34.8,
+   "neutre": 3.6
+  },
+  {
+   "ordre": "TA",
+   "domaine": "commerce_assurance",
+   "n": 1407,
+   "gagne": 5.8,
+   "partiel": 20.2,
+   "perd": 69.7,
+   "neutre": 4.3
+  }
+ ]
+}

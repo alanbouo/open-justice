@@ -1,0 +1,199 @@
+{
+ "calcule_le": "2026-10-28",
+ "base": "1155525 décisions publiées (justice administrative)",
+ "seuil": 300,
+ "lignes": [
+  {
+   "ordre": "CAA",
+   "annee": 2022,
+   "type_decision": "Décision",
+   "n": 12214
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2022,
+   "type_decision": "Ordonnance",
+   "n": 9099
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2023,
+   "type_decision": "Décision",
+   "n": 16473
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2023,
+   "type_decision": "Ordonnance",
+   "n": 12579
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2024,
+   "type_decision": "Décision",
+   "n": 15707
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2024,
+   "type_decision": "Ordonnance",
+   "n": 12167
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2025,
+   "type_decision": "Décision",
+   "n": 15764
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2025,
+   "type_decision": "Ordonnance",
+   "n": 11375
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2026,
+   "type_decision": "Décision",
+   "n": 11977
+  },
+  {
+   "ordre": "CAA",
+   "annee": 2026,
+   "type_decision": "Ordonnance",
+   "n": 9854
+  },
+  {
+   "ordre": "CE",
+   "annee": 2021,
+   "type_decision": "Décision",
+   "n": 2166
+  },
+  {
+   "ordre": "CE",
+   "annee": 2021,
+   "type_decision": "Ordonnance",
+   "n": 1395
+  },
+  {
+   "ordre": "CE",
+   "annee": 2022,
+   "type_decision": "Décision",
+   "n": 5166
+  },
+  {
+   "ordre": "CE",
+   "annee": 2022,
+   "type_decision": "Ordonnance",
+   "n": 3376
+  },
+  {
+   "ordre": "CE",
+   "annee": 2023,
+   "type_decision": "Décision",
+   "n": 4873
+  },
+  {
+   "ordre": "CE",
+   "annee": 2023,
+   "type_decision": "Ordonnance",
+   "n": 2701
+  },
+  {
+   "ordre": "CE",
+   "annee": 2024,
+   "type_decision": "Décision",
+   "n": 4994
+  },
+  {
+   "ordre": "CE",
+   "annee": 2024,
+   "type_decision": "Ordonnance",
+   "n": 2394
+  },
+  {
+   "ordre": "CE",
+   "annee": 2025,
+   "type_decision": "Décision",
+   "n": 5303
+  },
+  {
+   "ordre": "CE",
+   "annee": 2025,
+   "type_decision": "Ordonnance",
+   "n": 2202
+  },
+  {
+   "ordre": "CE",
+   "annee": 2026,
+   "type_decision": "Décision",
+   "n": 3732
+  },
+  {
+   "ordre": "CE",
+   "annee": 2026,
+   "type_decision": "Ordonnance",
+   "n": 1555
+  },
+  {
+   "ordre": "TA",
+   "annee": 2022,
+   "type_decision": "Décision",
+   "n": 60885
+  },
+  {
+   "ordre": "TA",
+   "annee": 2022,
+   "type_decision": "Ordonnance",
+   "n": 37544
+  },
+  {
+   "ordre": "TA",
+   "annee": 2023,
+   "type_decision": "Décision",
+   "n": 131002
+  },
+  {
+   "ordre": "TA",
+   "annee": 2023,
+   "type_decision": "Ordonnance",
+   "n": 77546
+  },
+  {
+   "ordre": "TA",
+   "annee": 2024,
+   "type_decision": "Décision",
+   "n": 131615
+  },
+  {
+   "ordre": "TA",
+   "annee": 2024,
+   "type_decision": "Ordonnance",
+   "n": 85838
+  },
+  {
+   "ordre": "TA",
+   "annee": 2025,
+   "type_decision": "Décision",
+   "n": 141249
+  },
+  {
+   "ordre": "TA",
+   "annee": 2025,
+   "type_decision": "Ordonnance",
+   "n": 105555
+  },
+  {
+   "ordre": "TA",
+   "annee": 2026,
+   "type_decision": "Décision",
+   "n": 121829
+  },
+  {
+   "ordre": "TA",
+   "annee": 2026,
+   "type_decision": "Ordonnance",
+   "n": 95396
+  }
+ ]
+}
