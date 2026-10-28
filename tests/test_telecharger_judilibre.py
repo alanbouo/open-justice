@@ -8,7 +8,7 @@ import unittest
 from contextlib import redirect_stdout
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, urlencode, urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import telecharger_judilibre as tj  # noqa: E402
@@ -48,12 +48,16 @@ class Faux(BaseHTTPRequestHandler):
             j, taille = q["jurisdiction"], int(q["batch_size"])
             toutes = [inventer(j, i) for i in range(DECISIONS[j])]
             debut = 0
-            if "search_after" in q:
-                debut = [d["id"] for d in toutes].index(q["search_after"]) + 1
+            # Comme l'API réelle : seul `searchAfter` fait avancer, `search_after` seul est ignoré.
+            if "searchAfter" in q:
+                debut = int(q["searchAfter"].split("&")[-1]) + 1
             lot = toutes[debut:debut + taille]
             suite = debut + taille < len(toutes)
+            prochain = urlencode({**{k: v for k, v in q.items() if k != "searchAfter"},
+                                  "search_after": lot[-1]["id"] if lot else "",
+                                  "searchAfter": f"0&-1&{debut + len(lot) - 1}"})
             return self._json(200, {"results": lot, "total": len(toutes), "batch_size": taille,
-                                    "next_batch": "http://x/scan?..." if suite else None})
+                                    "next_batch": prochain if suite else None})
         self._json(404, {})
 
 

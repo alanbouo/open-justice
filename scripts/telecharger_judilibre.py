@@ -11,7 +11,9 @@ Elle n'est jamais affichée, ni écrite dans le manifeste.
 
 Chaque lot reçu est conservé tel quel (JSON brut) avec sa somme de contrôle dans
 cold/judilibre/manifest.jsonl (ajout seulement). Le téléchargement reprend après
-la dernière décision enregistrée si le script est relancé.
+le lot enregistré si le script est relancé. Le curseur est le `next_batch` renvoyé par
+l'API (dont `searchAfter`, qui combine score, date et identifiant) : `search_after`
+seul, avec un identifiant, est ignoré et renvoie toujours le même lot.
 """
 import argparse
 import hashlib
@@ -25,7 +27,7 @@ import tomllib
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import parse_qsl, urlencode
 from urllib.request import Request, urlopen
 
 BASE = "https://api.piste.gouv.fr/cassation/judilibre/v1.0"
@@ -113,7 +115,7 @@ def etat(entrees, juridiction):
     propres = [e for e in entrees if e["jurisdiction"] == juridiction]
     lots = [e for e in propres if e["kind"] == "scan"]
     termine = any(e["kind"] == "fin" for e in propres)
-    return (lots[-1]["last_id"] if lots else None), termine, len(lots)
+    return (lots[-1].get("next_batch") if lots else None), termine, len(lots)
 
 
 def telecharger_juridiction(base, cle, juridiction, froid, manifeste, taille, pause, max_lots):
@@ -128,9 +130,10 @@ def telecharger_juridiction(base, cle, juridiction, froid, manifeste, taille, pa
     while max_lots is None or fait < max_lots:
         if shutil.disk_usage(dossier).free < MARGE_DISQUE:
             raise SystemExit("Disque presque plein : arrêt.")
-        params = {"jurisdiction": juridiction, "batch_size": taille, "order": "asc", "date_type": "creation"}
         if curseur:
-            params["search_after"] = curseur
+            params = dict(parse_qsl(curseur))
+        else:
+            params = {"jurisdiction": juridiction, "batch_size": taille, "order": "asc", "date_type": "creation"}
         corps = requete(base, "/scan", params, cle)
         lot = json.loads(corps)
         resultats = lot.get("results") or []
@@ -146,16 +149,16 @@ def telecharger_juridiction(base, cle, juridiction, froid, manifeste, taille, pa
         partiel = dossier / f".part-{os.getpid()}"
         partiel.write_bytes(corps)
         partiel.rename(final)
-        curseur = resultats[-1]["id"]
+        curseur = lot.get("next_batch")
         ajouter_manifeste(manifeste, {
             "kind": "scan", "jurisdiction": juridiction, "lot": deja + fait, "n": len(resultats),
-            "first_id": resultats[0]["id"], "last_id": curseur, "total": lot.get("total"),
+            "first_id": resultats[0]["id"], "last_id": resultats[-1]["id"], "next_batch": curseur, "total": lot.get("total"),
             "size": len(corps), "sha256": sha, "path": str(final.relative_to(froid)),
             "downloaded_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "params": {k: v for k, v in params.items() if k != "search_after"}})
+            "params": {k: v for k, v in params.items() if k not in ("search_after", "searchAfter")}})
         fait += 1
         print(f"stocké    {juridiction} lot {deja + fait - 1} ({len(resultats)} décisions, {len(corps) / 1e6:.1f} Mo)")
-        if not lot.get("next_batch") or len(resultats) < taille:
+        if not curseur or len(resultats) < taille:
             ajouter_manifeste(manifeste, {"kind": "fin", "jurisdiction": juridiction, "lots": deja + fait,
                                           "total": lot.get("total"),
                                           "at": datetime.now(timezone.utc).isoformat(timespec="seconds")})
