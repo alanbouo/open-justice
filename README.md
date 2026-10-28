@@ -7,8 +7,11 @@ Nom de domaine : `open-justice.fr` (enregistré le 22 octobre 2026).
 
 ## État du projet
 
-Idée à l'étude. Aucune ligne de code, aucun produit, aucun utilisateur.
-La recherche préalable est dans [`recherche.md`](recherche.md).
+Prototype local d'un site statique sur la justice administrative (issue des
+recours, durée, sort en appel). Pas encore en ligne, aucun utilisateur. Chiffres
+provisoires : l'extraction des variables du texte n'est pas validée
+(`statistiques.md` §D). La recherche préalable est dans
+[`recherche.md`](recherche.md).
 
 ## Intention
 
@@ -69,6 +72,18 @@ python3 scripts/telecharger_judilibre.py --telecharger         # tout, avec repr
 
 Le script n'a été testé que contre un faux serveur : le comportement réel de l'API
 (débit, quotas, curseur) reste à vérifier avec une clé.
+
+Site (HTML, CSS et JS sans dépendance ni étape de compilation) :
+
+```
+~/data/open-justice/work/.venv/bin/python scripts/agreger.py   # recalcule site/agregats/*.json
+python3 -m http.server -d site 8000                            # voir le site sur localhost:8000
+```
+
+`agreger.py` lit `corpus.duckdb` (hors dépôt) et n'écrit que des agrégats : aucun
+groupe de moins de 300 décisions. Les JSON de `site/agregats/` sont commités ; ils
+sont la seule donnée publiable du dépôt. Le site ne se charge pas en ouvrant les
+fichiers directement : il lui faut un serveur web.
 
 ## Périmètre
 
