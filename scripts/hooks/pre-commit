@@ -14,6 +14,27 @@ for f in $(git diff --cached --name-only --diff-filter=ACMR); do
       continue
       ;;
   esac
+  case "$f" in
+    site/agregats/*)
+      # Agrégats publiés : JSON valide, petit, et aucun groupe sous le seuil déclaré.
+      if ! git show ":$f" | python3 -c '
+import json, sys
+d = json.load(sys.stdin)
+seuil = d["seuil"]
+assert seuil >= 300, "seuil inférieur à 300"
+def lignes(o):
+    if isinstance(o, dict):
+        if "n" in o and o["n"] < seuil: raise SystemExit("groupe sous le seuil : %r" % o)
+        for v in o.values(): lignes(v)
+    elif isinstance(o, list):
+        for v in o: lignes(v)
+lignes(d)
+' >&2; then
+        echo "pre-commit : agrégat refusé : $f" >&2
+        refus=1
+      fi
+      ;;
+  esac
   taille=$(git cat-file -s ":$f" 2>/dev/null || echo 0)
   if [ "$taille" -gt "$limite_octets" ]; then
     echo "pre-commit : fichier trop volumineux ($taille octets) : $f" >&2
