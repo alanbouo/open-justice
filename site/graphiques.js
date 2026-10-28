@@ -78,8 +78,8 @@ function erreur(e) {
 }
 
 // En-tête et pied communs, écrits une seule fois.
-const PAGES = [["index.html", "Accueil"], ["issues.html", "Issue des recours"], ["durees.html", "Durée"],
-  ["appel.html", "Appel et cassation"], ["methode.html", "Méthode et limites"]];
+const PAGES = [["index.html", "Accueil"], ["durees.html", "Durée"], ["issues.html", "Issue des recours"],
+  ["appel.html", "Appel"], ["methode.html", "Méthode"]];
 
 function cadre(courante) {
   const nav = el("nav", {}, ...PAGES.map(([h, t]) => {
@@ -90,7 +90,7 @@ function cadre(courante) {
   document.body.prepend(el("header", {}, el("a", { class: "nom", href: "index.html" }, "Open Justice"), nav));
   document.body.append(el("footer", {},
     el("p", { id: "calcul" }),
-    el("p", {}, "Source : base Données ouvertes du Conseil d'État et des juridictions administratives (Licence Ouverte 2.0). ",
+    el("p", {}, "Initiative indépendante. Source : base Données ouvertes du Conseil d'État et des juridictions administratives (Licence Ouverte 2.0). ",
       "Ce site ne republie aucune décision : il publie des statistiques calculées sur les décisions publiées, ",
       "jamais par magistrat ni par greffier (article 33 de la loi de réforme de la justice de 2019). Code : ",
       el("a", { href: "https://github.com/alanbouo/open-justice" }, "dépôt public"), ".")));
