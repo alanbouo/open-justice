@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accueil · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Comment la justice administrative tranche-t-elle ?</h1>
+<p class="chapo">Des statistiques calculées sur plus d’un million de décisions de justice administrative publiées en open data : issue des recours, durée, sort des jugements en appel.</p>
+<p class="reserve"><b>Projet en construction.</b> Les chiffres sont provisoires : leur méthode d’extraction n’est pas encore validée sur un échantillon relu à la main. À lire comme des ordres de grandeur. Les décisions publiées ne sont pas toutes les décisions rendues.</p>
+<div class="grille">
+<a class="carte" href="issues.html"><b>Issue des recours</b><span>Qui obtient gain de cause, selon le domaine et selon qui saisit le juge.</span></a>
+<a class="carte" href="durees.html"><b>Durée</b><span>Le temps écoulé entre l’enregistrement de la requête et la décision.</span></a>
+<a class="carte" href="appel.html"><b>Appel et cassation</b><span>Que devient un jugement attaqué devant la cour ou le Conseil d’État.</span></a>
+<a class="carte" href="methode.html"><b>Méthode et limites</b><span>D’où viennent les chiffres, et ce qu’ils ne disent pas.</span></a>
+</div>
+<h2>Volume des décisions publiées</h2>
+<div id="volumes"></div>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("index.html");
+
+charger("volumes.json").then((d) => {
+  pied(d);
+  const par = {};
+  for (const r of d.lignes) (par[r.ordre] ??= {})[r.annee] = (par[r.ordre][r.annee] || 0) + r.n;
+  const t = el("table", {}, el("thead", {}, el("tr", {}, el("th", {}, "Année"), ...Object.keys(ORDRES).map((o) => el("th", { class: "num" }, ORDRES[o])))));
+  const annees = [...new Set(d.lignes.map((r) => r.annee))].sort();
+  const corps = el("tbody", {});
+  for (const a of annees) corps.append(el("tr", {}, el("td", {}, String(a)), ...Object.keys(ORDRES).map((o) => el("td", { class: "num" }, par[o]?.[a] ? nf.format(par[o][a]) : "–"))));
+  t.append(corps);
+  document.getElementById("volumes").replaceChildren(t, el("p", { class: "chapo" }, "Les années 2021 et 2022 sont partielles : les archives commencent en juin 2021 (Conseil d’État), mars 2022 (cours) et juin 2022 (tribunaux), et 2026 s’arrête en octobre."));
+}).catch(erreur);
+</script>
+</body>
+</html>
