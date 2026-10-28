@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Méthode et limites · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Méthode et limites</h1>
+<h2>D’où viennent les chiffres</h2>
+<p>Des archives mensuelles de la base Données ouvertes du Conseil d’État et des juridictions administratives : Conseil d’État depuis juin 2021, cours administratives d’appel depuis mars 2022, tribunaux administratifs depuis juin 2022, jusqu’en octobre 2026. Ces décisions sont téléchargées et traitées hors ligne. Le site ne publie que des totaux et des pourcentages.</p>
+<h2>Ce que les chiffres ne disent pas</h2>
+<ul>
+<li>Ce sont les décisions <b>publiées</b>, pas toutes les décisions rendues. La part publiée n’est pas mesurée.</li>
+<li>Les métadonnées donnent l’issue formelle (rejet, satisfaction…), pas qui avait raison.</li>
+<li>Domaine, nature du requérant, date de requête, sort en appel sont <b>extraits du texte par des règles automatiques</b>. L’accord avec la solution codée par la juridiction est de 90 à 94 % pour l’issue ; l’exactitude des autres variables n’est pas mesurée. Les chiffres sont provisoires.</li>
+<li>Les comparaisons entre juridictions ne sont pas publiées : elles demandent de neutraliser la nature du contentieux.</li>
+</ul>
+<h2>Ce qui n’est pas publié, par choix et par loi</h2>
+<p>Aucune statistique par magistrat ni par greffier : la loi interdit de réutiliser leurs données d’identité pour évaluer, analyser, comparer ou prédire leurs pratiques. Aucun groupe de moins de 300 décisions n’est affiché. Le texte des décisions n’est pas republié.</p>
+<h2>Justice judiciaire</h2>
+<p>Pas encore traitée. Les décisions judiciaires (Judilibre) sont téléchargées mais aucune statistique n’en est publiée ici.</p>
+<h2>Reproduire</h2>
+<p>Le code qui calcule ces agrégats est public, et les fichiers de chiffres sont lisibles directement : <a href="agregats/issue_domaine.json">issue_domaine</a>, <a href="agregats/issue_saisissant.json">issue_saisissant</a>, <a href="agregats/duree.json">duree</a>, <a href="agregats/appel.json">appel</a>, <a href="agregats/volumes.json">volumes</a>.</p>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("methode.html");
+
+</script>
+</body>
+</html>
