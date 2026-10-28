@@ -176,12 +176,61 @@ métadonnées seules vers `work/metadonnees.csv`, 193 Mo, hors dépôt).
   lot de mars 2025 **[cause non confirmée]**, qui touche aussi les décisions de
   2023.
 
-## 7. Non mesuré
+## 7. Judilibre : téléchargement complet et contenu des champs (mesuré le 28/10/2026)
+
+Téléchargement par `/scan`, lots de 1 000, clé de production, dans `cold/judilibre/`
+(hors dépôt). Lots chaînés par le `next_batch` renvoyé par l'API (dont `searchAfter`) ;
+`search_after` seul, avec un identifiant, est ignoré et redonne toujours le même lot.
+Aucun doublon d'identifiant dans les quatre juridictions. Photographie du 28/10/2026 :
+les mises à jour ultérieures ne sont pas traitées.
+
+| Juridiction | Décisions | Total lu avant téléchargement | Taille | Période de `decision_date` |
+|---|---|---|---|---|
+| Cour de cassation (`cc`) | 569 520 | 569 520 | 4,4 Go | 1860 à 2026 (10 000 à 17 000 par an depuis 2019) |
+| Cours d'appel (`ca`) | 646 601 | 646 242 | 12 Go | 547 800 en 2020 ou après, 1 868 en 2021, 75 271 en 2022 ; 6 dates aberrantes (année 0201) |
+| Tribunaux judiciaires (`tj`) | 765 280 | 764 444 | 9,4 Go | 2023 (2 274) à 2026 ; 326 104 en 2025 |
+| Tribunaux de commerce (`tcom`) | 202 072 | 201 338 | 1,4 Go | 2025 et 2026 (5 en 2024) |
+
+L'écart entre les décisions stockées et le total lu avant téléchargement est
+probablement dû à des ajouts pendant le téléchargement **[non vérifié]**. `/stats` ne
+renvoie que `cc` ; les totaux de `ca`, `tj` et `tcom` viennent du champ `total` de `/scan`.
+Ce que représente Judilibre par rapport à l'ensemble des décisions rendues : **non mesuré**.
+
+Texte (`text`, en caractères) : présent pour 100 % des décisions.
+
+| | Médiane | 10 % à 90 % | Minimum |
+|---|---|---|---|
+| `cc` | 3 879 | 1 706 à 15 452 | 90 |
+| `ca` | 13 360 | 3 724 à 34 351 | 1 |
+| `tj` | 9 993 | 2 603 à 20 973 | 32 |
+| `tcom` | 4 939 | 2 241 à 12 534 | 325 |
+
+Part de décisions dont le champ est présent et non vide :
+
+| Champ | `cc` | `ca` | `tj` | `tcom` |
+|---|---|---|---|---|
+| `solution` (code) | 100 % | 100 %, mais 612 028 sur 646 601 valent « other » | 100 %, 232 libellés | absent |
+| `solution_alt` (issue en toutes lettres) | 7,8 % | 89,8 % (173 libellés) | absent | absent |
+| `nac` (code de nature d'affaire) | 0 % | 90,5 % (641 codes) | 100 % (590 codes) | 0 % |
+| `themes` | 34,6 % (107 060 libellés distincts, mots-clés libres) | 76,3 % (6 666) | 28,7 % (622) | absent |
+| `chamber` | 100 % (11 valeurs) | 90,5 % (597) | 100 % (1 493 libellés, variantes d'écriture) | 78,5 % (601) |
+| `zones` (introduction, exposé, motivations, dispositif) | 66,1 % | 90,2 % | 99,3 % | 99,9 % |
+| `contested` (décision attaquée) | 88,8 % | 2,7 % | 0 % | 0 % |
+| `visa` | 43,8 % | 1,0 % | 0 % | 0 % |
+| `summary` | 22,0 % | absent | absent | absent |
+
+`portalis` est vide partout. `files` et `rapprochements` sont vides pour `ca`, `tj` et
+`tcom`. Les libellés de `solution_alt` de `ca` portent des espaces en fin de chaîne qui
+dédoublent les valeurs distinctes. Cours d'appel les plus représentées : Paris 136 467,
+Aix-en-Provence 71 871, Versailles 43 005. Nombre de textes presque vides (sous un seuil
+d'exploitation) : **non mesuré**. Pseudonymisation du texte : **non vérifiée**.
+
+## 8. Non mesuré
 
 - Taille réelle dans PostgreSQL (tables, TOAST, WAL).
 - Taille d'un index de recherche plein texte en français.
 - Temps de chargement, mémoire consommée pendant l'ingestion.
-- Volumes de Judilibre (nécessite un accès PISTE).
+- Quotas de débit de l'API Judilibre.
 
 Disque libre au 22/10/2026 : coolify-1 14 Go, coolify-2 11 Go, coolify-3 7,5 Go
 (sur 38 Go chacun).
