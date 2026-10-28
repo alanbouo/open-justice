@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Durée · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Durée entre la requête et la décision</h1>
+<p class="chapo">Nombre de jours entre l’enregistrement de la requête et la lecture de la décision. La barre va du premier au troisième quartile ; le trait marque la médiane.</p>
+<p class="reserve"><b>Ce n’est pas la durée totale du litige.</b> En appel et en cassation, le compte part de l’enregistrement de l’appel ou du pourvoi. La date de requête est lue dans le texte : elle manque pour une partie des décisions du Conseil d’État. Les décisions récentes sont plus courtes mécaniquement (seules celles déjà rendues sont publiées) : <b>aucune tendance d’une année à l’autre ne peut en être tirée</b>.</p>
+<h2>Par ordre et type de décision</h2><div id="type"></div>
+<h2>Par type de procédure</h2><div id="procedure"></div>
+<h2>Par domaine (tribunaux et cours, décisions hors ordonnances)</h2><div id="domaine"></div>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("durees.html");
+
+function plages(c, rows, etiquette) {
+  const max = Math.max(...rows.map((r) => r.p90));
+  c.replaceChildren(...rows.map((r) => {
+    const plage = el("div", { class: "plage" }); plage.style.left = (100 * r.q1 / max) + "%"; plage.style.width = (100 * (r.q3 - r.q1) / max) + "%";
+    const med = el("div", { class: "med" }); med.style.left = (100 * r.mediane / max) + "%";
+    return el("div", { class: "ligne dur" }, el("div", {}, etiquette(r)), el("div", { class: "piste", role: "img", "aria-label": `médiane ${r.mediane} jours` }, plage, med),
+      el("div", { class: "n" }, `médiane ${nf.format(r.mediane)} j · ${nf.format(r.n)} déc.`));
+  }));
+}
+charger("duree.json").then((d) => {
+  pied(d);
+  plages(document.getElementById("type"), d.par_type, (r) => `${r.ordre} · ${r.type_decision}`);
+  plages(document.getElementById("procedure"), d.par_procedure.filter((r) => r.ordre === "TA"), (r) => `TA · ${PROCEDURES[r.procedure] || r.procedure}`);
+  plages(document.getElementById("domaine"), d.par_domaine.filter((r) => r.ordre === "TA"), (r) => `TA · ${DOMAINES[r.domaine] || r.domaine}`);
+}).catch(erreur);
+</script>
+</body>
+</html>
