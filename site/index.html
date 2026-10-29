@@ -11,15 +11,24 @@
 <div class="hero">
   <span class="pastille">Premiers chiffres : justice administrative</span>
   <h1>Comprendre comment fonctionne <mark>la justice en France</mark></h1>
-  <p>Open Justice rend lisibles, pour les citoyens, les décisions de justice publiées en open data : la durée des procédures, l'issue des recours, le sort des jugements en appel. Aucun jugement individuel, aucun nom de magistrat.</p>
+  <p>Open Justice répond aux questions que se posent les citoyens sur la justice : comment elle fonctionne, combien de temps elle met, ce qu'elle décide. Les réponses s'appuient sur les décisions publiées en open data. Aucun jugement individuel, aucun nom de magistrat.</p>
 </div>
-<div class="questions" id="questions"></div>
-<h2>Ce que couvre Open Justice</h2>
-<div class="perimetre">
-  <div class="q-carte"><span class="pastille ok">Disponible</span><h3>Justice administrative</h3><p>Durée, issue des recours, appel.</p><a href="administratif.html">Explorer →</a></div>
-  <div class="q-carte"><span class="pastille attente">À venir</span><h3>Justice judiciaire</h3><p>Décisions récupérées, analyses à venir.</p><a href="judiciaire.html">Où en est-on →</a></div>
-  <div class="q-carte"><span class="pastille attente">À venir</span><h3>Justice pénale</h3><p>Dépend de l'ouverture des données, prévue en 2027 et 2028.</p><a href="penal.html">Le calendrier →</a></div>
+
+<h2>Comprendre le fonctionnement</h2>
+<div class="questions trois">
+  <div class="q-carte attente"><span class="pastille attente">À venir</span><h3>Comment la justice est-elle organisée en France ?</h3><a href="comprendre.html">Voir la section →</a></div>
+  <div class="q-carte attente"><span class="pastille attente">À venir</span><h3>Comment se déroule une affaire, de la saisine au jugement ?</h3><a href="comprendre.html">Voir la section →</a></div>
+  <div class="q-carte attente"><span class="pastille attente">À venir</span><h3>Quelle différence entre la justice judiciaire et la justice administrative ?</h3><a href="comprendre.html">Voir la section →</a></div>
 </div>
+
+<h2>La justice en chiffres</h2>
+<div class="questions trois" id="questions"></div>
+
+<h2>Votre situation</h2>
+<ul class="puces">
+  <li><a href="situations.html">Titre de séjour, OQTF</a></li><li><a href="situations.html">Logement</a></li><li><a href="situations.html">Impôts</a></li>
+  <li><a href="situations.html">Fonction publique</a></li><li><a href="situations.html">Urbanisme</a></li><li><a href="situations.html">Aides sociales</a></li>
+</ul>
 </main>
 <script src="graphiques.js"></script>
 <script>
@@ -28,10 +37,9 @@ cadre("index.html");
 const trouve = (rows, crit) => rows.find((r) => Object.entries(crit).every(([k, v]) => r[k] === v));
 const accueil = (r) => r.gagne + r.partiel;
 
-Promise.all([charger("duree.json"), charger("issue_domaine.json"), charger("appel.json"), charger("volumes.json")])
-  .then(([dur, iss, app, vol]) => {
+Promise.all([charger("duree.json"), charger("issue_domaine.json"), charger("appel.json")])
+  .then(([dur, iss, app]) => {
     pied(dur);
-    const total = Number(vol.base.match(/^\d+/)[0]);
     const median = trouve(dur.par_type, { ordre: "TA", type_decision: "Décision" }).mediane;
     const refere = trouve(dur.par_procedure, { ordre: "TA", procedure: "refere_liberte" }).mediane;
     const logement = accueil(trouve(iss.lignes, { ordre: "TA", domaine: "logement" }));
@@ -50,9 +58,6 @@ Promise.all([charger("duree.json"), charger("issue_domaine.json"), charger("appe
       ["Appel", "Que se passe-t-il quand on fait appel ?", `${e(particulier)} %`, " confirmés",
         `Part des jugements confirmés par la cour administrative d'appel quand l'appelant est un particulier. Quand c'est l'État : ${e(etat)} %.`,
         "appel.html", "Voir l'appel →"],
-      ["Méthode", "D'où viennent ces chiffres, et que ne disent-ils pas ?", nf.format(total), " décisions publiées",
-        "Ce sont les décisions publiées, pas toutes les décisions rendues. Un taux ne dit pas qui avait raison.",
-        "methode.html", "Lire la méthode →"],
     ];
     document.getElementById("questions").replaceChildren(...cartes.map(([tag, q, valeur, unite, texte, href, lien]) =>
       el("div", { class: "q-carte" },
