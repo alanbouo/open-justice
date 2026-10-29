@@ -81,7 +81,10 @@ function erreur(e) {
 // Chaque entrée du menu regroupe les pages qui lui appartiennent ; « sous » ajoute une seconde ligne de navigation.
 const MENU = [
   { href: "index.html", titre: "Accueil", pages: ["index.html"] },
-  { href: "comprendre.html", titre: "Comprendre", pages: ["comprendre.html"] },
+  { href: "comprendre.html", titre: "Comprendre",
+    pages: ["comprendre.html", "organisation.html", "deux-ordres.html", "deroule-administratif.html", "acteurs.html", "lexique.html", "delais.html"],
+    sous: [["comprendre.html", "Vue d'ensemble"], ["organisation.html", "Organisation"], ["deux-ordres.html", "Deux ordres"],
+      ["deroule-administratif.html", "Une affaire"], ["acteurs.html", "Les acteurs"], ["lexique.html", "Lexique"], ["delais.html", "Les délais"]] },
   { href: "aller-en-justice.html", titre: "Aller en justice", pages: ["aller-en-justice.html"] },
   { href: "chiffres.html", titre: "Les chiffres",
     pages: ["chiffres.html", "durees.html", "issues.html", "appel.html", "judiciaire.html", "penal.html", "juridictions.html"],
@@ -114,4 +117,30 @@ function cadre(courante) {
       "Ce site ne republie aucune décision : il publie des statistiques calculées sur les décisions publiées, ",
       "jamais par magistrat ni par greffier (article 33 de la loi de réforme de la justice de 2019). Code : ",
       el("a", { href: "https://github.com/alanbouo/open-justice" }, "dépôt public"), ".")));
+}
+
+// Chiffres officiels (source unique : references/conseil-etat-2025.json, avec URL et date de consultation).
+async function chargerReferences() {
+  const r = await fetch("references/conseil-etat-2025.json");
+  if (!r.ok) throw new Error("references : " + r.status);
+  return r.json();
+}
+
+// {mois, jours} -> « 1 an 9 jours », comme les publie le Conseil d'État.
+function dureeFr({ mois, jours }) {
+  const ans = Math.floor(mois / 12), m = mois % 12;
+  return [ans && `${ans} an${ans > 1 ? "s" : ""}`, m && `${m} mois`, jours && `${jours} jour${jours > 1 ? "s" : ""}`]
+    .filter(Boolean).join(" ");
+}
+const enMois = ({ mois, jours }) => mois + jours / 30.44;
+const virgule = (x, d = 1) => x.toFixed(d).replace(".", ",");
+
+// Bloc final des pages « Comprendre » : sources datées, puis une ligne sur la nature de l'information.
+function sources(liste, consulteLe) {
+  const date = new Date(consulteLe).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+  document.querySelector("main").append(el("section", { class: "sources" },
+    el("h2", {}, "Sources"),
+    el("ul", {}, ...liste.map(([titre, url, note]) =>
+      el("li", {}, el("a", { href: url }, titre), note ? " " + note : ""))),
+    el("p", {}, `Sources consultées le ${date}. Information générale, pas un conseil juridique.`)));
 }
