@@ -81,24 +81,12 @@
 <script>
 cadre("durees.html");
 
-const MOIS = 365.25 / 12;
-const jours = (j) => `${nf.format(Math.round(j))} jour${Math.round(j) > 1 ? "s" : ""}`;
 // Durée lisible : en jours sous deux mois, en mois jusqu'à deux ans, puis en années.
 function humain(j) {
   if (j < 60) return jours(j);
   const m = j / MOIS;
   if (m < 24) return `${virgule(m, m < 10 ? 1 : 0)} mois`;
   return `${virgule(m / 12, 1)} ans`;
-}
-// Durée arrondie pour les phrases. sens = 1 : « moins de » (arrondi au-dessus) ; -1 : « plus de » (arrondi en dessous) ; 0 : le plus proche.
-// En jours sous 45 jours, en mois jusqu'à deux ans, puis en années par demi-année.
-function approx(j, sens = 0) {
-  const r = sens > 0 ? Math.ceil : sens < 0 ? Math.floor : Math.round;
-  if (j < 45) return jours(r(j));
-  const m = j / MOIS;
-  if (m < 24) return `${r(m)} mois`;
-  const a = r(m / 6) / 2;
-  return `${virgule(a, a % 1 ? 1 : 0)} ans`;
 }
 const moisOfficiel = (d) => `environ ${Math.round(enMois(d))} mois`;
 const part = (x, tot) => Math.round(100 * x / tot);
@@ -206,7 +194,7 @@ Promise.all([charger("duree.json"), chargerReferences(), chargerReferences("just
   plages(document.getElementById("appel"), lignesAppel, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
   document.getElementById("leg-appel").textContent = legendeGraphique(90) + " Jugements au fond. Barre foncée : cours administratives d’appel.";
 
-  texte("t-stock", `Le Conseil d’État compte, pour 2025, ${nf.format(J.TA.enregistrees)} affaires arrivées devant les tribunaux administratifs et ${nf.format(J.TA.jugees)} jugées : un taux de couverture de ${virgule(TAo.taux_de_couverture_pct)} %, contre ${virgule(TAo.taux_de_couverture_2024_pct)} % en 2024. Le stock atteint ${nf.format(J.TA.stock)} dossiers, ${TAo.evolution_stock_pct} % de plus qu’un an plus tôt. Au rythme de 2025, il représente environ un an de jugements (délai prévisible : ${moisOfficiel(J.TA.delai_previsible)}). Ce n’est pas une prévision de durée, et nos données ne permettent pas de dire si les délais s’allongent. Pour les chiffres officiels en détail : <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>`);
+  texte("t-stock", `Le Conseil d’État compte, pour 2025, ${nf.format(J.TA.enregistrees)} affaires arrivées devant les tribunaux administratifs et ${nf.format(J.TA.jugees)} jugées : un taux de couverture de ${pctRond(TAo.taux_de_couverture_pct)}, contre ${pctRond(TAo.taux_de_couverture_2024_pct)} en 2024. Le stock atteint ${nf.format(J.TA.stock)} dossiers, ${TAo.evolution_stock_pct} % de plus qu’un an plus tôt. Au rythme de 2025, il représente environ un an de jugements (délai prévisible : ${moisOfficiel(J.TA.delai_previsible)}). Ce n’est pas une prévision de durée, et nos données ne permettent pas de dire si les délais s’allongent. Pour les chiffres officiels en détail : <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>`);
 
   // --- Justice civile
   texte("t-civil-0", `Chiffres officiels du ministère de la Justice pour ${an}, non calculés par Open Justice : durée des affaires terminées. Périmètre : ${civ.perimetre_tribunaux_judiciaires.charAt(0).toLowerCase()}${civ.perimetre_tribunaux_judiciaires.slice(1)}`);
