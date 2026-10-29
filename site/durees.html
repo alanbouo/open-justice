@@ -12,9 +12,6 @@
 <h1>Combien de temps faut-il pour être jugé ?</h1>
 <p class="chapo large">Le temps écoulé entre l’enregistrement de la requête et la lecture de la décision, mesuré sur les décisions publiées des tribunaux administratifs, des cours administratives d’appel et du Conseil d’État.</p>
 
-<h2>L’essentiel</h2>
-<div class="rapport lecture" id="essentiel"></div>
-
 <h2>Comment lire les graphiques</h2>
 <div class="lecture">
 <p>Chaque ligne représente un groupe de décisions. Pour le résumer, on ne donne pas une moyenne, qui serait tirée vers le haut par quelques affaires très longues, mais trois repères :</p>
@@ -29,22 +26,28 @@
 </div>
 <p class="reserve"><b>Ce n’est pas la durée totale du litige.</b> En appel et en cassation, le compte part de l’enregistrement de l’appel ou du pourvoi. La date de requête est lue dans le texte : elle manque pour une partie des décisions du Conseil d’État. Les décisions récentes sont plus courtes mécaniquement (seules celles déjà rendues sont publiées) : <b>aucune tendance d’une année à l’autre ne peut en être tirée</b>.</p>
 
-<h2>Par ordre et type de décision</h2>
-<div class="lecture" id="lecture-type"></div>
-<div class="bloc" id="type"></div>
-<details class="valeurs"><summary>Voir les chiffres exacts</summary><div class="tableau-officiel" id="t-type"></div></details>
+<h2>Le droit des étrangers est jugé bien plus vite que le reste</h2>
+<div class="lecture" id="lecture-etrangers"></div>
+<div class="bloc" id="etrangers"></div>
 
-<h2>Par type de procédure</h2>
+<h2>En urgence, la justice administrative statue en quelques jours</h2>
 <div class="lecture" id="lecture-procedure"></div>
-<div class="filtres" id="f-procedure"></div>
 <div class="bloc" id="procedure"></div>
-<details class="valeurs"><summary>Voir les chiffres exacts</summary><div class="tableau-officiel" id="t-procedure"></div></details>
 
-<h2>Par domaine</h2>
+<h2>Hors droit des étrangers et contentieux électoral, l’attente dépasse un an</h2>
 <div class="lecture" id="lecture-domaine"></div>
-<div class="filtres" id="f-domaine"></div>
 <div class="bloc" id="domaine"></div>
-<details class="valeurs"><summary>Voir les chiffres exacts</summary><div class="tableau-officiel" id="t-domaine"></div></details>
+
+<h2>Faire appel ajoute une attente, pas toujours plus longue que la première</h2>
+<div class="lecture" id="lecture-appel"></div>
+<div class="bloc" id="appel"></div>
+
+<h2>Tous les chiffres</h2>
+<p>Les durées exactes, avec le nombre de décisions de chaque groupe, pour les trois ordres de juridiction.</p>
+<details class="valeurs"><summary>Par type de décision (ordonnances comprises)</summary><div class="tableau-officiel" id="t-type"></div></details>
+<details class="valeurs"><summary>Par type de procédure</summary><div class="tableau-officiel" id="t-procedure"></div></details>
+<details class="valeurs"><summary>Par domaine, décisions au fond</summary><div class="tableau-officiel" id="t-domaine"></div></details>
+<details class="valeurs"><summary>Droit des étrangers et autres domaines, décisions au fond</summary><div class="tableau-officiel" id="t-etrangers"></div></details>
 
 <h2>Pour aller plus loin</h2>
 <p>Ces durées sont calculées par Open Justice sur les décisions publiées. Pour les chiffres officiels du Conseil d’État (délai constaté, délai prévisible, stock de dossiers) et leur comparaison avec ceux-ci, voir <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>. Pour le déroulement d’une affaire, voir <a href="deroule-administratif.html">Une affaire administrative</a>.</p>
@@ -64,7 +67,8 @@ function humain(j) {
 }
 const part = (x, tot) => Math.round(100 * x / tot);
 
-function plages(c, rows, etiquette) {
+// classe(r) : classe CSS facultative de la barre centrale (ici « appel », en vert foncé).
+function plages(c, rows, etiquette, classe = () => "") {
   const max = Math.max(...rows.map((r) => r.p90));
   // Échelle logarithmique (1 + jours, pour que 0 reste représentable) : les durées vont de 1 jour à plus de 2 ans.
   const x = (j) => 100 * Math.log1p(j) / Math.log1p(max);
@@ -79,14 +83,14 @@ function plages(c, rows, etiquette) {
       "aria-label": `médiane ${jours(r.mediane)} ; la moitié des décisions entre ${jours(r.q1)} et ${jours(r.q3)} ; 90 % en moins de ${jours(r.p90)}` });
     marques.forEach(([j]) => { const g = el("div", { class: "rep" }); g.style.left = x(j) + "%"; piste.append(g); });
     const queue = el("div", { class: "queue" }); queue.style.left = x(r.q3) + "%"; queue.style.width = (x(r.p90) - x(r.q3)) + "%";
-    const plage = el("div", { class: "plage" }); plage.style.left = x(r.q1) + "%"; plage.style.width = (x(r.q3) - x(r.q1)) + "%";
+    const plage = el("div", { class: ("plage " + classe(r)).trim() }); plage.style.left = x(r.q1) + "%"; plage.style.width = (x(r.q3) - x(r.q1)) + "%";
     const med = el("div", { class: "med" }); med.style.left = x(r.mediane) + "%";
     piste.append(queue, plage, med);
-    return el("div", { class: "ligne dur" }, el("div", {}, etiquette(r)), piste,
-      el("div", { class: "n" }, `médiane ${humain(r.mediane)}`, el("small", {}, `${nf.format(r.n)} déc.`)));
+    return el("div", { class: "ligne dur" }, el("div", {}, etiquette(r)), piste, el("div", { class: "n" }, `médiane ${humain(r.mediane)}`));
   }));
 }
 
+// Tableau complet, avec le nombre de décisions : c'est ici que l'effectif se lit.
 function tableau(c, rows, etiquette) {
   const th = (t, i) => el("th", i ? { class: "num" } : {}, t);
   c.replaceChildren(el("table", {},
@@ -96,66 +100,67 @@ function tableau(c, rows, etiquette) {
 }
 
 const p = (...enfants) => el("p", {}, ...enfants);
+const lien = (href, t) => el("a", { href }, t);
+const ordreCourt = { TA: "Tribunaux", CAA: "Cours d’appel", CE: "Conseil d’État" };
 
 charger("duree.json").then((d) => {
   pied(d);
   const T = (o, t) => d.par_type.find((r) => r.ordre === o && r.type_decision === t);
-  const ta = T("TA", "Décision"), taO = T("TA", "Ordonnance"), caa = T("CAA", "Décision"), ce = T("CE", "Décision");
-  const proc = (o, k) => d.par_procedure.find((r) => r.ordre === o && r.procedure === k);
-  const fond = proc("TA", "fond"), liberte = proc("TA", "refere_liberte"), supp = proc("TA", "refere_suspension"), prov = proc("TA", "refere_provision");
-  const dom = (o, k) => d.par_domaine.find((r) => r.ordre === o && r.domaine === k);
-  const etr = dom("TA", "etrangers"), fis = dom("TA", "fiscal");
-  const an = d.annee_reference, moy = Object.fromEntries(d.moyenne_annee_reference.map((r) => [r.ordre, r]));
-
-  document.getElementById("essentiel").append(el("ul", {},
-    el("li", {}, el("b", {}, `Devant un tribunal administratif, un jugement est rendu en ${humain(ta.mediane)} en médiane`),
-      `, mais l’écart est considérable : un quart des jugements arrive en moins de ${jours(ta.q1)}, un quart demande plus de ${humain(ta.q3)}, et un sur dix plus de ${humain(ta.p90)}. Un chiffre unique ne dit donc pas grand-chose : tout dépend du type d’affaire.`),
-    el("li", {}, el("b", {}, "Le type de procédure change tout."), ` Un référé-liberté, destiné aux urgences, est jugé en ${jours(liberte.mediane)} en médiane ; une requête au fond, en ${humain(fond.mediane)}.`),
-    el("li", {}, el("b", {}, "Le domaine aussi."), ` Les décisions en droit des étrangers, très nombreuses, sont rendues en ${humain(etr.mediane)} en médiane ; en matière fiscale, en ${humain(fis.mediane)}.`),
-    el("li", {}, el("b", {}, "L’appel s’ajoute au premier jugement, il ne le remplace pas."), ` Une cour administrative d’appel met ${humain(caa.mediane)} en médiane pour une décision, à compter de l’enregistrement de l’appel.`)));
+  const ta = T("TA", "Décision");
+  const eg = (o, g) => d.par_etrangers_fond.find((r) => r.ordre === o && r.groupe === g);
+  const taEtr = eg("TA", "etrangers"), taAut = eg("TA", "autres"), caaEtr = eg("CAA", "etrangers"), caaAut = eg("CAA", "autres");
+  const proc = (k) => d.par_procedure.find((r) => r.ordre === "TA" && r.procedure === k);
+  const fond = proc("fond"), liberte = proc("refere_liberte"), supp = proc("refere_suspension"), prov = proc("refere_provision");
 
   document.getElementById("exemple").textContent =
-    `Exemple, pour les jugements des tribunaux administratifs (${nf.format(ta.n)} décisions) : médiane de ${jours(ta.mediane)}, la moitié des décisions entre ${jours(ta.q1)} et ${jours(ta.q3)}, et 90 % en moins de ${jours(ta.p90)}.`;
+    `Exemple, pour les jugements au fond des tribunaux administratifs hors droit des étrangers (${nf.format(taAut.n)} décisions) : médiane de ${jours(taAut.mediane)}, la moitié des décisions entre ${jours(taAut.q1)} et ${jours(taAut.q3)}, et 90 % en moins de ${jours(taAut.p90)}.`;
 
-  // 1. Par ordre et type de décision
-  document.getElementById("lecture-type").append(
-    p("Une ordonnance est prise par un seul juge, souvent sans audience (voir le ", el("a", { href: "lexique.html#ordonnance" }, "lexique"), `) : elle est plus rapide qu’une décision collégiale. Devant les tribunaux administratifs, la médiane est de ${humain(taO.mediane)} pour une ordonnance et de ${humain(ta.mediane)} pour un jugement.`),
-    p(`Le Conseil d’État est plus rapide en médiane (${humain(ce.mediane)}) que les cours d’appel (${humain(caa.mediane)}), mais ces deux chiffres se comparent avec précaution : il ne juge pas les mêmes affaires, et la date de requête y manque plus souvent.`),
-    p(`Les jugements des tribunaux ont la plus grande dispersion : la moitié centrale va de ${jours(ta.q1)} à ${jours(ta.q3)}. Ce n’est pas une affaire « typique » mais un mélange d’affaires traitées très vite et d’affaires qui durent.`),
-    p(`Pour l’année ${an}, la durée moyenne est de ${humain(moy.TA.moyenne_jours)} devant les tribunaux administratifs (ordonnances comprises) contre une médiane de ${humain(moy.TA.mediane_jours)} : la moyenne est tirée vers le haut par les affaires longues, c’est pourquoi nous préférons la médiane.`));
-  plages(document.getElementById("type"), d.par_type, (r) => `${r.ordre} · ${r.type_decision}`);
-  tableau(document.getElementById("t-type"), d.par_type, (r) => `${r.ordre} · ${r.type_decision}`);
+  // 1. Étrangers / autres domaines
+  const partEtr = part(taEtr.n, taEtr.n + taAut.n);
+  document.getElementById("lecture-etrangers").append(
+    p(`Parmi les décisions au fond des tribunaux administratifs, ${partEtr} % concernent le droit des étrangers. Elles sont rendues en ${humain(taEtr.mediane)} en médiane, contre ${humain(taAut.mediane)} pour tous les autres domaines réunis. L’écart tient en partie à la procédure : le Conseil d’État relève que les procédures d’éloignement, enserrées dans un délai de six mois, concentrent une grande part des dossiers des tribunaux (voir `, lien("delais.html", "Les délais"), `). C’est une lecture d’Open Justice, non une mesure.`),
+    p(`Conséquence : la médiane d’ensemble des jugements (${humain(ta.mediane)}) ne décrit ni l’un ni l’autre cas. Elle mélange une moitié de dossiers jugés vite et une moitié qui attend près de deux ans. Pour savoir à quoi s’attendre, il faut regarder son domaine. En barre foncée, les cours administratives d’appel ; en barre claire, les tribunaux et le Conseil d’État.`));
+  const lignesEtr = [["TA", "etrangers", "Tribunaux · droit des étrangers"], ["TA", "autres", "Tribunaux · autres domaines"],
+    ["CAA", "etrangers", "Appel · droit des étrangers"], ["CAA", "autres", "Appel · autres domaines"], ["CE", "autres", "Conseil d’État · autres domaines"]]
+    .map(([o, g, nom]) => ({ ...eg(o, g), nom }));
+  plages(document.getElementById("etrangers"), lignesEtr, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
+  tableau(document.getElementById("t-etrangers"), d.par_etrangers_fond, (r) => `${ordreCourt[r.ordre]} · ${r.groupe === "etrangers" ? "droit des étrangers" : "autres domaines"}`);
 
-  // 2. Par type de procédure
-  const totalProcTA = d.par_procedure.filter((r) => r.ordre === "TA").reduce((a, r) => a + r.n, 0);
+  // 2. Procédures
   document.getElementById("lecture-procedure").append(
-    p("Le référé (voir le ", el("a", { href: "lexique.html#refere" }, "lexique"), `) permet d’obtenir rapidement des mesures provisoires, sans attendre le jugement de l’affaire. Les chiffres le confirment : devant les tribunaux administratifs, un référé-liberté est jugé en ${jours(liberte.mediane)} en médiane, un référé-suspension en ${jours(supp.mediane)}, contre ${humain(fond.mediane)} pour une requête au fond.`),
-    p(`Le référé n’est pas toujours rapide : le référé-provision, qui permet de demander le versement d’une somme avant le jugement, a une médiane de ${humain(prov.mediane)}, proche de celle d’une requête au fond.`),
-    p(`Les requêtes au fond représentent ${part(fond.n, totalProcTA)} % des décisions des tribunaux administratifs de ce graphique (${nf.format(fond.n)} sur ${nf.format(totalProcTA)}). Pour contester une décision de l’administration sans urgence, c’est la ligne « Au fond » qui s’applique.`));
-  const montrerProc = (o) => {
-    const rows = d.par_procedure.filter((r) => r.ordre === o).sort((a, b) => a.mediane - b.mediane);
-    const nom = (r) => PROCEDURES[r.procedure] || r.procedure;
-    plages(document.getElementById("procedure"), rows, nom);
-    tableau(document.getElementById("t-procedure"), rows, nom);
-  };
-  filtres(document.getElementById("f-procedure"), ORDRES, "TA", montrerProc);
-  montrerProc("TA");
+    p(`Le référé (voir le `, lien("lexique.html#refere", "lexique"), `) permet d’obtenir rapidement des mesures provisoires. Devant les tribunaux administratifs, un référé-liberté est jugé en ${jours(liberte.mediane)} en médiane et un référé-suspension en ${jours(supp.mediane)}, contre ${humain(fond.mediane)} pour une requête au fond.`),
+    p(`Tous les référés ne sont pas rapides : le référé-provision, qui permet de demander une somme avant le jugement, a une médiane de ${humain(prov.mediane)}, proche de celle d’une requête au fond. Ces durées comprennent les ordonnances, prises par un seul juge.`));
+  const procs = d.par_procedure.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane);
+  plages(document.getElementById("procedure"), procs, (r) => PROCEDURES[r.procedure] || r.procedure);
+  tableau(document.getElementById("t-procedure"), d.par_procedure, (r) => `${ordreCourt[r.ordre]} · ${PROCEDURES[r.procedure] || r.procedure}`);
 
-  // 3. Par domaine
+  // 3. Domaines au fond, tribunaux
   const nomDom = (r) => DOMAINES[r.domaine] || r.domaine;
-  const taDoms = d.par_domaine.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane);
-  const rapide = taDoms[0], lent = taDoms[taDoms.length - 1];
+  const taDoms = d.par_domaine_fond.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane);
+  const ordinaires = taDoms.filter((r) => r.domaine !== "etrangers" && r.domaine !== "electoral");
+  const court = ordinaires[0], long = ordinaires[ordinaires.length - 1];
+  const elec = taDoms.find((r) => r.domaine === "electoral");
   document.getElementById("lecture-domaine").append(
-    p(`Les domaines sont classés du plus rapide au plus lent. Devant les tribunaux administratifs, la médiane va de ${humain(rapide.mediane)} (${nomDom(rapide).toLowerCase()}) à ${humain(lent.mediane)} (${nomDom(lent).toLowerCase()}). Le droit des étrangers pèse à lui seul ${part(etr.n, taDoms.reduce((a, r) => a + r.n, 0))} % des décisions de ce graphique : il tire fortement vers le bas les durées d’ensemble des tribunaux.`),
-    p("Lecture d’Open Justice : les affaires que les textes obligent à juger dans un délai court (le contentieux électoral, l’éloignement des étrangers) sont rendues vite ; les affaires fiscales, d’urbanisme ou de fonction publique prennent plus de temps. Le Conseil d’État relève que les procédures d’éloignement, enserrées dans un délai de six mois, concentrent une grande part des dossiers (voir ", el("a", { href: "delais.html" }, "Les délais"), ")."),
+    p(`Jugements au fond des tribunaux administratifs, du plus rapide au plus lent. ${elec ? `Le contentieux électoral est jugé en ${humain(elec.mediane)} en médiane, le droit des étrangers en ${humain(taEtr.mediane)}. ` : ""}Dans les ${ordinaires.length} autres domaines, la médiane va de ${humain(court.mediane)} (${nomDom(court).toLowerCase()}) à ${humain(long.mediane)} (${nomDom(long).toLowerCase()}) : ${ordinaires.every((r) => r.mediane > 365.25) ? "partout, la moitié des affaires dépasse un an" : `dans ${ordinaires.filter((r) => r.mediane > 365.25).length} d’entre eux, la moitié des affaires dépasse un an`}.`),
+    p(`Au sein d’un même domaine, les durées restent étalées : en matière fiscale, un quart des jugements prend plus de ${humain(taDoms.find((r) => r.domaine === "fiscal").q3)}, et le dernier dixième plus de ${humain(taDoms.find((r) => r.domaine === "fiscal").p90)}. La médiane dit ce qui est le plus probable, pas ce qui est garanti.`),
     p(`Le domaine est détecté par mots-clés dans le texte de la décision : il est approximatif, et la catégorie « Civil » de la justice administrative ne correspond pas à la justice civile. Seuls les groupes d’au moins ${d.seuil} décisions sont affichés.`));
-  const montrerDom = (o) => {
-    const rows = d.par_domaine.filter((r) => r.ordre === o).sort((a, b) => a.mediane - b.mediane);
-    plages(document.getElementById("domaine"), rows, nomDom);
-    tableau(document.getElementById("t-domaine"), rows, nomDom);
-  };
-  filtres(document.getElementById("f-domaine"), ORDRES, "TA", montrerDom);
-  montrerDom("TA");
+  plages(document.getElementById("domaine"), taDoms, nomDom);
+  tableau(document.getElementById("t-domaine"), d.par_domaine_fond, (r) => `${ordreCourt[r.ordre]} · ${nomDom(r)}`);
+
+  // 4. Appel : les domaines les plus nombreux en appel, tribunal puis appel
+  const caaDoms = d.par_domaine_fond.filter((r) => r.ordre === "CAA").sort((a, b) => b.n - a.n).slice(0, 6);
+  const paires = caaDoms.map((c) => ({ ta: taDoms.find((t) => t.domaine === c.domaine), caa: c })).filter((x) => x.ta);
+  const plusCourt = d.par_domaine_fond.filter((r) => r.ordre === "CAA" && r.domaine !== "etrangers")
+    .filter((c) => { const t = taDoms.find((x) => x.domaine === c.domaine); return t && c.mediane < t.mediane; }).length;
+  const comparables = d.par_domaine_fond.filter((r) => r.ordre === "CAA" && r.domaine !== "etrangers" && taDoms.some((x) => x.domaine === r.domaine)).length;
+  document.getElementById("lecture-appel").append(
+    p(`Après un jugement défavorable, on peut faire appel (voir le `, lien("lexique.html#appel", "lexique"), `). Le délai de l’appel part de son enregistrement : il vient s’ajouter à l’attente du premier jugement. En droit des étrangers, il est plus long qu’au tribunal (${humain(caaEtr.mediane)} contre ${humain(taEtr.mediane)}). Dans les autres domaines, la médiane d’appel est plus courte que celle du tribunal dans ${plusCourt} domaines sur ${comparables} comparables.`),
+    p(`Ce n’est pas une preuve que l’appel va vite : ce sont des affaires différentes, et toutes ne sont pas portées en appel. Le graphique montre les six domaines les plus fréquents en appel : barre claire pour le tribunal, barre foncée pour la cour d’appel.`));
+  const lignesAppel = paires.flatMap(({ ta: t, caa: c }) => [{ ...t, nom: `${nomDom(t)} · tribunal` }, { ...c, nom: `${nomDom(c)} · appel` }]);
+  plages(document.getElementById("appel"), lignesAppel, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
+
+  // Tableau par type, toutes juridictions
+  tableau(document.getElementById("t-type"), d.par_type, (r) => `${ordreCourt[r.ordre]} · ${r.type_decision}`);
 }).catch(erreur);
 </script>
 </body>
