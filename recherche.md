@@ -102,12 +102,18 @@ Sources : [Conseil d'État](https://www.conseil-etat.fr/decisions-de-justice/ope
 ### Statistiques ministérielles
 
 - [Chiffres clés de la Justice](https://www.justice.gouv.fr/documentation/etudes-et-statistiques/chiffres-cles-justice-2025),
-  édition 2025 (publiée le 28/10/2025) : PDF d'environ 40 pages, agrégé.
+  édition 2025 (publiée le 28/10/2025, version corrigée du 03/03/2026) : PDF d'environ
+  40 pages, agrégé, lu le 29/10/2026. Il donne notamment la durée des contentieux civils
+  en 2024 par quartiles (p. 11), le stock et l'âge du stock par juridiction civile ; la
+  fiche [4.1 des Références statistiques Justice](https://www.justice.gouv.fr/sites/default/files/2025-09/RSJ2024%204_1.pdf)
+  détaille les tribunaux judiciaires. Les bornes de mesure de la durée ne sont pas précisées
+  dans ces documents **[non vérifié]**. Aucune édition 2026 n'était annoncée le 29/10/2026.
 - Sur [data.gouv.fr](https://www.data.gouv.fr/organizations/ministere-de-la-justice),
   l'organisation du ministère liste 11 jeux de données, dont un fichier géocodé
   des structures de la Justice (Licence Ouverte).
-- Aucun jeu ouvert détaillé sur les délais de jugement ni sur l'exécution des
-  peines n'a été trouvé.
+- Aucun jeu ouvert détaillé (au niveau de la décision) sur les délais de jugement ni sur
+  l'exécution des peines n'a été trouvé : seules des publications agrégées existent
+  (ci-dessus, et pour la justice administrative le Rapport public du Conseil d'État).
 - Existence d'un portail data.justice.gouv.fr : **[non vérifié]**.
 
 ### Fondement légal
