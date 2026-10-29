@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Judiciaire ou administratif · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre</span>
+<h1>Judiciaire ou administratif : quel juge pour quel litige ?</h1>
+<p class="chapo">La règle générale tient en une phrase : tout dépend de qui s'oppose à qui.</p>
+<div class="questions trois">
+<div class="q-carte"><span class="pastille">Ordre administratif</span><h3>Un litige avec une administration</h3><p>Contester une décision administrative ou fiscale, mettre en cause la responsabilité de l'administration, contester la régularité d'élections locales ou régionales.</p></div>
+<div class="q-carte"><span class="pastille">Ordre judiciaire</span><h3>Un litige entre personnes privées, ou une infraction</h3><p>Les litiges entre particuliers ou entre entreprises, et les infractions pénales.</p></div>
+</div>
+<h2>Des exemples dans les décisions publiées</h2>
+<p>Parmi les domaines qui arrivent devant le juge administratif, le Conseil d'État cite : les titres et visas de séjour (droit des étrangers), les permis de construire et les plans locaux d'urbanisme, les impôts locaux et l'impôt sur le revenu, les relations entre les fonctionnaires et leur employeur, les aides financières au logement, le permis de conduire. Voir <a href="issues.html">les chiffres par domaine</a>.</p>
+<h2>Si les deux ordres se renvoient l'affaire</h2>
+<p>Le Tribunal des conflits tranche les conflits de compétence entre juridictions administratives et judiciaires.</p>
+<p class="rapport">Cette page donne la règle générale. Elle ne permet pas de savoir, pour une situation précise, quel juge est compétent.</p>
+<h2>Pourquoi Open Justice commence par le juge administratif</h2>
+<p>Les décisions de la justice administrative sont publiées en open data depuis 2021 et 2022 : ce sont les premières dont les chiffres sont exploités ici. Les décisions judiciaires sont récupérées mais pas encore analysées : voir la page <a href="judiciaire.html">Justice judiciaire</a>.</p>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("deux-ordres.html");
+sources([
+    ["Ministère de la Justice, « L'organisation des cours et tribunaux »", 'https://www.justice.gouv.fr/justice-france/lorganisation-cours-tribunaux', ''],
+    ['Ministère de la Justice, « Le tribunal administratif »', 'https://www.justice.gouv.fr/justice-france/lorganisation-cours-tribunaux/lordre-administratif/tribunal-administratif', ''],
+    ["Conseil d'État, Chiffres clés de la justice administrative pour l'année 2025 : légende des domaines contentieux", 'https://www.conseil-etat.fr/content/download/235833/document/ChiffresClesJA2025.pdf', '']
+  ], "2026-10-29");
+</script>
+</body>
+</html>
