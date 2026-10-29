@@ -93,6 +93,11 @@ Sources : [Conseil d'État](https://www.conseil-etat.fr/decisions-de-justice/ope
   dans les index `/DCE/`, `/DCA/` et `/DTA/`. Détail, tailles et structure réelle
   des fichiers dans [`mesures.md`](mesures.md) (la structure réelle diffère en
   partie de la liste de balises ci-dessus).
+- **Statistiques officielles de la juridiction.** Le Conseil d'État publie chaque
+  année des chiffres agrégés : [Chiffres clés 2025](https://conseil-etat.fr/publications-colloques/rapports-d-activite/les-chiffres-cles-de-la-justice-administrative-pour-l-annee-2025)
+  (2 février 2026) et [Rapport public 2026](https://www.conseil-etat.fr/content/download/239421/document/Rapport%20public_2025.pdf),
+  qui définit les indicateurs de délai (délai constaté, délai prévisible, stock, taux de couverture).
+  Lus le 29/10/2026. Utilisés comme contrôle externe de nos chiffres : `statistiques.md` §E.
 
 ### Statistiques ministérielles
 
