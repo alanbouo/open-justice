@@ -69,7 +69,7 @@ function filtres(conteneur, options, courant, quand) {
 
 function pied(donnees) {
   const p = document.getElementById("calcul");
-  if (p) p.textContent = `Calculé le ${new Date(donnees.calcule_le).toLocaleDateString("fr-FR")} sur ${donnees.base}. Aucun groupe de moins de ${donnees.seuil} décisions n'est affiché.`;
+  if (p) p.textContent = `Calculé le ${new Date(donnees.calcule_le).toLocaleDateString("fr-FR")} sur ${donnees.base.replace(/^\d+/, (n) => nf.format(Number(n)))}. Aucun groupe de moins de ${donnees.seuil} décisions n'est affiché.`;
 }
 
 function erreur(e) {
@@ -81,13 +81,14 @@ function erreur(e) {
 // Chaque entrée du menu regroupe les pages qui lui appartiennent ; « sous » ajoute une seconde ligne de navigation.
 const MENU = [
   { href: "index.html", titre: "Accueil", pages: ["index.html"] },
-  { href: "administratif.html", titre: "Administratif", pages: ["administratif.html", "durees.html", "issues.html", "appel.html"],
-    sous: [["administratif.html", "Vue d'ensemble"], ["durees.html", "Durée"], ["issues.html", "Issue des recours"], ["appel.html", "Appel"]] },
-  { href: "judiciaire.html", titre: "Judiciaire", pages: ["judiciaire.html"] },
-  { href: "penal.html", titre: "Pénal", pages: ["penal.html"] },
-  { href: "domaines.html", titre: "Domaines", pages: ["domaines.html"] },
-  { href: "juridictions.html", titre: "Juridictions", pages: ["juridictions.html"] },
-  { href: "methode.html", titre: "Méthode", pages: ["methode.html"] },
+  { href: "comprendre.html", titre: "Comprendre", pages: ["comprendre.html"] },
+  { href: "aller-en-justice.html", titre: "Aller en justice", pages: ["aller-en-justice.html"] },
+  { href: "chiffres.html", titre: "Les chiffres",
+    pages: ["chiffres.html", "durees.html", "issues.html", "appel.html", "judiciaire.html", "penal.html", "juridictions.html"],
+    sous: [["chiffres.html", "Vue d'ensemble"], ["durees.html", "Durée"], ["issues.html", "Issue des recours"], ["appel.html", "Appel"],
+      ["judiciaire.html", "Judiciaire", "attente"], ["penal.html", "Pénal", "attente"], ["juridictions.html", "Par juridiction", "attente"]] },
+  { href: "situations.html", titre: "Par situation", pages: ["situations.html"] },
+  { href: "methode.html", titre: "Méthode et sources", pages: ["methode.html"] },
 ];
 
 function cadre(courante) {
@@ -100,8 +101,9 @@ function cadre(courante) {
   document.body.prepend(el("header", {}, el("a", { class: "nom", href: "index.html" }, "Open Justice"), nav));
   if (actif?.sous) {
     document.querySelector("header").after(el("nav", { class: "sous", "aria-label": actif.titre },
-      ...actif.sous.map(([h, t]) => {
+      ...actif.sous.map(([h, t, etat]) => {
         const a = el("a", { href: h }, t);
+        if (etat) { a.className = etat; a.title = "À venir"; }
         if (h === courante) a.setAttribute("aria-current", "page");
         return a;
       })));
