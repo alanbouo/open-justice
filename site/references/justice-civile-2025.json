@@ -1,0 +1,34 @@
+{
+  "note": "Chiffres officiels recopiés des documents cités, données de l'année 2024 (édition 2025 des chiffres clés). Aucun calcul d'Open Justice.",
+  "consulte_le": "2026-10-29",
+  "annee_donnees": 2024,
+  "sources": {
+    "chiffres_cles": {
+      "titre": "Ministère de la Justice, Les chiffres clés de la Justice, édition 2025, p. 11 (publiée le 28 octobre 2025, version corrigée du 3 mars 2026)",
+      "url": "https://www.justice.gouv.fr/sites/default/files/2026-03/Chiffres_Cles_2025_corrV2.pdf"
+    },
+    "rsj_tribunaux_judiciaires": {
+      "titre": "Ministère de la Justice, Références statistiques Justice, édition 2024, fiche 4.1 « Les tribunaux judiciaires »",
+      "url": "https://www.justice.gouv.fr/sites/default/files/2025-09/RSJ2024%204_1.pdf"
+    }
+  },
+  "perimetre_tribunaux_judiciaires": "Hors ruptures d'union et procédures spéciales (requêtes, injonctions de payer, saisies sur rémunération, tentatives préalables de conciliation, contentieux électoral politique).",
+  "duree_affaires_terminees_mois": {
+    "TJ": { "nom": "Tribunaux judiciaires", "q25": 1.6, "mediane": 4.4, "q75": 8.7, "p95": 27.4 },
+    "CA": { "nom": "Cours d'appel", "q25": 2.9, "mediane": 9.5, "q75": 21.3, "p95": 39.9 }
+  },
+  "tribunaux_judiciaires": {
+    "affaires_terminees": 1380333,
+    "dont_referes": 147602,
+    "stock_31_decembre": 1076517,
+    "age_moyen_stock_mois": 21.1,
+    "duree_moyenne_mois": 7.9,
+    "duree_moyenne_au_fond_mois": 8.4,
+    "duree_moyenne_referes_mois": 4.1
+  },
+  "cours_appel": {
+    "affaires_terminees": 195093,
+    "stock_31_decembre": 235310,
+    "age_moyen_stock_mois": 19.2
+  }
+}
