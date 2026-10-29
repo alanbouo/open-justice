@@ -235,3 +235,44 @@ Lecture, avec les réserves :
 - Au CE, 12 457 des 23 923 décisions sont des non-admissions de pourvoi, comptées comme confirmations : le jugement subsiste, sans examen au fond. La cassation avec renvoi concerne 2 516 décisions (10,5 %).
 - Quand l'État fait appel, « infirmé » veut dire que le tribunal avait donné raison au citoyen et que la cour renverse ce jugement ; le tableau ne distingue pas le sens du jugement de première instance.
 - `confirmation_premiere_instance` a été relue sur dix décisions (relevé n°1, cinq arrêts) sans erreur constatée ; la cohérence interne avec `issue_requerant` est de 99,3 % sur échantillon ; l'exactitude n'est pas mesurée.
+
+## E. Contrôles externes (29 octobre 2026)
+
+Comparaison de nos chiffres avec les publications officielles du Conseil d'État pour 2025 :
+[Rapport public 2026](https://www.conseil-etat.fr/content/download/239421/document/Rapport%20public_2025.pdf)
+et [Chiffres clés 2025](https://conseil-etat.fr/publications-colloques/rapports-d-activite/les-chiffres-cles-de-la-justice-administrative-pour-l-annee-2025)
+(publiés le 2 février 2026). Les chiffres officiels sont recopiés dans
+`site/references/conseil-etat-2025.json`. Nos chiffres portent sur les décisions
+**publiées** lues en 2025 ; les officiels, sur les affaires enregistrées ou jugées en 2025.
+
+### E1. Durée moyenne entre l'enregistrement de la requête et la décision
+
+Toutes décisions confondues (jugements et ordonnances). `date_requete` vient du texte ;
+la fin est la date de lecture chez nous, la notification chez le Conseil d'État.
+
+| Ordre | Moyenne calculée | Décisions | Délai constaté officiel |
+|---|---|---|---|
+| TA | 9,7 mois (295 jours) | 237 369 | 9 mois 19 jours |
+| CAA | 12,0 mois (364 jours) | 26 077 | 11 mois 18 jours |
+| CE | 6,4 mois (195 jours) | 4 518 | 6 mois 27 jours |
+
+Lecture, avec les réserves :
+- L'accord est étroit (écart de 1 à 7 %). C'est le premier contrôle indépendant de `date_requete`, mais il ne porte que sur une moyenne : il n'établit pas l'exactitude de chaque date.
+- Les populations et les bornes diffèrent (publiées contre jugées ; lecture contre notification).
+- Le délai officiel « des affaires ordinaires » (TA : 1 an 4 mois 15 jours) exclut les ordonnances, les référés et les affaires à délai particulier ; il n'est pas comparable à notre moyenne des jugements seuls (TA 2025 : 12,0 mois), qui garde ces affaires. Ce sens d'écart est cohérent, la cause n'est pas testée.
+
+### E2. Part du droit des étrangers dans l'activité
+
+Part des décisions lues en 2025 dont le domaine détecté est « étrangers », contre la part des
+entrées 2025 publiée par le Conseil d'État (Rapport public 2026, §1.2, §1.3 et §1.4.1).
+
+| Ordre | Notre part | Part officielle des entrées |
+|---|---|---|
+| TA | 44 % | 46 % |
+| CAA | 54 % | 55 % |
+| CE | 9 % | 15,2 % |
+
+Lecture, avec les réserves :
+- Accord proche pour les tribunaux et les cours. **Écart au Conseil d'État (9 % contre 15,2 %) non expliqué** : la détection du domaine y est peut-être moins complète. Cause non identifiée, non testée.
+- Les deux mesures ne portent pas sur le même objet (décisions publiées contre entrées) et les domaines n'ont pas la même définition.
+- Les autres domaines (fonction publique, fiscal, urbanisme) ne sont pas comparés ici : les parts officielles par juridiction n'ont pas toutes été relevées.
