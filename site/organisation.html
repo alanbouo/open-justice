@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment la justice est organisée · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre</span>
+<h1>Comment la justice est-elle organisée en France ?</h1>
+<p class="chapo">Deux grandes familles de juridictions, chacune organisée en trois niveaux : on juge, on peut faire appel, on peut se pourvoir en cassation.</p>
+<p>L'<b>ordre judiciaire</b> règle les litiges entre personnes privées et sanctionne les infractions pénales. L'<b>ordre administratif</b> règle les litiges entre l'administration et les particuliers, et parfois entre administrations.</p>
+
+<div class="schema" role="table" aria-label="Les deux ordres de juridiction et leurs trois niveaux">
+  <div></div><div class="ent">Ordre judiciaire</div><div class="ent">Ordre administratif</div>
+  <div class="rang">1er niveau<br>Jugement</div>
+  <div class="case">Tribunal judiciaire, tribunal de commerce, conseil de prud'hommes…<small>Au pénal : tribunal de police, tribunal correctionnel, cour d'assises</small></div>
+  <div class="case">Tribunal administratif<small>Premier tribunal saisi dans l'ordre administratif</small></div>
+  <div class="rang">2e niveau<br>Appel</div>
+  <div class="case">Cour d'appel<small>Rejuge l'affaire</small></div>
+  <div class="case">Cour administrative d'appel<small>Rejuge l'affaire</small></div>
+  <div class="rang">3e niveau<br>Cassation</div>
+  <div class="case top">Cour de cassation<small>Vérifie l'application du droit, sans rejuger</small></div>
+  <div class="case top">Conseil d'État<small>Vérifie l'application du droit, sans rejuger</small></div>
+</div>
+
+<h2>Ce que le schéma simplifie</h2>
+<ul>
+<li><b>Ordre judiciaire.</b> Au civil : tribunal judiciaire (et tribunal de proximité), avec des juridictions spécialisées : conseil de prud'hommes, tribunal de commerce, tribunal paritaire des baux ruraux. Au pénal : tribunal de police, tribunal correctionnel, cour criminelle départementale, cour d'assises. Pour les mineurs : juge des enfants, tribunal pour enfants, cour d'assises des mineurs.</li>
+<li><b>Ordre administratif.</b> <span id="nb-ta"></span> tribunaux administratifs et <span id="nb-caa"></span> cours administratives d'appel. Le Conseil d'État juge aussi lui-même certaines affaires en premier et dernier ressort. Des juridictions spécialisées existent, comme la Cour nationale du droit d'asile et le tribunal du stationnement payant. Le ministère de la Justice range aussi la Cour des comptes parmi les juridictions administratives spécialisées.</li>
+<li><b>Les conflits entre les deux ordres.</b> Le Tribunal des conflits tranche les conflits de compétence entre juridictions administratives et judiciaires.</li>
+</ul>
+
+<h2>Quelques chiffres de la justice administrative, 2025</h2>
+<ul id="chiffres"></ul>
+<p class="chapo">Ces chiffres sont officiels (Conseil d'État). Open Justice n'a pas encore de chiffres sur l'ordre judiciaire : voir la page <a href="judiciaire.html">Justice judiciaire</a>.</p>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("organisation.html");
+chargerReferences().then((ref) => {
+  const o = ref.organisation, j = ref.juridictions, e = ref.organisation.effectifs_ca_et_ta;
+  document.getElementById("nb-ta").textContent = o.tribunaux_administratifs;
+  document.getElementById("nb-caa").textContent = o.cours_administratives_appel;
+  document.getElementById("chiffres").replaceChildren(
+    el("li", {}, `${nf.format(j.TA.jugees)} affaires jugées par les tribunaux administratifs, ${nf.format(j.CAA.jugees)} par les cours administratives d'appel, ${nf.format(j.CE.jugees)} par le Conseil d'État.`),
+    el("li", {}, `${nf.format(e.magistrats)} magistrats et ${nf.format(e.agents_de_greffe)} agents de greffe dans les tribunaux et les cours ; ${o.membres_conseil_etat} membres au Conseil d'État.`));
+  sources([
+    ["Ministère de la Justice, « L'organisation des cours et tribunaux »", 'https://www.justice.gouv.fr/justice-france/lorganisation-cours-tribunaux', ''],
+    ['Ministère de la Justice, « Le tribunal administratif »', 'https://www.justice.gouv.fr/justice-france/lorganisation-cours-tribunaux/lordre-administratif/tribunal-administratif', ''],
+    [ref.sources.chiffres_cles.titre, ref.sources.chiffres_cles.url, ""]
+  ], "2026-10-29");
+}).catch(erreur);
+</script>
+</body>
+</html>
