@@ -69,7 +69,23 @@ h2 { font-size: 1.3rem; letter-spacing: -.01em; margin: 2.4rem 0 .4rem; }
 .piste { position: relative; height: 22px; background: var(--piste); border-radius: 5px; }
 .piste .plage { position: absolute; top: 4px; bottom: 4px; background: var(--partiel); border-radius: 3px; }
 .piste .med { position: absolute; top: 0; bottom: 0; width: 3px; background: var(--marque); border-radius: 2px; }
+.piste { background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(var(--pas, 100%) - 1px), var(--trait) calc(var(--pas, 100%) - 1px), var(--trait) var(--pas, 100%)); }
+.piste .queue { position: absolute; top: 10px; height: 2px; background: var(--doux); opacity: .55; }
+.axe .graduation { position: relative; height: 1.2em; font-size: .78rem; color: var(--doux); }
+.axe .graduation span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.axe .graduation span:first-child { transform: none; }
 .ligne.dur { grid-template-columns: 12rem 1fr 15rem; }
+.ligne.dur .n small { display: block; }
+.lecture { margin: .4rem 0 1rem; }
+.lecture p { margin: .5rem 0; }
+.mode-emploi { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: .9rem; color: var(--doux); margin: 10px 0 0; }
+.mode-emploi i { display: inline-block; vertical-align: middle; margin-right: 6px; }
+.mode-emploi .i-med { width: 3px; height: 14px; background: var(--marque); border-radius: 2px; }
+.mode-emploi .i-plage { width: 22px; height: 10px; background: var(--partiel); border-radius: 3px; }
+.mode-emploi .i-queue { width: 22px; height: 2px; background: var(--doux); opacity: .55; }
+details.valeurs { margin: 10px 0 0; font-size: .92rem; }
+details.valeurs summary { cursor: pointer; color: var(--doux); }
+@media (max-width: 640px) { .axe .ligne { display: none; } }
 .bloc { background: var(--carte); border: 1px solid var(--trait); border-radius: 16px; padding: 8px 20px 14px; box-shadow: var(--ombre); }
 .filtres { font-size: .92rem; margin: 14px 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .filtres button { font: inherit; padding: 6px 14px; border: 1px solid var(--trait); background: var(--carte);
