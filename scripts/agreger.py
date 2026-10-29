@@ -18,6 +18,7 @@ import duckdb
 
 SEUIL = 300
 ISSUES = ("gagne", "partiel", "perd", "neutre")
+ANNEE_REFERENCE = 2025  # dernière année complète avec chiffres officiels du Conseil d'État
 RACINE = Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "site" / "agregats"
 
@@ -104,6 +105,13 @@ def main():
         "par_type": arrondi(lignes(c, f"select source as ordre, type_decision, {quantiles} from {base} group by all having count(*) >= {SEUIL} order by all")),
         "par_procedure": arrondi(lignes(c, f"select source as ordre, type_procedure as procedure, {quantiles} from {base} where type_procedure is not null group by all having count(*) >= {SEUIL} order by all")),
         "par_domaine": arrondi(lignes(c, f"select source as ordre, domaine, {quantiles} from {base} where type_decision = 'Décision' and domaine is not null group by all having count(*) >= {SEUIL} order by all")),
+        # Une seule année, pour comparer aux chiffres officiels : l'année en cours est incomplète
+        # et les décisions récentes sont plus courtes mécaniquement (voir la note de la page Durée).
+        "annee_reference": ANNEE_REFERENCE,
+        "moyenne_annee_reference": arrondi(lignes(c, f"""select source as ordre, count(*) n,
+            avg(delai) as moyenne_jours, median(delai) as mediane_jours
+            from {base} where year(try_cast(date_lecture as date)) = {ANNEE_REFERENCE}
+            group by all having count(*) >= {SEUIL} order by all""")),
         "lignes": [],
     }, c)
 
