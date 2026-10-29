@@ -85,7 +85,7 @@ h2 { font-size: 1.3rem; letter-spacing: -.01em; margin: 2.4rem 0 .4rem; }
 .mode-emploi .i-queue { width: 22px; height: 2px; background: var(--doux); opacity: .55; }
 details.valeurs { margin: 10px 0 0; font-size: .92rem; }
 details.valeurs summary { cursor: pointer; color: var(--doux); }
-@media (max-width: 640px) { .axe .ligne { display: none; } }
+@media (max-width: 640px) { .ligne.axe { display: none; } }
 .bloc { background: var(--carte); border: 1px solid var(--trait); border-radius: 16px; padding: 8px 20px 14px; box-shadow: var(--ombre); }
 .filtres { font-size: .92rem; margin: 14px 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .filtres button { font: inherit; padding: 6px 14px; border: 1px solid var(--trait); background: var(--carte);
