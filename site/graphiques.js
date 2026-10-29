@@ -135,6 +135,23 @@ function dureeFr({ mois, jours }) {
 const enMois = ({ mois, jours }) => mois + jours / 30.44;
 const virgule = (x, d = 1) => x.toFixed(d).replace(".", ",");
 
+// Règle d'écriture des chiffres (CLAUDE.md) : dans le texte courant, on arrondit ; tableaux, cartes et graphiques gardent la valeur exacte.
+const MOIS = 365.25 / 12;
+const jours = (j) => `${nf.format(Math.round(j))} jour${Math.round(j) > 1 ? "s" : ""}`;
+// Durée en jours -> durée lisible. sens = 1 : « moins de » (arrondi au-dessus) ; -1 : « plus de » (arrondi en dessous) ; 0 : le plus proche.
+// En jours sous 45 jours, en mois jusqu'à deux ans, puis en années par demi-année.
+function approx(j, sens = 0) {
+  const r = sens > 0 ? Math.ceil : sens < 0 ? Math.floor : Math.round;
+  if (j < 45) return jours(r(j));
+  const m = j / MOIS;
+  if (m < 24) return `${r(m)} mois`;
+  const a = r(m / 6) / 2;
+  return `${virgule(a, a % 1 ? 1 : 0)} ans`;
+}
+// Mêmes règles pour une durée donnée en mois ; un pourcentage s'arrondit à l'unité.
+const approxMois = (m, sens = 0) => approx(m * MOIS, sens);
+const pctRond = (x) => Math.round(x) + " %";
+
 // Bloc final des pages « Comprendre » : sources datées, puis une ligne sur la nature de l'information.
 function sources(liste, consulteLe) {
   const date = new Date(consulteLe).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
