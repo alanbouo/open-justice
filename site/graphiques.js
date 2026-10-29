@@ -82,9 +82,9 @@ function erreur(e) {
 const MENU = [
   { href: "index.html", titre: "Accueil", pages: ["index.html"] },
   { href: "comprendre.html", titre: "Comprendre",
-    pages: ["comprendre.html", "organisation.html", "deux-ordres.html", "deroule-administratif.html", "acteurs.html", "lexique.html", "delais.html"],
+    pages: ["comprendre.html", "organisation.html", "deux-ordres.html", "deroule-administratif.html", "deroule-civil.html", "acteurs.html", "lexique.html", "delais.html"],
     sous: [["comprendre.html", "Vue d'ensemble"], ["organisation.html", "Organisation"], ["deux-ordres.html", "Deux ordres"],
-      ["deroule-administratif.html", "Une affaire"], ["acteurs.html", "Les acteurs"], ["lexique.html", "Lexique"], ["delais.html", "Les délais"]] },
+      ["deroule-administratif.html", "Affaire administrative"], ["deroule-civil.html", "Affaire civile"], ["acteurs.html", "Les acteurs"], ["lexique.html", "Lexique"], ["delais.html", "Les délais"]] },
   { href: "aller-en-justice.html", titre: "Aller en justice", pages: ["aller-en-justice.html"] },
   { href: "chiffres.html", titre: "Les chiffres",
     pages: ["chiffres.html", "durees.html", "issues.html", "appel.html", "judiciaire.html", "penal.html", "juridictions.html"],
@@ -120,8 +120,8 @@ function cadre(courante) {
 }
 
 // Chiffres officiels (source unique : references/conseil-etat-2025.json, avec URL et date de consultation).
-async function chargerReferences() {
-  const r = await fetch("references/conseil-etat-2025.json");
+async function chargerReferences(fichier = "conseil-etat-2025.json") {
+  const r = await fetch("references/" + fichier);
   if (!r.ok) throw new Error("references : " + r.status);
   return r.json();
 }
