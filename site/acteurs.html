@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qui fait quoi · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre</span>
+<h1>Qui fait quoi dans une affaire ?</h1>
+<p class="chapo">Les rôles, pas les personnes : Open Justice ne publie jamais de statistique par magistrat ni par greffier, la loi l'interdit.</p>
+<dl class="lexique">
+<dt id="juge">Le juge</dt><dd>Le magistrat qui tranche l'affaire. Une formation de jugement compte un nombre impair de magistrats, habituellement trois devant le juge administratif ; certaines affaires sont jugées par un magistrat seul.</dd>
+<dt id="rapporteur">Le rapporteur</dt><dd>Magistrat désigné par le président de la juridiction pour suivre l'instruction et étudier l'affaire. Il prépare un projet de jugement et le présente à l'audience.</dd>
+<dt id="rapporteur-public">Le rapporteur public</dt><dd>Magistrat qui, à l'audience, expose l'affaire et propose en toute indépendance la solution qu'il juge appropriée. Il ne fait pas partie de la formation de jugement et ne participe pas au vote. Les juges ne sont pas obligés de suivre son avis.</dd>
+<dt id="greffier">Le greffier</dt><dd>Il garantit le bon déroulement de la procédure et authentifie les décisions. Sa présence est obligatoire à l'audience. Il enregistre les affaires, constitue les dossiers et sert de relais avec les avocats et le public.</dd>
+<dt id="avocat">L'avocat</dt><dd>Il assiste ou représente une partie. Devant le tribunal administratif, il n'est pas obligatoire, sauf exceptions. Dans les pourvois en cassation devant le Conseil d'État, seuls les avocats au Conseil d'État et à la Cour de cassation s'expriment à l'audience.</dd>
+<dt id="procureur">Le procureur et le parquet</dt><dd>Dans l'ordre judiciaire, les magistrats du parquet requièrent l'application de la loi et mènent l'action pénale au nom de l'intérêt de la société. Ils ne rendent pas de jugement. Le procureur de la République représente le ministère public devant les juridictions judiciaires.</dd>
+</dl>
+<h2>Combien de personnes ?</h2>
+<p id="effectifs"></p>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("acteurs.html");
+chargerReferences().then((ref) => {
+  const e = ref.organisation.effectifs_ca_et_ta;
+  document.getElementById("effectifs").textContent = `Officiel, au 31 décembre 2025 : ${nf.format(e.magistrats)} magistrats et ${nf.format(e.agents_de_greffe)} agents de greffe dans les tribunaux et cours administratifs ; ${ref.organisation.membres_conseil_etat} membres au Conseil d'État.`;
+  sources([
+    ["Conseil d'État, « L'examen des requêtes et l'audience » (La justice administrative en pratique)", 'https://www.conseil-etat.fr/content/download/147406/document/L-examen-des-requetes-et-l-audience.pdf', 'Mise à jour de mars 2020 : des règles de détail ont pu changer depuis.'],
+    ['Ministère de la Justice, « Les personnels de greffe »', 'https://www.justice.gouv.fr/justice-france/acteurs-justice/personnels-greffe', ''],
+    ['Ministère de la Justice, « Les magistrats du parquet »', 'https://www.justice.gouv.fr/magistrats-du-parquet', ''],
+    ['Ministère de la Justice, « Le tribunal administratif »', 'https://www.justice.gouv.fr/justice-france/lorganisation-cours-tribunaux/lordre-administratif/tribunal-administratif', ''],
+    [ref.sources.chiffres_cles.titre, ref.sources.chiffres_cles.url, ""]
+  ], "2026-10-29");
+}).catch(erreur);
+</script>
+</body>
+</html>
