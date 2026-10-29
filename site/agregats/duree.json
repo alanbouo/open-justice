@@ -1,5 +1,5 @@
 {
- "calcule_le": "2026-10-28",
+ "calcule_le": "2026-10-29",
  "base": "1155525 décisions publiées (justice administrative)",
  "seuil": 300,
  "note": "Jours entre l'enregistrement de la requête (visas) et la lecture. Pas la durée totale du litige.",
@@ -655,6 +655,27 @@
    "q1": 220,
    "q3": 923,
    "p90": 1174
+  }
+ ],
+ "annee_reference": 2025,
+ "moyenne_annee_reference": [
+  {
+   "ordre": "CAA",
+   "n": 26077,
+   "moyenne_jours": 364,
+   "mediane_jours": 287
+  },
+  {
+   "ordre": "CE",
+   "n": 4518,
+   "moyenne_jours": 195,
+   "mediane_jours": 132
+  },
+  {
+   "ordre": "TA",
+   "n": 237369,
+   "moyenne_jours": 295,
+   "mediane_jours": 127
   }
  ],
  "lignes": []
