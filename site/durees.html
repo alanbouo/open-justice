@@ -148,10 +148,10 @@ Promise.all([charger("duree.json"), chargerReferences(), chargerReferences("just
   // Chiffres clés
   const cles = document.getElementById("cles");
   cles.append(
-    carte(humain(taEtr.mediane), "<b>Justice administrative</b>, droit des étrangers : un jugement au fond d’un tribunal administratif."),
-    carte(humain(taAut.mediane), "<b>Justice administrative</b>, tous les autres domaines : un jugement au fond d’un tribunal administratif."),
-    carte(moisFr(mc.TJ.mediane), `<b>Justice civile</b> : une affaire terminée devant un tribunal judiciaire en ${an}.`),
-    carte(moisFr(mc.CA.mediane), `<b>Justice civile</b> : une affaire terminée devant une cour d’appel en ${an}.`));
+    carte(humain(taEtr.mediane), "<b>Durée médiane</b>, justice administrative : un jugement au fond en droit des étrangers, devant un tribunal administratif."),
+    carte(humain(taAut.mediane), "<b>Durée médiane</b>, justice administrative : un jugement au fond dans tous les autres domaines, devant un tribunal administratif."),
+    carte(moisFr(mc.TJ.mediane), `<b>Durée médiane</b>, justice civile : une affaire terminée devant un tribunal judiciaire en ${an}.`),
+    carte(moisFr(mc.CA.mediane), `<b>Durée médiane</b>, justice civile : une affaire terminée devant une cour d’appel en ${an}.`));
 
   // --- Justice administrative
   texte("t-etrangers-1", `Les décisions en droit des étrangers forment ${part(taEtr.n, taEtr.n + taAut.n)} % des jugements au fond des tribunaux administratifs. Elles sont rendues en <b>${approx(taEtr.mediane)}</b> en médiane, contre <b>${approx(taAut.mediane)}</b> pour tous les autres domaines réunis. Une médiane d’ensemble, comme les ${approx(ta.mediane)} de tous les jugements, mélange deux réalités et ne décrit ni l’une ni l’autre.`);
