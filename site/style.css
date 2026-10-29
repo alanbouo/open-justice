@@ -77,8 +77,11 @@ h2 { font-size: 1.3rem; letter-spacing: -.01em; margin: 2.4rem 0 .4rem; }
 .axe .graduation span:first-child { transform: none; }
 .ligne.dur { grid-template-columns: 12rem 1fr 15rem; }
 .piste .plage.appel { background: var(--gagne); }
-.chiffres-cles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin: 1.2rem 0 .4rem; }
-.panneau[hidden] { display: none; }
+.chiffres-cles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr)); margin: 1.2rem 0 .4rem; }
+.ancres { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; font-size: .92rem; }
+.ancres a { padding: 6px 14px; border: 1px solid var(--trait); background: var(--carte); color: var(--texte); border-radius: 999px; text-decoration: none; }
+.ancres a:hover { border-color: var(--marque); }
+h2[id] { scroll-margin-top: 1rem; }
 .legende-graphique { font-size: .85rem; color: var(--doux); margin: 8px 2px 0; }
 details.valeurs h3 { font-size: 1rem; margin: 1.2rem 0 .4rem; }
 details.valeurs { margin: 10px 0 0; font-size: .92rem; }
