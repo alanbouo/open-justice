@@ -10,49 +10,72 @@
 <main>
 <span class="pastille">Durée</span>
 <h1>Combien de temps faut-il pour être jugé ?</h1>
-<p class="chapo large">Cela dépend de la juridiction et du type d’affaire. Les durées sont des <b>médianes</b> : la moitié des affaires est jugée plus vite, l’autre moitié moins vite.</p>
-<div class="filtres" id="f-justice"></div>
+<p class="chapo large">Cela dépend de la juridiction et du type d’affaire. Les durées de cette page sont des <b>médianes</b> : la moitié des affaires est jugée plus vite, l’autre moitié moins vite.</p>
+<div class="chiffres-cles" id="cles"></div>
+<nav class="ancres" aria-label="Sur cette page"><a href="#admin">Justice administrative</a><a href="#civil">Justice civile</a><a href="#penal">Justice pénale</a><a href="#limites">Ce que ces chiffres ne disent pas</a></nav>
 
-<section id="p-admin" class="panneau">
-<div class="chiffres-cles" id="cles-admin"></div>
+<h2 id="admin">Justice administrative</h2>
+<p>Chiffres calculés par Open Justice sur les décisions publiées : temps écoulé entre l’enregistrement de la requête et la lecture de la décision.</p>
 
-<h2>Selon le domaine</h2>
-<p id="texte-domaine"></p>
+<h3>Le droit des étrangers tire la durée vers le bas</h3>
+<p id="t-etrangers-1"></p>
+<div class="bloc" id="etrangers"></div>
+<p class="legende-graphique" id="leg-etrangers"></p>
+<p id="t-etrangers-2"></p>
+
+<h3>Selon le domaine, de quelques semaines à plus de deux ans</h3>
+<p id="t-domaine"></p>
 <div class="filtres" id="f-domaine"></div>
 <div class="bloc" id="domaine"></div>
 <p class="legende-graphique" id="leg-domaine"></p>
 
-<h2>En urgence : les référés</h2>
-<p id="texte-procedure"></p>
+<h3>Dans un même domaine, l’écart reste grand</h3>
+<p id="t-ecart"></p>
+
+<h3>En urgence, quelques jours</h3>
+<p id="t-procedure"></p>
 <div class="bloc" id="procedure"></div>
 <p class="legende-graphique" id="leg-procedure"></p>
+<p id="t-ordonnances"></p>
 
-<p class="reserve"><b>Ce n’est pas la durée totale du litige.</b> Le compte part de l’enregistrement de la requête ; en appel et en cassation, de celui de l’appel ou du pourvoi. Les décisions récentes sont plus courtes mécaniquement (seules celles déjà rendues sont publiées) : aucune tendance d’une année à l’autre ne peut en être tirée. Les domaines sont détectés par mots-clés : approximatifs.</p>
-<details class="valeurs"><summary>Tous les chiffres, avec le nombre de décisions</summary>
-<h3>Par type de décision (ordonnances comprises)</h3><div class="tableau-officiel" id="t-type"></div>
-<h3>Par type de procédure</h3><div class="tableau-officiel" id="t-procedure"></div>
-<h3>Par domaine, décisions au fond</h3><div class="tableau-officiel" id="t-domaine"></div>
-<h3>Droit des étrangers et autres domaines, décisions au fond</h3><div class="tableau-officiel" id="t-etrangers"></div>
-</details>
-<p>Source : décisions publiées de la justice administrative, calculs d’Open Justice. Chiffres officiels et comparaison : <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a></p>
-</section>
+<h3>Faire appel : une attente de plus, pas toujours plus longue</h3>
+<p id="t-appel"></p>
+<div class="bloc" id="appel"></div>
+<p class="legende-graphique" id="leg-appel"></p>
 
-<section id="p-civil" class="panneau" hidden>
-<div class="chiffres-cles" id="cles-civil"></div>
-<h2>Tribunal judiciaire et cour d’appel</h2>
-<p id="texte-civil"></p>
-<div class="bloc" id="civil"></div>
+<h3>Ce que dit le stock de dossiers</h3>
+<p id="t-stock"></p>
+
+<h2 id="civil">Justice civile</h2>
+<p id="t-civil-0"></p>
+<h3>Des délais courts en médiane, très longs pour les affaires les plus lentes</h3>
+<p id="t-civil-1"></p>
+<div class="bloc" id="g-civil"></div>
 <p class="legende-graphique" id="leg-civil"></p>
-<p id="source-civil"></p>
-</section>
+<p id="t-civil-2"></p>
+<h3>Affaires en cours et affaires terminées</h3>
+<p id="t-civil-3"></p>
 
-<section id="p-penal" class="panneau" hidden>
+<h2 id="penal">Justice pénale</h2>
 <div class="bientot">
 <span class="pastille attente">À venir</span>
-<h2>Justice pénale</h2>
 <p>Aucune durée n’est encore publiée ici pour les juridictions pénales.</p>
 </div>
-</section>
+
+<h2 id="limites">Ce que ces chiffres ne disent pas</h2>
+<ul>
+<li><b>Ce n’est pas la durée totale du litige.</b> Le compte part de l’enregistrement de la requête ; en appel et en cassation, de celui de l’appel ou du pourvoi.</li>
+<li><b>Les deux justices ne se comparent pas directement.</b> Pour l’administratif, Open Justice mesure le temps jusqu’à la lecture des décisions publiées. Pour le civil, le ministère mesure la durée des affaires terminées, hors ruptures d’union et procédures spéciales. Une médiane de 4,4 mois d’un côté et de 6,3 mois de l’autre ne disent pas que l’une des justices est plus rapide.</li>
+<li><b>Aucune tendance d’une année à l’autre.</b> Les décisions récentes sont plus courtes mécaniquement : seules celles déjà rendues sont publiées.</li>
+<li><b>Une médiane n’est pas une promesse.</b> Dans chaque groupe, une affaire sur quatre dépasse le trois-quarts de la barre, et une sur dix la fine ligne.</li>
+<li><b>Les domaines sont approximatifs.</b> Ils sont détectés par mots-clés dans le texte des décisions, et la catégorie « Civil » de la justice administrative ne correspond pas à la justice civile.</li>
+</ul>
+<details class="valeurs"><summary>Tous les chiffres de la justice administrative, avec le nombre de décisions</summary>
+<h3>Par type de décision (ordonnances comprises)</h3><div class="tableau-officiel" id="tab-type"></div>
+<h3>Par type de procédure</h3><div class="tableau-officiel" id="tab-procedure"></div>
+<h3>Par domaine, décisions au fond</h3><div class="tableau-officiel" id="tab-domaine"></div>
+<h3>Droit des étrangers et autres domaines, décisions au fond</h3><div class="tableau-officiel" id="tab-etrangers"></div>
+</details>
 </main>
 <script src="graphiques.js"></script>
 <script>
@@ -68,6 +91,7 @@ function humain(j) {
   return `${virgule(m / 12, 1)} ans`;
 }
 const part = (x, tot) => Math.round(100 * x / tot);
+const moisFr = (m) => `${virgule(m)} mois`;
 
 // Légende collée au graphique : il doit se lire sans le texte. « haut » : part des décisions couverte par la queue.
 const legendeGraphique = (haut) => `Trait : médiane. Barre : la moitié centrale des décisions. Fine ligne : jusqu’à ${haut} décisions sur 100. Échelle logarithmique, graduée en durée.`;
@@ -103,71 +127,96 @@ function tableau(c, rows, etiquette) {
       ...[nf.format(r.n), jours(r.q1), jours(r.mediane), jours(r.q3), jours(r.p90)].map((x) => el("td", { class: "num" }, x)))))));
 }
 
-const carte = (valeur, texte) => el("div", { class: "q-carte" }, el("span", { class: "r" }, valeur), el("p", {}, texte));
-const lien = (href, t) => el("a", { href }, t);
+// Les textes ne contiennent que des chiffres de nos fichiers de données et du balisage écrit ici.
+const texte = (id, html) => { document.getElementById(id).innerHTML = html; };
+const carte = (valeur, html) => { const c = el("div", { class: "q-carte" }, el("span", { class: "r" }, valeur), el("p")); c.lastChild.innerHTML = html; return c; };
 const ordreCourt = { TA: "Tribunaux", CAA: "Cours d’appel", CE: "Conseil d’État" };
 
-const JUSTICES = { admin: "Justice administrative", civil: "Justice civile", penal: "Justice pénale" };
-filtres(document.getElementById("f-justice"), JUSTICES, "admin", (k) => {
-  for (const cle of Object.keys(JUSTICES)) document.getElementById("p-" + cle).hidden = cle !== k;
-});
-
-charger("duree.json").then((d) => {
+Promise.all([charger("duree.json"), chargerReferences(), chargerReferences("justice-civile-2025.json")]).then(([d, ce, civ]) => {
   pied(d);
+  const nomDom = (r) => DOMAINES[r.domaine] || r.domaine;
+  const T = (o, t) => d.par_type.find((r) => r.ordre === o && r.type_decision === t);
+  const ta = T("TA", "Décision"), taOrd = T("TA", "Ordonnance");
   const eg = (o, g) => d.par_etrangers_fond.find((r) => r.ordre === o && r.groupe === g);
   const taEtr = eg("TA", "etrangers"), taAut = eg("TA", "autres");
-  const avecHaut = (rows) => rows.map((r) => ({ ...r, haut: r.p90 }));
   const proc = (k) => d.par_procedure.find((r) => r.ordre === "TA" && r.procedure === k);
   const fond = proc("fond"), liberte = proc("refere_liberte"), supp = proc("refere_suspension"), prov = proc("refere_provision");
-  const nomDom = (r) => DOMAINES[r.domaine] || r.domaine;
+  const avecHaut = (rows) => rows.map((r) => ({ ...r, haut: r.p90 }));
+  const J = ce.juridictions, TAo = ce.tribunaux_administratifs;
+  const mc = civ.duree_affaires_terminees_mois, tj = civ.tribunaux_judiciaires, ca = civ.cours_appel;
+  const an = civ.annee_donnees;
 
-  document.getElementById("cles-admin").append(
-    carte(humain(taEtr.mediane), "Droit des étrangers : un jugement au fond devant un tribunal administratif."),
-    carte(humain(taAut.mediane), "Tous les autres domaines réunis : un jugement au fond devant un tribunal administratif."));
+  // Chiffres clés
+  const cles = document.getElementById("cles");
+  cles.append(
+    carte(humain(taEtr.mediane), "<b>Justice administrative</b>, droit des étrangers : un jugement au fond d’un tribunal administratif."),
+    carte(humain(taAut.mediane), "<b>Justice administrative</b>, tous les autres domaines : un jugement au fond d’un tribunal administratif."),
+    carte(moisFr(mc.TJ.mediane), `<b>Justice civile</b> : une affaire terminée devant un tribunal judiciaire en ${an}.`),
+    carte(moisFr(mc.CA.mediane), `<b>Justice civile</b> : une affaire terminée devant une cour d’appel en ${an}.`));
 
-  // Domaines au fond
+  // --- Justice administrative
+  texte("t-etrangers-1", `Les décisions en droit des étrangers forment ${part(taEtr.n, taEtr.n + taAut.n)} % des jugements au fond des tribunaux administratifs. Elles sont rendues en <b>${humain(taEtr.mediane)}</b> en médiane, contre <b>${humain(taAut.mediane)}</b> pour tous les autres domaines réunis. Une médiane d’ensemble, comme les ${humain(ta.mediane)} de tous les jugements, mélange deux réalités et ne décrit ni l’une ni l’autre.`);
+  const lignesEtr = [["TA", "etrangers", "Tribunaux · droit des étrangers"], ["TA", "autres", "Tribunaux · autres domaines"],
+    ["CAA", "etrangers", "Appel · droit des étrangers"], ["CAA", "autres", "Appel · autres domaines"], ["CE", "autres", "Conseil d’État · autres domaines"]]
+    .map(([o, g, nom]) => ({ ...eg(o, g), nom, haut: eg(o, g).p90 }));
+  plages(document.getElementById("etrangers"), lignesEtr, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
+  document.getElementById("leg-etrangers").textContent = legendeGraphique(90) + " Jugements au fond. Barre foncée : cours administratives d’appel.";
+  texte("t-etrangers-2", `Le Conseil d’État publie lui aussi deux chiffres pour 2025 : un délai constaté de ${dureeFr(J.TA.delai_constate_global)} pour l’ensemble des affaires des tribunaux, et de ${dureeFr(J.TA.delai_constate_ordinaires)} pour les affaires « ordinaires », hors ordonnances, référés et affaires à délai encadré. Il relève que les procédures d’éloignement, enserrées dans un délai de six mois pour statuer, concentrent près de ${TAo.part_etrangers_procedures_eloignement_pct} % des dossiers. Lecture d’Open Justice : ces affaires à délai court expliquent probablement une part importante de l’écart observé ; nous ne l’avons pas mesurée.`);
+
   const taDoms = d.par_domaine_fond.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane);
   const ordinaires = taDoms.filter((r) => r.domaine !== "etrangers" && r.domaine !== "electoral");
   const court = ordinaires[0], long = ordinaires[ordinaires.length - 1];
-  document.getElementById("texte-domaine").textContent =
-    `Les décisions en droit des étrangers forment ${part(taEtr.n, taEtr.n + taAut.n)} % des jugements au fond des tribunaux : elles tirent vers le bas la durée d’ensemble. Dans les autres domaines hors contentieux électoral, la médiane va de ${humain(court.mediane)} (${nomDom(court).toLowerCase()}) à ${humain(long.mediane)} (${nomDom(long).toLowerCase()}).`;
-  const montrerDom = (o) => {
-    const rows = avecHaut(d.par_domaine_fond.filter((r) => r.ordre === o).sort((a, b) => a.mediane - b.mediane));
-    plages(document.getElementById("domaine"), rows, nomDom, (r) => (r.ordre === "CAA" ? "appel" : ""));
-  };
+  const elec = taDoms.find((r) => r.domaine === "electoral");
+  texte("t-domaine", `Devant les tribunaux, ${elec ? `le contentieux électoral est jugé en ${humain(elec.mediane)} et ` : ""}le droit des étrangers en ${humain(taEtr.mediane)}. Dans les ${ordinaires.length} autres domaines, la médiane va de <b>${humain(court.mediane)}</b> (${nomDom(court).toLowerCase()}) à <b>${humain(long.mediane)}</b> (${nomDom(long).toLowerCase()})${ordinaires.every((r) => r.mediane > 365.25) ? " : partout, la moitié des affaires dépasse un an" : ""}. Les boutons affichent les cours d’appel et le Conseil d’État.`);
+  const montrerDom = (o) => plages(document.getElementById("domaine"), avecHaut(d.par_domaine_fond.filter((r) => r.ordre === o).sort((a, b) => a.mediane - b.mediane)),
+    nomDom, (r) => (r.ordre === "CAA" ? "appel" : ""));
   filtres(document.getElementById("f-domaine"), ORDRES, "TA", montrerDom);
   montrerDom("TA");
   document.getElementById("leg-domaine").textContent = legendeGraphique(90) + " Jugements au fond.";
 
-  // Procédures
-  document.getElementById("texte-procedure").textContent =
-    `Devant les tribunaux, un référé-liberté est jugé en ${jours(liberte.mediane)} en médiane, un référé-suspension en ${jours(supp.mediane)}. Le référé-provision, qui demande le versement d’une somme, fait exception : ${humain(prov.mediane)}, proche des ${humain(fond.mediane)} d’une requête au fond.`;
-  plages(document.getElementById("procedure"), avecHaut(d.par_procedure.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane)),
-    (r) => PROCEDURES[r.procedure] || r.procedure);
+  const rapport = (r) => r.q3 / r.q1;
+  const parEcart = ordinaires.slice().sort((a, b) => rapport(a) - rapport(b));
+  const serre = parEcart[0], etale = parEcart[parEcart.length - 1];
+  const fisc = taDoms.find((r) => r.domaine === "fiscal");
+  texte("t-ecart", `La médiane dit ce qui est le plus probable, pas ce qui est garanti. Dans le domaine « ${nomDom(serre).toLowerCase()} », la moitié centrale des jugements va de ${humain(serre.q1)} à ${humain(serre.q3)} : les durées sont assez prévisibles. Dans le domaine « ${nomDom(etale).toLowerCase()} », elle va de ${humain(etale.q1)} à ${humain(etale.q3)} : un même domaine regroupe des affaires très différentes, sans que nous ayons vérifié ce qui l’explique. Même en matière fiscale, où la médiane est de ${humain(fisc.mediane)}, une affaire sur quatre dépasse ${humain(fisc.q3)} et une sur dix ${humain(fisc.p90)}.`);
+
+  const nProc = d.par_procedure.filter((r) => r.ordre === "TA");
+  plages(document.getElementById("procedure"), avecHaut(nProc.slice().sort((a, b) => a.mediane - b.mediane)), (r) => PROCEDURES[r.procedure] || r.procedure);
   document.getElementById("leg-procedure").textContent = legendeGraphique(90) + " Tribunaux administratifs, ordonnances comprises.";
+  texte("t-procedure", `Le référé (voir le <a href="lexique.html#refere">lexique</a>) permet d’obtenir rapidement des mesures provisoires. Devant les tribunaux, un référé-liberté est jugé en <b>${jours(liberte.mediane)}</b> en médiane et un référé-suspension en ${jours(supp.mediane)}, contre ${humain(fond.mediane)} pour une requête au fond. Tous les référés ne sont pas rapides : le référé-provision, qui demande le versement d’une somme, a une médiane de ${humain(prov.mediane)}, proche de celle d’une requête au fond.`);
+  texte("t-ordonnances", `Une ordonnance est prise par un seul juge, souvent sans audience (voir le <a href="lexique.html#ordonnance">lexique</a>). Elles représentent ${part(taOrd.n, taOrd.n + ta.n)} % des décisions publiées des tribunaux, et leur médiane est de ${humain(taOrd.mediane)}, contre ${humain(ta.mediane)} pour un jugement.`);
 
-  // Tableaux
-  tableau(document.getElementById("t-type"), d.par_type, (r) => `${ordreCourt[r.ordre]} · ${r.type_decision}`);
-  tableau(document.getElementById("t-procedure"), d.par_procedure, (r) => `${ordreCourt[r.ordre]} · ${PROCEDURES[r.procedure] || r.procedure}`);
-  tableau(document.getElementById("t-domaine"), d.par_domaine_fond, (r) => `${ordreCourt[r.ordre]} · ${nomDom(r)}`);
-  tableau(document.getElementById("t-etrangers"), d.par_etrangers_fond, (r) => `${ordreCourt[r.ordre]} · ${r.groupe === "etrangers" ? "droit des étrangers" : "autres domaines"}`);
-}).catch(erreur);
+  const caaDoms = d.par_domaine_fond.filter((r) => r.ordre === "CAA").sort((a, b) => b.n - a.n).slice(0, 6);
+  const paires = caaDoms.map((c) => ({ ta: taDoms.find((t) => t.domaine === c.domaine), caa: c })).filter((x) => x.ta);
+  const comparables = d.par_domaine_fond.filter((r) => r.ordre === "CAA" && r.domaine !== "etrangers" && taDoms.some((x) => x.domaine === r.domaine));
+  const plusCourt = comparables.filter((c) => c.mediane < taDoms.find((x) => x.domaine === c.domaine).mediane).length;
+  texte("t-appel", `Après un jugement défavorable, on peut faire appel (voir le <a href="lexique.html#appel">lexique</a>). Le délai de l’appel part de son enregistrement : pour qui fait appel, il s’ajoute à l’attente du premier jugement. En droit des étrangers, il est plus long qu’au tribunal (${humain(eg("CAA", "etrangers").mediane)} contre ${humain(taEtr.mediane)}). Dans les autres domaines, la médiane d’appel est plus courte que celle du tribunal dans ${plusCourt} domaines sur ${comparables.length}. Cela ne prouve pas que l’appel va vite : ce ne sont pas les mêmes affaires, et toutes ne sont pas portées en appel. Le graphique montre les six domaines les plus fréquents en appel.`);
+  const lignesAppel = paires.flatMap(({ ta: t, caa: c }) => [{ ...t, haut: t.p90, nom: `${nomDom(t)} · tribunal` }, { ...c, haut: c.p90, nom: `${nomDom(c)} · appel` }]);
+  plages(document.getElementById("appel"), lignesAppel, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
+  document.getElementById("leg-appel").textContent = legendeGraphique(90) + " Jugements au fond. Barre foncée : cours administratives d’appel.";
 
-// Justice civile : chiffres officiels du ministère de la Justice, en mois, recopiés dans references/.
-chargerReferences("justice-civile-2025.json").then((ref) => {
-  const m = ref.duree_affaires_terminees_mois, tj = ref.tribunaux_judiciaires;
-  const enJours = (x) => x * MOIS;
-  const rows = ["TJ", "CA"].map((k) => ({ nom: m[k].nom, q1: enJours(m[k].q25), mediane: enJours(m[k].mediane), q3: enJours(m[k].q75), haut: enJours(m[k].p95) }));
-  document.getElementById("cles-civil").append(
-    carte(`${virgule(m.TJ.mediane)} mois`, `Tribunal judiciaire : durée médiane d’une affaire terminée en ${ref.annee_donnees}.`),
-    carte(`${virgule(m.CA.mediane)} mois`, `Cour d’appel : durée médiane d’une affaire terminée en ${ref.annee_donnees}.`));
-  document.getElementById("texte-civil").textContent =
-    `Chiffres officiels, non calculés par Open Justice. Devant le tribunal judiciaire, la durée moyenne (${virgule(tj.duree_moyenne_mois)} mois) dépasse la médiane (${virgule(m.TJ.mediane)} mois) : quelques affaires très longues la tirent vers le haut. Périmètre : ${ref.perimetre_tribunaux_judiciaires.charAt(0).toLowerCase()}${ref.perimetre_tribunaux_judiciaires.slice(1)}`;
-  plages(document.getElementById("civil"), rows, (r) => r.nom, (r) => (r.nom.startsWith("Cours") ? "appel" : ""));
-  document.getElementById("leg-civil").textContent = legendeGraphique(95) + ` Affaires terminées en ${ref.annee_donnees}.`;
-  const s = ref.sources;
-  const date = new Date(ref.consulte_le).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
-  document.getElementById("source-civil").append("Sources : ", lien(s.chiffres_cles.url, s.chiffres_cles.titre), " ; ", lien(s.rsj_tribunaux_judiciaires.url, s.rsj_tribunaux_judiciaires.titre), `. Consultées le ${date}.`);
+  texte("t-stock", `Le Conseil d’État compte, pour 2025, ${nf.format(J.TA.enregistrees)} affaires arrivées devant les tribunaux administratifs et ${nf.format(J.TA.jugees)} jugées : un taux de couverture de ${virgule(TAo.taux_de_couverture_pct)} %, contre ${virgule(TAo.taux_de_couverture_2024_pct)} % en 2024. Le stock atteint ${nf.format(J.TA.stock)} dossiers, ${TAo.evolution_stock_pct} % de plus qu’un an plus tôt. Au rythme de 2025, il représente environ un an de jugements (délai prévisible : ${dureeFr(J.TA.delai_previsible)}). Ce n’est pas une prévision de durée, et nos données ne permettent pas de dire si les délais s’allongent. Pour les chiffres officiels en détail : <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>`);
+
+  // --- Justice civile
+  texte("t-civil-0", `Chiffres officiels du ministère de la Justice pour ${an}, non calculés par Open Justice : durée des affaires terminées. Périmètre : ${civ.perimetre_tribunaux_judiciaires.charAt(0).toLowerCase()}${civ.perimetre_tribunaux_judiciaires.slice(1)}`);
+  texte("t-civil-1", `Devant le tribunal judiciaire, une affaire sur quatre est terminée en moins de ${moisFr(mc.TJ.q25)}, la moitié en moins de <b>${moisFr(mc.TJ.mediane)}</b> et trois quarts en moins de ${moisFr(mc.TJ.q75)}. Mais une affaire sur vingt dépasse ${moisFr(mc.TJ.p95)}, soit plus de ${virgule(mc.TJ.p95 / 12)} ans. En cour d’appel, la médiane est de <b>${moisFr(mc.CA.mediane)}</b>, un quart des affaires dépasse ${moisFr(mc.CA.q75)} et une sur vingt ${moisFr(mc.CA.p95)}, soit plus de ${virgule(mc.CA.p95 / 12)} ans.`);
+  const rowsCivil = ["TJ", "CA"].map((k) => ({ nom: mc[k].nom, q1: mc[k].q25 * MOIS, mediane: mc[k].mediane * MOIS, q3: mc[k].q75 * MOIS, haut: mc[k].p95 * MOIS }));
+  plages(document.getElementById("g-civil"), rowsCivil, (r) => r.nom, (r) => (r.nom.startsWith("Cours") ? "appel" : ""));
+  document.getElementById("leg-civil").textContent = legendeGraphique(95) + ` Affaires terminées en ${an}. Barre foncée : cours d’appel.`;
+  texte("t-civil-2", `La durée moyenne des affaires terminées devant le tribunal judiciaire est de ${moisFr(tj.duree_moyenne_mois)}, bien au-dessus de la médiane : quelques affaires très longues tirent la moyenne vers le haut. Elle est de ${moisFr(tj.duree_moyenne_au_fond_mois)} pour les affaires au fond et de ${moisFr(tj.duree_moyenne_referes_mois)} pour les référés, qui sont ${part(tj.dont_referes, tj.affaires_terminees)} % des affaires terminées.`);
+  texte("t-civil-3", `À la fin de ${an}, ${nf.format(tj.stock_31_decembre)} affaires étaient en cours devant les tribunaux judiciaires, âgées de ${moisFr(tj.age_moyen_stock_mois)} en moyenne, et ${nf.format(ca.stock_31_decembre)} devant les cours d’appel, âgées de ${moisFr(ca.age_moyen_stock_mois)}. L’âge d’une affaire en cours n’est pas la durée d’une affaire terminée : ces deux mesures ne se comparent pas directement.`);
+
+  // --- Tableaux et sources
+  tableau(document.getElementById("tab-type"), d.par_type, (r) => `${ordreCourt[r.ordre]} · ${r.type_decision}`);
+  tableau(document.getElementById("tab-procedure"), d.par_procedure, (r) => `${ordreCourt[r.ordre]} · ${PROCEDURES[r.procedure] || r.procedure}`);
+  tableau(document.getElementById("tab-domaine"), d.par_domaine_fond, (r) => `${ordreCourt[r.ordre]} · ${nomDom(r)}`);
+  tableau(document.getElementById("tab-etrangers"), d.par_etrangers_fond, (r) => `${ordreCourt[r.ordre]} · ${r.groupe === "etrangers" ? "droit des étrangers" : "autres domaines"}`);
+  sources([
+    [ce.sources.rapport.titre, ce.sources.rapport.url, ""],
+    [ce.sources.chiffres_cles.titre, ce.sources.chiffres_cles.url, ""],
+    [civ.sources.chiffres_cles.titre, civ.sources.chiffres_cles.url, ""],
+    [civ.sources.rsj_tribunaux_judiciaires.titre, civ.sources.rsj_tribunaux_judiciaires.url, ""],
+  ], ce.consulte_le);
 }).catch(erreur);
 </script>
 </body>
