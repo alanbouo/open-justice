@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le déroulé d'une affaire · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre · juge administratif</span>
+<h1>Comment se déroule une affaire devant le juge administratif ?</h1>
+<p class="chapo">Une procédure surtout écrite, où l'essentiel se joue avant l'audience. Cette page décrit les tribunaux administratifs ; la procédure civile et pénale n'est pas encore traitée.</p>
+<ol class="etapes">
+<li><b>La requête</b>Le recours est enregistré par le greffe. L'avocat n'est pas obligatoire, sauf exceptions, notamment pour les litiges portant sur un contrat conclu avec une administration.</li>
+<li><b>L'instruction</b>Le président de la juridiction désigne un rapporteur, magistrat qui suit le dossier. La requête est transmise au défendeur, le plus souvent l'administration dont l'acte est contesté, qui répond par un mémoire. Le juge dirige l'instruction : il peut demander des précisions ou des pièces. La procédure est écrite et contradictoire : chacun peut discuter les arguments des autres.</li>
+<li><b>Parfois, pas d'audience</b>Une affaire peut être jugée sans instruction ni audience : le requérant se désiste, il n'y a plus lieu de statuer (par exemple parce que l'administration a donné satisfaction), la requête est irrecevable, ou elle manque d'arguments juridiques. Elle est alors traitée par ordonnance.</li>
+<li><b>L'audience publique</b>La formation de jugement compte toujours un nombre impair de magistrats, habituellement trois ; certaines affaires sont jugées par un magistrat seul. Le rapporteur rappelle la demande, puis le rapporteur public propose, en toute indépendance, la solution qui lui paraît la plus appropriée. Les juges ne sont pas obligés de la suivre. La présence des parties n'est pas obligatoire.</li>
+<li><b>Le délibéré et le jugement</b>Les magistrats délibèrent hors de la présence du rapporteur public (au Conseil d'État, il peut y assister sans parler ni voter), et la décision est prise à la majorité. Le sens de la décision est rendu public environ quinze jours après l'audience. Elle est notifiée aux parties, avec les délais et voies de recours possibles.</li>
+</ol>
+<h2>Les procédures d'urgence</h2>
+<p>En référé, les parties peuvent présenter leurs observations oralement et produire des documents nouveaux à l'audience. Certaines affaires urgentes sont dispensées des conclusions du rapporteur public : référés, éloignement des étrangers faisant l'objet d'une mesure de surveillance, mesures d'injonction en droit au logement.</p>
+<h2>Les vocabulaires</h2>
+<p>Un tribunal administratif rend un <b>jugement</b>, une cour administrative d'appel un <b>arrêt</b>, le Conseil d'État une <b>décision</b>. Voir le <a href="lexique.html">lexique</a>.</p>
+<h2>Ce que disent les chiffres</h2>
+<ul id="chiffres"></ul>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("deroule-administratif.html");
+chargerReferences().then((ref) => {
+  Promise.all([charger("volumes.json"), charger("duree.json")]).then(([vol, dur]) => {
+    pied(dur);
+    const ta = vol.lignes.filter((r) => r.ordre === "TA");
+    const total = ta.reduce((a, r) => a + r.n, 0);
+    const ord = ta.filter((r) => r.type_decision === "Ordonnance").reduce((a, r) => a + r.n, 0);
+    const refere = dur.par_procedure.find((r) => r.ordre === "TA" && r.procedure === "refere_liberte");
+    const urg = ref.juridictions.TA;
+    document.getElementById("chiffres").replaceChildren(
+      el("li", {}, `Calculé par Open Justice : ${Math.round(100 * ord / total)} % des décisions publiées des tribunaux administratifs sont des ordonnances, prises par un seul juge, souvent sans audience (${nf.format(ord)} sur ${nf.format(total)}, de juin 2022 à octobre 2026).`),
+      el("li", {}, `Calculé par Open Justice : un référé-liberté est jugé en ${Math.round(refere.mediane)} jours en médiane, entre l'enregistrement de la requête et la décision.`),
+      el("li", {}, `Officiel (Conseil d'État) : en 2025, ${nf.format(urg.dont_urgence)} des ${nf.format(urg.jugees)} affaires jugées par les tribunaux administratifs l'ont été en urgence (référés), soit ${Math.round(100 * urg.dont_urgence / urg.jugees)} %.`));
+  }).catch(erreur);
+  sources([
+    ["Conseil d'État, « L'examen des requêtes et l'audience » (La justice administrative en pratique)", 'https://www.conseil-etat.fr/content/download/147406/document/L-examen-des-requetes-et-l-audience.pdf', 'Mise à jour de mars 2020 : des règles de détail ont pu changer depuis.'],
+    ['Ministère de la Justice, « Le tribunal administratif »', 'https://www.justice.gouv.fr/justice-france/lorganisation-cours-tribunaux/lordre-administratif/tribunal-administratif', ''],
+    ["Conseil d'État, Glossaire", 'https://www.conseil-etat.fr/outils/glossaire', ''],
+    [ref.sources.chiffres_cles.titre, ref.sources.chiffres_cles.url, ""]
+  ], "2026-10-29");
+}).catch(erreur);
+</script>
+</body>
+</html>
