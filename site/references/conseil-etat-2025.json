@@ -1,0 +1,60 @@
+{
+  "note": "Chiffres officiels recopiés des documents cités, année 2025, données nettes. Aucun calcul d'Open Justice.",
+  "consulte_le": "2026-10-29",
+  "sources": {
+    "rapport": {
+      "titre": "Conseil d'État, Rapport public 2026 : Activité juridictionnelle et consultative des juridictions administratives en 2025",
+      "url": "https://www.conseil-etat.fr/content/download/239421/document/Rapport%20public_2025.pdf"
+    },
+    "chiffres_cles": {
+      "titre": "Conseil d'État, Chiffres clés de la justice administrative pour l'année 2025 (publié le 2 février 2026)",
+      "url": "https://conseil-etat.fr/publications-colloques/rapports-d-activite/les-chiffres-cles-de-la-justice-administrative-pour-l-annee-2025"
+    }
+  },
+  "juridictions": {
+    "TA": {
+      "nom": "Tribunaux administratifs",
+      "enregistrees": 334706,
+      "jugees": 283136,
+      "dont_urgence": 62249,
+      "stock": 290345,
+      "delai_constate_global": { "mois": 9, "jours": 19 },
+      "delai_constate_ordinaires": { "mois": 16, "jours": 15 },
+      "delai_previsible": { "mois": 12, "jours": 9 },
+      "part_etrangers_entrees_pct": 46
+    },
+    "CAA": {
+      "nom": "Cours administratives d'appel",
+      "enregistrees": 32344,
+      "jugees": 30605,
+      "dont_urgence": 1695,
+      "stock": 30597,
+      "delai_constate_global": { "mois": 11, "jours": 18 },
+      "delai_previsible": { "mois": 12, "jours": 0 },
+      "part_etrangers_entrees_pct": 55
+    },
+    "CE": {
+      "nom": "Conseil d'État",
+      "enregistrees": 10809,
+      "jugees": 10693,
+      "dont_urgence": 610,
+      "stock": 5075,
+      "delai_constate_global": { "mois": 6, "jours": 27 },
+      "delai_previsible": { "mois": 5, "jours": 21 },
+      "part_etrangers_entrees_pct": 15.2
+    }
+  },
+  "tribunaux_administratifs": {
+    "taux_de_couverture_pct": 84.6,
+    "taux_de_couverture_2024_pct": 91.3,
+    "evolution_stock_pct": 22,
+    "part_stock_plus_de_2_ans_pct": 11,
+    "part_etrangers_procedures_eloignement_pct": 31
+  },
+  "organisation": {
+    "tribunaux_administratifs": 42,
+    "cours_administratives_appel": 9,
+    "effectifs_ca_et_ta": { "magistrats": 1270, "agents_de_greffe": 1463 },
+    "membres_conseil_etat": 241
+  }
+}
