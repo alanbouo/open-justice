@@ -44,9 +44,9 @@ chargerReferences("justice-civile-2025.json").then((ref) => {
     th("Juridiction", "Un quart terminé en moins de", "La moitié en moins de", "Trois quarts en moins de", "95 % en moins de"),
     el("tbody", {}, ...["TJ", "CA"].map((k) => ligne(d[k].nom, `${m(d[k].q25)} mois`, `${m(d[k].mediane)} mois`, `${m(d[k].q75)} mois`, `${m(d[k].p95)} mois`))));
   document.getElementById("chiffres").replaceChildren(
-    el("li", {}, `Devant un tribunal judiciaire, la moitié des affaires est terminée en moins de ${m(d.TJ.mediane)} mois, mais une sur vingt dure plus de ${m(d.TJ.p95)} mois.`),
-    el("li", {}, `Durée moyenne en 2024 : ${m(tj.duree_moyenne_mois)} mois (${m(tj.duree_moyenne_au_fond_mois)} mois pour les affaires au fond, ${m(tj.duree_moyenne_referes_mois)} mois pour les référés).`),
-    el("li", {}, `${nf.format(tj.affaires_terminees)} affaires terminées en 2024, dont ${nf.format(tj.dont_referes)} référés. ${nf.format(tj.stock_31_decembre)} affaires en cours au 31 décembre 2024, d'un âge moyen de ${m(tj.age_moyen_stock_mois)} mois.`),
+    el("li", {}, `Devant un tribunal judiciaire, la moitié des affaires est terminée en moins de ${approxMois(d.TJ.mediane, 1)}, mais une sur vingt dure plus de ${approxMois(d.TJ.p95, -1)}.`),
+    el("li", {}, `Durée moyenne en 2024 : environ ${approxMois(tj.duree_moyenne_mois)} (environ ${approxMois(tj.duree_moyenne_au_fond_mois)} pour les affaires au fond, environ ${approxMois(tj.duree_moyenne_referes_mois)} pour les référés).`),
+    el("li", {}, `${nf.format(tj.affaires_terminees)} affaires terminées en 2024, dont ${nf.format(tj.dont_referes)} référés. ${nf.format(tj.stock_31_decembre)} affaires en cours au 31 décembre 2024, d'un âge moyen d'environ ${approxMois(tj.age_moyen_stock_mois)}.`),
     el("li", {}, `Cours d'appel : ${nf.format(ca.affaires_terminees)} affaires terminées, ${nf.format(ca.stock_31_decembre)} en cours au 31 décembre 2024.`));
   sources([
     ['Ministère de la Justice, « La procédure civile »', 'https://www.justice.gouv.fr/justice-france/justice-civile/procedure-civile', ''],
