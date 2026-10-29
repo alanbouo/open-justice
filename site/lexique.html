@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les mots de la justice · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre</span>
+<h1>Les mots de la justice</h1>
+<p class="chapo">Les termes qu'on rencontre dans une décision ou un dossier, expliqués simplement. Vocabulaire du juge administratif.</p>
+<dl class="lexique">
+<dt id="appel">Appel</dt><dd>Demande de faire rejuger l'affaire par une juridiction supérieure quand on n'a pas obtenu gain de cause en première instance. <span class="chiffre" id="c-appel"></span></dd>
+<dt id="arret">Arrêt</dt><dd>Décision d'une cour administrative d'appel. Un tribunal administratif rend un « jugement », le Conseil d'État une « décision ».</dd>
+<dt id="cassation">Cassation, pourvoi</dt><dd>Recours devant le Conseil d'État contre une décision rendue en dernier ressort. Il ne rejuge pas les faits : il vérifie les vices de forme ou de procédure, les erreurs de droit et la violation de la loi.</dd>
+<dt id="conclusions">Conclusions</dt><dd>Ce que la personne demande au juge. Pour le rapporteur public, c'est l'exposé de l'affaire et de la solution qu'il propose à l'audience.</dd>
+<dt id="delibere">Délibéré</dt><dd>Phase secrète qui suit l'audience : les juges débattent et décident. Le rapporteur public n'y participe pas.</dd>
+<dt id="desistement">Désistement</dt><dd>Le requérant renonce à son recours avant que le juge ne se prononce, par exemple parce qu'il a obtenu satisfaction.</dd>
+<dt id="instruction">Instruction</dt><dd>Phase d'échange de mémoires qui commence quand la requête est communiquée au défendeur et se termine à la clôture.</dd>
+<dt id="irrecevabilite">Irrecevabilité</dt><dd>La requête ne respecte pas les règles de procédure (délai, demande, intérêt à agir). Sauf régularisation possible, elle est rejetée sans examen du fond.</dd>
+<dt id="memoire">Mémoire</dt><dd>Écrit par lequel une partie présente ses demandes et les arguments de fait et de droit qui les appuient.</dd>
+<dt id="non-lieu">Non-lieu à statuer</dt><dd>Le juge constate que le recours a perdu son objet, notamment quand l'administration a donné satisfaction en cours de procédure.</dd>
+<dt id="ordonnance">Ordonnance</dt><dd>Décision prise par un seul juge, parfois sans audience, ou par le juge des référés. <span class="chiffre" id="c-ordonnance"></span></dd>
+<dt id="refere">Référé</dt><dd>Procédure qui permet d'obtenir rapidement des mesures provisoires. <span class="chiffre" id="c-refere"></span></dd>
+<dt id="requerant">Requérant</dt><dd>La personne qui saisit le tribunal.</dd>
+<dt id="rapporteur-public">Rapporteur, rapporteur public</dt><dd>Voir la page <a href="acteurs.html">Qui fait quoi</a>.</dd>
+</dl>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("lexique.html");
+Promise.all([charger("volumes.json"), charger("duree.json"), charger("appel.json")]).then(([vol, dur, app]) => {
+    pied(dur);
+    const ta = vol.lignes.filter((r) => r.ordre === "TA");
+    const total = ta.reduce((a, r) => a + r.n, 0);
+    const ord = ta.filter((r) => r.type_decision === "Ordonnance").reduce((a, r) => a + r.n, 0);
+    const refere = dur.par_procedure.find((r) => r.ordre === "TA" && r.procedure === "refere_liberte");
+    const caa = app.lignes.find((r) => r.ordre === "CAA" && r.saisissant === "tous");
+    document.getElementById("c-ordonnance").textContent = `Chiffre : ${Math.round(100 * ord / total)} % des décisions publiées des tribunaux administratifs.`;
+    document.getElementById("c-refere").textContent = `Chiffre : un référé-liberté est jugé en ${Math.round(refere.mediane)} jours en médiane.`;
+    document.getElementById("c-appel").textContent = `Chiffre : ${Math.round(caa.confirme)} % des jugements attaqués sont confirmés par les cours administratives d'appel (hors désistements et non-lieux).`;
+  }).catch(erreur);
+sources([
+    ["Conseil d'État, Glossaire", 'https://www.conseil-etat.fr/outils/glossaire', ''],
+    ["Conseil d'État, « L'examen des requêtes et l'audience » (La justice administrative en pratique)", 'https://www.conseil-etat.fr/content/download/147406/document/L-examen-des-requetes-et-l-audience.pdf', 'Mise à jour de mars 2020 : des règles de détail ont pu changer depuis.']
+  ], "2026-10-29");
+</script>
+</body>
+</html>
