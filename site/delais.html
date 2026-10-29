@@ -28,7 +28,7 @@
 <p>Open Justice calcule, sur les décisions publiées, le temps écoulé entre la date d'enregistrement de la requête, lue dans le texte, et la date de lecture de la décision. Pour 2025, en moyenne sur l'ensemble des décisions (jugements et ordonnances) :</p>
 <div class="tableau-officiel"><table id="concordance"></table></div>
 <p class="rapport"><b>Comment lire ce tableau.</b> Les deux séries se rapprochent, ce qui est rassurant pour notre extraction de la date de requête, mais ce n'est pas une validation : les populations diffèrent (les décisions publiées lues en 2025, et non toutes les affaires jugées en 2025), l'une mesure jusqu'à la lecture et l'autre jusqu'à la notification, et un accord sur une moyenne n'établit pas l'exactitude de chaque date.</p>
-<p>La <b>médiane</b> affichée sur la page <a href="durees.html">Durée</a> (<span id="mediane"></span> jours pour les jugements des tribunaux administratifs) ne se compare pas à ces moyennes : une médiane est le délai en dessous duquel la moitié des décisions est rendue, une moyenne est tirée vers le haut par les affaires très longues, et nous écartons les ordonnances.</p>
+<p>La <b>médiane</b> affichée sur la page <a href="durees.html">Durée</a> (<span id="mediane"></span> pour les jugements des tribunaux administratifs) ne se compare pas à ces moyennes : une médiane est le délai en dessous duquel la moitié des décisions est rendue, une moyenne est tirée vers le haut par les affaires très longues, et nous écartons les ordonnances.</p>
 </main>
 <script src="graphiques.js"></script>
 <script>
@@ -44,12 +44,12 @@ chargerReferences().then((ref) => {
       th("Juridiction", "Délai constaté", "Délai prévisible", "Stock fin 2025", "Entrées / jugées"),
       el("tbody", {}, ...ordres.map((o) => ligne(J[o].nom, dureeFr(J[o].delai_constate_global), dureeFr(J[o].delai_previsible),
         nf.format(J[o].stock), `${nf.format(J[o].enregistrees)} / ${nf.format(J[o].jugees)}`))));
-    document.getElementById("ordinaires").textContent = dureeFr(J.TA.delai_constate_ordinaires);
+    document.getElementById("ordinaires").textContent = `environ ${Math.round(enMois(J.TA.delai_constate_ordinaires))} mois`;
     document.getElementById("stock").textContent =
-      `Devant les tribunaux administratifs, ${nf.format(J.TA.enregistrees)} affaires sont arrivées en 2025 et ${nf.format(J.TA.jugees)} ont été jugées : le taux de couverture (jugées sur enregistrées) est de ${virgule(T.taux_de_couverture_pct)} %, contre ${virgule(T.taux_de_couverture_2024_pct)} % l'année précédente. Tant que les entrées dépassent les sorties, le stock grossit : ${nf.format(J.TA.stock)} dossiers au 31 décembre 2025, soit environ ${T.evolution_stock_pct} % de plus qu'un an plus tôt, dont près de ${T.part_stock_plus_de_2_ans_pct} % ont plus de deux ans.`;
+      `Devant les tribunaux administratifs, ${nf.format(J.TA.enregistrees)} affaires sont arrivées en 2025 et ${nf.format(J.TA.jugees)} ont été jugées : le taux de couverture (jugées sur enregistrées) est de ${pctRond(T.taux_de_couverture_pct)}, contre ${pctRond(T.taux_de_couverture_2024_pct)} l'année précédente. Tant que les entrées dépassent les sorties, le stock grossit : ${nf.format(J.TA.stock)} dossiers au 31 décembre 2025, soit environ ${T.evolution_stock_pct} % de plus qu'un an plus tôt, dont près de ${T.part_stock_plus_de_2_ans_pct} % ont plus de deux ans.`;
     document.getElementById("eloignement").textContent =
       `Le Conseil d'État relève que le contentieux des étrangers représente ${J.TA.part_etrangers_entrees_pct} % des entrées des tribunaux, et que les procédures d'éloignement, enserrées dans un délai de six mois pour statuer, concentrent à elles seules près de ${T.part_etrangers_procedures_eloignement_pct} % de l'ensemble des dossiers. Lecture d'Open Justice, non du Conseil d'État : ces affaires encadrées par un délai court tirent probablement la moyenne vers le bas.`;
-    document.getElementById("mediane").textContent = Math.round(dur.par_type.find((r) => r.ordre === "TA" && r.type_decision === "Décision").mediane);
+    document.getElementById("mediane").textContent = approx(dur.par_type.find((r) => r.ordre === "TA" && r.type_decision === "Décision").mediane);
     const notre = Object.fromEntries(dur.moyenne_annee_reference.map((r) => [r.ordre, r]));
     document.getElementById("concordance").replaceChildren(
       th("Juridiction", "Moyenne calculée par Open Justice", "Délai constaté officiel", "Décisions utilisées"),
