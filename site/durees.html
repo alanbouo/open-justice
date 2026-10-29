@@ -72,7 +72,7 @@ function plages(c, rows, etiquette, classe = () => "") {
   const max = Math.max(...rows.map((r) => r.p90));
   // Échelle logarithmique (1 + jours, pour que 0 reste représentable) : les durées vont de 1 jour à plus de 2 ans.
   const x = (j) => 100 * Math.log1p(j) / Math.log1p(max);
-  const marques = [[1, "1 jour"], [7, "1 semaine"], [30.44, "1 mois"], [91.3, "3 mois"], [182.6, "6 mois"], [365.25, "1 an"], [730.5, "2 ans"]].filter(([j]) => j <= max);
+  const marques = [[1, "1 jour"], [7, "1 semaine"], [30.44, "1 mois"], [182.6, "6 mois"], [365.25, "1 an"], [730.5, "2 ans"]].filter(([j]) => j <= max);
   const grad = el("div", { class: "graduation" }, ...marques.map(([j, t]) => {
     const s = el("span", {}, t);
     s.style.left = x(j) + "%";
