@@ -105,6 +105,9 @@ def main():
         "par_type": arrondi(lignes(c, f"select source as ordre, type_decision, {quantiles} from {base} group by all having count(*) >= {SEUIL} order by all")),
         "par_procedure": arrondi(lignes(c, f"select source as ordre, type_procedure as procedure, {quantiles} from {base} where type_procedure is not null group by all having count(*) >= {SEUIL} order by all")),
         "par_domaine": arrondi(lignes(c, f"select source as ordre, domaine, {quantiles} from {base} where type_decision = 'Décision' and domaine is not null group by all having count(*) >= {SEUIL} order by all")),
+        # Décisions au fond seulement : les référés et exécutions brouillent la durée « ordinaire » d'un domaine.
+        "par_domaine_fond": arrondi(lignes(c, f"select source as ordre, domaine, {quantiles} from {base} where type_decision = 'Décision' and type_procedure = 'fond' and domaine is not null group by all having count(*) >= {SEUIL} order by all")),
+        "par_etrangers_fond": arrondi(lignes(c, f"select source as ordre, case when domaine = 'etrangers' then 'etrangers' else 'autres' end as groupe, {quantiles} from {base} where type_decision = 'Décision' and type_procedure = 'fond' group by all having count(*) >= {SEUIL} order by all")),
         # Une seule année, pour comparer aux chiffres officiels : l'année en cours est incomplète
         # et les décisions récentes sont plus courtes mécaniquement (voir la note de la page Durée).
         "annee_reference": ANNEE_REFERENCE,
