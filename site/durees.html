@@ -90,6 +90,17 @@ function humain(j) {
   if (m < 24) return `${virgule(m, m < 10 ? 1 : 0)} mois`;
   return `${virgule(m / 12, 1)} ans`;
 }
+// Durée arrondie pour les phrases. sens = 1 : « moins de » (arrondi au-dessus) ; -1 : « plus de » (arrondi en dessous) ; 0 : le plus proche.
+// En jours sous 45 jours, en mois jusqu'à deux ans, puis en années par demi-année.
+function approx(j, sens = 0) {
+  const r = sens > 0 ? Math.ceil : sens < 0 ? Math.floor : Math.round;
+  if (j < 45) return jours(r(j));
+  const m = j / MOIS;
+  if (m < 24) return `${r(m)} mois`;
+  const a = r(m / 6) / 2;
+  return `${virgule(a, a % 1 ? 1 : 0)} ans`;
+}
+const moisOfficiel = (d) => `environ ${Math.round(enMois(d))} mois`;
 const part = (x, tot) => Math.round(100 * x / tot);
 const moisFr = (m) => `${virgule(m)} mois`;
 
@@ -161,7 +172,7 @@ Promise.all([charger("duree.json"), chargerReferences(), chargerReferences("just
     .map(([o, g, nom]) => ({ ...eg(o, g), nom, haut: eg(o, g).p90 }));
   plages(document.getElementById("etrangers"), lignesEtr, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
   document.getElementById("leg-etrangers").textContent = legendeGraphique(90) + " Jugements au fond. Barre foncée : cours administratives d’appel.";
-  texte("t-etrangers-2", `Le Conseil d’État publie lui aussi deux chiffres pour 2025 : un délai constaté de ${dureeFr(J.TA.delai_constate_global)} pour l’ensemble des affaires des tribunaux, et de ${dureeFr(J.TA.delai_constate_ordinaires)} pour les affaires « ordinaires », hors ordonnances, référés et affaires à délai encadré. Il relève que les procédures d’éloignement, enserrées dans un délai de six mois pour statuer, concentrent près de ${TAo.part_etrangers_procedures_eloignement_pct} % des dossiers. Lecture d’Open Justice : ces affaires à délai court expliquent probablement une part importante de l’écart observé ; nous ne l’avons pas mesurée.`);
+  texte("t-etrangers-2", `Le Conseil d’État publie lui aussi deux chiffres pour 2025 : un délai constaté d’${moisOfficiel(J.TA.delai_constate_global)} pour l’ensemble des affaires des tribunaux, et d’${moisOfficiel(J.TA.delai_constate_ordinaires)} pour les affaires « ordinaires », hors ordonnances, référés et affaires à délai encadré. Il relève que les procédures d’éloignement, enserrées dans un délai de six mois pour statuer, concentrent près de ${TAo.part_etrangers_procedures_eloignement_pct} % des dossiers. Lecture d’Open Justice : ces affaires à délai court expliquent probablement une part importante de l’écart observé ; nous ne l’avons pas mesurée.`);
 
   const taDoms = d.par_domaine_fond.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane);
   const ordinaires = taDoms.filter((r) => r.domaine !== "etrangers" && r.domaine !== "electoral");
@@ -178,7 +189,7 @@ Promise.all([charger("duree.json"), chargerReferences(), chargerReferences("just
   const parEcart = ordinaires.slice().sort((a, b) => rapport(a) - rapport(b));
   const serre = parEcart[0], etale = parEcart[parEcart.length - 1];
   const fisc = taDoms.find((r) => r.domaine === "fiscal");
-  texte("t-ecart", `La médiane dit ce qui est le plus probable, pas ce qui est garanti. Dans le domaine « ${nomDom(serre).toLowerCase()} », la moitié centrale des jugements va de ${humain(serre.q1)} à ${humain(serre.q3)} : les durées sont assez prévisibles. Dans le domaine « ${nomDom(etale).toLowerCase()} », elle va de ${humain(etale.q1)} à ${humain(etale.q3)} : un même domaine regroupe des affaires très différentes, sans que nous ayons vérifié ce qui l’explique. Même en matière fiscale, où la médiane est de ${humain(fisc.mediane)}, une affaire sur quatre dépasse ${humain(fisc.q3)} et une sur dix ${humain(fisc.p90)}.`);
+  texte("t-ecart", `La médiane dit ce qui est le plus probable, pas ce qui est garanti. Dans le domaine « ${nomDom(serre).toLowerCase()} », la moitié centrale des jugements va de ${approx(serre.q1, -1)} à ${approx(serre.q3, 1)} : les durées sont assez prévisibles. Dans le domaine « ${nomDom(etale).toLowerCase()} », elle va de ${approx(etale.q1, -1)} à ${approx(etale.q3, 1)} : un même domaine regroupe des affaires très différentes, sans que nous ayons vérifié ce qui l’explique. Même en matière fiscale, où la médiane est de ${humain(fisc.mediane)}, une affaire sur quatre dépasse ${approx(fisc.q3, -1)} et une sur dix ${approx(fisc.p90, -1)}.`);
 
   const nProc = d.par_procedure.filter((r) => r.ordre === "TA");
   plages(document.getElementById("procedure"), avecHaut(nProc.slice().sort((a, b) => a.mediane - b.mediane)), (r) => PROCEDURES[r.procedure] || r.procedure);
@@ -195,11 +206,11 @@ Promise.all([charger("duree.json"), chargerReferences(), chargerReferences("just
   plages(document.getElementById("appel"), lignesAppel, (r) => r.nom, (r) => (r.ordre === "CAA" ? "appel" : ""));
   document.getElementById("leg-appel").textContent = legendeGraphique(90) + " Jugements au fond. Barre foncée : cours administratives d’appel.";
 
-  texte("t-stock", `Le Conseil d’État compte, pour 2025, ${nf.format(J.TA.enregistrees)} affaires arrivées devant les tribunaux administratifs et ${nf.format(J.TA.jugees)} jugées : un taux de couverture de ${virgule(TAo.taux_de_couverture_pct)} %, contre ${virgule(TAo.taux_de_couverture_2024_pct)} % en 2024. Le stock atteint ${nf.format(J.TA.stock)} dossiers, ${TAo.evolution_stock_pct} % de plus qu’un an plus tôt. Au rythme de 2025, il représente environ un an de jugements (délai prévisible : ${dureeFr(J.TA.delai_previsible)}). Ce n’est pas une prévision de durée, et nos données ne permettent pas de dire si les délais s’allongent. Pour les chiffres officiels en détail : <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>`);
+  texte("t-stock", `Le Conseil d’État compte, pour 2025, ${nf.format(J.TA.enregistrees)} affaires arrivées devant les tribunaux administratifs et ${nf.format(J.TA.jugees)} jugées : un taux de couverture de ${virgule(TAo.taux_de_couverture_pct)} %, contre ${virgule(TAo.taux_de_couverture_2024_pct)} % en 2024. Le stock atteint ${nf.format(J.TA.stock)} dossiers, ${TAo.evolution_stock_pct} % de plus qu’un an plus tôt. Au rythme de 2025, il représente environ un an de jugements (délai prévisible : ${moisOfficiel(J.TA.delai_previsible)}). Ce n’est pas une prévision de durée, et nos données ne permettent pas de dire si les délais s’allongent. Pour les chiffres officiels en détail : <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>`);
 
   // --- Justice civile
   texte("t-civil-0", `Chiffres officiels du ministère de la Justice pour ${an}, non calculés par Open Justice : durée des affaires terminées. Périmètre : ${civ.perimetre_tribunaux_judiciaires.charAt(0).toLowerCase()}${civ.perimetre_tribunaux_judiciaires.slice(1)}`);
-  texte("t-civil-1", `Devant le tribunal judiciaire, une affaire sur quatre est terminée en moins de ${moisFr(mc.TJ.q25)}, la moitié en moins de <b>${moisFr(mc.TJ.mediane)}</b> et trois quarts en moins de ${moisFr(mc.TJ.q75)}. Mais une affaire sur vingt dépasse ${moisFr(mc.TJ.p95)}, soit plus de ${virgule(mc.TJ.p95 / 12)} ans. En cour d’appel, la médiane est de <b>${moisFr(mc.CA.mediane)}</b>, un quart des affaires dépasse ${moisFr(mc.CA.q75)} et une sur vingt ${moisFr(mc.CA.p95)}, soit plus de ${virgule(mc.CA.p95 / 12)} ans.`);
+  texte("t-civil-1", `Devant le tribunal judiciaire, une affaire sur quatre est terminée en moins de ${approx(mc.TJ.q25 * MOIS, 1)}, la moitié en moins de <b>${approx(mc.TJ.mediane * MOIS, 1)}</b> et trois quarts en moins de ${approx(mc.TJ.q75 * MOIS, 1)}. Mais une affaire sur vingt dépasse ${approx(mc.TJ.p95 * MOIS, -1)}. En cour d’appel, la moitié des affaires est terminée en moins de <b>${approx(mc.CA.mediane * MOIS, 1)}</b>, un quart dépasse ${approx(mc.CA.q75 * MOIS, -1)} et une sur vingt ${approx(mc.CA.p95 * MOIS, -1)}.`);
   const rowsCivil = ["TJ", "CA"].map((k) => ({ nom: mc[k].nom, q1: mc[k].q25 * MOIS, mediane: mc[k].mediane * MOIS, q3: mc[k].q75 * MOIS, haut: mc[k].p95 * MOIS }));
   plages(document.getElementById("g-civil"), rowsCivil, (r) => r.nom, (r) => (r.nom.startsWith("Cours") ? "appel" : ""));
   document.getElementById("leg-civil").textContent = legendeGraphique(95) + ` Affaires terminées en ${an}. Barre foncée : cours d’appel.`;
