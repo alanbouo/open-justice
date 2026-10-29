@@ -61,6 +61,24 @@ Signaler toute duplication constatée.
 
 ---
 
+## RÈGLE D'ÉCRITURE DES CHIFFRES (site)
+
+**Dans le texte courant, un chiffre doit rester lisible : on arrondit.** Pas
+de « 1,6 mois » ni de « 9 mois 19 jours » dans une phrase : « moins de 2
+mois », « environ 10 mois ». Les valeurs exactes restent dans les tableaux, les
+cartes de chiffres clés et les graphiques.
+
+- « moins de » s'arrondit au-dessus, « plus de » en dessous, pour que la
+  phrase reste vraie ; une moyenne ou une médiane s'arrondit au plus proche,
+  avec « environ » ;
+- jours sous 45 jours, mois jusqu'à deux ans, puis années par demi-année ;
+  pourcentages à l'unité ;
+- on n'écrit jamais en dur un chiffre qui vient d'un fichier de données : le
+  texte le calcule. L'arrondi est dans `site/graphiques.js` (`approx`,
+  `approxMois`, `pctRond`), à réutiliser, pas à recopier.
+
+---
+
 ## Git
 
 Commit après chaque modification de fichier, message d'une ligne en français,
