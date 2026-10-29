@@ -77,13 +77,10 @@ h2 { font-size: 1.3rem; letter-spacing: -.01em; margin: 2.4rem 0 .4rem; }
 .axe .graduation span:first-child { transform: none; }
 .ligne.dur { grid-template-columns: 12rem 1fr 15rem; }
 .piste .plage.appel { background: var(--gagne); }
-.lecture { margin: .4rem 0 1rem; }
-.lecture p { margin: .5rem 0; }
-.mode-emploi { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: .9rem; color: var(--doux); margin: 10px 0 0; }
-.mode-emploi i { display: inline-block; vertical-align: middle; margin-right: 6px; }
-.mode-emploi .i-med { width: 3px; height: 14px; background: var(--marque); border-radius: 2px; }
-.mode-emploi .i-plage { width: 22px; height: 10px; background: var(--partiel); border-radius: 3px; }
-.mode-emploi .i-queue { width: 22px; height: 2px; background: var(--doux); opacity: .55; }
+.chiffres-cles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin: 1.2rem 0 .4rem; }
+.panneau[hidden] { display: none; }
+.legende-graphique { font-size: .85rem; color: var(--doux); margin: 8px 2px 0; }
+details.valeurs h3 { font-size: 1rem; margin: 1.2rem 0 .4rem; }
 details.valeurs { margin: 10px 0 0; font-size: .92rem; }
 details.valeurs summary { cursor: pointer; color: var(--doux); }
 @media (max-width: 640px) { .ligne.axe { display: none; } }
