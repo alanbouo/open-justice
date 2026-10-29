@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Une affaire civile · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre · juge civil</span>
+<h1>Comment se déroule une affaire civile devant le tribunal judiciaire ?</h1>
+<p class="chapo">Du premier effort pour s'entendre jusqu'au jugement : les étapes d'un litige entre personnes privées, et les règles qui changent selon le montant de la demande.</p>
+
+<h2>Quel tribunal ?</h2>
+<p>Depuis le 1er janvier 2020, le <b>tribunal judiciaire</b> est la seule juridiction de droit commun en matière civile : il traite toutes les affaires qui ne sont pas confiées à une autre juridiction. Y siègent notamment le juge aux affaires familiales, le juge de l'exécution et le juge des contentieux de la protection. D'autres juridictions civiles ont leur propre procédure, comme le conseil de prud'hommes et le tribunal de commerce : cette page ne les traite pas.</p>
+
+<ol class="etapes">
+<li><b>Chercher d'abord un accord</b>Pour certaines demandes, la loi impose de tenter de s'entendre avant de saisir le juge : conciliation avec un conciliateur de justice, médiation ou procédure participative, au choix des parties. Cela concerne les demandes de paiement d'une somme qui n'excède pas 5 000 euros, certaines actions listées par le code de l'organisation judiciaire et le trouble anormal de voisinage. Sans cette tentative, la demande peut être déclarée irrecevable, sauf dispense, par exemple en cas d'urgence manifeste.</li>
+<li><b>La saisine du tribunal</b>Le demandeur saisit le tribunal par assignation, ou en remettant une requête au greffe. La requête n'est possible que si la demande n'excède pas 5 000 euros, ou dans certaines matières fixées par la loi ou le règlement. Les parties peuvent aussi saisir ensemble le tribunal par une requête conjointe. En cas d'urgence, on peut s'adresser au juge des référés, dont la décision ne règle pas définitivement le litige.</li>
+<li><b>Faut-il un avocat ?</b>En principe, oui devant le tribunal judiciaire. Il y a des exceptions : devant le juge des contentieux de la protection, dans certaines matières listées par les textes, et quand la demande ne dépasse pas 10 000 euros. Dans les matières de la compétence exclusive du tribunal judiciaire, l'avocat reste obligatoire quel que soit le montant. Attention : le seuil de 5 000 euros (requête, tentative amiable) et celui de 10 000 euros (dispense d'avocat) ne sont pas les mêmes.</li>
+<li><b>La mise en état</b>Un juge de la mise en état vérifie que le dossier est complet et peut sanctionner les parties trop lentes. Il peut aussi proposer une médiation ou une conciliation. Les parties échangent leurs demandes, leurs arguments et leurs pièces. À la clôture, plus aucune demande, aucun argument et aucune pièce ne peut être ajouté.</li>
+<li><b>L'audience</b>Les audiences sont en principe publiques. Le demandeur plaide en premier, puis le défendeur ; le ministère public peut intervenir dans certains cas. Quand la procédure est écrite, les avocats peuvent plaider ou se contenter de déposer leur dossier. Sauf exceptions, le tribunal statue en formation collégiale, composée d'un président et de deux assesseurs.</li>
+<li><b>Le délibéré et le jugement</b>À l'issue du délibéré, le juge rend sa décision.</li>
+<li><b>Après le jugement</b>L'appel est une voie de recours possible : il fait rejuger l'affaire par la cour d'appel. Les conditions et les délais relèvent de la future section « <a href="aller-en-justice.html">Aller en justice</a> ».</li>
+</ol>
+
+<h2>Ce que disent les chiffres</h2>
+<p>Durée des affaires civiles terminées en 2024, en mois (chiffres officiels du ministère de la Justice) :</p>
+<div class="tableau-officiel"><table id="durees"></table></div>
+<ul id="chiffres"></ul>
+<p class="rapport"><b>À ne pas comparer avec la justice administrative.</b> Les périmètres et les méthodes diffèrent, et les documents consultés ne précisent pas les dates de début et de fin de la mesure. Pour les tribunaux judiciaires, le périmètre exclut les ruptures d'union et plusieurs procédures spéciales (injonctions de payer, saisies sur rémunération, notamment).</p>
+<p>Open Justice a récupéré 765 280 décisions de tribunaux judiciaires, mais ne les a pas encore analysées : voir la page <a href="judiciaire.html">Justice judiciaire</a>.</p>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("deroule-civil.html");
+chargerReferences("justice-civile-2025.json").then((ref) => {
+  const d = ref.duree_affaires_terminees_mois, tj = ref.tribunaux_judiciaires, ca = ref.cours_appel;
+  const m = (x) => virgule(x).replace(".", ",");
+  const th = (...t) => el("thead", {}, el("tr", {}, ...t.map((x, i) => el("th", i ? { class: "num" } : {}, x))));
+  const ligne = (...c) => el("tr", {}, ...c.map((x, i) => el("td", i ? { class: "num" } : {}, x)));
+  document.getElementById("durees").replaceChildren(
+    th("Juridiction", "Un quart terminé en moins de", "La moitié en moins de", "Trois quarts en moins de", "95 % en moins de"),
+    el("tbody", {}, ...["TJ", "CA"].map((k) => ligne(d[k].nom, `${m(d[k].q25)} mois`, `${m(d[k].mediane)} mois`, `${m(d[k].q75)} mois`, `${m(d[k].p95)} mois`))));
+  document.getElementById("chiffres").replaceChildren(
+    el("li", {}, `Devant un tribunal judiciaire, la moitié des affaires est terminée en moins de ${m(d.TJ.mediane)} mois, mais une sur vingt dure plus de ${m(d.TJ.p95)} mois.`),
+    el("li", {}, `Durée moyenne en 2024 : ${m(tj.duree_moyenne_mois)} mois (${m(tj.duree_moyenne_au_fond_mois)} mois pour les affaires au fond, ${m(tj.duree_moyenne_referes_mois)} mois pour les référés).`),
+    el("li", {}, `${nf.format(tj.affaires_terminees)} affaires terminées en 2024, dont ${nf.format(tj.dont_referes)} référés. ${nf.format(tj.stock_31_decembre)} affaires en cours au 31 décembre 2024, d'un âge moyen de ${m(tj.age_moyen_stock_mois)} mois.`),
+    el("li", {}, `Cours d'appel : ${nf.format(ca.affaires_terminees)} affaires terminées, ${nf.format(ca.stock_31_decembre)} en cours au 31 décembre 2024.`));
+  sources([
+    ['Ministère de la Justice, « La procédure civile »', 'https://www.justice.gouv.fr/justice-france/justice-civile/procedure-civile', ''],
+    ['Code de procédure civile, article 750 (version en vigueur au 29 octobre 2026)', 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039623523/', ''],
+    ['Code de procédure civile, article 750-1 (version du 13 mai 2023, en vigueur au 29 octobre 2026)', 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039501708/', ''],
+    ['Code de procédure civile, article 760 (version en vigueur au 29 octobre 2026)', 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039623478', ''],
+    ['Code de procédure civile, article 761 (version du 1er septembre 2025)', 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039726277', ''],
+    [ref.sources.chiffres_cles.titre, ref.sources.chiffres_cles.url, ""],
+    [ref.sources.rsj_tribunaux_judiciaires.titre, ref.sources.rsj_tribunaux_judiciaires.url, ""]
+  ], "2026-10-29");
+}).catch(erreur);
+</script>
+</body>
+</html>
