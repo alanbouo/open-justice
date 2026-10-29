@@ -104,3 +104,28 @@ footer { margin-top: 3rem; padding-top: 16px; padding-bottom: 30px; border-top: 
 nav.sous a.attente { opacity: .6; }
 .puces a { text-decoration: none; color: inherit; }
 .puces li:hover { border-color: var(--marque); }
+
+/* Section Comprendre */
+.sources { margin-top: 2.6rem; padding-top: 6px; border-top: 1px solid var(--trait); font-size: .88rem; color: var(--doux); }
+.sources h2 { font-size: 1rem; margin: 1rem 0 .3rem; }
+.sources ul { margin: 0 0 .6rem; }
+.etapes { list-style: none; counter-reset: etape; padding: 0; margin: 1.2rem 0; }
+.etapes li { counter-increment: etape; position: relative; background: var(--carte); border: 1px solid var(--trait);
+  border-radius: 14px; padding: 14px 18px 14px 58px; margin: 10px 0; box-shadow: var(--ombre); }
+.etapes li::before { content: counter(etape); position: absolute; left: 16px; top: 14px; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--marque-fond); color: var(--marque); font-weight: 800; display: grid; place-items: center; }
+.etapes b { display: block; margin-bottom: 2px; }
+.schema { display: grid; grid-template-columns: 8rem 1fr 1fr; gap: 10px; margin: 1.2rem 0; font-size: .92rem; }
+.schema > div { border-radius: 12px; padding: 10px 14px; }
+.schema .ent { font-weight: 700; color: var(--marque); text-align: center; background: var(--marque-fond); }
+.schema .rang { display: flex; align-items: center; font-weight: 700; color: var(--doux); }
+.schema .case { background: var(--carte); border: 1px solid var(--trait); }
+.schema .case small { display: block; color: var(--doux); margin-top: 3px; }
+.schema .top { background: var(--marque-fond); border-color: transparent; }
+@media (max-width: 640px) { .schema { grid-template-columns: 1fr; } .schema .rang { margin-top: 8px; } }
+dl.lexique dt { font-weight: 700; margin-top: 1rem; scroll-margin-top: 1rem; }
+dl.lexique dd { margin: .15rem 0 0; color: var(--texte); }
+dl.lexique dd .chiffre { display: block; color: var(--doux); font-size: .88rem; margin-top: 3px; }
+.tableau-officiel { overflow-x: auto; }
+.tableau-officiel th { white-space: nowrap; }
+.rapport { background: var(--marque-fond); border-radius: 12px; padding: 12px 16px; margin: 1rem 0; font-size: .95rem; }
