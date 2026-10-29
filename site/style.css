@@ -98,3 +98,9 @@ footer { margin-top: 3rem; padding-top: 16px; padding-bottom: 30px; border-top: 
 .perimetre .q-carte h3 { margin: 8px 0 0; }
 .puces { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: .8rem 0; }
 .puces li { background: var(--carte); border: 1px solid var(--trait); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
+.questions.trois { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.q-carte.attente { border-style: dashed; box-shadow: none; background: transparent; }
+.q-carte.attente a { margin-top: auto; }
+nav.sous a.attente { opacity: .6; }
+.puces a { text-decoration: none; color: inherit; }
+.puces li:hover { border-color: var(--marque); }
