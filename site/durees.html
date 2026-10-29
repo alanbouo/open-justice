@@ -10,30 +10,151 @@
 <main>
 <span class="pastille">Durée · justice administrative</span>
 <h1>Combien de temps faut-il pour être jugé ?</h1>
-<p class="chapo">Nombre de jours entre l’enregistrement de la requête et la lecture de la décision. La barre va du premier au troisième quartile ; le trait marque la médiane.</p>
+<p class="chapo">Le temps écoulé entre l’enregistrement de la requête et la lecture de la décision, mesuré sur les décisions publiées des tribunaux administratifs, des cours administratives d’appel et du Conseil d’État.</p>
+
+<h2>L’essentiel</h2>
+<div class="rapport lecture" id="essentiel"></div>
+
+<h2>Comment lire les graphiques</h2>
+<div class="lecture">
+<p>Chaque ligne représente un groupe de décisions. Pour le résumer, on ne donne pas une moyenne, qui serait tirée vers le haut par quelques affaires très longues, mais trois repères :</p>
+<ul>
+<li>la <b>médiane</b> (le trait épais) : la moitié des décisions est rendue plus vite, l’autre moitié moins vite ;</li>
+<li>la <b>zone centrale</b> (la barre) : elle contient la moitié des décisions, celles qui ne sont ni parmi le quart le plus rapide, ni parmi le quart le plus lent. Plus elle est large, plus les durées sont imprévisibles ;</li>
+<li>la <b>queue</b> (le fin trait à droite) : elle va jusqu’au seuil que dépassent seulement 10 % des décisions, les plus longues.</li>
+</ul>
+<p id="exemple"></p>
+<div class="mode-emploi"><span><i class="i-med"></i>médiane</span><span><i class="i-plage"></i>moitié des décisions (du 1<sup>er</sup> au 3<sup>e</sup> quartile)</span><span><i class="i-queue"></i>jusqu’à 90 % des décisions</span></div>
+</div>
 <p class="reserve"><b>Ce n’est pas la durée totale du litige.</b> En appel et en cassation, le compte part de l’enregistrement de l’appel ou du pourvoi. La date de requête est lue dans le texte : elle manque pour une partie des décisions du Conseil d’État. Les décisions récentes sont plus courtes mécaniquement (seules celles déjà rendues sont publiées) : <b>aucune tendance d’une année à l’autre ne peut en être tirée</b>.</p>
-<h2>Par ordre et type de décision</h2><div class="bloc" id="type"></div>
-<h2>Par type de procédure</h2><div class="bloc" id="procedure"></div>
-<h2>Par domaine (tribunaux et cours, décisions hors ordonnances)</h2><div class="bloc" id="domaine"></div>
+
+<h2>Par ordre et type de décision</h2>
+<div class="lecture" id="lecture-type"></div>
+<div class="bloc" id="type"></div>
+<details class="valeurs"><summary>Voir les chiffres exacts</summary><div class="tableau-officiel" id="t-type"></div></details>
+
+<h2>Par type de procédure</h2>
+<div class="lecture" id="lecture-procedure"></div>
+<div class="filtres" id="f-procedure"></div>
+<div class="bloc" id="procedure"></div>
+<details class="valeurs"><summary>Voir les chiffres exacts</summary><div class="tableau-officiel" id="t-procedure"></div></details>
+
+<h2>Par domaine</h2>
+<div class="lecture" id="lecture-domaine"></div>
+<div class="filtres" id="f-domaine"></div>
+<div class="bloc" id="domaine"></div>
+<details class="valeurs"><summary>Voir les chiffres exacts</summary><div class="tableau-officiel" id="t-domaine"></div></details>
+
+<h2>Pour aller plus loin</h2>
+<p>Ces durées sont calculées par Open Justice sur les décisions publiées. Pour les chiffres officiels du Conseil d’État (délai constaté, délai prévisible, stock de dossiers) et leur comparaison avec ceux-ci, voir <a href="delais.html">Pourquoi une procédure peut-elle être longue ?</a>. Pour le déroulement d’une affaire, voir <a href="deroule-administratif.html">Une affaire administrative</a>.</p>
 </main>
 <script src="graphiques.js"></script>
 <script>
 cadre("durees.html");
 
+const MOIS = 365.25 / 12;
+const jours = (j) => `${nf.format(Math.round(j))} jour${Math.round(j) > 1 ? "s" : ""}`;
+// Durée lisible : en jours sous deux mois, en mois jusqu'à deux ans, puis en années.
+function humain(j) {
+  if (j < 60) return jours(j);
+  const m = j / MOIS;
+  if (m < 24) return `${virgule(m, m < 10 ? 1 : 0)} mois`;
+  return `${virgule(m / 12, 1)} ans`;
+}
+const part = (x, tot) => Math.round(100 * x / tot);
+
 function plages(c, rows, etiquette) {
   const max = Math.max(...rows.map((r) => r.p90));
-  c.replaceChildren(...rows.map((r) => {
+  const pas = 365.25 / 2;                       // graduation tous les six mois
+  const marques = [];
+  for (let j = 0; j <= max; j += pas) marques.push(j);
+  const grad = el("div", { class: "graduation" }, ...marques.map((j, i) => {
+    const s = el("span", {}, i === 0 ? "0" : (i % 2 ? `${i * 6} mois` : `${i / 2} an${i > 2 ? "s" : ""}`));
+    s.style.left = (100 * j / max) + "%";
+    return s;
+  }));
+  c.replaceChildren(el("div", { class: "ligne dur axe" }, el("div"), grad, el("div")), ...rows.map((r) => {
+    const piste = el("div", { class: "piste", role: "img",
+      "aria-label": `médiane ${jours(r.mediane)} ; la moitié des décisions entre ${jours(r.q1)} et ${jours(r.q3)} ; 90 % en moins de ${jours(r.p90)}` });
+    piste.style.setProperty("--pas", (100 * pas / max) + "%");
+    const queue = el("div", { class: "queue" }); queue.style.left = (100 * r.q3 / max) + "%"; queue.style.width = (100 * (r.p90 - r.q3) / max) + "%";
     const plage = el("div", { class: "plage" }); plage.style.left = (100 * r.q1 / max) + "%"; plage.style.width = (100 * (r.q3 - r.q1) / max) + "%";
     const med = el("div", { class: "med" }); med.style.left = (100 * r.mediane / max) + "%";
-    return el("div", { class: "ligne dur" }, el("div", {}, etiquette(r)), el("div", { class: "piste", role: "img", "aria-label": `médiane ${r.mediane} jours` }, plage, med),
-      el("div", { class: "n" }, `médiane ${nf.format(r.mediane)} j · ${nf.format(r.n)} déc.`));
+    piste.append(queue, plage, med);
+    return el("div", { class: "ligne dur" }, el("div", {}, etiquette(r)), piste,
+      el("div", { class: "n" }, `médiane ${humain(r.mediane)}`, el("small", {}, `${nf.format(r.n)} déc.`)));
   }));
 }
+
+function tableau(c, rows, etiquette) {
+  const th = (t, i) => el("th", i ? { class: "num" } : {}, t);
+  c.replaceChildren(el("table", {},
+    el("thead", {}, el("tr", {}, ...["Groupe", "Décisions", "Quart le plus rapide : moins de", "Médiane", "Trois quarts : moins de", "90 % : moins de"].map(th))),
+    el("tbody", {}, ...rows.map((r) => el("tr", {}, el("td", {}, etiquette(r)),
+      ...[nf.format(r.n), jours(r.q1), jours(r.mediane), jours(r.q3), jours(r.p90)].map((x) => el("td", { class: "num" }, x)))))));
+}
+
+const p = (...enfants) => el("p", {}, ...enfants);
+
 charger("duree.json").then((d) => {
   pied(d);
+  const T = (o, t) => d.par_type.find((r) => r.ordre === o && r.type_decision === t);
+  const ta = T("TA", "Décision"), taO = T("TA", "Ordonnance"), caa = T("CAA", "Décision"), ce = T("CE", "Décision");
+  const proc = (o, k) => d.par_procedure.find((r) => r.ordre === o && r.procedure === k);
+  const fond = proc("TA", "fond"), liberte = proc("TA", "refere_liberte"), supp = proc("TA", "refere_suspension"), prov = proc("TA", "refere_provision");
+  const dom = (o, k) => d.par_domaine.find((r) => r.ordre === o && r.domaine === k);
+  const etr = dom("TA", "etrangers"), fis = dom("TA", "fiscal");
+  const an = d.annee_reference, moy = Object.fromEntries(d.moyenne_annee_reference.map((r) => [r.ordre, r]));
+
+  document.getElementById("essentiel").append(el("ul", {},
+    el("li", {}, el("b", {}, `Devant un tribunal administratif, un jugement est rendu en ${humain(ta.mediane)} en médiane`),
+      `, mais l’écart est considérable : un quart des jugements arrive en moins de ${jours(ta.q1)}, un quart demande plus de ${humain(ta.q3)}, et un sur dix plus de ${humain(ta.p90)}. Un chiffre unique ne dit donc pas grand-chose : tout dépend du type d’affaire.`),
+    el("li", {}, el("b", {}, "Le type de procédure change tout."), ` Un référé-liberté, destiné aux urgences, est jugé en ${jours(liberte.mediane)} en médiane ; une requête au fond, en ${humain(fond.mediane)}.`),
+    el("li", {}, el("b", {}, "Le domaine aussi."), ` Les décisions en droit des étrangers, très nombreuses, sont rendues en ${humain(etr.mediane)} en médiane ; en matière fiscale, en ${humain(fis.mediane)}.`),
+    el("li", {}, el("b", {}, "L’appel s’ajoute au premier jugement, il ne le remplace pas."), ` Une cour administrative d’appel met ${humain(caa.mediane)} en médiane pour une décision, à compter de l’enregistrement de l’appel.`)));
+
+  document.getElementById("exemple").textContent =
+    `Exemple, pour les jugements des tribunaux administratifs (${nf.format(ta.n)} décisions) : médiane de ${jours(ta.mediane)}, la moitié des décisions entre ${jours(ta.q1)} et ${jours(ta.q3)}, et 90 % en moins de ${jours(ta.p90)}.`;
+
+  // 1. Par ordre et type de décision
+  document.getElementById("lecture-type").append(
+    p("Une ordonnance est prise par un seul juge, souvent sans audience (voir le ", el("a", { href: "lexique.html#ordonnance" }, "lexique"), `) : elle est plus rapide qu’une décision collégiale. Devant les tribunaux administratifs, la médiane est de ${humain(taO.mediane)} pour une ordonnance et de ${humain(ta.mediane)} pour un jugement.`),
+    p(`Le Conseil d’État est plus rapide en médiane (${humain(ce.mediane)}) que les cours d’appel (${humain(caa.mediane)}), mais ces deux chiffres se comparent avec précaution : il ne juge pas les mêmes affaires, et la date de requête y manque plus souvent.`),
+    p(`Les jugements des tribunaux ont la plus grande dispersion : la moitié centrale va de ${jours(ta.q1)} à ${jours(ta.q3)}. Ce n’est pas une affaire « typique » mais un mélange d’affaires traitées très vite et d’affaires qui durent.`),
+    p(`Pour l’année ${an}, la durée moyenne est de ${humain(moy.TA.moyenne_jours)} devant les tribunaux administratifs (ordonnances comprises) contre une médiane de ${humain(moy.TA.mediane_jours)} : la moyenne est tirée vers le haut par les affaires longues, c’est pourquoi nous préférons la médiane.`));
   plages(document.getElementById("type"), d.par_type, (r) => `${r.ordre} · ${r.type_decision}`);
-  plages(document.getElementById("procedure"), d.par_procedure.filter((r) => r.ordre === "TA"), (r) => `TA · ${PROCEDURES[r.procedure] || r.procedure}`);
-  plages(document.getElementById("domaine"), d.par_domaine.filter((r) => r.ordre === "TA"), (r) => `TA · ${DOMAINES[r.domaine] || r.domaine}`);
+  tableau(document.getElementById("t-type"), d.par_type, (r) => `${r.ordre} · ${r.type_decision}`);
+
+  // 2. Par type de procédure
+  const totalProcTA = d.par_procedure.filter((r) => r.ordre === "TA").reduce((a, r) => a + r.n, 0);
+  document.getElementById("lecture-procedure").append(
+    p("Le référé (voir le ", el("a", { href: "lexique.html#refere" }, "lexique"), `) permet d’obtenir rapidement des mesures provisoires, sans attendre le jugement de l’affaire. Les chiffres le confirment : devant les tribunaux administratifs, un référé-liberté est jugé en ${jours(liberte.mediane)} en médiane, un référé-suspension en ${jours(supp.mediane)}, contre ${humain(fond.mediane)} pour une requête au fond.`),
+    p(`Le référé n’est pas toujours rapide : le référé-provision, qui permet de demander le versement d’une somme avant le jugement, a une médiane de ${humain(prov.mediane)}, proche de celle d’une requête au fond.`),
+    p(`Les requêtes au fond représentent ${part(fond.n, totalProcTA)} % des décisions des tribunaux administratifs de ce graphique (${nf.format(fond.n)} sur ${nf.format(totalProcTA)}). Pour contester une décision de l’administration sans urgence, c’est la ligne « Au fond » qui s’applique.`));
+  const montrerProc = (o) => {
+    const rows = d.par_procedure.filter((r) => r.ordre === o).sort((a, b) => a.mediane - b.mediane);
+    const nom = (r) => PROCEDURES[r.procedure] || r.procedure;
+    plages(document.getElementById("procedure"), rows, nom);
+    tableau(document.getElementById("t-procedure"), rows, nom);
+  };
+  filtres(document.getElementById("f-procedure"), ORDRES, "TA", montrerProc);
+  montrerProc("TA");
+
+  // 3. Par domaine
+  const nomDom = (r) => DOMAINES[r.domaine] || r.domaine;
+  const taDoms = d.par_domaine.filter((r) => r.ordre === "TA").sort((a, b) => a.mediane - b.mediane);
+  const rapide = taDoms[0], lent = taDoms[taDoms.length - 1];
+  document.getElementById("lecture-domaine").append(
+    p(`Les domaines sont classés du plus rapide au plus lent. Devant les tribunaux administratifs, la médiane va de ${humain(rapide.mediane)} (${nomDom(rapide).toLowerCase()}) à ${humain(lent.mediane)} (${nomDom(lent).toLowerCase()}). Le droit des étrangers pèse à lui seul ${part(etr.n, taDoms.reduce((a, r) => a + r.n, 0))} % des décisions de ce graphique : il tire fortement vers le bas les durées d’ensemble des tribunaux.`),
+    p("Lecture d’Open Justice : les affaires que les textes obligent à juger dans un délai court (le contentieux électoral, l’éloignement des étrangers) sont rendues vite ; les affaires fiscales, d’urbanisme ou de fonction publique prennent plus de temps. Le Conseil d’État relève que les procédures d’éloignement, enserrées dans un délai de six mois, concentrent une grande part des dossiers (voir ", el("a", { href: "delais.html" }, "Les délais"), ")."),
+    p(`Le domaine est détecté par mots-clés dans le texte de la décision : il est approximatif, et la catégorie « Civil » de la justice administrative ne correspond pas à la justice civile. Seuls les groupes d’au moins ${d.seuil} décisions sont affichés.`));
+  const montrerDom = (o) => {
+    const rows = d.par_domaine.filter((r) => r.ordre === o).sort((a, b) => a.mediane - b.mediane);
+    plages(document.getElementById("domaine"), rows, nomDom);
+    tableau(document.getElementById("t-domaine"), rows, nomDom);
+  };
+  filtres(document.getElementById("f-domaine"), ORDRES, "TA", montrerDom);
+  montrerDom("TA");
 }).catch(erreur);
 </script>
 </body>
