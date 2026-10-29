@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pourquoi une procédure est longue · Open Justice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<span class="pastille">Comprendre · justice administrative</span>
+<h1>Pourquoi une procédure peut-elle être longue ?</h1>
+<p class="chapo">« Le délai de la justice » recouvre plusieurs mesures qui ne disent pas la même chose. Voici lesquelles, ce que le Conseil d'État publie, et comment cela se compare aux chiffres d'Open Justice.</p>
+
+<h2>Ce que publie le Conseil d'État pour 2025</h2>
+<div class="tableau-officiel"><table id="officiel"></table></div>
+<ul>
+<li><b>Délai constaté.</b> Délai moyen de jugement des affaires, de leur enregistrement à la notification de la décision, ordonnances et référés compris.</li>
+<li><b>Délai constaté des affaires ordinaires.</b> La même mesure, sans les ordonnances, les référés et les affaires dont le jugement est encadré par un délai particulier. Pour les tribunaux administratifs : <span id="ordinaires"></span>.</li>
+<li><b>Délai prévisible.</b> Nombre de dossiers en stock en fin d'année divisé par le nombre d'affaires jugées dans l'année : le temps qu'il faudrait pour écouler le stock au rythme actuel. Ce n'est pas un délai observé.</li>
+</ul>
+
+<h2>Pourquoi le stock augmente</h2>
+<p id="stock"></p>
+<p id="eloignement"></p>
+
+<h2>Et les chiffres d'Open Justice ?</h2>
+<p>Open Justice calcule, sur les décisions publiées, le temps écoulé entre la date d'enregistrement de la requête, lue dans le texte, et la date de lecture de la décision. Pour 2025, en moyenne sur l'ensemble des décisions (jugements et ordonnances) :</p>
+<div class="tableau-officiel"><table id="concordance"></table></div>
+<p class="rapport"><b>Comment lire ce tableau.</b> Les deux séries se rapprochent, ce qui est rassurant pour notre extraction de la date de requête, mais ce n'est pas une validation : les populations diffèrent (les décisions publiées lues en 2025, et non toutes les affaires jugées en 2025), l'une mesure jusqu'à la lecture et l'autre jusqu'à la notification, et un accord sur une moyenne n'établit pas l'exactitude de chaque date.</p>
+<p>La <b>médiane</b> affichée sur la page <a href="durees.html">Durée</a> (<span id="mediane"></span> jours pour les jugements des tribunaux administratifs) ne se compare pas à ces moyennes : une médiane est le délai en dessous duquel la moitié des décisions est rendue, une moyenne est tirée vers le haut par les affaires très longues, et nous écartons les ordonnances.</p>
+</main>
+<script src="graphiques.js"></script>
+<script>
+cadre("delais.html");
+chargerReferences().then((ref) => {
+  Promise.all([charger("duree.json")]).then(([dur]) => {
+    pied(dur);
+    const ordres = ["TA", "CAA", "CE"];
+    const J = ref.juridictions, T = ref.tribunaux_administratifs;
+    const th = (...t) => el("thead", {}, el("tr", {}, ...t.map((x, i) => el("th", i ? { class: "num" } : {}, x))));
+    const ligne = (...c) => el("tr", {}, ...c.map((x, i) => el("td", i ? { class: "num" } : {}, x)));
+    document.getElementById("officiel").replaceChildren(
+      th("Juridiction", "Délai constaté", "Délai prévisible", "Stock fin 2025", "Entrées / jugées"),
+      el("tbody", {}, ...ordres.map((o) => ligne(J[o].nom, dureeFr(J[o].delai_constate_global), dureeFr(J[o].delai_previsible),
+        nf.format(J[o].stock), `${nf.format(J[o].enregistrees)} / ${nf.format(J[o].jugees)}`))));
+    document.getElementById("ordinaires").textContent = dureeFr(J.TA.delai_constate_ordinaires);
+    document.getElementById("stock").textContent =
+      `Devant les tribunaux administratifs, ${nf.format(J.TA.enregistrees)} affaires sont arrivées en 2025 et ${nf.format(J.TA.jugees)} ont été jugées : le taux de couverture (jugées sur enregistrées) est de ${virgule(T.taux_de_couverture_pct)} %, contre ${virgule(T.taux_de_couverture_2024_pct)} % l'année précédente. Tant que les entrées dépassent les sorties, le stock grossit : ${nf.format(J.TA.stock)} dossiers au 31 décembre 2025, soit environ ${T.evolution_stock_pct} % de plus qu'un an plus tôt, dont près de ${T.part_stock_plus_de_2_ans_pct} % ont plus de deux ans.`;
+    document.getElementById("eloignement").textContent =
+      `Le Conseil d'État relève que le contentieux des étrangers représente ${J.TA.part_etrangers_entrees_pct} % des entrées des tribunaux, et que les procédures d'éloignement, enserrées dans un délai de six mois pour statuer, concentrent à elles seules près de ${T.part_etrangers_procedures_eloignement_pct} % de l'ensemble des dossiers. Lecture d'Open Justice, non du Conseil d'État : ces affaires encadrées par un délai court tirent probablement la moyenne vers le bas.`;
+    document.getElementById("mediane").textContent = Math.round(dur.par_type.find((r) => r.ordre === "TA" && r.type_decision === "Décision").mediane);
+    const notre = Object.fromEntries(dur.moyenne_annee_reference.map((r) => [r.ordre, r]));
+    document.getElementById("concordance").replaceChildren(
+      th("Juridiction", "Moyenne calculée par Open Justice", "Délai constaté officiel", "Décisions utilisées"),
+      el("tbody", {}, ...ordres.map((o) => ligne(J[o].nom, `${virgule(notre[o].moyenne_jours / 30.44)} mois`,
+        `${virgule(enMois(J[o].delai_constate_global))} mois (${dureeFr(J[o].delai_constate_global)})`, nf.format(notre[o].n)))));
+  }).catch(erreur);
+  sources([
+    [ref.sources.rapport.titre, ref.sources.rapport.url, ""],
+    [ref.sources.chiffres_cles.titre, ref.sources.chiffres_cles.url, ""]
+  ], "2026-10-29");
+}).catch(erreur);
+</script>
+</body>
+</html>
