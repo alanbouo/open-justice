@@ -24,6 +24,7 @@
 <li>la <b>queue</b> (le fin trait à droite) : elle va jusqu’au seuil que dépassent seulement 10 % des décisions, les plus longues.</li>
 </ul>
 <p id="exemple"></p>
+<p><b>L’échelle est logarithmique.</b> Les graduations ne sont pas à égale distance en durée : de l’une à la suivante, la durée est à peu près multipliée par deux ou par trois. Sans cela, les procédures de quelques jours seraient invisibles à côté de celles qui durent des années. Conséquence : les longueurs ne sont pas proportionnelles aux durées, il faut se fier aux graduations et au chiffre écrit à droite.</p>
 <div class="mode-emploi"><span><i class="i-med"></i>médiane</span><span><i class="i-plage"></i>moitié des décisions (du 1<sup>er</sup> au 3<sup>e</sup> quartile)</span><span><i class="i-queue"></i>jusqu’à 90 % des décisions</span></div>
 </div>
 <p class="reserve"><b>Ce n’est pas la durée totale du litige.</b> En appel et en cassation, le compte part de l’enregistrement de l’appel ou du pourvoi. La date de requête est lue dans le texte : elle manque pour une partie des décisions du Conseil d’État. Les décisions récentes sont plus courtes mécaniquement (seules celles déjà rendues sont publiées) : <b>aucune tendance d’une année à l’autre ne peut en être tirée</b>.</p>
@@ -65,21 +66,21 @@ const part = (x, tot) => Math.round(100 * x / tot);
 
 function plages(c, rows, etiquette) {
   const max = Math.max(...rows.map((r) => r.p90));
-  const pas = 365.25 / 2;                       // graduation tous les six mois
-  const marques = [];
-  for (let j = 0; j <= max; j += pas) marques.push(j);
-  const grad = el("div", { class: "graduation" }, ...marques.map((j, i) => {
-    const s = el("span", {}, i === 0 ? "0" : (i % 2 ? `${i * 6} mois` : `${i / 2} an${i > 2 ? "s" : ""}`));
-    s.style.left = (100 * j / max) + "%";
+  // Échelle logarithmique (1 + jours, pour que 0 reste représentable) : les durées vont de 1 jour à plus de 2 ans.
+  const x = (j) => 100 * Math.log1p(j) / Math.log1p(max);
+  const marques = [[1, "1 jour"], [7, "1 semaine"], [30.44, "1 mois"], [91.3, "3 mois"], [182.6, "6 mois"], [365.25, "1 an"], [730.5, "2 ans"]].filter(([j]) => j <= max);
+  const grad = el("div", { class: "graduation" }, ...marques.map(([j, t]) => {
+    const s = el("span", {}, t);
+    s.style.left = x(j) + "%";
     return s;
   }));
   c.replaceChildren(el("div", { class: "ligne dur axe" }, el("div"), grad, el("div")), ...rows.map((r) => {
     const piste = el("div", { class: "piste", role: "img",
       "aria-label": `médiane ${jours(r.mediane)} ; la moitié des décisions entre ${jours(r.q1)} et ${jours(r.q3)} ; 90 % en moins de ${jours(r.p90)}` });
-    piste.style.setProperty("--pas", (100 * pas / max) + "%");
-    const queue = el("div", { class: "queue" }); queue.style.left = (100 * r.q3 / max) + "%"; queue.style.width = (100 * (r.p90 - r.q3) / max) + "%";
-    const plage = el("div", { class: "plage" }); plage.style.left = (100 * r.q1 / max) + "%"; plage.style.width = (100 * (r.q3 - r.q1) / max) + "%";
-    const med = el("div", { class: "med" }); med.style.left = (100 * r.mediane / max) + "%";
+    marques.forEach(([j]) => { const g = el("div", { class: "rep" }); g.style.left = x(j) + "%"; piste.append(g); });
+    const queue = el("div", { class: "queue" }); queue.style.left = x(r.q3) + "%"; queue.style.width = (x(r.p90) - x(r.q3)) + "%";
+    const plage = el("div", { class: "plage" }); plage.style.left = x(r.q1) + "%"; plage.style.width = (x(r.q3) - x(r.q1)) + "%";
+    const med = el("div", { class: "med" }); med.style.left = x(r.mediane) + "%";
     piste.append(queue, plage, med);
     return el("div", { class: "ligne dur" }, el("div", {}, etiquette(r)), piste,
       el("div", { class: "n" }, `médiane ${humain(r.mediane)}`, el("small", {}, `${nf.format(r.n)} déc.`)));
