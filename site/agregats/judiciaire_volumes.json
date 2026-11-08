@@ -1,0 +1,8556 @@
+{
+ "calcule_le": "2026-11-08",
+ "base": "2183473 décisions publiées dans Judilibre (justice judiciaire), photographie du 28/10/2026",
+ "seuil": 300,
+ "note": "Décisions publiées en open data, pas décisions rendues. Les volumes suivent l'entrée progressive des juridictions dans Judilibre autant que leur activité. Groupes de moins de 300 décisions fondus dans « autres ».",
+ "sources": {
+  "decisions": "API Judilibre (Cour de cassation), téléchargement complet du 28/10/2026",
+  "nac": {
+   "titre": "Ministère de la Justice, Nomenclature des affaires civiles – Modifications effectuées entre 2002 et 2022 [archive], data.gouv.fr, licence ouverte 2.0",
+   "page": "https://www.data.gouv.fr/datasets/634677f37b8614146f4090ff",
+   "fichier": "https://static.data.gouv.fr/resources/nomenclature-des-affaires-civiles-historiques/20221012-101711/copie-de-nac-historique-jusquen-juillet-2022.csv",
+   "presentation": "https://static.data.gouv.fr/resources/nomenclature-des-affaires-civiles-historiques/20221012-101743/presentation-generale-nac-et-pp-dacs.pdf"
+  },
+  "libelles_juridictions": "https://github.com/Cour-de-cassation/judilibre-search/tree/6cdd7e69917940d3aa43043f9b9992245d292a52/src/taxons"
+ },
+ "par_juridiction": [
+  {
+   "juridiction": "tj",
+   "n": 765280,
+   "premiere_date": "2023-12-14",
+   "derniere_date": "2026-10-19",
+   "avec_nac": 765280,
+   "lieux": 153,
+   "libelle": "Tribunaux judiciaires"
+  },
+  {
+   "juridiction": "ca",
+   "n": 646601,
+   "premiere_date": "0201-02-24",
+   "derniere_date": "2026-10-19",
+   "avec_nac": 540768,
+   "lieux": 36,
+   "libelle": "Cours d'appel"
+  },
+  {
+   "juridiction": "cc",
+   "n": 569520,
+   "premiere_date": "1860-08-01",
+   "derniere_date": "2026-10-22",
+   "avec_nac": null,
+   "lieux": 0,
+   "libelle": "Cour de cassation"
+  },
+  {
+   "juridiction": "tcom",
+   "n": 202072,
+   "premiere_date": "2024-12-31",
+   "derniere_date": "2026-10-19",
+   "avec_nac": null,
+   "lieux": 132,
+   "libelle": "Tribunaux de commerce"
+  }
+ ],
+ "par_annee": [
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2008",
+   "n": 9201
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2007",
+   "n": 6567
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2011",
+   "n": 6035
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2012",
+   "n": 4425
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2014",
+   "n": 3807
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2015",
+   "n": 3593
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2013",
+   "n": 3549
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2006",
+   "n": 3393
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2016",
+   "n": 2972
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2002",
+   "n": 2233
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2001",
+   "n": 2179
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2003",
+   "n": 1527
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2017",
+   "n": 1467
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2004",
+   "n": 1386
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2005",
+   "n": 1301
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2018",
+   "n": 1297
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2019",
+   "n": 1109
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2020",
+   "n": 1017
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2000",
+   "n": 951
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2009",
+   "n": 885
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2021",
+   "n": 875
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "2010",
+   "n": 716
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "1999",
+   "n": 502
+  },
+  {
+   "juridiction": "ca",
+   "source": "dila",
+   "annee": "autres années (sous le seuil chacune)",
+   "n": 557,
+   "groupes_fondus": 4
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2024",
+   "n": 132526
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2025",
+   "n": 130178
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2023",
+   "n": 119125
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2026",
+   "n": 83606
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2022",
+   "n": 75271
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2018",
+   "n": 5190
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2019",
+   "n": 4240
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2020",
+   "n": 4209
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2017",
+   "n": 4091
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2016",
+   "n": 3943
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2014",
+   "n": 3891
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2015",
+   "n": 3851
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2012",
+   "n": 3556
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2013",
+   "n": 3551
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2011",
+   "n": 3548
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2010",
+   "n": 2634
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "2021",
+   "n": 993
+  },
+  {
+   "juridiction": "ca",
+   "source": "jurica",
+   "annee": "autres années (sous le seuil chacune)",
+   "n": 654,
+   "groupes_fondus": 4
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2001",
+   "n": 17557
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2000",
+   "n": 17111
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1999",
+   "n": 16654
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1995",
+   "n": 15959
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1998",
+   "n": 15903
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1997",
+   "n": 15721
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1996",
+   "n": 15178
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1989",
+   "n": 14793
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1994",
+   "n": 14745
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1993",
+   "n": 13950
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1991",
+   "n": 13859
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1990",
+   "n": 13625
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2002",
+   "n": 13598
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1992",
+   "n": 13453
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2006",
+   "n": 12163
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2004",
+   "n": 12058
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2003",
+   "n": 11970
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2005",
+   "n": 11815
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2007",
+   "n": 10408
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2012",
+   "n": 9452
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2010",
+   "n": 9164
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2011",
+   "n": 9080
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2009",
+   "n": 9037
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2013",
+   "n": 8942
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2014",
+   "n": 8836
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2015",
+   "n": 8312
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2008",
+   "n": 8257
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1988",
+   "n": 7525
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1987",
+   "n": 6591
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1970",
+   "n": 3019
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1973",
+   "n": 2953
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1972",
+   "n": 2852
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1971",
+   "n": 2809
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1981",
+   "n": 2771
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1976",
+   "n": 2703
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1977",
+   "n": 2688
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1978",
+   "n": 2677
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1979",
+   "n": 2671
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1982",
+   "n": 2581
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1980",
+   "n": 2578
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1974",
+   "n": 2533
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1975",
+   "n": 2375
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1983",
+   "n": 2170
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1965",
+   "n": 2136
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1985",
+   "n": 2092
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1984",
+   "n": 2057
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1986",
+   "n": 2002
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1968",
+   "n": 709
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "2016",
+   "n": 539
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1967",
+   "n": 451
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1966",
+   "n": 446
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1964",
+   "n": 393
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "1963",
+   "n": 391
+  },
+  {
+   "juridiction": "cc",
+   "source": "dila",
+   "annee": "autres années (sous le seuil chacune)",
+   "n": 540,
+   "groupes_fondus": 25
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2023",
+   "n": 17236
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2016",
+   "n": 16652
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2024",
+   "n": 16351
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2025",
+   "n": 16277
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2022",
+   "n": 16231
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2017",
+   "n": 15561
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2018",
+   "n": 14932
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2019",
+   "n": 13521
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2026",
+   "n": 12900
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2021",
+   "n": 12519
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2020",
+   "n": 11756
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "2015",
+   "n": 399
+  },
+  {
+   "juridiction": "cc",
+   "source": "jurinet",
+   "annee": "autres années (sous le seuil chacune)",
+   "n": 333,
+   "groupes_fondus": 50
+  },
+  {
+   "juridiction": "tcom",
+   "source": "juritcom",
+   "annee": "2024-2025",
+   "n": 115973
+  },
+  {
+   "juridiction": "tcom",
+   "source": "juritcom",
+   "annee": "2026",
+   "n": 86099
+  },
+  {
+   "juridiction": "tj",
+   "source": "juritj",
+   "annee": "2025",
+   "n": 326104
+  },
+  {
+   "juridiction": "tj",
+   "source": "juritj",
+   "annee": "2026",
+   "n": 271525
+  },
+  {
+   "juridiction": "tj",
+   "source": "juritj",
+   "annee": "2024",
+   "n": 165377
+  },
+  {
+   "juridiction": "tj",
+   "source": "juritj",
+   "annee": "2023",
+   "n": 2274
+  }
+ ],
+ "par_mois": [
+  {
+   "juridiction": "ca",
+   "mois": "2024-05",
+   "n": 13803
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-03",
+   "n": 13074
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-06",
+   "n": 13024
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-09",
+   "n": 12956
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-03",
+   "n": 12890
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-09",
+   "n": 12666
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-03",
+   "n": 12541
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-06",
+   "n": 12519
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-06",
+   "n": 12457
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-11",
+   "n": 12438
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-01",
+   "n": 12433
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-10",
+   "n": 12262
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-05",
+   "n": 12208
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-11",
+   "n": 12081
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-02",
+   "n": 12080
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-06",
+   "n": 11969
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-11",
+   "n": 11823
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-05",
+   "n": 11804
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-09",
+   "n": 11732
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-01",
+   "n": 11717
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-01",
+   "n": 11624
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-01",
+   "n": 11222
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-09",
+   "n": 11184
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-10",
+   "n": 11130
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-12",
+   "n": 11127
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-02",
+   "n": 10952
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-11",
+   "n": 10869
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-04",
+   "n": 10826
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-05",
+   "n": 10671
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-04",
+   "n": 10584
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-12",
+   "n": 10437
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-12",
+   "n": 10254
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-02",
+   "n": 10217
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-02",
+   "n": 10105
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-09",
+   "n": 10098
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-05",
+   "n": 9739
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-06",
+   "n": 9541
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-04",
+   "n": 9174
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-04",
+   "n": 9099
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-10",
+   "n": 9035
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-07",
+   "n": 8881
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-10",
+   "n": 8827
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-12",
+   "n": 8769
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-03",
+   "n": 8490
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-07",
+   "n": 8062
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-07",
+   "n": 6406
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-07",
+   "n": 6078
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-07",
+   "n": 5448
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-10",
+   "n": 5351
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-04",
+   "n": 3624
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2025-08",
+   "n": 3413
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2026-08",
+   "n": 3041
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2024-08",
+   "n": 2987
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2023-08",
+   "n": 2657
+  },
+  {
+   "juridiction": "ca",
+   "mois": "2022-08",
+   "n": 2236
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-09",
+   "n": 14475
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-11",
+   "n": 13523
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-12",
+   "n": 13236
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-10",
+   "n": 13170
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-09",
+   "n": 12638
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-07",
+   "n": 11087
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-07",
+   "n": 10990
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-06",
+   "n": 10704
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-06",
+   "n": 10605
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-03",
+   "n": 10057
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-04",
+   "n": 9160
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-01",
+   "n": 8939
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-04",
+   "n": 8723
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-03",
+   "n": 8658
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-05",
+   "n": 8336
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-05",
+   "n": 8116
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-02",
+   "n": 7344
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-02",
+   "n": 5854
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-01",
+   "n": 5673
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-10",
+   "n": 5508
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2026-08",
+   "n": 2742
+  },
+  {
+   "juridiction": "tcom",
+   "mois": "2025-08",
+   "n": 2529
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-03",
+   "n": 36211
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-06",
+   "n": 34858
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-09",
+   "n": 33500
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-05",
+   "n": 32634
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-04",
+   "n": 31932
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-06",
+   "n": 31918
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-01",
+   "n": 30264
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-12",
+   "n": 30247
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-11",
+   "n": 30103
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-05",
+   "n": 30020
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-07",
+   "n": 29655
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-02",
+   "n": 28772
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-07",
+   "n": 28218
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-03",
+   "n": 27414
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-01",
+   "n": 26681
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-10",
+   "n": 25731
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-09",
+   "n": 25111
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-04",
+   "n": 23609
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-11",
+   "n": 23561
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-02",
+   "n": 22623
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-12",
+   "n": 20740
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-10",
+   "n": 19283
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-09",
+   "n": 18190
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2025-08",
+   "n": 14603
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-06",
+   "n": 14258
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-08",
+   "n": 13580
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-05",
+   "n": 12968
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-07",
+   "n": 11698
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-03",
+   "n": 10673
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2026-10",
+   "n": 9945
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-04",
+   "n": 9597
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-02",
+   "n": 9156
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-01",
+   "n": 8862
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2024-08",
+   "n": 6391
+  },
+  {
+   "juridiction": "tj",
+   "mois": "2023-12",
+   "n": 2274
+  }
+ ],
+ "juridictions_par_trimestre": [
+  {
+   "juridiction": "ca",
+   "trimestre": "2022-T2",
+   "juridictions_presentes": 36,
+   "n": 27319
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2022-T3",
+   "juridictions_presentes": 36,
+   "n": 19416
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2022-T4",
+   "juridictions_presentes": 36,
+   "n": 28465
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2023-T1",
+   "juridictions_presentes": 36,
+   "n": 34401
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2023-T2",
+   "juridictions_presentes": 36,
+   "n": 33435
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2023-T3",
+   "juridictions_presentes": 36,
+   "n": 19919
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2023-T4",
+   "juridictions_presentes": 36,
+   "n": 31370
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2024-T1",
+   "juridictions_presentes": 36,
+   "n": 36338
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2024-T2",
+   "juridictions_presentes": 36,
+   "n": 36356
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2024-T3",
+   "juridictions_presentes": 36,
+   "n": 24005
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2024-T4",
+   "juridictions_presentes": 36,
+   "n": 35827
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2025-T1",
+   "juridictions_presentes": 36,
+   "n": 36275
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2025-T2",
+   "juridictions_presentes": 36,
+   "n": 35553
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2025-T3",
+   "juridictions_presentes": 36,
+   "n": 24960
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2025-T4",
+   "juridictions_presentes": 36,
+   "n": 33390
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2026-T1",
+   "juridictions_presentes": 36,
+   "n": 30331
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2026-T2",
+   "juridictions_presentes": 36,
+   "n": 28379
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2026-T3",
+   "juridictions_presentes": 36,
+   "n": 19545
+  },
+  {
+   "juridiction": "ca",
+   "trimestre": "2026-T4",
+   "juridictions_presentes": 36,
+   "n": 5351
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2025-T1",
+   "juridictions_presentes": 101,
+   "n": 20185
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2025-T2",
+   "juridictions_presentes": 115,
+   "n": 27763
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2025-T3",
+   "juridictions_presentes": 119,
+   "n": 28091
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2025-T4",
+   "juridictions_presentes": 128,
+   "n": 39929
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2026-T1",
+   "juridictions_presentes": 125,
+   "n": 26340
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2026-T2",
+   "juridictions_presentes": 128,
+   "n": 27881
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2026-T3",
+   "juridictions_presentes": 126,
+   "n": 26370
+  },
+  {
+   "juridiction": "tcom",
+   "trimestre": "2026-T4",
+   "juridictions_presentes": 121,
+   "n": 5508
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2023-T4",
+   "juridictions_presentes": 9,
+   "n": 2274
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2024-T1",
+   "juridictions_presentes": 28,
+   "n": 28691
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2024-T2",
+   "juridictions_presentes": 46,
+   "n": 36823
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2024-T3",
+   "juridictions_presentes": 54,
+   "n": 36279
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2024-T4",
+   "juridictions_presentes": 61,
+   "n": 63584
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2025-T1",
+   "juridictions_presentes": 75,
+   "n": 76718
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2025-T2",
+   "juridictions_presentes": 129,
+   "n": 85547
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2025-T3",
+   "juridictions_presentes": 138,
+   "n": 77758
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2025-T4",
+   "juridictions_presentes": 141,
+   "n": 86081
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2026-T1",
+   "juridictions_presentes": 145,
+   "n": 95247
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2026-T2",
+   "juridictions_presentes": 145,
+   "n": 99424
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2026-T3",
+   "juridictions_presentes": 140,
+   "n": 66909
+  },
+  {
+   "juridiction": "tj",
+   "trimestre": "2026-T4",
+   "juridictions_presentes": 124,
+   "n": 9945
+  }
+ ],
+ "par_lieu": [
+  {
+   "juridiction": "ca",
+   "lieu": "ca_paris",
+   "n": 136467,
+   "libelle": "Cour d'appel de Paris"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_aix_provence",
+   "n": 71871,
+   "libelle": "Cour d'appel d'Aix-en-Provence"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_versailles",
+   "n": 43005,
+   "libelle": "Cour d'appel de Versailles"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_lyon",
+   "n": 37279,
+   "libelle": "Cour d'appel de Lyon"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_douai",
+   "n": 32102,
+   "libelle": "Cour d'appel de Douai"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_rennes",
+   "n": 28363,
+   "libelle": "Cour d'appel de Rennes"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_montpellier",
+   "n": 26221,
+   "libelle": "Cour d'appel de Montpellier"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_toulouse",
+   "n": 23177,
+   "libelle": "Cour d'appel de Toulouse"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_bordeaux",
+   "n": 20595,
+   "libelle": "Cour d'appel de Bordeaux"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_nimes",
+   "n": 20034,
+   "libelle": "Cour d'appel de Nîmes"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_amiens",
+   "n": 18034,
+   "libelle": "Cour d'appel d'Amiens"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_rouen",
+   "n": 14783,
+   "libelle": "Cour d'appel de Rouen"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_grenoble",
+   "n": 14545,
+   "libelle": "Cour d'appel de Grenoble"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_colmar",
+   "n": 12946,
+   "libelle": "Cour d'appel de Colmar"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_metz",
+   "n": 12787,
+   "libelle": "Cour d'appel de Metz"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_pau",
+   "n": 11622,
+   "libelle": "Cour d'appel de Pau"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_orleans",
+   "n": 11380,
+   "libelle": "Cour d'appel d'Orléans"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_caen",
+   "n": 9090,
+   "libelle": "Cour d'appel de Caen"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_angers",
+   "n": 8955,
+   "libelle": "Cour d'appel d'Angers"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_reims",
+   "n": 7950,
+   "libelle": "Cour d'appel de Reims"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_poitiers",
+   "n": 7789,
+   "libelle": "Cour d'appel de Poitiers"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_nancy",
+   "n": 7678,
+   "libelle": "Cour d'appel de Nancy"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_dijon",
+   "n": 7531,
+   "libelle": "Cour d'appel de Dijon"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_riom",
+   "n": 7200,
+   "libelle": "Cour d'appel de Riom"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_st_denis_reunion",
+   "n": 6972,
+   "libelle": "Cour d'appel de Saint-Denis de la Réunion"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_bastia",
+   "n": 6967,
+   "libelle": "Cour d'appel de Bastia"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_chambery",
+   "n": 6749,
+   "libelle": "Cour d'appel de Chambéry"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_basse_terre",
+   "n": 6656,
+   "libelle": "Cour d'appel de Basse-Terre"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_limoges",
+   "n": 6004,
+   "libelle": "Cour d'appel de Limoges"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_besancon",
+   "n": 5966,
+   "libelle": "Cour d'appel de Besançon"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_agen",
+   "n": 4191,
+   "libelle": "Cour d'appel d'Agen"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_bourges",
+   "n": 3192,
+   "libelle": "Cour d'appel de Bourges"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_fort_de_france",
+   "n": 2872,
+   "libelle": "Cour d'appel de Fort-de-France"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_noumea",
+   "n": 2423,
+   "libelle": "Cour d'appel de Nouméa"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_papeete",
+   "n": 2349,
+   "libelle": "Cour d'appel de Papeete"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_cayenne",
+   "n": 856,
+   "libelle": "Cour d'appel de Cayenne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7501",
+   "n": 20241,
+   "libelle": "Tribunal des activités économiques de Paris"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9201",
+   "n": 12097,
+   "libelle": "Tribunal des activités économiques de Nanterre"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3302",
+   "n": 8705,
+   "libelle": "Tribunal de commerce de Bordeaux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9301",
+   "n": 7849,
+   "libelle": "Tribunal de commerce de Bobigny"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3405",
+   "n": 5480,
+   "libelle": "Tribunal de commerce de Montpellier"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3102",
+   "n": 5349,
+   "libelle": "Tribunal de commerce de Toulouse"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4202",
+   "n": 4557,
+   "libelle": "Tribunal de commerce de Saint-Etienne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8401",
+   "n": 4343,
+   "libelle": "Tribunal des activités économiques d'Avignon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9401",
+   "n": 4336,
+   "libelle": "Tribunal de commerce de Créteil"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6901",
+   "n": 4208,
+   "libelle": "Tribunal des activités économiques de Lyon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7801",
+   "n": 3935,
+   "libelle": "Tribunal de commerce d'Évry"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1303",
+   "n": 3814,
+   "libelle": "Tribunal des activités économiques de Marseille"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7701",
+   "n": 3551,
+   "libelle": "Tribunal de commerce de Meaux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7802",
+   "n": 3527,
+   "libelle": "Tribunal de commerce de Pontoise"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6303",
+   "n": 3271,
+   "libelle": "Tribunal de commerce de Clermont-Ferrand"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "autres (groupes sous le seuil)",
+   "n": 3230,
+   "groupes_fondus": 27,
+   "libelle": "Autres (sous le seuil)"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5910",
+   "n": 3206,
+   "libelle": "Tribunal de commerce de Lille Métropole"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3801",
+   "n": 3112,
+   "libelle": "Tribunal de commerce de Grenoble"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1301",
+   "n": 3095,
+   "libelle": "Tribunal de commerce d'Aix-en-Provence"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3501",
+   "n": 2482,
+   "libelle": "Tribunal de commerce de Rennes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0605",
+   "n": 2442,
+   "libelle": "Tribunal de commerce de Nice"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8305",
+   "n": 2316,
+   "libelle": "Tribunal de commerce de Toulon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8501",
+   "n": 2267,
+   "libelle": "Tribunal de commerce de La Roche-sur-Yon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7202",
+   "n": 2185,
+   "libelle": "Tribunal des activités économiques du Mans"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6002",
+   "n": 2149,
+   "libelle": "Tribunal de commerce de Compiègne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2801",
+   "n": 2142,
+   "libelle": "Tribunal de commerce de Chartres"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7608",
+   "n": 2119,
+   "libelle": "Tribunal de commerce de Rouen"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5601",
+   "n": 2048,
+   "libelle": "Tribunal de commerce de Lorient"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5906",
+   "n": 2027,
+   "libelle": "Tribunal de commerce de Valenciennes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7301",
+   "n": 1969,
+   "libelle": "Tribunal de commerce de Chambéry"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4502",
+   "n": 1876,
+   "libelle": "Tribunal de commerce d'Orléans"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7702",
+   "n": 1865,
+   "libelle": "Tribunal de commerce de Melun"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2104",
+   "n": 1803,
+   "libelle": "Tribunal de commerce de Dijon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3003",
+   "n": 1687,
+   "libelle": "Tribunal de commerce de Nîmes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9721",
+   "n": 1667,
+   "libelle": "Tribunal de commerce de Fort-de-France"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3802",
+   "n": 1637,
+   "libelle": "Tribunal de commerce de Vienne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6201",
+   "n": 1637,
+   "libelle": "Tribunal de commerce d'Arras"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2702",
+   "n": 1568,
+   "libelle": "Tribunal de commerce d'Évreux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0601",
+   "n": 1566,
+   "libelle": "Tribunal de commerce d'Antibes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7401",
+   "n": 1563,
+   "libelle": "Tribunal de commerce d'Annecy"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8002",
+   "n": 1555,
+   "libelle": "Tribunal de commerce d'Amiens"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5402",
+   "n": 1519,
+   "libelle": "Tribunal des activités économiques de Nancy"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9741",
+   "n": 1501,
+   "libelle": "Tribunal de commerce de Saint-Denis de La Réunion"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2202",
+   "n": 1477,
+   "libelle": "Tribunal des activités économiques de Saint-Brieuc"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3402",
+   "n": 1449,
+   "libelle": "Tribunal de commerce de Béziers"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7102",
+   "n": 1403,
+   "libelle": "Tribunal de commerce de Chalon-sur-Saône"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8602",
+   "n": 1356,
+   "libelle": "Tribunal de commerce de Poitiers"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1601",
+   "n": 1324,
+   "libelle": "Tribunal de commerce d'Angoulême"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7606",
+   "n": 1277,
+   "libelle": "Tribunal des activités économiques du Havre"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6403",
+   "n": 1225,
+   "libelle": "Tribunal de commerce de Pau"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0602",
+   "n": 1195,
+   "libelle": "Tribunal de commerce de Cannes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1304",
+   "n": 1192,
+   "libelle": "Tribunal de commerce de Salon-de-Provence"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1708",
+   "n": 1103,
+   "libelle": "Tribunal de commerce de Saintes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3303",
+   "n": 1102,
+   "libelle": "Tribunal de commerce de Libourne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7402",
+   "n": 1099,
+   "libelle": "Tribunal de commerce de Thonon-les-Bains"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3701",
+   "n": 1093,
+   "libelle": "Tribunal de commerce de Tours"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4002",
+   "n": 1044,
+   "libelle": "Tribunal de commerce de Mont-de-Marsan"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1101",
+   "n": 1023,
+   "libelle": "Tribunal de commerce de Carcassonne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6903",
+   "n": 1000,
+   "libelle": "Tribunal de commerce de Villefranche-sur-Saône - Tarare"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8302",
+   "n": 994,
+   "libelle": "Tribunal de commerce de Draguignan"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8701",
+   "n": 994,
+   "libelle": "Tribunal des activités économiques de Limoges"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1104",
+   "n": 978,
+   "libelle": "Tribunal de commerce de Narbonne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5952",
+   "n": 966,
+   "libelle": "Tribunal de commerce de Douai"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8201",
+   "n": 956,
+   "libelle": "Tribunal de commerce de Montauban"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5103",
+   "n": 919,
+   "libelle": "Tribunal de commerce de Reims"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2002",
+   "n": 919,
+   "libelle": "Tribunal de commerce de Bastia"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8903",
+   "n": 898,
+   "libelle": "Tribunal de commerce de Sens"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0702",
+   "n": 862,
+   "libelle": "Tribunal de commerce d'Aubenas"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2903",
+   "n": 846,
+   "libelle": "Tribunal de commerce de Quimper"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4201",
+   "n": 832,
+   "libelle": "Tribunal de commerce de Roanne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4901",
+   "n": 818,
+   "libelle": "Tribunal de commerce d'Angers"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4401",
+   "n": 804,
+   "libelle": "Tribunal de commerce de Nantes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5602",
+   "n": 802,
+   "libelle": "Tribunal de commerce de Vannes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1704",
+   "n": 793,
+   "libelle": "Tribunal de commerce de La Rochelle"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3601",
+   "n": 761,
+   "libelle": "Tribunal de commerce de Châteauroux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4101",
+   "n": 695,
+   "libelle": "Tribunal de commerce de Blois"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0802",
+   "n": 683,
+   "libelle": "Tribunal de commerce de Sedan"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5001",
+   "n": 678,
+   "libelle": "Tribunal de commerce de Cherbourg"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0101",
+   "n": 656,
+   "libelle": "Tribunal de commerce de Bourg-en-Bresse"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1801",
+   "n": 641,
+   "libelle": "Tribunal de commerce de Bourges"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0501",
+   "n": 635,
+   "libelle": "Tribunal de commerce de Gap"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4001",
+   "n": 561,
+   "libelle": "Tribunal de commerce de Dax"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5501",
+   "n": 556,
+   "libelle": "Tribunal de commerce de Bar-le-Duc"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1203",
+   "n": 550,
+   "libelle": "Tribunal de commerce de Rodez"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2401",
+   "n": 541,
+   "libelle": "Tribunal de commerce de Bergerac"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7803",
+   "n": 530,
+   "libelle": "Tribunal des activités économiques de Versailles"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6502",
+   "n": 523,
+   "libelle": "Tribunal de commerce de Tarbes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1402",
+   "n": 517,
+   "libelle": "Tribunal de commerce de Caen"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0203",
+   "n": 497,
+   "libelle": "Tribunal de commerce de Soissons"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6202",
+   "n": 494,
+   "libelle": "Tribunal de commerce de Boulogne-sur-Mer"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3502",
+   "n": 480,
+   "libelle": "Tribunal de commerce de Saint-Malo"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6101",
+   "n": 476,
+   "libelle": "Tribunal de commerce d'Alençon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6401",
+   "n": 465,
+   "libelle": "Tribunal de commerce de Bayonne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7001",
+   "n": 456,
+   "libelle": "Tribunal de commerce de Vesoul - Gray"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8102",
+   "n": 453,
+   "libelle": "Tribunal de commerce de Castres"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0202",
+   "n": 452,
+   "libelle": "Tribunal de commerce de Saint-Quentin"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5401",
+   "n": 437,
+   "libelle": "Tribunal de commerce de Briey"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7601",
+   "n": 418,
+   "libelle": "Tribunal de commerce de Dieppe"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0301",
+   "n": 386,
+   "libelle": "Tribunal de commerce de Cusset"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8901",
+   "n": 375,
+   "libelle": "Tribunal des activités économiques d'Auxerre"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1901",
+   "n": 339,
+   "libelle": "Tribunal de commerce de Brive-la-Gaillarde"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5101",
+   "n": 332,
+   "libelle": "Tribunal de commerce de Chalons-en-Champagne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2701",
+   "n": 326,
+   "libelle": "Tribunal de commerce de Bernay"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3201",
+   "n": 316,
+   "libelle": "Tribunal de commerce d'Auch"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8101",
+   "n": 303,
+   "libelle": "Tribunal de commerce d'Albi"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0603",
+   "n": 301,
+   "libelle": "Tribunal de commerce de Grasse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj75056",
+   "n": 110057,
+   "libelle": "Tribunal judiciaire de Paris"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj93008",
+   "n": 45944,
+   "libelle": "Tribunal judiciaire de Bobigny"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj13055",
+   "n": 45059,
+   "libelle": "Tribunal judiciaire de Marseille"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj69123",
+   "n": 40278,
+   "libelle": "Tribunal judiciaire de Lyon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj33063",
+   "n": 29956,
+   "libelle": "Tribunal judiciaire de Bordeaux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59350",
+   "n": 26949,
+   "libelle": "Tribunal judiciaire de Lille"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj78646",
+   "n": 23774,
+   "libelle": "Tribunal judiciaire de Versailles"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj31555",
+   "n": 23743,
+   "libelle": "Tribunal judiciaire de Toulouse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj77284",
+   "n": 17900,
+   "libelle": "Tribunal judiciaire de Meaux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj67482",
+   "n": 15218,
+   "libelle": "Tribunal judiciaire de Strasbourg"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj06088",
+   "n": 14560,
+   "libelle": "Tribunal judiciaire de Nice"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj92050",
+   "n": 13736,
+   "libelle": "Tribunal judiciaire de Nanterre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj44109",
+   "n": 12832,
+   "libelle": "Tribunal judiciaire de Nantes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj95500",
+   "n": 12277,
+   "libelle": "Tribunal judiciaire de Pontoise"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj91228",
+   "n": 11682,
+   "libelle": "Tribunal judiciaire d'Évry"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj35238",
+   "n": 11299,
+   "libelle": "Tribunal judiciaire de Rennes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj30189",
+   "n": 10277,
+   "libelle": "Tribunal judiciaire de Nîmes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj97411",
+   "n": 9888,
+   "libelle": "Tribunal judiciaire de Saint-Denis de La Réunion"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj45234",
+   "n": 9296,
+   "libelle": "Tribunal judiciaire d'Orléans"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj63113",
+   "n": 8961,
+   "libelle": "Tribunal judiciaire de Clermont-Ferrand"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj42218",
+   "n": 8880,
+   "libelle": "Tribunal judiciaire de Saint-Etienne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj38185",
+   "n": 8233,
+   "libelle": "Tribunal judiciaire de Grenoble"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj57463",
+   "n": 8073,
+   "libelle": "Tribunal judiciaire de Metz"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj34172",
+   "n": 8069,
+   "libelle": "Tribunal judiciaire de Montpellier"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62160",
+   "n": 7697,
+   "libelle": "Tribunal judiciaire de Boulogne-sur-Mer"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj01053",
+   "n": 7584,
+   "libelle": "Tribunal judiciaire de Bourg-en-Bresse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj94028",
+   "n": 7400,
+   "libelle": "Tribunal judiciaire de Créteil"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj68224",
+   "n": 7222,
+   "libelle": "Tribunal judiciaire de Mulhouse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj83137",
+   "n": 7018,
+   "libelle": "Tribunal judiciaire de Toulon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj83050",
+   "n": 6961,
+   "libelle": "Tribunal judiciaire de Draguignan"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj37261",
+   "n": 6001,
+   "libelle": "Tribunal judiciaire de Tours"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj21231",
+   "n": 5911,
+   "libelle": "Tribunal judiciaire de Dijon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj14118",
+   "n": 5549,
+   "libelle": "Tribunal judiciaire de Caen"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj76351",
+   "n": 5430,
+   "libelle": "Tribunal judiciaire du Havre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj49007",
+   "n": 5196,
+   "libelle": "Tribunal judiciaire d'Angers"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj84007",
+   "n": 4947,
+   "libelle": "Tribunal judiciaire d'Avignon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj86194",
+   "n": 4855,
+   "libelle": "Tribunal judiciaire de Poitiers"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj80021",
+   "n": 4784,
+   "libelle": "Tribunal judiciaire d'Amiens"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj27229",
+   "n": 4626,
+   "libelle": "Tribunal judiciaire d'Évreux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj28085",
+   "n": 4614,
+   "libelle": "Tribunal judiciaire de Chartres"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj06069",
+   "n": 4588,
+   "libelle": "Tribunal judiciaire de Grasse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj76540",
+   "n": 4543,
+   "libelle": "Tribunal judiciaire de Rouen"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj26362",
+   "n": 4429,
+   "libelle": "Tribunal judiciaire de Valence"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj54395",
+   "n": 4199,
+   "libelle": "Tribunal judiciaire de Nancy"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj34032",
+   "n": 3763,
+   "libelle": "Tribunal judiciaire de Béziers"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59606",
+   "n": 3515,
+   "libelle": "Tribunal judiciaire de Valenciennes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj72181",
+   "n": 3498,
+   "libelle": "Tribunal judiciaire du Mans"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj13001",
+   "n": 3268,
+   "libelle": "Tribunal judiciaire d'Aix-en-Provence"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj10387",
+   "n": 3267,
+   "libelle": "Tribunal judiciaire de Troyes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj77288",
+   "n": 3093,
+   "libelle": "Tribunal judiciaire de Melun"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj87085",
+   "n": 3044,
+   "libelle": "Tribunal judiciaire de Limoges"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "autres (groupes sous le seuil)",
+   "n": 2925,
+   "groupes_fondus": 20,
+   "libelle": "Autres (sous le seuil)"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj51454",
+   "n": 2872,
+   "libelle": "Tribunal judiciaire de Reims"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj74010",
+   "n": 2674,
+   "libelle": "Tribunal judiciaire d'Annecy"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj22278",
+   "n": 2549,
+   "libelle": "Tribunal judiciaire de Saint-Brieuc"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj74281",
+   "n": 2485,
+   "libelle": "Tribunal judiciaire de Thonon-les-Bains"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj56121",
+   "n": 2341,
+   "libelle": "Tribunal judiciaire de Lorient"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj56260",
+   "n": 2338,
+   "libelle": "Tribunal judiciaire de Vannes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62119",
+   "n": 2303,
+   "libelle": "Tribunal judiciaire de Béthune"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj73065",
+   "n": 2232,
+   "libelle": "Tribunal judiciaire de Chambéry"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj17300",
+   "n": 1942,
+   "libelle": "Tribunal judiciaire de La Rochelle"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj13108",
+   "n": 1942,
+   "libelle": "Tribunal judiciaire de Tarascon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj44184",
+   "n": 1872,
+   "libelle": "Tribunal judiciaire de Saint-Nazaire"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj40088",
+   "n": 1855,
+   "libelle": "Tribunal judiciaire de Dax"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj57631",
+   "n": 1840,
+   "libelle": "Tribunal judiciaire de Sarreguemines"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj98735",
+   "n": 1716,
+   "libelle": "Tribunal judiciaire de Papeete"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62041",
+   "n": 1712,
+   "libelle": "Tribunal judiciaire d'Arras"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj68066",
+   "n": 1694,
+   "libelle": "Tribunal judiciaire de Colmar"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj40192",
+   "n": 1689,
+   "libelle": "Tribunal judiciaire de Mont-de-Marsan"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj30007",
+   "n": 1666,
+   "libelle": "Tribunal judiciaire d'Alès"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj38544",
+   "n": 1629,
+   "libelle": "Tribunal judiciaire de Vienne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj38053",
+   "n": 1625,
+   "libelle": "Tribunal judiciaire de Bourgoin-Jallieu"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj57672",
+   "n": 1550,
+   "libelle": "Tribunal judiciaire de Thionville"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj97416",
+   "n": 1546,
+   "libelle": "Tribunal judiciaire de Saint-Pierre de La Réunion"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj53130",
+   "n": 1509,
+   "libelle": "Tribunal judiciaire de Laval"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj41018",
+   "n": 1505,
+   "libelle": "Tribunal judiciaire de Blois"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj2b033",
+   "n": 1499,
+   "libelle": "Tribunal judiciaire de Bastia"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj35288",
+   "n": 1449,
+   "libelle": "Tribunal judiciaire de Saint-Malo"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj07186",
+   "n": 1415,
+   "libelle": "Tribunal judiciaire de Privas"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj08105",
+   "n": 1407,
+   "libelle": "Tribunal judiciaire de Charleville-Mézières"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj51108",
+   "n": 1393,
+   "libelle": "Tribunal judiciaire de Chalons-en-Champagne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj12202",
+   "n": 1385,
+   "libelle": "Tribunal judiciaire de Rodez"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj50147",
+   "n": 1376,
+   "libelle": "Tribunal judiciaire de Coutances"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj65440",
+   "n": 1365,
+   "libelle": "Tribunal judiciaire de Tarbes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj61001",
+   "n": 1292,
+   "libelle": "Tribunal judiciaire d'Alençon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj54099",
+   "n": 1280,
+   "libelle": "Tribunal judiciaire de Val de Briey"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj73011",
+   "n": 1270,
+   "libelle": "Tribunal judiciaire d'Albertville"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj16015",
+   "n": 1257,
+   "libelle": "Tribunal judiciaire d'Angoulême"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj29232",
+   "n": 1248,
+   "libelle": "Tribunal judiciaire de Quimper"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj02691",
+   "n": 1221,
+   "libelle": "Tribunal judiciaire de Saint-Quentin"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj2a004",
+   "n": 1161,
+   "libelle": "Tribunal judiciaire d'Ajaccio"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj82121",
+   "n": 1159,
+   "libelle": "Tribunal judiciaire de Montauban"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj60159",
+   "n": 1154,
+   "libelle": "Tribunal judiciaire de Compiègne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj74042",
+   "n": 1142,
+   "libelle": "Tribunal judiciaire de Bonneville"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj97120",
+   "n": 1044,
+   "libelle": "Tribunal judiciaire de Pointe-à-Pitre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj89024",
+   "n": 1002,
+   "libelle": "Tribunal judiciaire d'Auxerre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj85194",
+   "n": 998,
+   "libelle": "Tribunal judiciaire des Sables-d'Olonne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj70550",
+   "n": 988,
+   "libelle": "Tribunal judiciaire de Vesoul"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj81004",
+   "n": 929,
+   "libelle": "Tribunal judiciaire d'Albi"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59183",
+   "n": 919,
+   "libelle": "Tribunal judiciaire de Dunkerque"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj69264",
+   "n": 872,
+   "libelle": "Tribunal judiciaire de Villefranche-sur-Saône"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj60057",
+   "n": 847,
+   "libelle": "Tribunal judiciaire de Beauvais"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj19031",
+   "n": 839,
+   "libelle": "Tribunal judiciaire de Brive-la-Gaillarde"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj33243",
+   "n": 837,
+   "libelle": "Tribunal judiciaire de Libourne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj64445",
+   "n": 818,
+   "libelle": "Tribunal judiciaire de Pau"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj11069",
+   "n": 809,
+   "libelle": "Tribunal judiciaire de Carcassonne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj84031",
+   "n": 791,
+   "libelle": "Tribunal judiciaire de Carpentras"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj05061",
+   "n": 789,
+   "libelle": "Tribunal judiciaire de Gap"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj15014",
+   "n": 789,
+   "libelle": "Tribunal judiciaire d'Aurillac"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj25056",
+   "n": 789,
+   "libelle": "Tribunal judiciaire de Besançon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj14366",
+   "n": 787,
+   "libelle": "Tribunal judiciaire de Lisieux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj24037",
+   "n": 771,
+   "libelle": "Tribunal judiciaire de Bergerac"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj19272",
+   "n": 737,
+   "libelle": "Tribunal judiciaire de Tulle"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj36044",
+   "n": 719,
+   "libelle": "Tribunal judiciaire de Châteauroux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj67437",
+   "n": 708,
+   "libelle": "Tribunal judiciaire de Saverne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj98818",
+   "n": 701,
+   "libelle": "Tribunal judiciaire de Nouméa"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj09122",
+   "n": 687,
+   "libelle": "Tribunal judiciaire de Foix"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj39300",
+   "n": 652,
+   "libelle": "Tribunal judiciaire de Lons-le-Saunier"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj55029",
+   "n": 609,
+   "libelle": "Tribunal judiciaire de Bar-le-Duc"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj03185",
+   "n": 606,
+   "libelle": "Tribunal judiciaire de Montluçon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj71270",
+   "n": 602,
+   "libelle": "Tribunal judiciaire de Mâcon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62765",
+   "n": 602,
+   "libelle": "Tribunal judiciaire de Saint-Omer"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj81065",
+   "n": 602,
+   "libelle": "Tribunal judiciaire de Castres"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj02408",
+   "n": 589,
+   "libelle": "Tribunal judiciaire de Laon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj25388",
+   "n": 565,
+   "libelle": "Tribunal judiciaire de Montbéliard"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj79191",
+   "n": 553,
+   "libelle": "Tribunal judiciaire de Niort"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj50129",
+   "n": 525,
+   "libelle": "Tribunal judiciaire de Cherbourg-en-Cotentin"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj31483",
+   "n": 477,
+   "libelle": "Tribunal judiciaire de Saint-Gaudens"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj55545",
+   "n": 435,
+   "libelle": "Tribunal judiciaire de Verdun"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59122",
+   "n": 424,
+   "libelle": "Tribunal judiciaire de Cambrai"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj24322",
+   "n": 404,
+   "libelle": "Tribunal judiciaire de Périgueux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj42187",
+   "n": 391,
+   "libelle": "Tribunal judiciaire de Roanne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj11262",
+   "n": 344,
+   "libelle": "Tribunal judiciaire de Narbonne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj02722",
+   "n": 303,
+   "libelle": "Tribunal judiciaire de Soissons"
+  }
+ ],
+ "par_lieu_2025": [
+  {
+   "juridiction": "ca",
+   "lieu": "ca_paris",
+   "n": 26724,
+   "libelle": "Cour d'appel de Paris"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_aix_provence",
+   "n": 16052,
+   "libelle": "Cour d'appel d'Aix-en-Provence"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_versailles",
+   "n": 8738,
+   "libelle": "Cour d'appel de Versailles"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_lyon",
+   "n": 7568,
+   "libelle": "Cour d'appel de Lyon"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_douai",
+   "n": 6109,
+   "libelle": "Cour d'appel de Douai"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_montpellier",
+   "n": 5619,
+   "libelle": "Cour d'appel de Montpellier"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_rennes",
+   "n": 5317,
+   "libelle": "Cour d'appel de Rennes"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_toulouse",
+   "n": 5269,
+   "libelle": "Cour d'appel de Toulouse"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_nimes",
+   "n": 4983,
+   "libelle": "Cour d'appel de Nîmes"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_bordeaux",
+   "n": 4187,
+   "libelle": "Cour d'appel de Bordeaux"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_amiens",
+   "n": 3487,
+   "libelle": "Cour d'appel d'Amiens"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_rouen",
+   "n": 3266,
+   "libelle": "Cour d'appel de Rouen"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_colmar",
+   "n": 3020,
+   "libelle": "Cour d'appel de Colmar"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_metz",
+   "n": 2953,
+   "libelle": "Cour d'appel de Metz"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_grenoble",
+   "n": 2839,
+   "libelle": "Cour d'appel de Grenoble"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_orleans",
+   "n": 2623,
+   "libelle": "Cour d'appel d'Orléans"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_pau",
+   "n": 2010,
+   "libelle": "Cour d'appel de Pau"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_chambery",
+   "n": 1701,
+   "libelle": "Cour d'appel de Chambéry"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_caen",
+   "n": 1647,
+   "libelle": "Cour d'appel de Caen"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_riom",
+   "n": 1602,
+   "libelle": "Cour d'appel de Riom"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_dijon",
+   "n": 1526,
+   "libelle": "Cour d'appel de Dijon"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_reims",
+   "n": 1454,
+   "libelle": "Cour d'appel de Reims"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_nancy",
+   "n": 1415,
+   "libelle": "Cour d'appel de Nancy"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_poitiers",
+   "n": 1309,
+   "libelle": "Cour d'appel de Poitiers"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_st_denis_reunion",
+   "n": 1290,
+   "libelle": "Cour d'appel de Saint-Denis de la Réunion"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_besancon",
+   "n": 1176,
+   "libelle": "Cour d'appel de Besançon"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_angers",
+   "n": 1082,
+   "libelle": "Cour d'appel d'Angers"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_basse_terre",
+   "n": 964,
+   "libelle": "Cour d'appel de Basse-Terre"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_bastia",
+   "n": 806,
+   "libelle": "Cour d'appel de Bastia"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_agen",
+   "n": 719,
+   "libelle": "Cour d'appel d'Agen"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_bourges",
+   "n": 585,
+   "libelle": "Cour d'appel de Bourges"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_limoges",
+   "n": 549,
+   "libelle": "Cour d'appel de Limoges"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_papeete",
+   "n": 503,
+   "libelle": "Cour d'appel de Papeete"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_fort_de_france",
+   "n": 442,
+   "libelle": "Cour d'appel de Fort-de-France"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_noumea",
+   "n": 340,
+   "libelle": "Cour d'appel de Nouméa"
+  },
+  {
+   "juridiction": "ca",
+   "lieu": "ca_cayenne",
+   "n": 304,
+   "libelle": "Cour d'appel de Cayenne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7501",
+   "n": 14495,
+   "libelle": "Tribunal des activités économiques de Paris"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9201",
+   "n": 7377,
+   "libelle": "Tribunal des activités économiques de Nanterre"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "autres (groupes sous le seuil)",
+   "n": 6670,
+   "groupes_fondus": 48,
+   "libelle": "Autres (sous le seuil)"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9301",
+   "n": 5392,
+   "libelle": "Tribunal de commerce de Bobigny"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3302",
+   "n": 3817,
+   "libelle": "Tribunal de commerce de Bordeaux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3405",
+   "n": 3091,
+   "libelle": "Tribunal de commerce de Montpellier"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3102",
+   "n": 2904,
+   "libelle": "Tribunal de commerce de Toulouse"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4202",
+   "n": 2627,
+   "libelle": "Tribunal de commerce de Saint-Etienne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7701",
+   "n": 2513,
+   "libelle": "Tribunal de commerce de Meaux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7801",
+   "n": 2499,
+   "libelle": "Tribunal de commerce d'Évry"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5910",
+   "n": 2428,
+   "libelle": "Tribunal de commerce de Lille Métropole"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9401",
+   "n": 2273,
+   "libelle": "Tribunal de commerce de Créteil"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8401",
+   "n": 2202,
+   "libelle": "Tribunal des activités économiques d'Avignon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6303",
+   "n": 1887,
+   "libelle": "Tribunal de commerce de Clermont-Ferrand"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6901",
+   "n": 1856,
+   "libelle": "Tribunal des activités économiques de Lyon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3801",
+   "n": 1850,
+   "libelle": "Tribunal de commerce de Grenoble"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1301",
+   "n": 1747,
+   "libelle": "Tribunal de commerce d'Aix-en-Provence"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3501",
+   "n": 1706,
+   "libelle": "Tribunal de commerce de Rennes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8305",
+   "n": 1662,
+   "libelle": "Tribunal de commerce de Toulon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7802",
+   "n": 1653,
+   "libelle": "Tribunal de commerce de Pontoise"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7202",
+   "n": 1609,
+   "libelle": "Tribunal des activités économiques du Mans"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1303",
+   "n": 1485,
+   "libelle": "Tribunal des activités économiques de Marseille"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2801",
+   "n": 1474,
+   "libelle": "Tribunal de commerce de Chartres"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5601",
+   "n": 1408,
+   "libelle": "Tribunal de commerce de Lorient"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8501",
+   "n": 1328,
+   "libelle": "Tribunal de commerce de La Roche-sur-Yon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0605",
+   "n": 1256,
+   "libelle": "Tribunal de commerce de Nice"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4502",
+   "n": 1240,
+   "libelle": "Tribunal de commerce d'Orléans"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6002",
+   "n": 1198,
+   "libelle": "Tribunal de commerce de Compiègne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8002",
+   "n": 1164,
+   "libelle": "Tribunal de commerce d'Amiens"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3802",
+   "n": 1143,
+   "libelle": "Tribunal de commerce de Vienne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7608",
+   "n": 1135,
+   "libelle": "Tribunal de commerce de Rouen"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5906",
+   "n": 1134,
+   "libelle": "Tribunal de commerce de Valenciennes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3003",
+   "n": 1028,
+   "libelle": "Tribunal de commerce de Nîmes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0601",
+   "n": 1022,
+   "libelle": "Tribunal de commerce d'Antibes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2702",
+   "n": 976,
+   "libelle": "Tribunal de commerce d'Évreux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7702",
+   "n": 942,
+   "libelle": "Tribunal de commerce de Melun"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3402",
+   "n": 931,
+   "libelle": "Tribunal de commerce de Béziers"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7102",
+   "n": 918,
+   "libelle": "Tribunal de commerce de Chalon-sur-Saône"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7606",
+   "n": 918,
+   "libelle": "Tribunal des activités économiques du Havre"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5402",
+   "n": 881,
+   "libelle": "Tribunal des activités économiques de Nancy"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2104",
+   "n": 856,
+   "libelle": "Tribunal de commerce de Dijon"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3701",
+   "n": 822,
+   "libelle": "Tribunal de commerce de Tours"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7401",
+   "n": 818,
+   "libelle": "Tribunal de commerce d'Annecy"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8602",
+   "n": 806,
+   "libelle": "Tribunal de commerce de Poitiers"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "9721",
+   "n": 800,
+   "libelle": "Tribunal de commerce de Fort-de-France"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7301",
+   "n": 768,
+   "libelle": "Tribunal de commerce de Chambéry"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "7402",
+   "n": 766,
+   "libelle": "Tribunal de commerce de Thonon-les-Bains"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0602",
+   "n": 746,
+   "libelle": "Tribunal de commerce de Cannes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1304",
+   "n": 730,
+   "libelle": "Tribunal de commerce de Salon-de-Provence"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6201",
+   "n": 663,
+   "libelle": "Tribunal de commerce d'Arras"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3303",
+   "n": 630,
+   "libelle": "Tribunal de commerce de Libourne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2002",
+   "n": 586,
+   "libelle": "Tribunal de commerce de Bastia"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1104",
+   "n": 581,
+   "libelle": "Tribunal de commerce de Narbonne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8903",
+   "n": 580,
+   "libelle": "Tribunal de commerce de Sens"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6403",
+   "n": 572,
+   "libelle": "Tribunal de commerce de Pau"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4002",
+   "n": 567,
+   "libelle": "Tribunal de commerce de Mont-de-Marsan"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6903",
+   "n": 564,
+   "libelle": "Tribunal de commerce de Villefranche-sur-Saône - Tarare"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8201",
+   "n": 532,
+   "libelle": "Tribunal de commerce de Montauban"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5952",
+   "n": 529,
+   "libelle": "Tribunal de commerce de Douai"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4401",
+   "n": 523,
+   "libelle": "Tribunal de commerce de Nantes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "3601",
+   "n": 519,
+   "libelle": "Tribunal de commerce de Châteauroux"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8302",
+   "n": 498,
+   "libelle": "Tribunal de commerce de Draguignan"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2202",
+   "n": 492,
+   "libelle": "Tribunal des activités économiques de Saint-Brieuc"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4201",
+   "n": 476,
+   "libelle": "Tribunal de commerce de Roanne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0501",
+   "n": 453,
+   "libelle": "Tribunal de commerce de Gap"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5501",
+   "n": 439,
+   "libelle": "Tribunal de commerce de Bar-le-Duc"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2903",
+   "n": 432,
+   "libelle": "Tribunal de commerce de Quimper"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "8701",
+   "n": 405,
+   "libelle": "Tribunal des activités économiques de Limoges"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5103",
+   "n": 402,
+   "libelle": "Tribunal de commerce de Reims"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5602",
+   "n": 393,
+   "libelle": "Tribunal de commerce de Vannes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5001",
+   "n": 393,
+   "libelle": "Tribunal de commerce de Cherbourg"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0802",
+   "n": 387,
+   "libelle": "Tribunal de commerce de Sedan"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4101",
+   "n": 383,
+   "libelle": "Tribunal de commerce de Blois"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1708",
+   "n": 380,
+   "libelle": "Tribunal de commerce de Saintes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1101",
+   "n": 378,
+   "libelle": "Tribunal de commerce de Carcassonne"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1601",
+   "n": 371,
+   "libelle": "Tribunal de commerce d'Angoulême"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "4001",
+   "n": 356,
+   "libelle": "Tribunal de commerce de Dax"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "0202",
+   "n": 324,
+   "libelle": "Tribunal de commerce de Saint-Quentin"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "1203",
+   "n": 304,
+   "libelle": "Tribunal de commerce de Rodez"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "6502",
+   "n": 303,
+   "libelle": "Tribunal de commerce de Tarbes"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "2401",
+   "n": 302,
+   "libelle": "Tribunal de commerce de Bergerac"
+  },
+  {
+   "juridiction": "tcom",
+   "lieu": "5401",
+   "n": 300,
+   "libelle": "Tribunal de commerce de Briey"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj75056",
+   "n": 40169,
+   "libelle": "Tribunal judiciaire de Paris"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj93008",
+   "n": 18560,
+   "libelle": "Tribunal judiciaire de Bobigny"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj13055",
+   "n": 18174,
+   "libelle": "Tribunal judiciaire de Marseille"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj69123",
+   "n": 16693,
+   "libelle": "Tribunal judiciaire de Lyon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj31555",
+   "n": 12455,
+   "libelle": "Tribunal judiciaire de Toulouse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj33063",
+   "n": 10855,
+   "libelle": "Tribunal judiciaire de Bordeaux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59350",
+   "n": 10589,
+   "libelle": "Tribunal judiciaire de Lille"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj78646",
+   "n": 10570,
+   "libelle": "Tribunal judiciaire de Versailles"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj77284",
+   "n": 8323,
+   "libelle": "Tribunal judiciaire de Meaux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj67482",
+   "n": 8133,
+   "libelle": "Tribunal judiciaire de Strasbourg"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj92050",
+   "n": 6523,
+   "libelle": "Tribunal judiciaire de Nanterre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj06088",
+   "n": 6277,
+   "libelle": "Tribunal judiciaire de Nice"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj91228",
+   "n": 5901,
+   "libelle": "Tribunal judiciaire d'Évry"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj44109",
+   "n": 5486,
+   "libelle": "Tribunal judiciaire de Nantes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj30189",
+   "n": 5012,
+   "libelle": "Tribunal judiciaire de Nîmes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj45234",
+   "n": 4806,
+   "libelle": "Tribunal judiciaire d'Orléans"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj35238",
+   "n": 4496,
+   "libelle": "Tribunal judiciaire de Rennes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj34172",
+   "n": 4325,
+   "libelle": "Tribunal judiciaire de Montpellier"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj63113",
+   "n": 4233,
+   "libelle": "Tribunal judiciaire de Clermont-Ferrand"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj68224",
+   "n": 4206,
+   "libelle": "Tribunal judiciaire de Mulhouse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj38185",
+   "n": 4012,
+   "libelle": "Tribunal judiciaire de Grenoble"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj97411",
+   "n": 3975,
+   "libelle": "Tribunal judiciaire de Saint-Denis de La Réunion"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj42218",
+   "n": 3971,
+   "libelle": "Tribunal judiciaire de Saint-Etienne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj57463",
+   "n": 3931,
+   "libelle": "Tribunal judiciaire de Metz"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj95500",
+   "n": 3834,
+   "libelle": "Tribunal judiciaire de Pontoise"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62160",
+   "n": 3800,
+   "libelle": "Tribunal judiciaire de Boulogne-sur-Mer"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "autres (groupes sous le seuil)",
+   "n": 3629,
+   "groupes_fondus": 29,
+   "libelle": "Autres (sous le seuil)"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj01053",
+   "n": 3511,
+   "libelle": "Tribunal judiciaire de Bourg-en-Bresse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj94028",
+   "n": 3429,
+   "libelle": "Tribunal judiciaire de Créteil"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj83137",
+   "n": 3104,
+   "libelle": "Tribunal judiciaire de Toulon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj21231",
+   "n": 3020,
+   "libelle": "Tribunal judiciaire de Dijon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj83050",
+   "n": 2938,
+   "libelle": "Tribunal judiciaire de Draguignan"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj37261",
+   "n": 2933,
+   "libelle": "Tribunal judiciaire de Tours"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj76351",
+   "n": 2851,
+   "libelle": "Tribunal judiciaire du Havre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj14118",
+   "n": 2695,
+   "libelle": "Tribunal judiciaire de Caen"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj84007",
+   "n": 2665,
+   "libelle": "Tribunal judiciaire d'Avignon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj27229",
+   "n": 2524,
+   "libelle": "Tribunal judiciaire d'Évreux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj86194",
+   "n": 2475,
+   "libelle": "Tribunal judiciaire de Poitiers"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj49007",
+   "n": 2400,
+   "libelle": "Tribunal judiciaire d'Angers"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj26362",
+   "n": 2248,
+   "libelle": "Tribunal judiciaire de Valence"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj80021",
+   "n": 2217,
+   "libelle": "Tribunal judiciaire d'Amiens"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj28085",
+   "n": 2202,
+   "libelle": "Tribunal judiciaire de Chartres"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj72181",
+   "n": 1895,
+   "libelle": "Tribunal judiciaire du Mans"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj34032",
+   "n": 1743,
+   "libelle": "Tribunal judiciaire de Béziers"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj06069",
+   "n": 1710,
+   "libelle": "Tribunal judiciaire de Grasse"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj54395",
+   "n": 1666,
+   "libelle": "Tribunal judiciaire de Nancy"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj76540",
+   "n": 1538,
+   "libelle": "Tribunal judiciaire de Rouen"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59606",
+   "n": 1531,
+   "libelle": "Tribunal judiciaire de Valenciennes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj13001",
+   "n": 1338,
+   "libelle": "Tribunal judiciaire d'Aix-en-Provence"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj87085",
+   "n": 1333,
+   "libelle": "Tribunal judiciaire de Limoges"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj10387",
+   "n": 1215,
+   "libelle": "Tribunal judiciaire de Troyes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj56260",
+   "n": 1144,
+   "libelle": "Tribunal judiciaire de Vannes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj51454",
+   "n": 1137,
+   "libelle": "Tribunal judiciaire de Reims"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj22278",
+   "n": 1131,
+   "libelle": "Tribunal judiciaire de Saint-Brieuc"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj56121",
+   "n": 1070,
+   "libelle": "Tribunal judiciaire de Lorient"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj73065",
+   "n": 933,
+   "libelle": "Tribunal judiciaire de Chambéry"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj74281",
+   "n": 909,
+   "libelle": "Tribunal judiciaire de Thonon-les-Bains"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62119",
+   "n": 888,
+   "libelle": "Tribunal judiciaire de Béthune"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj13108",
+   "n": 887,
+   "libelle": "Tribunal judiciaire de Tarascon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj74010",
+   "n": 875,
+   "libelle": "Tribunal judiciaire d'Annecy"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj98735",
+   "n": 869,
+   "libelle": "Tribunal judiciaire de Papeete"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj44184",
+   "n": 865,
+   "libelle": "Tribunal judiciaire de Saint-Nazaire"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj30007",
+   "n": 831,
+   "libelle": "Tribunal judiciaire d'Alès"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj25056",
+   "n": 789,
+   "libelle": "Tribunal judiciaire de Besançon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj62041",
+   "n": 774,
+   "libelle": "Tribunal judiciaire d'Arras"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj38053",
+   "n": 767,
+   "libelle": "Tribunal judiciaire de Bourgoin-Jallieu"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj77288",
+   "n": 764,
+   "libelle": "Tribunal judiciaire de Melun"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj35288",
+   "n": 752,
+   "libelle": "Tribunal judiciaire de Saint-Malo"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj40088",
+   "n": 699,
+   "libelle": "Tribunal judiciaire de Dax"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj17300",
+   "n": 642,
+   "libelle": "Tribunal judiciaire de La Rochelle"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj68066",
+   "n": 640,
+   "libelle": "Tribunal judiciaire de Colmar"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj70550",
+   "n": 638,
+   "libelle": "Tribunal judiciaire de Vesoul"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj12202",
+   "n": 630,
+   "libelle": "Tribunal judiciaire de Rodez"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj40192",
+   "n": 630,
+   "libelle": "Tribunal judiciaire de Mont-de-Marsan"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj54099",
+   "n": 621,
+   "libelle": "Tribunal judiciaire de Val de Briey"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj29232",
+   "n": 609,
+   "libelle": "Tribunal judiciaire de Quimper"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj2b033",
+   "n": 608,
+   "libelle": "Tribunal judiciaire de Bastia"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj61001",
+   "n": 590,
+   "libelle": "Tribunal judiciaire d'Alençon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj82121",
+   "n": 584,
+   "libelle": "Tribunal judiciaire de Montauban"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj73011",
+   "n": 579,
+   "libelle": "Tribunal judiciaire d'Albertville"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj16015",
+   "n": 568,
+   "libelle": "Tribunal judiciaire d'Angoulême"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj25388",
+   "n": 565,
+   "libelle": "Tribunal judiciaire de Montbéliard"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj02691",
+   "n": 551,
+   "libelle": "Tribunal judiciaire de Saint-Quentin"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj50147",
+   "n": 541,
+   "libelle": "Tribunal judiciaire de Coutances"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj60159",
+   "n": 539,
+   "libelle": "Tribunal judiciaire de Compiègne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj57631",
+   "n": 537,
+   "libelle": "Tribunal judiciaire de Sarreguemines"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj41018",
+   "n": 523,
+   "libelle": "Tribunal judiciaire de Blois"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj89024",
+   "n": 508,
+   "libelle": "Tribunal judiciaire d'Auxerre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj53130",
+   "n": 493,
+   "libelle": "Tribunal judiciaire de Laval"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj38544",
+   "n": 485,
+   "libelle": "Tribunal judiciaire de Vienne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj08105",
+   "n": 470,
+   "libelle": "Tribunal judiciaire de Charleville-Mézières"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj57672",
+   "n": 458,
+   "libelle": "Tribunal judiciaire de Thionville"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj07186",
+   "n": 445,
+   "libelle": "Tribunal judiciaire de Privas"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj15014",
+   "n": 438,
+   "libelle": "Tribunal judiciaire d'Aurillac"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj85194",
+   "n": 428,
+   "libelle": "Tribunal judiciaire des Sables-d'Olonne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59183",
+   "n": 420,
+   "libelle": "Tribunal judiciaire de Dunkerque"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj11069",
+   "n": 420,
+   "libelle": "Tribunal judiciaire de Carcassonne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj97416",
+   "n": 416,
+   "libelle": "Tribunal judiciaire de Saint-Pierre de La Réunion"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj36044",
+   "n": 406,
+   "libelle": "Tribunal judiciaire de Châteauroux"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj97120",
+   "n": 393,
+   "libelle": "Tribunal judiciaire de Pointe-à-Pitre"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj60057",
+   "n": 393,
+   "libelle": "Tribunal judiciaire de Beauvais"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj84031",
+   "n": 387,
+   "libelle": "Tribunal judiciaire de Carpentras"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj2a004",
+   "n": 382,
+   "libelle": "Tribunal judiciaire d'Ajaccio"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj24037",
+   "n": 377,
+   "libelle": "Tribunal judiciaire de Bergerac"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj74042",
+   "n": 372,
+   "libelle": "Tribunal judiciaire de Bonneville"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj33243",
+   "n": 363,
+   "libelle": "Tribunal judiciaire de Libourne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj51108",
+   "n": 353,
+   "libelle": "Tribunal judiciaire de Chalons-en-Champagne"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj19031",
+   "n": 348,
+   "libelle": "Tribunal judiciaire de Brive-la-Gaillarde"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj65440",
+   "n": 333,
+   "libelle": "Tribunal judiciaire de Tarbes"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj98818",
+   "n": 327,
+   "libelle": "Tribunal judiciaire de Nouméa"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj19272",
+   "n": 319,
+   "libelle": "Tribunal judiciaire de Tulle"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj59122",
+   "n": 319,
+   "libelle": "Tribunal judiciaire de Cambrai"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj03185",
+   "n": 317,
+   "libelle": "Tribunal judiciaire de Montluçon"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj55029",
+   "n": 315,
+   "libelle": "Tribunal judiciaire de Bar-le-Duc"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj09122",
+   "n": 313,
+   "libelle": "Tribunal judiciaire de Foix"
+  },
+  {
+   "juridiction": "tj",
+   "lieu": "tj64445",
+   "n": 308,
+   "libelle": "Tribunal judiciaire de Pau"
+  }
+ ],
+ "lieux_sans_libelle": {
+  "ca": [],
+  "tj": [],
+  "tcom": []
+ },
+ "cc_par_chambre": [
+  {
+   "periode": "2020 et après",
+   "chambre": "Chambre criminelle",
+   "n": 21867,
+   "part": 21.2
+  },
+  {
+   "periode": "2020 et après",
+   "chambre": "Ordonnances, assemblée plénière, chambre mixte et autres",
+   "n": 19435,
+   "part": 18.8
+  },
+  {
+   "periode": "2020 et après",
+   "chambre": "Chambre sociale",
+   "n": 16048,
+   "part": 15.5
+  },
+  {
+   "periode": "2020 et après",
+   "chambre": "Deuxième chambre civile",
+   "n": 15571,
+   "part": 15.1
+  },
+  {
+   "periode": "2020 et après",
+   "chambre": "Première chambre civile",
+   "n": 10770,
+   "part": 10.4
+  },
+  {
+   "periode": "2020 et après",
+   "chambre": "Troisième chambre civile",
+   "n": 9882,
+   "part": 9.6
+  },
+  {
+   "periode": "2020 et après",
+   "chambre": "Chambre commerciale",
+   "n": 9697,
+   "part": 9.4
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Chambre sociale",
+   "n": 146258,
+   "part": 25.7
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Chambre criminelle",
+   "n": 104815,
+   "part": 18.4
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Deuxième chambre civile",
+   "n": 78396,
+   "part": 13.8
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Première chambre civile",
+   "n": 74319,
+   "part": 13.0
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Troisième chambre civile",
+   "n": 73076,
+   "part": 12.8
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Chambre commerciale",
+   "n": 71259,
+   "part": 12.5
+  },
+  {
+   "periode": "toutes années",
+   "chambre": "Ordonnances, assemblée plénière, chambre mixte et autres",
+   "n": 21397,
+   "part": 3.8
+  }
+ ],
+ "tcom_par_libelle_de_chambre": [
+  {
+   "categorie_libelle": "Autre libellé",
+   "n": 108584,
+   "part": 53.7
+  },
+  {
+   "categorie_libelle": "Sans libellé de chambre",
+   "n": 45453,
+   "part": 22.5
+  },
+  {
+   "categorie_libelle": "Libellé mentionnant les procédures collectives",
+   "n": 38155,
+   "part": 18.9
+  },
+  {
+   "categorie_libelle": "Libellé mentionnant les référés",
+   "n": 9880,
+   "part": 4.9
+  }
+ ],
+ "nac_couverture": [
+  {
+   "juridiction": "ca",
+   "n": 646601,
+   "avec_nac": 540768,
+   "nac_dans_table": 540636,
+   "nac_supprime_avant_2022": 159210,
+   "codes_distincts": 640
+  },
+  {
+   "juridiction": "tj",
+   "n": 765280,
+   "avec_nac": 765280,
+   "nac_dans_table": 763879,
+   "nac_supprime_avant_2022": 3634,
+   "codes_distincts": 590
+  }
+ ],
+ "nac_niveau1": [
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "8",
+   "n": 44593,
+   "libelle": "Relations du travail et protection sociale",
+   "part": 33.6
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "5",
+   "n": 30911,
+   "libelle": "Contrats",
+   "part": 23.3
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "1",
+   "n": 23350,
+   "libelle": "Droit des personnes",
+   "part": 17.6
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "7",
+   "n": 9383,
+   "libelle": "Biens - Propriété littéraire et artistique",
+   "part": 7.1
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "3",
+   "n": 7836,
+   "libelle": "Droit des affaires",
+   "part": 5.9
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "4",
+   "n": 5647,
+   "libelle": "Entreprises en difficulté-surendettement",
+   "part": 4.3
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "6",
+   "n": 5036,
+   "libelle": "Responsabilité et quasi-contrats",
+   "part": 3.8
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "9",
+   "n": 2979,
+   "libelle": "Relations avec les personnes publiques",
+   "part": 2.2
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2024",
+   "niveau1": "2",
+   "n": 2791,
+   "libelle": "Droit de la famille",
+   "part": 2.1
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "8",
+   "n": 40267,
+   "libelle": "Relations du travail et protection sociale",
+   "part": 30.9
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "5",
+   "n": 30000,
+   "libelle": "Contrats",
+   "part": 23.0
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "1",
+   "n": 26327,
+   "libelle": "Droit des personnes",
+   "part": 20.2
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "7",
+   "n": 9481,
+   "libelle": "Biens - Propriété littéraire et artistique",
+   "part": 7.3
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "3",
+   "n": 7387,
+   "libelle": "Droit des affaires",
+   "part": 5.7
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "4",
+   "n": 6250,
+   "libelle": "Entreprises en difficulté-surendettement",
+   "part": 4.8
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "6",
+   "n": 4847,
+   "libelle": "Responsabilité et quasi-contrats",
+   "part": 3.7
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "2",
+   "n": 2864,
+   "libelle": "Droit de la famille",
+   "part": 2.2
+  },
+  {
+   "juridiction": "ca",
+   "periode": "2025",
+   "niveau1": "9",
+   "n": 2755,
+   "libelle": "Relations avec les personnes publiques",
+   "part": 2.1
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "8",
+   "n": 179619,
+   "libelle": "Relations du travail et protection sociale",
+   "part": 27.8
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "5",
+   "n": 126296,
+   "libelle": "Contrats",
+   "part": 19.5
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "non renseigné",
+   "n": 105833,
+   "libelle": "Code de nature d'affaire absent",
+   "part": 16.4
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "1",
+   "n": 97906,
+   "libelle": "Droit des personnes",
+   "part": 15.1
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "7",
+   "n": 38204,
+   "libelle": "Biens - Propriété littéraire et artistique",
+   "part": 5.9
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "3",
+   "n": 30565,
+   "libelle": "Droit des affaires",
+   "part": 4.7
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "4",
+   "n": 24815,
+   "libelle": "Entreprises en difficulté-surendettement",
+   "part": 3.8
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "6",
+   "n": 20793,
+   "libelle": "Responsabilité et quasi-contrats",
+   "part": 3.2
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "9",
+   "n": 11379,
+   "libelle": "Relations avec les personnes publiques",
+   "part": 1.8
+  },
+  {
+   "juridiction": "ca",
+   "periode": "toutes années",
+   "niveau1": "2",
+   "n": 11191,
+   "libelle": "Droit de la famille",
+   "part": 1.7
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "5",
+   "n": 61005,
+   "libelle": "Contrats",
+   "part": 36.9
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "8",
+   "n": 21550,
+   "libelle": "Relations du travail et protection sociale",
+   "part": 13.0
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "7",
+   "n": 20368,
+   "libelle": "Biens - Propriété littéraire et artistique",
+   "part": 12.3
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "1",
+   "n": 19539,
+   "libelle": "Droit des personnes",
+   "part": 11.8
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "2",
+   "n": 17255,
+   "libelle": "Droit de la famille",
+   "part": 10.4
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "3",
+   "n": 12145,
+   "libelle": "Droit des affaires",
+   "part": 7.3
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "6",
+   "n": 9779,
+   "libelle": "Responsabilité et quasi-contrats",
+   "part": 5.9
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "4",
+   "n": 2718,
+   "libelle": "Entreprises en difficulté-surendettement",
+   "part": 1.6
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2024",
+   "niveau1": "9",
+   "n": 1018,
+   "libelle": "Relations avec les personnes publiques",
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "5",
+   "n": 128544,
+   "libelle": "Contrats",
+   "part": 39.4
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "1",
+   "n": 46335,
+   "libelle": "Droit des personnes",
+   "part": 14.2
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "8",
+   "n": 38282,
+   "libelle": "Relations du travail et protection sociale",
+   "part": 11.7
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "7",
+   "n": 36170,
+   "libelle": "Biens - Propriété littéraire et artistique",
+   "part": 11.1
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "2",
+   "n": 33202,
+   "libelle": "Droit de la famille",
+   "part": 10.2
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "3",
+   "n": 17830,
+   "libelle": "Droit des affaires",
+   "part": 5.5
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "6",
+   "n": 16865,
+   "libelle": "Responsabilité et quasi-contrats",
+   "part": 5.2
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "4",
+   "n": 7618,
+   "libelle": "Entreprises en difficulté-surendettement",
+   "part": 2.3
+  },
+  {
+   "juridiction": "tj",
+   "periode": "2025",
+   "niveau1": "9",
+   "n": 1258,
+   "libelle": "Relations avec les personnes publiques",
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "5",
+   "n": 302308,
+   "libelle": "Contrats",
+   "part": 39.5
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "1",
+   "n": 98928,
+   "libelle": "Droit des personnes",
+   "part": 12.9
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "8",
+   "n": 91171,
+   "libelle": "Relations du travail et protection sociale",
+   "part": 11.9
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "7",
+   "n": 86512,
+   "libelle": "Biens - Propriété littéraire et artistique",
+   "part": 11.3
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "2",
+   "n": 79089,
+   "libelle": "Droit de la famille",
+   "part": 10.3
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "3",
+   "n": 44247,
+   "libelle": "Droit des affaires",
+   "part": 5.8
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "6",
+   "n": 40231,
+   "libelle": "Responsabilité et quasi-contrats",
+   "part": 5.3
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "4",
+   "n": 18733,
+   "libelle": "Entreprises en difficulté-surendettement",
+   "part": 2.4
+  },
+  {
+   "juridiction": "tj",
+   "periode": "toutes années",
+   "niveau1": "9",
+   "n": 4061,
+   "libelle": "Relations avec les personnes publiques",
+   "part": 0.5
+  }
+ ],
+ "nac_niveau2": [
+  {
+   "juridiction": "ca",
+   "niveau2": "80",
+   "n": 119024,
+   "libelle": "Relations individuelles de travail",
+   "part": 18.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "non renseigné",
+   "n": 105833,
+   "libelle": "Code de nature d'affaire absent",
+   "part": 16.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "14",
+   "n": 95200,
+   "libelle": "Droits attachés à la personne",
+   "part": 14.7
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "88",
+   "n": 36734,
+   "libelle": "Protection sociale",
+   "part": 5.7
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "53",
+   "n": 24706,
+   "libelle": "Prêt d'argent, crédit-bail (ou leasing), cautionnement",
+   "part": 3.8
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "50",
+   "n": 22125,
+   "libelle": "Vente",
+   "part": 3.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "51",
+   "n": 21681,
+   "libelle": "Baux d'habitation et baux professionnels",
+   "part": 3.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "89",
+   "n": 20315,
+   "libelle": "Risques professionnels",
+   "part": 3.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "54",
+   "n": 19492,
+   "libelle": "Contrat tendant à la réalisation de travaux de construction",
+   "part": 3.0
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "78",
+   "n": 13989,
+   "libelle": "Saisies et mesures conservatoires",
+   "part": 2.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "30",
+   "n": 13506,
+   "libelle": "Bail commercial",
+   "part": 2.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "59",
+   "n": 10804,
+   "libelle": "Contrats divers",
+   "part": 1.7
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "56",
+   "n": 10545,
+   "libelle": "Autres contrats de prestation de services",
+   "part": 1.6
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "70",
+   "n": 9013,
+   "libelle": "Propriété et possession immobilières",
+   "part": 1.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "58",
+   "n": 8725,
+   "libelle": "Contrat d'assurance",
+   "part": 1.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "48",
+   "n": 8440,
+   "libelle": "Surendettement des particuliers, faillite civile et rétablissement personnel",
+   "part": 1.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "28",
+   "n": 8333,
+   "libelle": "Partage, indivision, succession",
+   "part": 1.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "97",
+   "n": 6350,
+   "libelle": "Recours et actions contre des décisions rendues par certains organismes",
+   "part": 1.0
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "72",
+   "n": 6245,
+   "libelle": "Copropriété (II): droits et obligations des copropriétaires",
+   "part": 1.0
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "63",
+   "n": 5952,
+   "libelle": "Dommages causés par l'activité professionnelle de certaines personnes qualifiées",
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "64",
+   "n": 5782,
+   "libelle": "Dommages causés par l'action directe d'une personne",
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "4D",
+   "n": 5614,
+   "libelle": "L'entreprise au cours de la procédure  - Période suspecte et sort des créances et cession d'actifs -",
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "60",
+   "n": 4497,
+   "libelle": "Dommages causés par des véhicules",
+   "part": 0.7
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "74",
+   "n": 3924,
+   "libelle": "Servitudes",
+   "part": 0.6
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "38",
+   "n": 3866,
+   "libelle": "Banque - Effets de commerce",
+   "part": 0.6
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "71",
+   "n": 3463,
+   "libelle": "Copropriété (I): organisation et administration",
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "39",
+   "n": 3435,
+   "libelle": "Concurrence",
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "4A",
+   "n": 3284,
+   "libelle": "Désignation d'un mandataire ad hoc, ouverture d'une procédure de conciliation ou de règlement amiable agricole, de sauvegarde, de sauvegarde accélérée, de redressement ou de liquidation judiciaire",
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "35",
+   "n": 3231,
+   "libelle": "Groupements : Fonctionnement (II)",
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "4I",
+   "n": 3153,
+   "libelle": "Autres demandes en matière de sauvegarde, de redressement et de liquidation judiciaires",
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "96",
+   "n": 2878,
+   "libelle": "Responsabilité des personnes publiques",
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "autres (groupes sous le seuil)",
+   "n": 2752,
+   "groupes_fondus": 35,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "4H",
+   "n": 2739,
+   "libelle": "Liquidation judiciaire",
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "10",
+   "n": 2684,
+   "libelle": "Nationalité",
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "52",
+   "n": 2668,
+   "libelle": "Baux ruraux",
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "57",
+   "n": 2559,
+   "libelle": "Contrats d'intermédiaire",
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "5A",
+   "n": 2165,
+   "libelle": "Baux d'habitation",
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "62",
+   "n": 2061,
+   "libelle": "Dommages causés par des immeubles",
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "36",
+   "n": 1696,
+   "libelle": "Groupements : Dirigeants",
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "22",
+   "n": 1682,
+   "libelle": "Demandes postérieures au prononcé du divorce ou de la séparation de corps",
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "31",
+   "n": 1458,
+   "libelle": "Vente du fonds de commerce",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "34",
+   "n": 1361,
+   "libelle": "Groupements : Fonctionnement (I)",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "84",
+   "n": 1221,
+   "libelle": "Condition du personnel dans les procédures de sauvegarde, de redressement ou de liquidation judiciaire",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "66",
+   "n": 1189,
+   "libelle": "Quasi-contrats",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "3C",
+   "n": 1170,
+   "libelle": "Propriété industrielle : Marques",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "29",
+   "n": 1161,
+   "libelle": "Libéralités (donations et testaments)",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "61",
+   "n": 1067,
+   "libelle": "Dommages causés par des animaux, des produits ou des services",
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "91",
+   "n": 955,
+   "libelle": "Droits d'enregistrement et assimilés",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "82",
+   "n": 870,
+   "libelle": "Représentation des intérêts des salariés",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "55",
+   "n": 705,
+   "libelle": "Contrat de transport",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "92",
+   "n": 684,
+   "libelle": "Droits de douane et assimilés",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "76",
+   "n": 681,
+   "libelle": "Sûretés mobilières et immobilières",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "86",
+   "n": 633,
+   "libelle": "Négociation collective",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "83",
+   "n": 540,
+   "libelle": "Statut des salariés protégés",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "32",
+   "n": 529,
+   "libelle": "Location-gérance du fonds de commerce",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "79",
+   "n": 504,
+   "libelle": "Propriété littéraire et artistique",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "4G",
+   "n": 386,
+   "libelle": "Plan de redressement de l'entreprise",
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "niveau2": "4C",
+   "n": 342,
+   "libelle": "L'entreprise au cours de la procédure  - Autorisations,  plan de cession et actions diverses -",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "5A",
+   "n": 131811,
+   "libelle": "Baux d'habitation",
+   "part": 17.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "14",
+   "n": 94421,
+   "libelle": "Droits attachés à la personne",
+   "part": 12.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "20",
+   "n": 54857,
+   "libelle": "Divorce",
+   "part": 7.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "88",
+   "n": 52643,
+   "libelle": "Protection sociale",
+   "part": 6.9
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "54",
+   "n": 48462,
+   "libelle": "Contrat tendant à la réalisation de travaux de construction",
+   "part": 6.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "53",
+   "n": 42333,
+   "libelle": "Prêt d'argent, crédit-bail (ou leasing), cautionnement",
+   "part": 5.5
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "72",
+   "n": 39619,
+   "libelle": "Copropriété (II): droits et obligations des copropriétaires",
+   "part": 5.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "50",
+   "n": 33315,
+   "libelle": "Vente",
+   "part": 4.4
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "30",
+   "n": 33034,
+   "libelle": "Bail commercial",
+   "part": 4.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "89",
+   "n": 32280,
+   "libelle": "Risques professionnels",
+   "part": 4.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "78",
+   "n": 26158,
+   "libelle": "Saisies et mesures conservatoires",
+   "part": 3.4
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "56",
+   "n": 20506,
+   "libelle": "Autres contrats de prestation de services",
+   "part": 2.7
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "48",
+   "n": 16940,
+   "libelle": "Surendettement des particuliers, faillite civile et rétablissement personnel",
+   "part": 2.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "60",
+   "n": 14677,
+   "libelle": "Dommages causés par des véhicules",
+   "part": 1.9
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "28",
+   "n": 11919,
+   "libelle": "Partage, indivision, succession",
+   "part": 1.6
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "70",
+   "n": 9864,
+   "libelle": "Propriété et possession immobilières",
+   "part": 1.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "58",
+   "n": 9018,
+   "libelle": "Contrat d'assurance",
+   "part": 1.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "64",
+   "n": 8631,
+   "libelle": "Dommages causés par l'action directe d'une personne",
+   "part": 1.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "63",
+   "n": 8212,
+   "libelle": "Dommages causés par l'activité professionnelle de certaines personnes qualifiées",
+   "part": 1.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "26",
+   "n": 7008,
+   "libelle": "Filiation naturelle (recours) et filiation adoptive",
+   "part": 0.9
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "71",
+   "n": 6390,
+   "libelle": "Copropriété (I): organisation et administration",
+   "part": 0.8
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "55",
+   "n": 6255,
+   "libelle": "Contrat de transport",
+   "part": 0.8
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "38",
+   "n": 5359,
+   "libelle": "Banque - Effets de commerce",
+   "part": 0.7
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "59",
+   "n": 4977,
+   "libelle": "Contrats divers",
+   "part": 0.7
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "62",
+   "n": 4728,
+   "libelle": "Dommages causés par des immeubles",
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "10",
+   "n": 4443,
+   "libelle": "Nationalité",
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "82",
+   "n": 4139,
+   "libelle": "Représentation des intérêts des salariés",
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "autres (groupes sous le seuil)",
+   "n": 2689,
+   "groupes_fondus": 34,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "74",
+   "n": 2553,
+   "libelle": "Servitudes",
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "61",
+   "n": 2357,
+   "libelle": "Dommages causés par des animaux, des produits ou des services",
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "5B",
+   "n": 2178,
+   "libelle": "Baux professionnels",
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "96",
+   "n": 2031,
+   "libelle": "Responsabilité des personnes publiques",
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "22",
+   "n": 1934,
+   "libelle": "Demandes postérieures au prononcé du divorce ou de la séparation de corps",
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "2A",
+   "n": 1784,
+   "libelle": "Filiation",
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "35",
+   "n": 1478,
+   "libelle": "Groupements : Fonctionnement (II)",
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "57",
+   "n": 1460,
+   "libelle": "Contrats d'intermédiaire",
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "79",
+   "n": 1386,
+   "libelle": "Propriété littéraire et artistique",
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "81",
+   "n": 1232,
+   "libelle": "Élections professionnelles",
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "66",
+   "n": 1212,
+   "libelle": "Quasi-contrats",
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "52",
+   "n": 1106,
+   "libelle": "Baux ruraux",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "29",
+   "n": 1049,
+   "libelle": "Libéralités (donations et testaments)",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "31",
+   "n": 1037,
+   "libelle": "Vente du fonds de commerce",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "51",
+   "n": 887,
+   "libelle": "Baux d'habitation et baux professionnels",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "34",
+   "n": 851,
+   "libelle": "Groupements : Fonctionnement (I)",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "4A",
+   "n": 842,
+   "libelle": "Désignation d'un mandataire ad hoc, ouverture d'une procédure de conciliation ou de règlement amiable agricole, de sauvegarde, de sauvegarde accélérée, de redressement ou de liquidation judiciaire",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "3C",
+   "n": 773,
+   "libelle": "Propriété industrielle : Marques",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "36",
+   "n": 728,
+   "libelle": "Groupements : Dirigeants",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "91",
+   "n": 722,
+   "libelle": "Droits d'enregistrement et assimilés",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "94",
+   "n": 618,
+   "libelle": "Elections politiques et référendum",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "80",
+   "n": 471,
+   "libelle": "Relations individuelles de travail",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "4H",
+   "n": 438,
+   "libelle": "Liquidation judiciaire",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "65",
+   "n": 414,
+   "libelle": "Dommages causés par l'action d'une personne dont on est responsable",
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "39",
+   "n": 376,
+   "libelle": "Concurrence",
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "21",
+   "n": 375,
+   "libelle": "Séparation de corps",
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "niveau2": "97",
+   "n": 300,
+   "libelle": "Recours et actions contre des décisions rendues par certains organismes",
+   "part": 0.0
+  }
+ ],
+ "nac_codes": [
+  {
+   "juridiction": "ca",
+   "code": "80A",
+   "intitule": "Demande d'indemnités liées à la rupture du contrat de travail CDI ou CDD, son exécution ou inexécution",
+   "n": 77126,
+   "part": 14.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "14G",
+   "intitule": "Demande d'autorisation relative à la rétention et au maintien en zone d'attente d'un étranger",
+   "n": 37165,
+   "part": 6.9
+  },
+  {
+   "juridiction": "ca",
+   "code": "14H",
+   "intitule": "Demande de mainlevée de la rétention formée devant le juge des libertés et de la détention par l'étranger",
+   "n": 26969,
+   "part": 5.0
+  },
+  {
+   "juridiction": "ca",
+   "code": "autres (groupes sous le seuil)",
+   "n": 26875,
+   "groupes_fondus": 455,
+   "part": 5.0,
+   "intitule": "Autres codes (sous le seuil chacun)"
+  },
+  {
+   "juridiction": "ca",
+   "code": "14Q",
+   "intitule": "Demande d'autorisation de prolongation des mesures de rétention prises à l'encontre des étrangers en situation irrégulière",
+   "n": 15825,
+   "part": 2.9
+  },
+  {
+   "juridiction": "ca",
+   "code": "88A",
+   "intitule": "Constestation d'une décision d'un organisme portant sur l'immatriculation, l'affiliation ou un refus de reconnaissance d'un droit",
+   "n": 14554,
+   "part": 2.7
+  },
+  {
+   "juridiction": "ca",
+   "code": "80J",
+   "intitule": "Contestation du motif non économique de la rupture du contrat de travail",
+   "n": 13557,
+   "part": 2.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "80C",
+   "intitule": "Demande d'indemnités ou de salaires",
+   "n": 13538,
+   "part": 2.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "53B",
+   "intitule": "Prêt - Demande en remboursement du prêt",
+   "n": 13485,
+   "part": 2.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "51A",
+   "intitule": "Demande en paiement des loyers et des charges et/ou tendant à faire prononcer ou constater la résiliation pour défaut de paiement  ou défaut d'assurance et ordonner l'expulsion",
+   "n": 13452,
+   "part": 2.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "54G",
+   "intitule": "Demande d'exécution de travaux, ou de dommages-intérêts, formée par le maître de l'ouvrage contre le constructeur ou son garant, ou contre le fabricant d'un élément de construction",
+   "n": 11225,
+   "part": 2.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "30B",
+   "intitule": "Demande en paiement des loyers et charges et/ou tendant à la  résiliation du bail et/ou à l'expulsion",
+   "n": 7988,
+   "part": 1.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "89A",
+   "intitule": "A.T.M.P. : Demande de prise en charge au titre des A.T.M.P. et/ou contestation relative au taux d'incapacité",
+   "n": 6840,
+   "part": 1.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "28A",
+   "intitule": "Demande en partage, ou contestations relatives au partage",
+   "n": 6507,
+   "part": 1.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "89E",
+   "intitule": "A.T.M.P. : Demande d'un employeur contestant une décision d'une caisse",
+   "n": 6497,
+   "part": 1.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "48C",
+   "intitule": "Contestation des mesures imposées par la commission de surendettement  des particuliers",
+   "n": 6470,
+   "part": 1.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "59B",
+   "intitule": "Demande en paiement relative à un autre contrat",
+   "n": 6427,
+   "part": 1.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "50D",
+   "intitule": "Demande en garantie des vices cachés ou tendant à faire sanctionner un défaut de conformité",
+   "n": 6295,
+   "part": 1.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "78F",
+   "intitule": "Demande en nullité et/ou en mainlevée, en suspension ou en exécution d'une saisie mobilière",
+   "n": 6129,
+   "part": 1.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "88G",
+   "intitule": "Autres demandes contre un organisme",
+   "n": 6099,
+   "part": 1.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "50A",
+   "intitule": "Demande en nullité de la vente ou d'une clause de la vente",
+   "n": 5941,
+   "part": 1.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "88B",
+   "intitule": "Demande d'annulation d'une mise en demeure ou d'une contrainte",
+   "n": 5771,
+   "part": 1.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "56B",
+   "intitule": "Demande en paiement du prix, ou des honoraires formée contre le client et/ou tendant à faire sanctionner le non-paiement du prix, ou des honoraires",
+   "n": 5122,
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "code": "97J",
+   "intitule": "Contestation concernant le montant et le recouvrement des honoraires des avocats",
+   "n": 5067,
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "code": "58E",
+   "intitule": "Demande en paiement de l'indemnité d'assurance dans une assurance de dommages",
+   "n": 4962,
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "code": "53I",
+   "intitule": "Cautionnement - Demande en paiement formée contre la caution seule",
+   "n": 4652,
+   "part": 0.9
+  },
+  {
+   "juridiction": "ca",
+   "code": "14K",
+   "intitule": "Demande de contrôle obligatoire périodique de la nécessité d'une mesure d'hospitalisation complète",
+   "n": 4584,
+   "part": 0.8
+  },
+  {
+   "juridiction": "ca",
+   "code": "60A",
+   "intitule": "Demande en réparation des dommages causés par des véhicules terrestres à moteur",
+   "n": 4278,
+   "part": 0.8
+  },
+  {
+   "juridiction": "ca",
+   "code": "14I",
+   "intitule": "Demande de mainlevée d'une mesure d'hospitalisation complète par le patient ou toute personne agissant dans son intérêt",
+   "n": 4166,
+   "part": 0.8
+  },
+  {
+   "juridiction": "ca",
+   "code": "64B",
+   "intitule": "Demande en réparation des dommages causés par d'autres faits personnels",
+   "n": 4104,
+   "part": 0.8
+  },
+  {
+   "juridiction": "ca",
+   "code": "4DC",
+   "intitule": "Appel sur une décision du juge commissaire relative à l'admission des créances",
+   "n": 4099,
+   "part": 0.8
+  },
+  {
+   "juridiction": "ca",
+   "code": "89B",
+   "intitule": "A.T.M.P. : Demande relative à la faute inexcusable de l'employeur",
+   "n": 3868,
+   "part": 0.7
+  },
+  {
+   "juridiction": "ca",
+   "code": "50G",
+   "intitule": "Demande relative à l'exécution d'une promesse unilatérale de vente ou d'un pacte de préférence ou d'un compromis de vente",
+   "n": 3358,
+   "part": 0.6
+  },
+  {
+   "juridiction": "ca",
+   "code": "54Z",
+   "intitule": "Autres demandes relatives à un contrat de réalisation de travaux de construction",
+   "n": 3217,
+   "part": 0.6
+  },
+  {
+   "juridiction": "ca",
+   "code": "50B",
+   "intitule": "Demande en paiement du prix ou tendant à faire sanctionner le non-paiement du prix",
+   "n": 3155,
+   "part": 0.6
+  },
+  {
+   "juridiction": "ca",
+   "code": "72A",
+   "intitule": "Demande en paiement des charges ou des contributions",
+   "n": 2931,
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "63B",
+   "intitule": "Demande en réparation des dommages causés par l'activité des auxiliaires de justice",
+   "n": 2745,
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "56C",
+   "intitule": "Demande en dommages-intérêts contre le prestataire de services pour mauvaise exécution",
+   "n": 2721,
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "80P",
+   "intitule": "Demande en paiement de créances salariales sans contestation du motif de la rupture du contrat de travail",
+   "n": 2677,
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "54C",
+   "intitule": "Demande en paiement du prix formée par le constructeur contre le maître de l'ouvrage ou son garant",
+   "n": 2609,
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "14N",
+   "intitule": "Contestation de la légalité de l'arrêté de placement en rétention devant le juge des libertés et de la détention par l'étranger",
+   "n": 2534,
+   "part": 0.5
+  },
+  {
+   "juridiction": "ca",
+   "code": "4HA",
+   "intitule": "Appel contre des décisions prononçant la liquidation judiciaire",
+   "n": 2413,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "96E",
+   "intitule": "Demande d'indemnisation à raison d'une détention provisoire",
+   "n": 2305,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "63A",
+   "intitule": "Demande en réparation des dommages causés par l'activité médicale ou para-médicale",
+   "n": 2299,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "78A",
+   "intitule": "Demande tendant à la vente immobilière et à la distribution du prix",
+   "n": 2273,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "30Z",
+   "intitule": "Autres demandes en matière de baux commerciaux",
+   "n": 2260,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "88C",
+   "intitule": "Demande en paiement de cotisations, majorations de retard et/ou pénalités",
+   "n": 2159,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "70C",
+   "intitule": "Demande d'expulsion et/ou d'indemnités dirigée contre les occupants des lieux",
+   "n": 2142,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "74D",
+   "intitule": "Demande relative à un droit de passage",
+   "n": 2118,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "71F",
+   "intitule": "Demande en nullité d'une assemblée générale ou d'une délibération de cette assemblée",
+   "n": 2099,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "39H",
+   "intitule": "Demande en cessation de concurrence déloyale ou illicite et/ou en dommages et intérêts",
+   "n": 2069,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "53F",
+   "intitule": "Crédit-bail ou leasing - Demande en paiement des loyers et/ou en résiliation du crédit-bail",
+   "n": 2032,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "38E",
+   "intitule": "Autres actions en responsabilité exercées contre un établissement de crédit",
+   "n": 2010,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "80B",
+   "intitule": "Demande d'indemnités liées à la rupture du contrat de travail pour motif économique",
+   "n": 1949,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "59C",
+   "intitule": "Demande en exécution ou en dommages-intérêts pour mauvaise exécution d'un autre contrat",
+   "n": 1920,
+   "part": 0.4
+  },
+  {
+   "juridiction": "ca",
+   "code": "80O",
+   "intitule": "Demande de requalification du contrat de travail",
+   "n": 1890,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "14C",
+   "intitule": "Demande relative à l'internement d'une personne",
+   "n": 1866,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "88H",
+   "intitule": "Autres demandes d'un organisme, ou au profit d'un organisme",
+   "n": 1827,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "80M",
+   "intitule": "Demande de résiliation ou de résolution judiciaire du contrat de travail formée par un salarié",
+   "n": 1780,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "50Z",
+   "intitule": "Autres demandes relatives à la vente",
+   "n": 1775,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "80K",
+   "intitule": "Contestation du motif économique de la rupture du contrat de travail",
+   "n": 1761,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "22G",
+   "intitule": "Demande relative à la liquidation du régime matrimonial",
+   "n": 1682,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "51Z",
+   "intitule": "Autres demandes relatives à un bail d'habitation ou à un bail professionnel",
+   "n": 1680,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "51C",
+   "intitule": "Demande du bailleur tendant à faire constater la validité du congé et à ordonner l'expulsion",
+   "n": 1627,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "88D",
+   "intitule": "Demande en remboursement de cotisations, prestations ou allocations indues",
+   "n": 1623,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "62B",
+   "intitule": "Demande en réparation des dommages causés à une chose mobilière ou immobilière par un immeuble",
+   "n": 1606,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "57A",
+   "intitule": "Demande en paiement ou en indemnisation formée par un intermédiaire",
+   "n": 1528,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "35Z",
+   "intitule": "Autres demandes relatives au fonctionnement du groupement",
+   "n": 1526,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "64A",
+   "intitule": "Demande en réparation des dommages causés par une nuisance de l'environnement",
+   "n": 1526,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "51B",
+   "intitule": "Demande tendant à l'exécution des autres obligations du locataire et/ou tendant à faire prononcer  la résiliation pour inexécution de ces obligations et ordonner l'expulsion",
+   "n": 1454,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "5AA",
+   "intitule": "Baux d'habitation - Demande en paiement des loyers et des charges et/ou tendant à faire prononcer ou constater la résiliation pour défaut de paiement  ou défaut d'assurance et ordonner l'expulsion",
+   "n": 1425,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "51G",
+   "intitule": "Demande du locataire tendant à la diminution du loyer ou des charges, et/ou à la résiliation du bail, et/ou à des dommages-intérêts,  en raison de troubles de jouissance",
+   "n": 1417,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "10A",
+   "intitule": "Demande tendant à contester l'enregistrement ou le refus d'enregistrement d'une déclaration de nationalité",
+   "n": 1391,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "53A",
+   "intitule": "Prêt - Demande en nullité du contrat ou d'une clause du contrat",
+   "n": 1389,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "58G",
+   "intitule": "Demande en paiement de l'indemnité d'assurance dans une assurance de personnes",
+   "n": 1388,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "4AF",
+   "intitule": "Demande d'ouverture de la procédure de liquidation judiciaire",
+   "n": 1366,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "70H",
+   "intitule": "Demande de fixation de l'indemnité d'expropriation",
+   "n": 1364,
+   "part": 0.3
+  },
+  {
+   "juridiction": "ca",
+   "code": "70B",
+   "intitule": "Demande formée par le propriétaire de démolition d'une construction ou d'enlèvement d'une plantation faite par un tiers sur son terrain",
+   "n": 1302,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "72Z",
+   "intitule": "Autres demandes relatives à la copropriété",
+   "n": 1219,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "88E",
+   "intitule": "Demande en paiement de prestations",
+   "n": 1184,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "53D",
+   "intitule": "Autres demandes relatives au prêt",
+   "n": 1172,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "59A",
+   "intitule": "Demande en nullité d'un contrat ou des clauses relatives à un autre contrat",
+   "n": 1170,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "88M",
+   "intitule": "Majeur handicapé - Contestation d'une décision relative à une allocation",
+   "n": 1157,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "70E",
+   "intitule": "Demande relative aux murs, haies et  fossés mitoyens",
+   "n": 1157,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "78K",
+   "intitule": "Demande en nullité et/ou de mainlevée d'une mesure conservatoire",
+   "n": 1149,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "56Z",
+   "intitule": "Autres demandes relatives à un contrat de prestation de services",
+   "n": 1117,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "52Z",
+   "intitule": "Autres demandes relatives à un bail rural",
+   "n": 1073,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "80T",
+   "intitule": "Demande en paiement de créances salariales en l'absence de rupture du contrat de travail",
+   "n": 1063,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "50F",
+   "intitule": "Autres demandes  tendant à faire sanctionner l'inexécution des obligations du vendeur",
+   "n": 1056,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "70D",
+   "intitule": "Demande en bornage ou en clôture",
+   "n": 1044,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "4AE",
+   "intitule": "Demande d'ouverture de la procédure de redressement judiciaire",
+   "n": 1035,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "57B",
+   "intitule": "Demande en réparation des dommages causés par un intermédiaire",
+   "n": 1031,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "78H",
+   "intitule": "Demande d'ouverture ou contestation d'une procédure de saisie des rémunérations",
+   "n": 1007,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "58Z",
+   "intitule": "Demande relative à d'autres contrats d'assurance",
+   "n": 981,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "80L",
+   "intitule": "Demande de prise d'acte de la rupture du contrat de travail",
+   "n": 949,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "28Z",
+   "intitule": "Autres demandes en matière de succession",
+   "n": 949,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "53J",
+   "intitule": "Cautionnement - Recours de la caution contre le débiteur principal ou contre une autre caution",
+   "n": 942,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "30C",
+   "intitule": "Demande de fixation du prix du bail révisé ou renouvelé",
+   "n": 928,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "35A",
+   "intitule": "Demande tendant à contester l'agrément ou le refus d'agrément de cessionnaires de parts sociales ou d'actions",
+   "n": 909,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "88L",
+   "intitule": "Majeur handicapé - Contestation d'une décision relative à l'attribution d'un taux",
+   "n": 897,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "70A",
+   "intitule": "Revendication d'un bien immobilier",
+   "n": 895,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "78E",
+   "intitule": "Autres demandes relatives à la procédure de saisie immobilière",
+   "n": 880,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "72C",
+   "intitule": "Demande du syndicat tendant à la cessation et/ou à la sanction d'une violation des règles de la copropriété commise par un copropriétaire",
+   "n": 875,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "59D",
+   "intitule": "Demande en paiement relative à un contrat non qualifié",
+   "n": 872,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "39J",
+   "intitule": "Demande en réparation des préjudices résultant de la rupture brutale d'une relation commerciale établie",
+   "n": 847,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "4IA",
+   "intitule": "Action en responsabilité pour insuffisance d'actif à l'encontre des dirigeants",
+   "n": 846,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "89M",
+   "intitule": "Tarification - Demande tendant au retrait ou à la modification du compte employeur des coûts moyens relatifs à une maladie professionnelle ou un accident du travail",
+   "n": 826,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "56A",
+   "intitule": "Demande en nullité d'un contrat de prestation de services",
+   "n": 822,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "54B",
+   "intitule": "Demande en paiement du prix formée par le sous-traitant contre l'entrepreneur principal",
+   "n": 822,
+   "part": 0.2
+  },
+  {
+   "juridiction": "ca",
+   "code": "61B",
+   "intitule": "Demande en réparation des dommages causés par un produit ou une prestation de services défectueux",
+   "n": 800,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "66B",
+   "intitule": "Demande en restitution d'une chose ou en paiement d'un prix reçu indûment",
+   "n": 745,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "89K",
+   "intitule": "Demande relative à l'exposition à un risque professionnel",
+   "n": 743,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "78B",
+   "intitule": "Demande tendant à la suspension de la procédure de saisie immobilière, l'annulation ou la péremption du commandement  ou  tendant à la vente amiable",
+   "n": 736,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "30G",
+   "intitule": "Demande d'exécution de travaux à la charge du bailleur, ou demande en garantie contre le bailleur",
+   "n": 725,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "36E",
+   "intitule": "Action en responsabilité civile exercée contre les dirigeants ou les associés",
+   "n": 705,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "71G",
+   "intitule": "Action en responsabilité exercée contre le syndicat",
+   "n": 702,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "72D",
+   "intitule": "Demande d'un copropriétaire tendant à la cessation et/ou à la sanction d'une atteinte à la propriété ou à la jouissance d'un lot",
+   "n": 702,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "30E",
+   "intitule": "Action en contestation de congé et/ou demande de renouvellement de bail",
+   "n": 689,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "38C",
+   "intitule": "Demande en paiement du solde du compte bancaire",
+   "n": 666,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "63C",
+   "intitule": "Demande en réparation des dommages causés par l'activité d'un expert en diagnostic, un commissaire aux comptes, un commissaire aux apports, un commissaire à la fusion ou un expert-comptable",
+   "n": 664,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "97C",
+   "intitule": "Recours contre les décisions administratives des ordres d'avocats",
+   "n": 648,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "4IF",
+   "intitule": "Recours devant le tribunal contre les décisions du juge commissaire et appels contre les décisions statuant sur ces recours",
+   "n": 646,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "4IC",
+   "intitule": "Demande de prononcé de la faillite personnelle",
+   "n": 645,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "52A",
+   "intitule": "Demande en paiement des fermages ou loyers et/ou tendant à faire prononcer ou constater la résiliation du bail pour défaut de paiement et prononcer l'expulsion",
+   "n": 636,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "31B",
+   "intitule": "Demande en paiement du prix et/ou tendant à faire sanctionner le non-paiement du prix",
+   "n": 630,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "51D",
+   "intitule": "Demande du  locataire ou de l'ancien locataire tendant au maintien dans les lieux",
+   "n": 626,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "4DF",
+   "intitule": "Appel sur une décision du juge commissaire relative à la vente d'actifs",
+   "n": 622,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "3CE",
+   "intitule": "Recours contre les décisions du directeur de l'INPI - marques -",
+   "n": 621,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "14S",
+   "intitule": "Demande de mainlevée d'une mesure d'isolement et/ou de contention formée à titre principal",
+   "n": 609,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "74A",
+   "intitule": "Demande relative à une servitude d'usage ou de passage des eaux",
+   "n": 608,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "78I",
+   "intitule": "Autres demandes relatives à la saisie mobilière",
+   "n": 605,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "30F",
+   "intitule": "Demande d'évaluation et/ou en paiement de l'indemnité d'éviction",
+   "n": 590,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "34C",
+   "intitule": "Demande en nullité des actes des assemblées et conseils",
+   "n": 581,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "48O",
+   "intitule": "Demande aux fins de suspension des mesures d'expulsion du logement du débiteur",
+   "n": 578,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "54A",
+   "intitule": "Demande en nullité d'un contrat tendant à la réalisation de travaux de construction",
+   "n": 573,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "4ID",
+   "intitule": "Demande de prononcé d'une interdiction de diriger, gérer, administrer ou contrôler",
+   "n": 570,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "29A",
+   "intitule": "Demande en annulation, en réduction d'une libéralité ou d'une clause d'une libéralité",
+   "n": 564,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "80U",
+   "intitule": "Demande présentée par un employeur liée à la rupture du contrat de travail ou à des créances salariales",
+   "n": 539,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "70Z",
+   "intitule": "Autres demandes relatives à la propriété ou à la possession d'un immeuble ou relevant de la compétence du juge de l'expropriation",
+   "n": 521,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "51F",
+   "intitule": "Demande du locataire tendant  à être autorisé d'exécuter des travaux ou à faire exécuter des travaux à la charge du bailleur",
+   "n": 515,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "50C",
+   "intitule": "Demande tendant à obtenir la livraison de la chose ou à faire sanctionner le défaut de livraison",
+   "n": 514,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "10D",
+   "intitule": "Demande tendant à contester l'enregistrement d'une déclaration de nationalité",
+   "n": 502,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "54F",
+   "intitule": "Recours entre constructeurs",
+   "n": 492,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "48J",
+   "intitule": "Contestation de la décision de la commission imposant un rétablissement personnel sans liquidation judiciaire",
+   "n": 487,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "91Z",
+   "intitule": "Demande relative à d'autres droits d'enregistrement ou assimilés",
+   "n": 485,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "89L",
+   "intitule": "Tarification - Demande tendant à faire inscrire une maladie professionnelle au compte spécial ou aux charges techniques générales",
+   "n": 482,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "53L",
+   "intitule": "Autres demandes relatives au cautionnement",
+   "n": 462,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "52C",
+   "intitule": "Demande formée par le bailleur ou le preneur relative à la poursuite ou au renouvellement du bail",
+   "n": 459,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "62A",
+   "intitule": "Demande en réparation des dommages causés à une personne par un immeuble",
+   "n": 455,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "4AG",
+   "intitule": "Demande de prononcé de la liquidation judiciaire après résolution du plan de sauvegarde ou du plan de redressement",
+   "n": 450,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "34F",
+   "intitule": "Demande tendant à la communication des documents sociaux",
+   "n": 450,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "10B",
+   "intitule": "Action déclaratoire ou négatoire de nationalité",
+   "n": 446,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "80H",
+   "intitule": "Demande présentée par un employeur liée à la rupture du contrat de travail ou à des créances salariales",
+   "n": 445,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "48A",
+   "intitule": "Recours contre les décisions statuant sur la recevabilité prononcées par les commissions de surendettement des particuliers",
+   "n": 442,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "55B",
+   "intitule": "Action en responsabilité exercée contre le transporteur",
+   "n": 442,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "51E",
+   "intitule": "Demande en dommages-intérêts formée par le bailleur en fin de bail en raison des dégradations ou des pertes imputables au locataire",
+   "n": 433,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "36Z",
+   "intitule": "Autres demandes relatives aux dirigeants du groupement",
+   "n": 433,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "80G",
+   "intitule": "Demande en paiement de créances salariales en l'absence de rupture du contrat de travail",
+   "n": 432,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "86F",
+   "intitule": "Demande en exécution d'un accord de conciliation, d'un accord sur une recommandation de médiateur, d'une sentence arbitrale, ou tendant à sanctionner leur inexécution",
+   "n": 426,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "78G",
+   "intitule": "Demande relative à la saisissabilité et/ou à la mise à disposition de sommes ou d'un  bien",
+   "n": 422,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "74Z",
+   "intitule": "Demande relative à d'autres servitudes",
+   "n": 420,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "4DD",
+   "intitule": "Appel sur une décision du juge commissaire relative à la réclamation sur l'état des créances",
+   "n": 412,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "82C",
+   "intitule": "Demande relative à la désignation, au mandat ou la rémunération d'un expert",
+   "n": 403,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "38Z",
+   "intitule": "Autres demandes en matière de droit bancaire et d'effets de commerce",
+   "n": 399,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "70O",
+   "intitule": "Demande tendant à la démolition ou la mise en conformité d'un ouvrage édifié ou installé en violation des règles d'urbanisme",
+   "n": 399,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "74C",
+   "intitule": "Demande relative à une servitude de jours et vues sur le fonds voisin",
+   "n": 388,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "84F",
+   "intitule": "Demande d'indemnités ou de salaires liée ou non à la rupture du contrat de travail, présentée après l'ouverture d'une procédure collective",
+   "n": 386,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "78J",
+   "intitule": "Demande d’autorisation d’une visite et/ou d’une mesure conservatoire",
+   "n": 378,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "96D",
+   "intitule": "Demande en réparation des dommages causés par le fonctionnement défectueux du service de la justice",
+   "n": 368,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "31Z",
+   "intitule": "Autres demandes en matière de vente de fonds de commerce",
+   "n": 367,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "54D",
+   "intitule": "Demande en paiement direct du prix formée par le sous-traitant contre le maître de l'ouvrage",
+   "n": 365,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "78M",
+   "intitule": "Autres demandes relatives à une mesure conservatoire",
+   "n": 353,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "38D",
+   "intitule": "Action en responsabilité exercée contre l'établissement de crédit pour octroi abusif de crédits ou brusque rupture de crédits",
+   "n": 351,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "58F",
+   "intitule": "Demande en paiement de l'indemnité d'assurance de responsabilité formée par l'assuré",
+   "n": 338,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "88U",
+   "intitule": "Invalidité - Contestation d'une décision relative à une allocation",
+   "n": 338,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "51H",
+   "intitule": "Demande du locataire en fin de bail en restitution du dépôt de garantie et/ou tendant au paiement d'une indemnité pour amélioration des lieux loués",
+   "n": 329,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "28C",
+   "intitule": "Demande relative aux pouvoirs de gestion des biens indivis",
+   "n": 327,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "82E",
+   "intitule": "Autres demandes des représentants du personnel",
+   "n": 323,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "74B",
+   "intitule": "Demande relative à une servitude de distance pour les plantations et constructions",
+   "n": 320,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "79A",
+   "intitule": "Demande tendant à faire cesser et/ou à sanctionner une contrefaçon ou une atteinte illicite au droit de l'auteur, à un droit voisin du droit d'auteur ou à un droit de producteur de base de données",
+   "n": 317,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "56F",
+   "intitule": "Demande en résolution formée par le client pour inexécution de la prestation de services",
+   "n": 314,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "53E",
+   "intitule": "Crédit-bail ou leasing - Demande en nullité du contrat ou d'une clause du contrat",
+   "n": 305,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "59E",
+   "intitule": "Demande en exécution ou en dommages-intérêts pour mauvaise exécution d'un contrat non qualifié",
+   "n": 303,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "80F",
+   "intitule": "Demande de remise de documents",
+   "n": 302,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "92D",
+   "intitule": "Demande relative au  recouvrement des taxes douanières fiscales, parafiscales et taxes annexes",
+   "n": 301,
+   "part": 0.1
+  },
+  {
+   "juridiction": "ca",
+   "code": "30A",
+   "intitule": "Demande en nullité du bail commercial",
+   "n": 300,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AA",
+   "intitule": "Baux d'habitation - Demande en paiement des loyers et des charges et/ou tendant à faire prononcer ou constater la résiliation pour défaut de paiement  ou défaut d'assurance et ordonner l'expulsion",
+   "n": 108838,
+   "part": 14.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "14K",
+   "intitule": "Demande de contrôle obligatoire périodique de la nécessité d'une mesure d'hospitalisation complète",
+   "n": 46664,
+   "part": 6.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "20L",
+   "intitule": "Art. 1107 CPC- Demande en divorce autre que par consentement mutuel",
+   "n": 43600,
+   "part": 5.7
+  },
+  {
+   "juridiction": "tj",
+   "code": "53B",
+   "intitule": "Prêt - Demande en remboursement du prêt",
+   "n": 33947,
+   "part": 4.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "72A",
+   "intitule": "Demande en paiement des charges ou des contributions",
+   "n": 28872,
+   "part": 3.8
+  },
+  {
+   "juridiction": "tj",
+   "code": "14Q",
+   "intitule": "Demande d'autorisation de prolongation des mesures de rétention prises à l'encontre des étrangers en situation irrégulière",
+   "n": 27753,
+   "part": 3.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "54G",
+   "intitule": "Demande d'exécution de travaux, ou de dommages-intérêts, formée par le maître de l'ouvrage contre le constructeur ou son garant, ou contre le fabricant d'un élément de construction",
+   "n": 26906,
+   "part": 3.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "30B",
+   "intitule": "Demande en paiement des loyers et charges et/ou tendant à la  résiliation du bail et/ou à l'expulsion",
+   "n": 22758,
+   "part": 3.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "autres (groupes sous le seuil)",
+   "n": 20522,
+   "groupes_fondus": 424,
+   "part": 2.7,
+   "intitule": "Autres codes (sous le seuil chacun)"
+  },
+  {
+   "juridiction": "tj",
+   "code": "88B",
+   "intitule": "Demande d'annulation d'une mise en demeure ou d'une contrainte",
+   "n": 20169,
+   "part": 2.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "54Z",
+   "intitule": "Autres demandes relatives à un contrat de réalisation de travaux de construction",
+   "n": 17440,
+   "part": 2.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "89E",
+   "intitule": "A.T.M.P. : Demande d'un employeur contestant une décision d'une caisse",
+   "n": 15633,
+   "part": 2.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "60A",
+   "intitule": "Demande en réparation des dommages causés par des véhicules terrestres à moteur",
+   "n": 14302,
+   "part": 1.9
+  },
+  {
+   "juridiction": "tj",
+   "code": "50D",
+   "intitule": "Demande en garantie des vices cachés ou tendant à faire sanctionner un défaut de conformité",
+   "n": 13559,
+   "part": 1.8
+  },
+  {
+   "juridiction": "tj",
+   "code": "14T",
+   "intitule": "Demande de maintien d’une mesure d’isolement et/ou de contention formée par le directeur de l’établissement",
+   "n": 11490,
+   "part": 1.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "89A",
+   "intitule": "A.T.M.P. : Demande de prise en charge au titre des A.T.M.P. et/ou contestation relative au taux d'incapacité",
+   "n": 11141,
+   "part": 1.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "78F",
+   "intitule": "Demande en nullité et/ou en mainlevée, en suspension ou en exécution d'une saisie mobilière",
+   "n": 10564,
+   "part": 1.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "78A",
+   "intitule": "Demande tendant à la vente immobilière et à la distribution du prix",
+   "n": 10343,
+   "part": 1.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "20J",
+   "intitule": "Art. 751 du CPC - Demande en divorce autre que par consentement mutuel",
+   "n": 10012,
+   "part": 1.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "56B",
+   "intitule": "Demande en paiement du prix, ou des honoraires formée contre le client et/ou tendant à faire sanctionner le non-paiement du prix, ou des honoraires",
+   "n": 8704,
+   "part": 1.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "28A",
+   "intitule": "Demande en partage, ou contestations relatives au partage",
+   "n": 8229,
+   "part": 1.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "48C",
+   "intitule": "Contestation des mesures imposées par la commission de surendettement  des particuliers",
+   "n": 7375,
+   "part": 1.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "64B",
+   "intitule": "Demande en réparation des dommages causés par d'autres faits personnels",
+   "n": 6892,
+   "part": 0.9
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AZ",
+   "intitule": "Baux d'habitation - Autres demandes relatives à un bail d'habitation",
+   "n": 6539,
+   "part": 0.9
+  },
+  {
+   "juridiction": "tj",
+   "code": "56C",
+   "intitule": "Demande en dommages-intérêts contre le prestataire de services pour mauvaise exécution",
+   "n": 5990,
+   "part": 0.8
+  },
+  {
+   "juridiction": "tj",
+   "code": "88M",
+   "intitule": "Majeur handicapé - Contestation d'une décision relative à une allocation",
+   "n": 5848,
+   "part": 0.8
+  },
+  {
+   "juridiction": "tj",
+   "code": "88G",
+   "intitule": "Autres demandes contre un organisme",
+   "n": 5835,
+   "part": 0.8
+  },
+  {
+   "juridiction": "tj",
+   "code": "63A",
+   "intitule": "Demande en réparation des dommages causés par l'activité médicale ou para-médicale",
+   "n": 5369,
+   "part": 0.7
+  },
+  {
+   "juridiction": "tj",
+   "code": "30Z",
+   "intitule": "Autres demandes en matière de baux commerciaux",
+   "n": 5281,
+   "part": 0.7
+  },
+  {
+   "juridiction": "tj",
+   "code": "50A",
+   "intitule": "Demande en nullité de la vente ou d'une clause de la vente",
+   "n": 5197,
+   "part": 0.7
+  },
+  {
+   "juridiction": "tj",
+   "code": "55B",
+   "intitule": "Action en responsabilité exercée contre le transporteur",
+   "n": 5121,
+   "part": 0.7
+  },
+  {
+   "juridiction": "tj",
+   "code": "89B",
+   "intitule": "A.T.M.P. : Demande relative à la faute inexcusable de l'employeur",
+   "n": 4925,
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "50B",
+   "intitule": "Demande en paiement du prix ou tendant à faire sanctionner le non-paiement du prix",
+   "n": 4756,
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AD",
+   "intitule": "Baux d'habitation - Demande du  locataire ou de l'ancien locataire tendant au maintien dans les lieux",
+   "n": 4692,
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "71F",
+   "intitule": "Demande en nullité d'une assemblée générale ou d'une délibération de cette assemblée",
+   "n": 4476,
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "14N",
+   "intitule": "Contestation de la légalité de l'arrêté de placement en rétention devant le juge des libertés et de la détention par l'étranger",
+   "n": 4235,
+   "part": 0.6
+  },
+  {
+   "juridiction": "tj",
+   "code": "88E",
+   "intitule": "Demande en paiement de prestations",
+   "n": 4207,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "62B",
+   "intitule": "Demande en réparation des dommages causés à une chose mobilière ou immobilière par un immeuble",
+   "n": 4097,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "72Z",
+   "intitule": "Autres demandes relatives à la copropriété",
+   "n": 4054,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "50Z",
+   "intitule": "Autres demandes relatives à la vente",
+   "n": 3874,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "58E",
+   "intitule": "Demande en paiement de l'indemnité d'assurance dans une assurance de dommages",
+   "n": 3869,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "82C",
+   "intitule": "Demande relative à la désignation, au mandat ou la rémunération d'un expert",
+   "n": 3856,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "26J",
+   "intitule": "Demande d'adoption simple de l'enfant du conjoint",
+   "n": 3732,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "88A",
+   "intitule": "Constestation d'une décision d'un organisme portant sur l'immatriculation, l'affiliation ou un refus de reconnaissance d'un droit",
+   "n": 3726,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "56Z",
+   "intitule": "Autres demandes relatives à un contrat de prestation de services",
+   "n": 3708,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "88D",
+   "intitule": "Demande en remboursement de cotisations, prestations ou allocations indues",
+   "n": 3639,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AB",
+   "intitule": "Baux d'habitation - Demande tendant à l'exécution des autres obligations du locataire et/ou tendant à faire prononcer  la résiliation pour inexécution de ces obligations et ordonner l'expulsion",
+   "n": 3571,
+   "part": 0.5
+  },
+  {
+   "juridiction": "tj",
+   "code": "70C",
+   "intitule": "Demande d'expulsion et/ou d'indemnités dirigée contre les occupants des lieux",
+   "n": 3396,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "48J",
+   "intitule": "Contestation de la décision de la commission imposant un rétablissement personnel sans liquidation judiciaire",
+   "n": 3378,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "38E",
+   "intitule": "Autres actions en responsabilité exercées contre un établissement de crédit",
+   "n": 3050,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "72I",
+   "intitule": "Demande en paiement de provisions ou sommes exigibles présentée devant le Président du TJ statuant selon la procédure accélérée au fond (art. 19-2 de L. 1965)",
+   "n": 2965,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "50G",
+   "intitule": "Demande relative à l'exécution d'une promesse unilatérale de vente ou d'un pacte de préférence ou d'un compromis de vente",
+   "n": 2938,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "48A",
+   "intitule": "Recours contre les décisions statuant sur la recevabilité prononcées par les commissions de surendettement des particuliers",
+   "n": 2815,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AC",
+   "intitule": "Baux d'habitation - Demande du bailleur tendant à faire constater la validité du congé et à ordonner l'expulsion",
+   "n": 2802,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "54C",
+   "intitule": "Demande en paiement du prix formée par le constructeur contre le maître de l'ouvrage ou son garant",
+   "n": 2702,
+   "part": 0.4
+  },
+  {
+   "juridiction": "tj",
+   "code": "53J",
+   "intitule": "Cautionnement - Recours de la caution contre le débiteur principal ou contre une autre caution",
+   "n": 2509,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "30C",
+   "intitule": "Demande de fixation du prix du bail révisé ou renouvelé",
+   "n": 2448,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "53D",
+   "intitule": "Autres demandes relatives au prêt",
+   "n": 2290,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "63B",
+   "intitule": "Demande en réparation des dommages causés par l'activité des auxiliaires de justice",
+   "n": 2158,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "59B",
+   "intitule": "Demande en paiement relative à un autre contrat",
+   "n": 2085,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "58Z",
+   "intitule": "Demande relative à d'autres contrats d'assurance",
+   "n": 2067,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "28Z",
+   "intitule": "Autres demandes en matière de succession",
+   "n": 2044,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "50F",
+   "intitule": "Autres demandes  tendant à faire sanctionner l'inexécution des obligations du vendeur",
+   "n": 2033,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "26F",
+   "intitule": "Demande d'adoption simple",
+   "n": 1959,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "72C",
+   "intitule": "Demande du syndicat tendant à la cessation et/ou à la sanction d'une violation des règles de la copropriété commise par un copropriétaire",
+   "n": 1953,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "22G",
+   "intitule": "Demande relative à la liquidation du régime matrimonial",
+   "n": 1934,
+   "part": 0.3
+  },
+  {
+   "juridiction": "tj",
+   "code": "96D",
+   "intitule": "Demande en réparation des dommages causés par le fonctionnement défectueux du service de la justice",
+   "n": 1859,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "78I",
+   "intitule": "Autres demandes relatives à la saisie mobilière",
+   "n": 1790,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "61B",
+   "intitule": "Demande en réparation des dommages causés par un produit ou une prestation de services défectueux",
+   "n": 1745,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AH",
+   "intitule": "Baux d'habitation - Demande du locataire en fin de bail en restitution du dépôt de garantie et/ou tendant au paiement d'une indemnité pour amélioration des lieux loués",
+   "n": 1735,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "14R",
+   "intitule": "Demande d'autorisation de maintien en zone d'attente d'un étranger demandant son admission sur le territoire français",
+   "n": 1732,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "88Q",
+   "intitule": "Mineur handicapé - Contestation d'une décision relative à une allocation",
+   "n": 1686,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "58G",
+   "intitule": "Demande en paiement de l'indemnité d'assurance dans une assurance de personnes",
+   "n": 1684,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "70E",
+   "intitule": "Demande relative aux murs, haies et  fossés mitoyens",
+   "n": 1633,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "88C",
+   "intitule": "Demande en paiement de cotisations, majorations de retard et/ou pénalités",
+   "n": 1600,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "70H",
+   "intitule": "Demande de fixation de l'indemnité d'expropriation",
+   "n": 1577,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "53F",
+   "intitule": "Crédit-bail ou leasing - Demande en paiement des loyers et/ou en résiliation du crédit-bail",
+   "n": 1558,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "48B",
+   "intitule": "Demande de vérification de la validité des créances, des titres qui les constatent  et du montant des sommes réclamées",
+   "n": 1503,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "5BA",
+   "intitule": "Baux professionnels - Demande en paiement des loyers et des charges et/ou tendant à faire prononcer ou constater la résiliation pour défaut de paiement  ou défaut d'assurance et ordonner l'expulsion",
+   "n": 1458,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AE",
+   "intitule": "Baux d'habitation - Demande en dommages-intérêts formée par le bailleur en fin de bail en raison des dégradations ou des pertes imputables au locataire",
+   "n": 1393,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "72D",
+   "intitule": "Demande d'un copropriétaire tendant à la cessation et/ou à la sanction d'une atteinte à la propriété ou à la jouissance d'un lot",
+   "n": 1372,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "59C",
+   "intitule": "Demande en exécution ou en dommages-intérêts pour mauvaise exécution d'un autre contrat",
+   "n": 1355,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "88H",
+   "intitule": "Autres demandes d'un organisme, ou au profit d'un organisme",
+   "n": 1305,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "38C",
+   "intitule": "Demande en paiement du solde du compte bancaire",
+   "n": 1246,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "78K",
+   "intitule": "Demande en nullité et/ou de mainlevée d'une mesure conservatoire",
+   "n": 1244,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "64A",
+   "intitule": "Demande en réparation des dommages causés par une nuisance de l'environnement",
+   "n": 1238,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "74D",
+   "intitule": "Demande relative à un droit de passage",
+   "n": 1191,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "10B",
+   "intitule": "Action déclaratoire ou négatoire de nationalité",
+   "n": 1175,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "88O",
+   "intitule": "Majeur handicapé - Contestation d'une décision relative aux cartes",
+   "n": 1159,
+   "part": 0.2
+  },
+  {
+   "juridiction": "tj",
+   "code": "88L",
+   "intitule": "Majeur handicapé - Contestation d'une décision relative à l'attribution d'un taux",
+   "n": 1084,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "57B",
+   "intitule": "Demande en réparation des dommages causés par un intermédiaire",
+   "n": 1078,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "14I",
+   "intitule": "Demande de mainlevée d'une mesure d'hospitalisation complète par le patient ou toute personne agissant dans son intérêt",
+   "n": 1056,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "20I",
+   "intitule": "Demande en divorce par consentement mutuel",
+   "n": 1049,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "10F",
+   "intitule": "Action déclaratoire de nationalité",
+   "n": 1024,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AG",
+   "intitule": "Baux d'habitation - Demande du locataire tendant à la diminution du loyer ou des charges, et/ou à la résiliation du bail, et/ou à des dommages-intérêts,  en raison de troubles de jouissance",
+   "n": 1023,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "10A",
+   "intitule": "Demande tendant à contester l'enregistrement ou le refus d'enregistrement d'une déclaration de nationalité",
+   "n": 996,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "30F",
+   "intitule": "Demande d'évaluation et/ou en paiement de l'indemnité d'éviction",
+   "n": 979,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "2AP",
+   "intitule": "Action en contestation de paternité - hors mariage -",
+   "n": 953,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "50C",
+   "intitule": "Demande tendant à obtenir la livraison de la chose ou à faire sanctionner le défaut de livraison",
+   "n": 934,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "28C",
+   "intitule": "Demande relative aux pouvoirs de gestion des biens indivis",
+   "n": 904,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "66B",
+   "intitule": "Demande en restitution d'une chose ou en paiement d'un prix reçu indûment",
+   "n": 904,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "70B",
+   "intitule": "Demande formée par le propriétaire de démolition d'une construction ou d'enlèvement d'une plantation faite par un tiers sur son terrain",
+   "n": 901,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "30G",
+   "intitule": "Demande d'exécution de travaux à la charge du bailleur, ou demande en garantie contre le bailleur",
+   "n": 855,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "31B",
+   "intitule": "Demande en paiement du prix et/ou tendant à faire sanctionner le non-paiement du prix",
+   "n": 848,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "38Z",
+   "intitule": "Autres demandes en matière de droit bancaire et d'effets de commerce",
+   "n": 827,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "53I",
+   "intitule": "Cautionnement - Demande en paiement formée contre la caution seule",
+   "n": 812,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "78M",
+   "intitule": "Autres demandes relatives à une mesure conservatoire",
+   "n": 767,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "53A",
+   "intitule": "Prêt - Demande en nullité du contrat ou d'une clause du contrat",
+   "n": 762,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "70D",
+   "intitule": "Demande en bornage ou en clôture",
+   "n": 738,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "5AF",
+   "intitule": "Baux d'habitation - Demande du locataire tendant  à être autorisé d'exécuter des travaux ou à faire exécuter des travaux à la charge du bailleur",
+   "n": 730,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "4AG",
+   "intitule": "Demande de prononcé de la liquidation judiciaire après résolution du plan de sauvegarde ou du plan de redressement",
+   "n": 719,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "55Z",
+   "intitule": "Autres demandes relatives au contrat de transport",
+   "n": 715,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "71G",
+   "intitule": "Action en responsabilité exercée contre le syndicat",
+   "n": 708,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "70Z",
+   "intitule": "Autres demandes relatives à la propriété ou à la possession d'un immeuble ou relevant de la compétence du juge de l'expropriation",
+   "n": 685,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "35Z",
+   "intitule": "Autres demandes relatives au fonctionnement du groupement",
+   "n": 683,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "81D",
+   "intitule": "Demande d'annulation de la désignation élective de représentants du personnel des institutions représentatives ou d'un scrutin de révocation",
+   "n": 670,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "78H",
+   "intitule": "Demande d'ouverture ou contestation d'une procédure de saisie des rémunérations",
+   "n": 668,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "79A",
+   "intitule": "Demande tendant à faire cesser et/ou à sanctionner une contrefaçon ou une atteinte illicite au droit de l'auteur, à un droit voisin du droit d'auteur ou à un droit de producteur de base de données",
+   "n": 667,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "59D",
+   "intitule": "Demande en paiement relative à un contrat non qualifié",
+   "n": 663,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "48O",
+   "intitule": "Demande aux fins de suspension des mesures d'expulsion du logement du débiteur",
+   "n": 649,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "26K",
+   "intitule": "Demande d'adoption plénière de l'enfant du conjoint",
+   "n": 635,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "62A",
+   "intitule": "Demande en réparation des dommages causés à une personne par un immeuble",
+   "n": 631,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "26G",
+   "intitule": "Demande d'adoption plénière",
+   "n": 623,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "56A",
+   "intitule": "Demande en nullité d'un contrat de prestation de services",
+   "n": 618,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "61A",
+   "intitule": "Demande en réparation des dommages causés par un animal",
+   "n": 612,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "10E",
+   "intitule": "Demande tendant à contester le refus d'enregistrement d'une déclaration de nationalité",
+   "n": 597,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "14H",
+   "intitule": "Demande de mainlevée de la rétention formée devant le juge des libertés et de la détention par l'étranger",
+   "n": 595,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "56F",
+   "intitule": "Demande en résolution formée par le client pour inexécution de la prestation de services",
+   "n": 575,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "54A",
+   "intitule": "Demande en nullité d'un contrat tendant à la réalisation de travaux de construction",
+   "n": 555,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "88R",
+   "intitule": "Mineur handicapé - Contestation d'une décision relative à l'orientation et au placement",
+   "n": 512,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "71I",
+   "intitule": "Demande de remise de pièces ou de fonds détenus par le syndic",
+   "n": 511,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "88T",
+   "intitule": "Invalidité - Contestation relative à une décision de reconnaissance",
+   "n": 509,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "88U",
+   "intitule": "Invalidité - Contestation d'une décision relative à une allocation",
+   "n": 503,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "14A",
+   "intitule": "Demande tendant à la réparation et/ou à la cessation d'une atteinte au droit au respect de la vie privée",
+   "n": 500,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "3CB",
+   "intitule": "Demande en contrefaçon de marque française ou internationale",
+   "n": 495,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "74A",
+   "intitule": "Demande relative à une servitude d'usage ou de passage des eaux",
+   "n": 492,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "70A",
+   "intitule": "Revendication d'un bien immobilier",
+   "n": 481,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "2AA",
+   "intitule": "Action en recherche de paternité",
+   "n": 471,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "34C",
+   "intitule": "Demande en nullité des actes des assemblées et conseils",
+   "n": 469,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "52A",
+   "intitule": "Demande en paiement des fermages ou loyers et/ou tendant à faire prononcer ou constater la résiliation du bail pour défaut de paiement et prononcer l'expulsion",
+   "n": 465,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "56D",
+   "intitule": "Demande en restitution d'une chose confiée au prestataire de services et/ou en dommages-intérêts pour non restitution",
+   "n": 465,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "10H",
+   "intitule": "Action en contestation du refus de délivrance d'un certificat de nationalité française",
+   "n": 460,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "78G",
+   "intitule": "Demande relative à la saisissabilité et/ou à la mise à disposition de sommes ou d'un  bien",
+   "n": 452,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "56E",
+   "intitule": "Demande en exécution formée par le client contre le prestataire de services",
+   "n": 446,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "59E",
+   "intitule": "Demande en exécution ou en dommages-intérêts pour mauvaise exécution d'un contrat non qualifié",
+   "n": 440,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "4HC",
+   "intitule": "Autres demandes postérieures à la clôture de la procédure de liquidation judiciaire",
+   "n": 438,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "74Z",
+   "intitule": "Demande relative à d'autres servitudes",
+   "n": 430,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "89Z",
+   "intitule": "Autres demandes en matière de risques professionnels",
+   "n": 414,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "59A",
+   "intitule": "Demande en nullité d'un contrat ou des clauses relatives à un autre contrat",
+   "n": 411,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "48S",
+   "intitule": "Hors table NAC 2022",
+   "n": 408,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "29A",
+   "intitule": "Demande en annulation, en réduction d'une libéralité ou d'une clause d'une libéralité",
+   "n": 398,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "91Z",
+   "intitule": "Demande relative à d'autres droits d'enregistrement ou assimilés",
+   "n": 392,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "30E",
+   "intitule": "Action en contestation de congé et/ou demande de renouvellement de bail",
+   "n": 390,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "28D",
+   "intitule": "Demande relative aux charges et revenus de l'indivision",
+   "n": 386,
+   "part": 0.1
+  },
+  {
+   "juridiction": "tj",
+   "code": "57A",
+   "intitule": "Demande en paiement ou en indemnisation formée par un intermédiaire",
+   "n": 382,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "63C",
+   "intitule": "Demande en réparation des dommages causés par l'activité d'un expert en diagnostic, un commissaire aux comptes, un commissaire aux apports, un commissaire à la fusion ou un expert-comptable",
+   "n": 378,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "79Z",
+   "intitule": "Autres demandes relatives à la propriété littéraire et artistique",
+   "n": 375,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "54F",
+   "intitule": "Recours entre constructeurs",
+   "n": 349,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "58F",
+   "intitule": "Demande en paiement de l'indemnité d'assurance de responsabilité formée par l'assuré",
+   "n": 340,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "48D",
+   "intitule": "Demande relative à la procédure collective applicable aux débiteurs civils spécifique à l'Alsace-Moselle",
+   "n": 331,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "64F",
+   "intitule": "Demande de blocage, retrait ou déréférencement de contenus illicites accessibles en ligne",
+   "n": 327,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "71H",
+   "intitule": "Action en responsabilité exercée contre le syndic ou tendant à sa révocation",
+   "n": 323,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "55C",
+   "intitule": "Hors table NAC 2022",
+   "n": 323,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "51A",
+   "intitule": "Demande en paiement des loyers et des charges et/ou tendant à faire prononcer ou constater la résiliation pour défaut de paiement  ou défaut d'assurance et ordonner l'expulsion",
+   "n": 322,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "51Z",
+   "intitule": "Autres demandes relatives à un bail d'habitation ou à un bail professionnel",
+   "n": 316,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "63D",
+   "intitule": "Demande en réparation des dommages causés par l'activité d'un prestataire de services d'investissement",
+   "n": 307,
+   "part": 0.0
+  },
+  {
+   "juridiction": "tj",
+   "code": "70O",
+   "intitule": "Demande tendant à la démolition ou la mise en conformité d'un ouvrage édifié ou installé en violation des règles d'urbanisme",
+   "n": 303,
+   "part": 0.0
+  }
+ ],
+ "nac_regroupements": [
+  {
+   "regroupement": "Baux (habitation, professionnels, ruraux, commerciaux)",
+   "juridiction": "ca",
+   "n": 40141,
+   "part": 7.4
+  },
+  {
+   "regroupement": "Baux (habitation, professionnels, ruraux, commerciaux)",
+   "juridiction": "tj",
+   "n": 169016,
+   "part": 22.1
+  },
+  {
+   "regroupement": "Étrangers : rétention et zone d'attente",
+   "juridiction": "ca",
+   "n": 82777,
+   "part": 15.3
+  },
+  {
+   "regroupement": "Étrangers : rétention et zone d'attente",
+   "juridiction": "tj",
+   "n": 34315,
+   "part": 4.5
+  },
+  {
+   "regroupement": "Soins psychiatriques sans consentement, isolement, contention",
+   "juridiction": "ca",
+   "n": 12035,
+   "part": 2.2
+  },
+  {
+   "regroupement": "Soins psychiatriques sans consentement, isolement, contention",
+   "juridiction": "tj",
+   "n": 59483,
+   "part": 7.8
+  },
+  {
+   "regroupement": "Divorce et séparation de corps",
+   "juridiction": "tj",
+   "n": 55232,
+   "part": 7.2
+  },
+  {
+   "regroupement": "Surendettement des particuliers",
+   "juridiction": "ca",
+   "n": 8440,
+   "part": 1.6
+  },
+  {
+   "regroupement": "Surendettement des particuliers",
+   "juridiction": "tj",
+   "n": 16940,
+   "part": 2.2
+  },
+  {
+   "regroupement": "Entreprises en difficulté (hors surendettement)",
+   "juridiction": "ca",
+   "n": 16375,
+   "part": 3.0
+  },
+  {
+   "regroupement": "Entreprises en difficulté (hors surendettement)",
+   "juridiction": "tj",
+   "n": 1793,
+   "part": 0.2
+  },
+  {
+   "regroupement": "Relations individuelles de travail",
+   "juridiction": "ca",
+   "n": 119024,
+   "part": 22.0
+  },
+  {
+   "regroupement": "Relations individuelles de travail",
+   "juridiction": "tj",
+   "n": 471,
+   "part": 0.1
+  },
+  {
+   "regroupement": "Protection sociale et risques professionnels",
+   "juridiction": "ca",
+   "n": 57049,
+   "part": 10.5
+  },
+  {
+   "regroupement": "Protection sociale et risques professionnels",
+   "juridiction": "tj",
+   "n": 84923,
+   "part": 11.1
+  }
+ ],
+ "lignes": []
+}
