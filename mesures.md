@@ -211,7 +211,7 @@ Part de décisions dont le champ est présent et non vide :
 |---|---|---|---|---|
 | `solution` (code) | 100 % | 100 %, mais 612 028 sur 646 601 valent « other » | 100 %, 232 libellés | absent |
 | `solution_alt` (issue en toutes lettres) | 7,8 % | 89,8 % (173 libellés) | absent | absent |
-| `nac` (code de nature d'affaire) | 0 % | 90,5 % (641 codes) | 100 % (590 codes) | 0 % |
+| `nac` (code de nature d'affaire) | 0 % | 83,6 % (44 289 décisions portent la chaîne « null », comptées à tort comme un code jusqu'au 08/11/2026) | 100 % (590 codes) | 0 % |
 | `themes` | 34,6 % (107 060 libellés distincts, mots-clés libres) | 76,3 % (6 666) | 28,7 % (622) | absent |
 | `chamber` | 100 % (11 valeurs) | 90,5 % (597) | 100 % (1 493 libellés, variantes d'écriture) | 78,5 % (601) |
 | `zones` (introduction, exposé, motivations, dispositif) | 66,1 % | 90,2 % | 99,3 % | 99,9 % |
