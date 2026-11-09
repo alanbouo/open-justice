@@ -13,6 +13,15 @@ provisoires : l'extraction des variables du texte n'est pas validée
 (`statistiques.md` §D). La recherche préalable est dans
 [`recherche.md`](recherche.md).
 
+Justice judiciaire : les 2 183 473 décisions Judilibre sont chargées dans une base
+de travail (`scripts/charger_judilibre.py`, hors dépôt). Volumes et nature des
+affaires analysés (`analyses/judiciaire-volumes.md`, `site/agregats/judiciaire_volumes.json`),
+pas encore sur le site. Issues et durées commencées puis interrompues le 08/11/2026 :
+`scripts/agreger_judiciaire_issues.py`, `site/agregats/judiciaire_issues.json` (état
+intermédiaire) et `scripts/agreger_judiciaire_durees.py` (sans résultat ni validation)
+restent hors git. Prochaine étape : finir et valider issues et durées, puis rédiger
+`site/judiciaire.html`.
+
 ## Intention
 
 - Informer les citoyens sur l'exécution de la justice en France.
